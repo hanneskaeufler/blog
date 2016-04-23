@@ -10,3 +10,7 @@ blog = "blog/:slug/"
 [params]
 DateForm = "Jan 2, 2006"
 DateFormFull = "Mon Jan 2 2006 15:04:05 MST"
+Author = "Hannes Käufler"
+GitHub = "https://github.com/hanneskaeufler"
+Twitter = "https://twitter.com/hanneskaeufler"
+Lang = "en-us"
