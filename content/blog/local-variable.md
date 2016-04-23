@@ -1,6 +1,5 @@
 +++
 date = "2016-04-23T20:40:44+02:00"
-draft = true
 title = "local variable"
 
 +++
