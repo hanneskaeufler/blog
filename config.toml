@@ -1,6 +1,7 @@
 baseurl = "http://hannes.kaeufler.net"
 languageCode = "en-us"
 title = "A slow saturday"
+pygmentsuseclasses = true
 
 [permalinks]
 fixed = ":title/"
