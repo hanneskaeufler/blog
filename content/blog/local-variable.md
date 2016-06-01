@@ -1,6 +1,6 @@
 +++
 date = "2016-04-23T20:40:44+02:00"
-title = "local variable"
+title = "Local variable"
 
 +++
 
