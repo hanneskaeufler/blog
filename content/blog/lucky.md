@@ -1,6 +1,5 @@
 +++
 date = "2016-06-01T19:28:12+02:00"
-draft = true
 title = "Lucky"
 
 +++
