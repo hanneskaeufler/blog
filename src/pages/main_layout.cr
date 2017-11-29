@@ -30,6 +30,6 @@ abstract class MainLayout
   end
 
   def page_title
-    "Welcome to Lucky"
+    "hannes.kaeufler.net"
   end
 end

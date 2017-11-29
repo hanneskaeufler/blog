@@ -6,3 +6,79 @@
 /* @import "mixins/**.pcss"; */
 /* For example, add `static/css/components/btn.pcss` and uncomment the next line */
 /* @import "components/**.pcss"; */
+
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #002748;
+}
+
+.posts-container {
+    lost-utility: clearfix;
+    lost-center: 980px;
+}
+
+.posts-container div {
+    lost-column: 1/2;
+}
+
+.post-title h2 {
+    margin-bottom: 0.1em;
+}
+.post-title .meta {
+    color: #666;
+}
+
+.box {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave {
+    opacity: .4;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    background: #0af;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 12000ms infinite linear;
+}
+
+.wave.-three {
+    animation: drift 20000ms infinite linear;
+}
+
+.wave.-two {
+    animation: drift 32000ms infinite linear;
+    opacity: .1;
+    background: yellow;
+}
+
+.box:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .0));
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+}
+
+.intro ul {
+    list-style-type: none;
+}
