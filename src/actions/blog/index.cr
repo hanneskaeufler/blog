@@ -1,5 +1,6 @@
 class Blog::Index < BrowserAction
   get "/" do
-    render Blog::IndexPage
+    posts = PostQuery.new.latest.results
+    render Blog::IndexPage, posts: posts
   end
 end

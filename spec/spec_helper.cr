@@ -1,2 +1,2 @@
 require "spec"
-require "../src/blog"
+require "../src/app"
