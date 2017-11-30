@@ -5,7 +5,6 @@ class Blog::IndexPage < MainLayout
 
   def inner
     header class: "blog-title" do
-      eyecatcher
       intro
     end
 
@@ -17,11 +16,21 @@ class Blog::IndexPage < MainLayout
   end
 
   private def single_post(post : Post)
-    header class: "post-title" do
-      h2 post.title
-      span post.published_at.to_s, class: "meta"
+    article do
+      header class: "post-title" do
+        h2 post.title
+        span post.published_at.to_s, class: "meta"
+      end
+      content(post)
     end
-    raw Markdown.to_html(post.content)
+  end
+
+  private def content(post : Post)
+    raw Markdown.to_html(downgrade_headings(post.content))
+  end
+
+  private def downgrade_headings(content : String)
+    content.gsub(/\n#/, "##")
   end
 
   private def intro
