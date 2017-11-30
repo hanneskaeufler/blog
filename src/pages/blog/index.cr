@@ -13,13 +13,16 @@ class Blog::IndexPage < MainLayout
         single_post(post)
       end
     end
+
+    footer class: "blog-footer" do
+    end
   end
 
   private def single_post(post : Post)
     article do
       header class: "post-title" do
         h2 post.title
-        span post.published_at.to_s, class: "meta"
+        post_meta(post)
       end
       content(post)
     end
@@ -47,6 +50,14 @@ class Blog::IndexPage < MainLayout
         end
       end
     end
+  end
+
+  private def post_meta(post : Post)
+    span post_date(post), class: "post-title-meta"
+  end
+
+  private def post_date(post : Post)
+    Time::Format.new("%b %-d, %Y").format(post.published_at)
   end
 
   private def eyecatcher

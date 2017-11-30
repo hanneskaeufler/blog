@@ -11,7 +11,16 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
     line-height: 1.5;
+    font-size: 1.5em;
     color: #6b7c93;
+}
+
+.blog-title {
+    height: 300px;
+}
+
+.blog-title h1 {
+    color: white;
 }
 
 .posts-container {
@@ -23,11 +32,17 @@ body {
     lost-column: 1/2;
 }
 
+.posts-container article {
+    margin-bottom: 80px;
+}
+
 .post-title h2 {
     margin-bottom: 0.1em;
 }
-.post-title .meta {
-    color: #666;
+.post-title .post-title-meta {
+    color: #6b7c93;
+    font-size: 0.8em;
+    opacity: .6;
 }
 
 .box {
@@ -81,4 +96,36 @@ body {
 
 .intro ul {
     list-style-type: none;
+}
+
+.blog-title:after {
+    opacity: .4;
+    background: #ddd;
+    content: '';
+    height: 2000px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -1800px;
+    transform: skew(0,-12deg);
+    z-index: -1;
+}
+
+.blog-title:before {
+    opacity: .4;
+    background: #24b47e;
+    content: '';
+    height: 2000px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -1800px;
+    transform: skew(0,6deg);
+    z-index: -1;
+}
+
+.blog-footer {
+    margin-top: 100px;
+    height: 200px;
+    border-top: 2px solid rgba(207,215,223,.25);
 }
