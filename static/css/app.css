@@ -125,7 +125,18 @@ body {
 }
 
 .blog-footer {
-    margin-top: 100px;
-    height: 200px;
+    background: #f6f9fc;
     border-top: 2px solid rgba(207,215,223,.25);
+    font-size: .8em;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+
+.blog-footer section {
+    lost-utility: clearfix;
+    lost-center: 980px;
+}
+
+.blog-footer div {
+    lost-column: 1/2;
 }

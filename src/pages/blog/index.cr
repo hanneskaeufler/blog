@@ -9,12 +9,11 @@ class Blog::IndexPage < MainLayout
     end
 
     section class: "posts-container" do
-      @posts.each do |post|
-        single_post(post)
-      end
+      @posts.each { |post| single_post(post) }
     end
 
     footer class: "blog-footer" do
+      imprint
     end
   end
 
@@ -66,6 +65,22 @@ class Blog::IndexPage < MainLayout
       div class: "wave -one"
       div class: "wave -two"
       div class: "wave -three"
+    end
+  end
+
+  private def imprint
+    section do
+      div do
+        h4 "Imprint"
+        text "Hannes Käufler"
+        br
+        text "Gotenstraße 17"
+        br
+        text "89610 Oberdischingen"
+      end
+      div do
+        text "2"
+      end
     end
   end
 end
