@@ -79,7 +79,6 @@ class Blog::IndexPage < MainLayout
         text "89610 Oberdischingen"
       end
       div do
-        text "2"
       end
     end
   end
