@@ -1,3 +1,5 @@
+ENV["LUCKY_ENV"] = "test"
+
 require "spec"
 require "./support/app_visitor"
 require "./support/factories"
