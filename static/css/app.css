@@ -28,10 +28,6 @@ body {
     lost-center: 980px;
 }
 
-.posts-container div {
-    lost-column: 1/2;
-}
-
 .posts-container article {
     margin-bottom: 80px;
 }

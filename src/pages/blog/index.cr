@@ -1,6 +1,9 @@
 require "markdown"
 
 class Blog::IndexPage < MainLayout
+  RAW_START = "RAW_HTML_START"
+  RAW_END = "RAW_HTML_END"
+
   needs posts : Array(Post)
 
   def inner
@@ -28,7 +31,20 @@ class Blog::IndexPage < MainLayout
   end
 
   private def content(post : Post)
-    raw Markdown.to_html(downgrade_headings(post.content))
+    content = downgrade_headings(post.content)
+    raw = [] of String
+    matches = /#{RAW_START}(.*)#{RAW_END}/.match(content)
+    if matches
+      content = content.gsub(matches[0], "RAW_1")
+      raw << matches[1]
+    end
+
+    markdown = Markdown.to_html(content)
+
+    if matches
+      markdown = markdown.gsub("RAW_1", "</p>#{raw[0]}<p>")
+    end
+    raw markdown
   end
 
   private def downgrade_headings(content : String)
