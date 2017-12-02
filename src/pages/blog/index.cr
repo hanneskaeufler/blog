@@ -5,7 +5,8 @@ class Blog::IndexPage < MainLayout
   SOCIALS = {
     :github => "https://github.com/hanneskaeufler",
     :facebook => "https://facebook.com/hanneskaeufler",
-    :twitter => "https://twitter.com/hanneskaeufler"
+    :twitter => "https://twitter.com/hanneskaeufler",
+    :xing => "https://www.xing.com/profile/Hannes_Kaeufler"
   }
 
   needs posts : Array(Post)
