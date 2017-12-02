@@ -5,7 +5,10 @@ module Blog::Posts::Components
   private def single_post(post : Post)
     article do
       header class: "post-title" do
-        h2 post.title
+        h2 do
+          text post.title
+          link "#", to: Blog::Posts::Show.with(post.slug)
+        end
         post_meta(post)
       end
       content(post)

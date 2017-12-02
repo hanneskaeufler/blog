@@ -18,8 +18,8 @@ describe Blog do
 
       visitor.visit("/")
 
-      visitor.should contain "Sample post"
-      visitor.should contain "Lorem ipsum"
+      visitor.should contain "Sample post<a href=\"/posts/sample-post\">#</a>"
+      visitor.should contain "Lorem ipsum<a href=\"/posts/lorem-ipsum\">#</a>"
     end
   end
 

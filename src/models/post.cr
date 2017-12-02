@@ -4,4 +4,8 @@ class Post < BaseModel
     field content : String
     field published_at : Time
   end
+
+  def slug
+    title.downcase.gsub(" ", "-")
+  end
 end
