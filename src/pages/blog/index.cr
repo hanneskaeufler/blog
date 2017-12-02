@@ -74,7 +74,9 @@ class Blog::IndexPage < MainLayout
         end
       end
       div class: "tag-line" do
-        h1 "racing, software, open-source"
+        h1 do
+          raw "racing &middot; software &middot; open-source"
+        end
       end
     end
   end
