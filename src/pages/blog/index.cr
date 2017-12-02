@@ -68,7 +68,6 @@ class Blog::IndexPage < MainLayout
       :twitter => "https://twitter.com/hanneskaeufler"
     }
     section class: "intro" do
-      h1 "Hannes Käufler"
       ul do
         socials.each do |name, href|
           li do link name.to_s, to: href end

@@ -32,6 +32,6 @@ abstract class MainLayout
   end
 
   def page_title
-    "hannes.kaeufler.net"
+    "Hannes Käufler: Blog"
   end
 end

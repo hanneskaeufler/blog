@@ -105,7 +105,31 @@ body {
 
 .intro ul {
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
+
+.intro li a:link {
+    color: white;
+    background: rgba(0,0,0,.2);
+    display: inline-block;
+    margin: 5px;
+    padding: 6px 14px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.8em;
+}
+
+.intro li a:hover {
+    background: rgba(0,0,0,.4);
+}
+
+.intro li a:visited {
+    color: white;
+}
+
 
 .blog-title:after {
     opacity: .4;
