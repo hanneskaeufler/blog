@@ -29,7 +29,7 @@ body {
     lost-center: 980px;
 }
 
-.blog-title-small a:link, a:visited {
+.blog-title-small a:link, .blog-title-small a:visited {
     padding: 5px 10px;
     border-radius: 4px;
     color: #6772e5;
