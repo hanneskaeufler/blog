@@ -13,15 +13,21 @@ class Blog::IndexPage < MainLayout
   needs posts : Array(Post)
 
   def inner
+    render_header
+    render_posts(@posts)
+    render_footer
+  end
+
+  private def render_header
     header class: "blog-title" do
       intro
     end
+  end
 
+  private def render_posts(posts : Array(Post))
     section class: "posts-container" do
       @posts.each { |post| single_post(post) }
     end
-
-    render_footer
   end
 
   private def intro

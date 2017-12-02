@@ -5,10 +5,13 @@ class Blog::ShowPage < MainLayout
   needs post : Post
 
   def inner
+    render_post(@post)
+    render_footer
+  end
+
+  private def render_post(post : Post)
     section class: "posts-container" do
       single_post(@post)
     end
-
-    render_footer
   end
 end
