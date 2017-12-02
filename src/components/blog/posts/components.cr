@@ -40,7 +40,11 @@ module Blog::Posts::Components
       markdown = markdown.gsub("RAW_HTML_#{index}", "</p>#{snippet}<p>")
     end
 
-    raw markdown
+    raw handle_strikethrough(markdown)
+  end
+
+  private def handle_strikethrough(markdown : String)
+    markdown.gsub(/~~([\s\w.]+?)~~/, "<del>\\1</del>")
   end
 
   private def downgrade_headings(content : String)

@@ -2,9 +2,9 @@ require "../../spec_helper"
 
 describe Blog::IndexPage do
   it "renders markdown to html" do
-    post = build_post(content: "[Google](http://google.de)")
+    post = build_post(content: "Hi [Google](http://google.de). ~~bam bam.~~")
 
-    rendered([post]).should contain "<a href=\"http://google.de\">Google</a>"
+    rendered([post]).should contain "Hi <a href=\"http://google.de\">Google</a>. <del>bam bam.</del>"
   end
 
   it "downgrades headings by one" do
