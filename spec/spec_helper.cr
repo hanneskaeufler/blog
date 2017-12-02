@@ -1,4 +1,5 @@
 require "spec"
+require "./support/app_visitor"
 require "../src/app"
 
 Spec.before_each do
