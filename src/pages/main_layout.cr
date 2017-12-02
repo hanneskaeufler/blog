@@ -20,6 +20,8 @@ abstract class MainLayout
         title page_title
         css_link asset("css/app.css")
         js_link asset("js/app.js")
+        css_link "https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"
+        js_link "https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"
       end
 
       body do

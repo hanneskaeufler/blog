@@ -140,3 +140,8 @@ body {
 .blog-footer div {
     lost-column: 1/2;
 }
+
+.post-editor {
+    lost-utility: clearfix;
+    lost-center: 980px;
+}

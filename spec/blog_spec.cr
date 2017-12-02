@@ -22,4 +22,15 @@ describe Blog do
       visitor.should contain "Lorem ipsum"
     end
   end
+
+  describe "/admin" do
+    it "shows an editor" do
+      visitor = AppVisitor.new
+
+      visitor.visit("/admin")
+
+      visitor.should contain "<h1>New post</h1>"
+      visitor.should contain "textarea"
+    end
+  end
 end
