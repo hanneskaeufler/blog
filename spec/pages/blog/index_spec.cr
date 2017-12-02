@@ -35,13 +35,5 @@ describe Blog::IndexPage do
 end
 
 private def rendered(posts)
-  Blog::IndexPage.new(flash: flash, posts: posts).render.to_s
-end
-
-private def flash
-  Lucky::Flash::Store.new
-end
-
-private def build_post(content)
-  Post.new(1, Time.now, Time.now, "title", content, Time.now)
+  Blog::IndexPage.new(flash: empty_flash, posts: posts).render.to_s
 end
