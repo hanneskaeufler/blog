@@ -32,8 +32,21 @@ body {
     margin-bottom: 80px;
 }
 
+.posts-container article a:link {
+    color: #6772e5;
+}
+
+.posts-container article a:visited {
+    color: #6772e5;
+}
+
+.posts-container article a:hover {
+    color: #32325d;
+}
+
 .post-title h2 {
     margin-bottom: 0.1em;
+    color: #32325d;
 }
 .post-title .post-title-meta {
     color: #6b7c93;
