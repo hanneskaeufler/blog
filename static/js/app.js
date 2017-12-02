@@ -23,6 +23,7 @@ document.write = function(str) {
     var div = document.createElement('div');
     div.innerHTML = str;
     script.parentNode.insertBefore(div, script.nextElementSibling);
+    script.remove();
   }
   else {
     document._write(str);
