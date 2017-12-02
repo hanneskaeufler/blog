@@ -5,8 +5,22 @@ class Blog::ShowPage < MainLayout
   needs post : Post
 
   def inner
+    render_header
     render_post(@post)
     render_footer
+  end
+
+  private def render_header
+    header class: "blog-title-small" do
+      section do
+        div do
+          link "« All posts", to: Blog::Index.path
+        end
+        div do
+          render_tagline
+        end
+      end
+    end
   end
 
   private def render_post(post : Post)

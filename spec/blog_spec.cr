@@ -44,6 +44,7 @@ describe Blog do
         visitor.visit("/posts/welcome")
 
         visitor.should contain "Welcome"
+        visitor.should contain "<a href=\"/\">« All posts</a>"
       end
     end
   end

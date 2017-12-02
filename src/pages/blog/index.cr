@@ -37,11 +37,7 @@ class Blog::IndexPage < MainLayout
           li do link name.to_s, to: href end
         end
       end
-      div class: "tag-line" do
-        h1 do
-          raw "racing &middot; software &middot; open-source"
-        end
-      end
+      render_tagline
     end
   end
 end

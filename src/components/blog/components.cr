@@ -1,4 +1,12 @@
 module Blog::Components
+  private def render_tagline
+    div class: "tag-line" do
+      h1 do
+        raw "racing &middot; software &middot; open-source"
+      end
+    end
+  end
+
   private def render_footer
     footer class: "blog-footer" do
       imprint
