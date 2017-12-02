@@ -15,13 +15,22 @@ describe Blog::IndexPage do
 
   it "can handle raw html, and assumes closing and opening paragraphs" do
     # what. a. hack. https://github.com/crystal-lang/crystal/issues/4613
-    post = build_post(content: "<p>Some text. RAW_HTML_START<br id=\"must-remain\">RAW_HTML_END. More text</p>")
+    post = build_post(content: "Some text. RAW_HTML_START<br id=\"must-remain\">RAW_HTML_END. More text")
 
     html = rendered([post])
 
     html.should contain "</p><br id=\"must-remain\"><p>"
     html.should_not contain "RAW_HTML_START"
     html.should_not contain "RAW_HTML_END"
+  end
+
+  it "can handle multiple raw html blocks" do
+    post = build_post(content: "Some text. RAW_HTML_START<br id=\"must-remain\">RAW_HTML_END. More text. RAW_HTML_START<i>hi</i>RAW_HTML_END")
+
+    html = rendered([post])
+
+    html.should contain "</p><br id=\"must-remain\"><p>"
+    html.should contain "</p><i>hi</i><p>"
   end
 end
 

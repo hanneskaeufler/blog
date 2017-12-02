@@ -1,8 +1,7 @@
 require "markdown"
+require "string_scanner"
 
 class Blog::IndexPage < MainLayout
-  RAW_START = "RAW_HTML_START"
-  RAW_END = "RAW_HTML_END"
 
   needs posts : Array(Post)
 
@@ -32,18 +31,29 @@ class Blog::IndexPage < MainLayout
 
   private def content(post : Post)
     content = downgrade_headings(post.content)
-    raw = [] of String
-    matches = /#{RAW_START}(.*)#{RAW_END}/.match(content)
-    if matches
-      content = content.gsub(matches[0], "RAW_1")
-      raw << matches[1]
+
+    matches = [] of String
+    html_snippets = [] of String
+
+    scanner = StringScanner.new(content)
+
+    while scanner.skip_until(/RAW_HTML_START(.+?)RAW_HTML_END/)
+      if scanner[0]? && scanner[1]?
+          matches << scanner[0]
+          html_snippets << scanner[1]
+      end
+    end
+
+    matches.each_with_index do |match, index|
+      content = content.gsub(match, "RAW_HTML_#{index}")
     end
 
     markdown = Markdown.to_html(content)
 
-    if matches
-      markdown = markdown.gsub("RAW_1", "</p>#{raw[0]}<p>")
+    html_snippets.each_with_index do |snippet, index|
+      markdown = markdown.gsub("RAW_HTML_#{index}", "</p>#{snippet}<p>")
     end
+
     raw markdown
   end
 
