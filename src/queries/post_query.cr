@@ -4,7 +4,11 @@ class PostQuery < Post::BaseQuery
   end
 
   def find_published_by_slug(slug : String) : Post
-    post = title.lower.is(slug.downcase).first? ||
+    post = title.lower.is(titlelize(slug)).first? ||
       raise LuckyRecord::RecordNotFoundError.new(:post, slug)
+  end
+
+  private def titlelize(slug)
+    slug.downcase.gsub("-", " ")
   end
 end
