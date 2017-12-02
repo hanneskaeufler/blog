@@ -1,0 +1,147 @@
+@import "normalize.css";
+
+/* Uncomment these when you add files to variables, mixins or components */
+
+/* @import "variables/**.pcss"; */
+/* @import "mixins/**.pcss"; */
+/* For example, add `static/css/components/btn.pcss` and uncomment the next line */
+/* @import "components/**.pcss"; */
+
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    font-size: 1.5em;
+    color: #6b7c93;
+}
+
+.blog-title {
+    height: 300px;
+}
+
+.blog-title h1 {
+    color: white;
+}
+
+.posts-container {
+    lost-utility: clearfix;
+    lost-center: 980px;
+}
+
+.posts-container div {
+    lost-column: 1/2;
+}
+
+.posts-container article {
+    margin-bottom: 80px;
+}
+
+.post-title h2 {
+    margin-bottom: 0.1em;
+}
+.post-title .post-title-meta {
+    color: #6b7c93;
+    font-size: 0.8em;
+    opacity: .6;
+}
+
+.box {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave {
+    opacity: .4;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    background: #0af;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 12000ms infinite linear;
+}
+
+.wave.-three {
+    animation: drift 20000ms infinite linear;
+}
+
+.wave.-two {
+    animation: drift 32000ms infinite linear;
+    opacity: .1;
+    background: yellow;
+}
+
+.box:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .0));
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+}
+
+.intro ul {
+    list-style-type: none;
+}
+
+.blog-title:after {
+    opacity: .4;
+    background: #ddd;
+    content: '';
+    height: 2000px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -1800px;
+    transform: skew(0,-12deg);
+    z-index: -1;
+}
+
+.blog-title:before {
+    opacity: .4;
+    background: #24b47e;
+    content: '';
+    height: 2000px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -1800px;
+    transform: skew(0,6deg);
+    z-index: -1;
+}
+
+.blog-footer {
+    background: #f6f9fc;
+    border-top: 2px solid rgba(207,215,223,.25);
+    font-size: .8em;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+
+.blog-footer section {
+    lost-utility: clearfix;
+    lost-center: 980px;
+}
+
+.blog-footer div {
+    lost-column: 1/2;
+}
+
+.post-editor {
+    lost-utility: clearfix;
+    lost-center: 980px;
+}
