@@ -41,7 +41,7 @@ describe Blog do
 
         visitor = AppVisitor.new
 
-        visitor.visit("/posts/Welcome")
+        visitor.visit("/posts/welcome")
 
         visitor.should contain "Welcome"
       end

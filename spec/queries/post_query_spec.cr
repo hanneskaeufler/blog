@@ -27,10 +27,16 @@ describe PostQuery do
 
   describe "#find_published_by_slug" do
     it "finds by title when already published" do
-      insert_post title: "published", published_at: Time.now - 1.days
+      insert_post title: "Published", published_at: Time.now - 1.days
 
       post = PostQuery.new.find_published_by_slug("published")
-      post.title.should eq "published"
+      post.title.should eq "Published"
+    end
+
+    it "raises when title does not exist" do
+      expect_raises(LuckyRecord::RecordNotFoundError) do |exc|
+        PostQuery.new.find_published_by_slug("published")
+      end
     end
   end
 end
