@@ -33,4 +33,18 @@ describe Blog do
       visitor.should contain "textarea"
     end
   end
+
+  context "with a post titled 'welcome'" do
+    describe "/posts/welcome" do
+      it "renders a single post" do
+        insert_post title: "Welcome", published_at: Time.now - 1.days
+
+        visitor = AppVisitor.new
+
+        visitor.visit("/posts/Welcome")
+
+        visitor.should contain "Welcome"
+      end
+    end
+  end
 end

@@ -3,10 +3,6 @@ abstract class MainLayout
   include Shared::FieldErrorsComponent
   include Shared::FlashComponent
 
-  # You can put things here that all pages need
-  #
-  # Example:
-  #   needs current_user : User
   needs flash : Lucky::Flash::Store
 
   abstract def inner

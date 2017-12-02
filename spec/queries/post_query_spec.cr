@@ -24,4 +24,13 @@ describe PostQuery do
     #   PostQuery.new.latest.results.size.should eq 5
     # end
   end
+
+  describe "#find_published_by_slug" do
+    it "finds by title when already published" do
+      insert_post title: "published", published_at: Time.now - 1.days
+
+      post = PostQuery.new.find_published_by_slug("published")
+      post.title.should eq "published"
+    end
+  end
 end

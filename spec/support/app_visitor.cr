@@ -4,7 +4,7 @@ class AppVisitor
   getter! response
   @response : HTTP::Client::Response? = nil
 
-  def visit(path)
+  def visit(path : String)
     request = HTTP::Request.new("GET", path)
     @response = process_request(request)
   end
