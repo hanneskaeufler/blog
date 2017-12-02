@@ -19,8 +19,17 @@ body {
     height: 300px;
 }
 
+.tag-line {
+    lost-utility: clearfix;
+    lost-center: 980px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+}
+
 .blog-title h1 {
-    color: white;
+    color: #6772e5;
+    text-align: center;
 }
 
 .posts-container {

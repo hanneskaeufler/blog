@@ -2,6 +2,11 @@ require "markdown"
 require "string_scanner"
 
 class Blog::IndexPage < MainLayout
+  SOCIALS = {
+    :github => "https://github.com/hanneskaeufler",
+    :facebook => "https://facebook.com/hanneskaeufler",
+    :twitter => "https://twitter.com/hanneskaeufler"
+  }
 
   needs posts : Array(Post)
 
@@ -62,16 +67,14 @@ class Blog::IndexPage < MainLayout
   end
 
   private def intro
-    socials = {
-      :github => "https://github.com/hanneskaeufler",
-      :facebook => "https://facebook.com/hanneskaeufler",
-      :twitter => "https://twitter.com/hanneskaeufler"
-    }
     section class: "intro" do
       ul do
-        socials.each do |name, href|
+        SOCIALS.each do |name, href|
           li do link name.to_s, to: href end
         end
+      end
+      div class: "tag-line" do
+        h1 "racing, software, open-source"
       end
     end
   end
