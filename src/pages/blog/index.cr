@@ -34,7 +34,21 @@ class Blog::IndexPage < MainLayout
     section class: "intro" do
       ul do
         SOCIALS.each do |name, href|
-          li do link name.to_s, to: href end
+          li do
+            link to: href do
+              case name
+              when :github
+                img src: asset("logos/github.svg")
+              when :facebook
+                img src: asset("logos/facebook.svg")
+              when :xing
+                img src: asset("logos/xing.svg")
+              when :twitter
+                img src: asset("logos/twitter.svg")
+              end
+              text name.to_s
+            end
+          end
         end
       end
       render_tagline

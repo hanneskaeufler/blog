@@ -135,6 +135,12 @@ body {
     color: white;
 }
 
+.intro li img {
+    color: white;
+    height: 15px;
+    margin-right: 10px;
+    opacity: .2;
+}
 
 .blog-title:after {
     opacity: .4;
