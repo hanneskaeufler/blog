@@ -16,6 +16,7 @@ abstract class MainLayout
     html lang: "en" do
       head do
         utf8_charset
+        css_link(asset("images/favicon.png"), rel: "icon")
         title page_title
         css_link asset("css/app.css")
         js_link asset("js/app.js")
