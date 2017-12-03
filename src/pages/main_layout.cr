@@ -20,6 +20,7 @@ abstract class MainLayout
         css_link asset("css/app.css")
         js_link asset("js/app.js")
         inner_head
+        google_analytics
       end
 
       body do
@@ -35,5 +36,18 @@ abstract class MainLayout
 
   def page_title_suffix
     ""
+  end
+
+  def google_analytics
+    raw <<-RAW
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-10194989-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-10194989-1');
+      </script>
+    RAW
   end
 end
