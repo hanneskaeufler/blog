@@ -23,11 +23,11 @@ describe Blog do
     end
   end
 
-  describe "/admin" do
-    it "shows an editor" do
+  describe "/posts/new" do
+    it "shows an editor and a button" do
       visitor = AppVisitor.new
 
-      visitor.visit("/admin")
+      visitor.visit("/posts/new")
 
       visitor.should contain "<h1>New post</h1>"
       visitor.should contain "textarea"
