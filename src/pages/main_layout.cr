@@ -30,6 +30,10 @@ abstract class MainLayout
   end
 
   def page_title
-    "Hannes Käufler: Blog"
+    "Hannes Käufler: Blog#{page_title_suffix}"
+  end
+
+  def page_title_suffix
+    ""
   end
 end
