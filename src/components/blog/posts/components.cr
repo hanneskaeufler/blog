@@ -56,7 +56,7 @@ module Blog::Posts::Components
   end
 
   private def post_date(post : Post)
-    Time::Format.new("%b %-d, %Y").format(post.published_at)
+    Time::Format.new("%B %-d, %Y").format(post.published_at)
   end
 
 end
