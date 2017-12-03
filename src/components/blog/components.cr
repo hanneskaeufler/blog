@@ -17,7 +17,7 @@ module Blog::Components
     section do
       div do
         h4 "Imprint"
-        text "Hannes Käufler"
+        text "Dipl.-Ing. Hannes Käufler"
         br
         text "Gotenstraße 17"
         br

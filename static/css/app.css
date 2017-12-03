@@ -182,6 +182,14 @@ body {
     padding-bottom: 20px;
 }
 
+.blog-footer a:link, .blog-footer a:visited {
+    color: #6772e5;
+}
+
+.blog-footer a:hover {
+    color: #32325d;
+}
+
 .blog-footer section {
     lost-utility: clearfix;
     lost-center: 980px;
