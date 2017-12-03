@@ -87,6 +87,12 @@ body {
     color: #32325d;
 }
 
+.posts-container article blockquote:before {
+    content: "\201C";
+    font-size: 4em;
+    opacity: .5;
+}
+
 .post-title h2 {
     margin-bottom: 0.1em;
     color: #32325d;
