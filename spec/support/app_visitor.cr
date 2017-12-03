@@ -9,6 +9,15 @@ class AppVisitor
     @response = process_request(request)
   end
 
+  def post(path : String, body : Hash(String, String))
+    body_strings = [] of String
+    body.each do |key, value|
+      body_strings << "#{URI.escape(key)}=#{URI.escape(value)}"
+    end
+    request = HTTP::Request.new("POST", path, nil, body_strings.join("&"))
+    @response = process_request(request)
+  end
+
   def process_request(request)
     io = IO::Memory.new
     response = HTTP::Server::Response.new(io)

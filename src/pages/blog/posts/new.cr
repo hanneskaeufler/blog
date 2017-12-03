@@ -1,4 +1,7 @@
 class Blog::Posts::NewPage < MainLayout
+
+  needs post_form : PostForm
+
   def inner_head
     css_link "https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"
     js_link "https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"
@@ -7,8 +10,20 @@ class Blog::Posts::NewPage < MainLayout
 
   def inner
     section class: "post-editor" do
+      render_post_form(@post_form)
+    end
+  end
+
+  private def render_post_form(f)
+    form_for Blog::Posts::Create do
       h1 "New post"
-      textarea
+      label_for f.title
+      text_input f.title
+      errors_for f.title
+      textarea f.content
+      errors_for f.content
+
+      submit "Save Post"
     end
   end
 end
