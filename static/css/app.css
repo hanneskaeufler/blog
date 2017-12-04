@@ -203,3 +203,34 @@ body {
     lost-utility: clearfix;
     lost-center: 980px;
 }
+
+.post-editor .form-row {
+    margin-bottom: 20px;
+}
+
+.post-editor input[type=text] {
+    color: #6b7c93;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    width: calc(100% - 30px - 2px);
+    border-radius: 4px;
+}
+
+.post-editor input[type=submit] {
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #6772e5;
+    color: #6772e5;
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.post-editor .error {
+    color: red;
+}
+
+.post-editor .error:before {
+    content: "💥"
+}

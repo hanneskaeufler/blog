@@ -30,7 +30,41 @@ describe Blog do
       visitor.visit("/posts/new")
 
       visitor.should contain "<h1>New post</h1>"
+      visitor.should contain "input type=\"text\""
       visitor.should contain "textarea"
+      visitor.should contain "input type=\"submit\""
+    end
+  end
+
+  describe "/posts/create" do
+    context "none of the fields filled" do
+      it "rerenders the form with errors" do
+        visitor = AppVisitor.new
+        data = {
+          "post:title" => "",
+          "post:content" => ""
+        }
+
+        visitor.post("/posts/create", data)
+
+        visitor.should contain "Title is required"
+        visitor.should contain "Content is required"
+      end
+    end
+
+    context "all fields filled" do
+      it "pusblishes a new post" do
+        visitor = AppVisitor.new
+        data = {
+          "post:title" => "some title",
+          "post:content" => "some content"
+        }
+
+        visitor.post("/posts/create", data)
+
+        visitor.should redirect_to("/")
+        PostQuery.new.latest.results.size.should eq 1
+      end
     end
   end
 
@@ -49,4 +83,14 @@ describe Blog do
       end
     end
   end
+
+  # context "with no posts" do
+  #   it "renders a generic not found error" do
+  #       visitor = AppVisitor.new
+
+  #       visitor.visit("/posts/welcome")
+
+  #       visitor.should contain "<h1>Not found</h1>"
+  #   end
+  # end
 end

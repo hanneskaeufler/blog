@@ -9,6 +9,15 @@ class AppVisitor
     @response = process_request(request)
   end
 
+  def post(path : String, body : Hash(String, String))
+    body_strings = [] of String
+    body.each do |key, value|
+      body_strings << "#{URI.escape(key)}=#{URI.escape(value)}"
+    end
+    request = HTTP::Request.new("POST", path, nil, body_strings.join("&"))
+    @response = process_request(request)
+  end
+
   def process_request(request)
     io = IO::Memory.new
     response = HTTP::Server::Response.new(io)
@@ -31,8 +40,26 @@ class AppVisitor
   end
 
   module Matchers
-    def contain(expected)
-      Spec::ContainExpectation.new(expected)
+    def redirect_to(path : String)
+      RedirectToExpectation.new(path)
+    end
+  end
+
+  struct RedirectToExpectation
+    def initialize(@expected_path : String)
+    end
+
+    def match(visitor : AppVisitor)
+      visitor.response.status_code == 302 &&
+        visitor.response.headers.fetch("Location") == @expected_path
+    end
+
+    def failure_message(visitor : AppVisitor)
+      if visitor.response.headers.["Location"]?
+        "Expected to redirect to \"#{@expected_path}\", but redirected to #{visitor.response.headers.fetch("Location")}"
+      else
+        "Expected to redirect to \"#{@expected_path}\", but did not redirected at all"
+      end
     end
   end
 
