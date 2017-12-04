@@ -17,11 +17,16 @@ class Blog::Posts::NewPage < MainLayout
   private def render_post_form(f)
     form_for Blog::Posts::Create do
       h1 "New post"
-      label_for f.title
-      text_input f.title
-      errors_for f.title
-      textarea f.content
-      errors_for f.content
+      div class: "form-row" do
+        label_for f.title
+        text_input f.title
+        errors_for f.title
+      end
+      div class: "form-row" do
+        label_for f.content
+        textarea f.content
+        errors_for f.content
+      end
 
       submit "Save Post"
     end
