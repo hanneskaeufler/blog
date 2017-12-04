@@ -53,7 +53,7 @@ describe Blog do
     end
 
     context "all fields filled" do
-      it "creates a post" do
+      it "pusblishes a new post" do
         visitor = AppVisitor.new
         data = {
           "post:title" => "some title",
@@ -62,8 +62,8 @@ describe Blog do
 
         visitor.post("/posts/create", data)
 
-        visitor.should contain "Created!"
-        PostQuery.new.count.should eq 1
+        visitor.should redirect_to("/")
+        PostQuery.new.latest.results.size.should eq 1
       end
     end
   end
