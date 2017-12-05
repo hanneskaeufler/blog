@@ -23,9 +23,8 @@ describe Blog do
     end
 
     it "shows the second page of posts" do
-      7.times do |index|
-        pp index
-        insert_post title: "title #{index + 1}", published_at: Time.now - index.days
+      (1..7).each do |index|
+        insert_post title: "title #{index}", published_at: Time.now - index.days
       end
 
       visitor = AppVisitor.new
