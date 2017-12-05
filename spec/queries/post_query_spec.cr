@@ -19,10 +19,10 @@ describe PostQuery do
         .map(&.title).should eq ["published"]
     end
 
-    # it "shows 5 posts at most" do
-    #   10.times { insert_post }
-    #   PostQuery.new.latest.results.size.should eq 5
-    # end
+    it "shows 5 posts at most" do
+      10.times { insert_post }
+      PostQuery.new.latest.results.size.should eq 5
+    end
   end
 
   describe "#find_published_by_slug" do
