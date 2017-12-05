@@ -23,6 +23,11 @@ describe PostQuery do
       10.times { insert_post }
       PostQuery.new.latest.results.size.should eq 5
     end
+
+    it "accepts a page param" do
+      7.times { insert_post }
+      PostQuery.new.latest(page: 2).results.size.should eq 2
+    end
   end
 
   describe "#find_published_by_slug" do
