@@ -235,7 +235,7 @@ body {
     content: "💥"
 }
 
-.flash-success {
+.flash-notice {
     z-index: 3;
     position: absolute;
     top: 0;
