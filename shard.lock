@@ -14,7 +14,7 @@ shards:
 
   lucky:
     github: luckyframework/lucky
-    version: 0.6.2
+    version: 0.6.3
 
   lucky_cli:
     github: luckyframework/lucky_cli
@@ -30,7 +30,7 @@ shards:
 
   lucky_record:
     github: luckyframework/lucky_record
-    version: 0.3.0
+    version: 0.3.1
 
   lucky_router:
     github: luckyframework/lucky_router
