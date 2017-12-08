@@ -84,6 +84,31 @@ describe Blog do
     end
   end
 
+  describe "/feed.json" do
+    it "renders a valid json feed" do
+      headers = HTTP::Headers.new
+      headers.add("content-type", "application/json")
+      visitor = AppVisitor.new
+      insert_post title: "post title", content: "post content"
+      post_id = PostQuery.new.first.id
+
+      response = visitor.visit("/feed.json", headers)
+
+      response.body.should eq({
+        "version": "https://jsonfeed.org/version/1",
+        "home_page_url": "http://hannes.kaeufler.net",
+        "feed_url": "http://hannes.kaeufler.net/feed.json",
+        "items": [
+          {
+            "id": "#{post_id}",
+            "content_html": "post content",
+            "url": "/posts/post-title"
+          }
+        ]
+      }.to_json)
+    end
+  end
+
   # context "with no posts" do
   #   it "renders a generic not found error" do
   #       visitor = AppVisitor.new
