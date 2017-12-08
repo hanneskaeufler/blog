@@ -32,10 +32,11 @@ class Blog::IndexPage < MainLayout
     section class: "posts-container" do
       @posts.each { |post| single_post(post) }
       if has_previous_page?
-        raw "<a href=\"#{Blog::Index.path(previous_page)}\">Previous page</a>"
+        raw "<a href=\"#{Blog::Index.path(previous_page)}\">&laquo; Previous page</a>"
       end
+      raw " &middot; " if has_previous_page? && has_next_page?
       if has_next_page?
-        raw "<a href=\"#{Blog::Index.path(next_page)}\">Next page</a>"
+        raw "<a href=\"#{Blog::Index.path(next_page)}\">Next page &raquo;</a>"
       end
     end
   end

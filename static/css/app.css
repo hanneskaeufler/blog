@@ -15,6 +15,14 @@ body {
     color: #6b7c93;
 }
 
+a:link, a:visited {
+    color: #6772e5;
+}
+
+a:hover {
+    color: #32325d;
+}
+
 .blog-title {
     height: 300px;
 }
@@ -32,7 +40,6 @@ body {
 .blog-title-small a:link, .blog-title-small a:visited {
     padding: 5px 10px;
     border-radius: 4px;
-    color: #6772e5;
     background: white;
     text-decoration: none;
 }
@@ -73,18 +80,6 @@ body {
 
 .posts-container article {
     margin-bottom: 80px;
-}
-
-.posts-container article a:link {
-    color: #6772e5;
-}
-
-.posts-container article a:visited {
-    color: #6772e5;
-}
-
-.posts-container article a:hover {
-    color: #32325d;
 }
 
 .posts-container article blockquote:before {
@@ -180,10 +175,6 @@ body {
     font-size: .8em;
     margin-top: 100px;
     padding-bottom: 20px;
-}
-
-.blog-footer a:link, .blog-footer a:visited {
-    color: #6772e5;
 }
 
 .blog-footer a:hover {
