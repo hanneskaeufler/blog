@@ -3,6 +3,7 @@ class Blog::Index < BrowserAction
 
   get "/" do
     posts = PostQuery.new.latest(page: page.to_i).results
-    render Blog::IndexPage, posts: posts
+    posts_count = Int32.new(PostQuery.new.published.count)
+    render Blog::IndexPage, posts: posts, posts_count: posts_count, current_page: page.to_i
   end
 end
