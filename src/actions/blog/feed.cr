@@ -12,8 +12,11 @@ class Blog::Feed < BrowserAction
     PostQuery.new.latest.map do |post|
       {
         "id": "#{post.id}",
+        "title": post.title,
         "content_html": post.content,
-        "url": Blog::Posts::Show.path(post.slug)
+        "url": Blog::Posts::Show.path(post.slug),
+        "date_published": Time::Format::ISO_8601_DATE_TIME.format(post.published_at),
+        "date_modified": Time::Format::ISO_8601_DATE_TIME.format(post.updated_at)
       }
     end
   end

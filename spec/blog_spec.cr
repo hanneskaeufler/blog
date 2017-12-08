@@ -89,7 +89,9 @@ describe Blog do
       headers = HTTP::Headers.new
       headers.add("content-type", "application/json")
       visitor = AppVisitor.new
-      insert_post title: "post title", content: "post content"
+      published = Time.now - 2.days
+      updated = Time.now - 1.day
+      insert_post title: "post title", content: "post content", published_at: published, updated_at: updated
       post_id = PostQuery.new.first.id
 
       response = visitor.visit("/feed.json", headers)
@@ -101,8 +103,11 @@ describe Blog do
         "items": [
           {
             "id": "#{post_id}",
+            "title": "post title",
             "content_html": "post content",
-            "url": "/posts/post-title"
+            "url": "/posts/post-title",
+            "date_published": Time::Format::ISO_8601_DATE_TIME.format(published),
+            "date_modified": Time::Format::ISO_8601_DATE_TIME.format(updated)
           }
         ]
       }.to_json)
