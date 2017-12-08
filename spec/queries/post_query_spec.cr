@@ -36,6 +36,16 @@ describe PostQuery do
     end
   end
 
+  describe "#published" do
+    it "yields only published posts" do
+      insert_post title: "published", published_at: Time.now - 1.days
+      insert_post title: "not published", published_at: Time.now + 1.day
+
+      PostQuery.new.published.results
+        .map(&.title).should eq ["published"]
+    end
+  end
+
   describe "#find_published_by_slug" do
     it "finds by title when already published" do
       insert_post title: "Published Post", published_at: Time.now - 1.days

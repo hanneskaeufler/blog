@@ -7,6 +7,10 @@ class PostQuery < Post::BaseQuery
       .offset(limit * (page - 1))
   end
 
+  def published
+    published_at.lte(Time.now)
+  end
+
   def find_published_by_slug(slug : String) : Post
     post = title.lower.is(titlelize(slug)).first? ||
       raise LuckyRecord::RecordNotFoundError.new(:post, slug)
