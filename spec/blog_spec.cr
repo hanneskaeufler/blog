@@ -105,9 +105,7 @@ describe Blog do
             "id": "#{post_id}",
             "title": "post title",
             "content_html": "post content",
-            "url": "/posts/post-title",
-            "date_published": Time::Format::ISO_8601_DATE_TIME.format(published),
-            "date_modified": Time::Format::ISO_8601_DATE_TIME.format(updated)
+            "url": "/posts/post-title"
           }
         ]
       }.to_json)
