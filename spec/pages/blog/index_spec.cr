@@ -42,13 +42,13 @@ describe Blog::IndexPage do
   it "shows prev page link when on page 2" do
     html = rendered([] of Post, posts_count: 7, on_page: 2)
 
-    html.should contain "<a href=\"/?page=1\">&laquo; Previous page</a>"
+    html.should contain "<a href=\"/\">&laquo; Previous page</a>"
   end
 
   it "shows third and first page link when on page 2" do
     html = rendered([] of Post, posts_count: 14, on_page: 2)
 
-    html.should contain "<a href=\"/?page=1\">&laquo; Previous page</a>"
+    html.should contain "<a href=\"/\">&laquo; Previous page</a>"
     html.should contain "<a href=\"/?page=3\">Next page &raquo;</a>"
   end
 end

@@ -50,11 +50,11 @@ class Blog::IndexPage < MainLayout
   end
 
   private def previous_page
-    (@current_page - 1).to_s
+    @current_page - 1
   end
 
   private def next_page
-    (@current_page + 1).to_s
+    @current_page + 1
   end
 
   private def intro
