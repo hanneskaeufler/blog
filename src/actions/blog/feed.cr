@@ -1,4 +1,4 @@
-class Blog::Feed < BrowserAction
+class Blog::Feed < ApiAction
   get "/feed.json" do
     json({
       "version": "https://jsonfeed.org/version/1",
