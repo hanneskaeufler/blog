@@ -36,16 +36,7 @@ class Blog::IndexPage < MainLayout
         SOCIALS.each do |name, href|
           li do
             link to: href do
-              case name
-              when :github
-                img src: asset("logos/github.svg")
-              when :facebook
-                img src: asset("logos/facebook.svg")
-              when :xing
-                img src: asset("logos/xing.svg")
-              when :twitter
-                img src: asset("logos/twitter.svg")
-              end
+              img src: dynamic_asset("logos/#{name}.svg")
               text name.to_s
             end
           end
