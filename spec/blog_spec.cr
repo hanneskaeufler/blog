@@ -91,7 +91,7 @@ describe Blog do
       visitor = AppVisitor.new
       published = Time.now - 2.days
       updated = Time.now - 1.day
-      insert_post title: "post title", content: "post content", published_at: published, updated_at: updated
+      insert_post title: "post title", content: "\n# post\ncontent", published_at: published, updated_at: updated
       post_id = PostQuery.new.first.id
 
       response = visitor.visit("/feed.json", headers)
@@ -104,7 +104,7 @@ describe Blog do
           {
             "id": "#{post_id}",
             "title": "post title",
-            "content_html": "post content",
+            "content_html": "<h2>post</h2>\n\n<p>content</p>",
             "url": "/posts/post-title"
           }
         ]

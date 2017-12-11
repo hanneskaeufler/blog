@@ -1,4 +1,6 @@
 class Blog::Feed < ApiAction
+  @renderer = PostContentRenderer.new
+
   get "/feed.json" do
     json({
       "version": "https://jsonfeed.org/version/1",
@@ -9,13 +11,15 @@ class Blog::Feed < ApiAction
   end
 
   private def items
-    PostQuery.new.latest.map do |post|
-      {
-        "id": "#{post.id}",
-        "title": post.title,
-        "content_html": post.content,
-        "url": Blog::Posts::Show.path(post.slug)
-      }
-    end
+    PostQuery.new.latest.map { |post| post_json(post) }
+  end
+
+  private def post_json(post : Post)
+    {
+      "id": "#{post.id}",
+      "title": post.title,
+      "content_html": @renderer.render(post),
+      "url": Blog::Posts::Show.path(post.slug)
+    }
   end
 end
