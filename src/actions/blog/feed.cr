@@ -19,7 +19,9 @@ class Blog::Feed < ApiAction
       "id": "#{post.id}",
       "title": post.title,
       "content_html": @renderer.render(post),
-      "url": Blog::Posts::Show.path(post.slug)
+      "url": Blog::Posts::Show.path(post.slug),
+      "date_published": Time::Format::ISO_8601_DATE_TIME.format(post.published_at),
+      "date_updated": Time::Format::ISO_8601_DATE_TIME.format(post.updated_at),
     }
   end
 end
