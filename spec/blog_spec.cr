@@ -89,8 +89,8 @@ describe Blog do
       headers = HTTP::Headers.new
       headers.add("content-type", "application/json")
       visitor = AppVisitor.new
-      published = Time.now - 2.days
-      updated = Time.now - 1.day
+      published = Time.epoch((2 * 24 * 60 * 60) + 60)
+      updated = Time.epoch((3 * 24 * 60 * 60) + 50)
       insert_post title: "post title", content: "\n# post\ncontent", published_at: published, updated_at: updated
       post_id = PostQuery.new.first.id
 
@@ -105,7 +105,9 @@ describe Blog do
             "id": "#{post_id}",
             "title": "post title",
             "content_html": "<h2>post</h2>\n\n<p>content</p>",
-            "url": "/posts/post-title"
+            "url": "/posts/post-title",
+            "date_published": "1970-01-03T00:01:00+0000",
+            "date_updated": "1970-01-04T00:00:50+0000",
           }
         ]
       }.to_json)
