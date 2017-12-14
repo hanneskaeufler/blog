@@ -3,8 +3,6 @@ class Blog::IndexPage < MainLayout
   include Blog::Components
   include Blog::Posts::Components
 
-  PER_PAGE = 5
-
   SOCIALS = {
     :github => "https://github.com/hanneskaeufler",
     :facebook => "https://facebook.com/hanneskaeufler",
@@ -46,7 +44,7 @@ class Blog::IndexPage < MainLayout
   end
 
   private def has_next_page?
-    @current_page * PER_PAGE < @posts_count
+    @current_page * PostQuery::PER_PAGE < @posts_count
   end
 
   private def previous_page
