@@ -8,6 +8,10 @@ Lucky::Server.configure do
   settings.port = (ENV["PORT"]? || 8080).to_i
 end
 
+Lucky::RouteHelper.configure do
+  settings.domain = "http://hannesdotkaeuflerdotnet.herokuapp.com"
+end
+
 private def secret_key_from_env
   ENV["SECRET_KEY_BASE"]? || raise_missing_secret_key_in_production
 end

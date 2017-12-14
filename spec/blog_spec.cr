@@ -98,14 +98,14 @@ describe Blog do
 
       response.body.should eq({
         "version": "https://jsonfeed.org/version/1",
-        "home_page_url": "http://hannes.kaeufler.net",
-        "feed_url": "http://hannes.kaeufler.net/feed.json",
+        "home_page_url": "http://hannesdotkaeuflerdotnet.herokuapp.com",
+        "feed_url": "http://hannesdotkaeuflerdotnet.herokuapp.com/feed.json",
         "items": [
           {
             "id": "#{post_id}",
             "title": "post title",
             "content_html": "<h2>post</h2>\n\n<p>content</p>",
-            "url": "/posts/post-title",
+            "url": "http://hannesdotkaeuflerdotnet.herokuapp.com/posts/post-title",
             "date_published": "1970-01-03T00:01:00+0000",
             "date_updated": "1970-01-04T00:00:50+0000",
           }
