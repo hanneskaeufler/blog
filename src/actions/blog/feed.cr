@@ -4,8 +4,8 @@ class Blog::Feed < ApiAction
   get "/feed.json" do
     json({
       "version": "https://jsonfeed.org/version/1",
-      "home_page_url": "http://hannes.kaeufler.net",
-      "feed_url": "http://hannes.kaeufler.net/feed.json",
+      "home_page_url": "http://hannesdotkaeuflerdotnet.herokuapp.com",
+      "feed_url": "http://hannesdotkaeuflerdotnet.herokuapp.com/feed.json",
       "items": items
     })
   end
@@ -19,7 +19,7 @@ class Blog::Feed < ApiAction
       "id": "#{post.id}",
       "title": post.title,
       "content_html": @renderer.render(post),
-      "url": Blog::Posts::Show.path(post.slug),
+      "url": Blog::Posts::Show.with(post.slug).url,
       "date_published": Time::Format::ISO_8601_DATE_TIME.format(post.published_at),
       "date_updated": Time::Format::ISO_8601_DATE_TIME.format(post.updated_at),
     }
