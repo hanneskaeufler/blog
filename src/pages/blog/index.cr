@@ -11,6 +11,8 @@ class Blog::IndexPage < MainLayout
   }
 
   needs posts : Array(Post)
+  needs posts_count : Int32
+  needs current_page : Int32
 
   def inner
     render_header
@@ -27,7 +29,30 @@ class Blog::IndexPage < MainLayout
   private def render_posts(posts : Array(Post))
     section class: "posts-container" do
       @posts.each { |post| single_post(post) }
+      if has_previous_page?
+        raw "<a href=\"#{Blog::Index.path(previous_page)}\">&laquo; Previous page</a>"
+      end
+      raw " &middot; " if has_previous_page? && has_next_page?
+      if has_next_page?
+        raw "<a href=\"#{Blog::Index.path(next_page)}\">Next page &raquo;</a>"
+      end
     end
+  end
+
+  private def has_previous_page?
+    @current_page > 1
+  end
+
+  private def has_next_page?
+    @current_page * PostQuery::PER_PAGE < @posts_count
+  end
+
+  private def previous_page
+    @current_page - 1
+  end
+
+  private def next_page
+    @current_page + 1
   end
 
   private def intro

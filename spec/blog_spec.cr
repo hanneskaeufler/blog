@@ -21,6 +21,19 @@ describe Blog do
       visitor.should contain "Sample post<a href=\"/posts/sample-post\">#</a>"
       visitor.should contain "Lorem ipsum<a href=\"/posts/lorem-ipsum\">#</a>"
     end
+
+    it "shows the second page of posts" do
+      (1..7).each do |index|
+        insert_post title: "title #{index}", published_at: Time.now - index.days
+      end
+
+      visitor = AppVisitor.new
+
+      visitor.visit("/?page=2")
+
+      visitor.should contain "title 6"
+      visitor.should contain "title 7"
+    end
   end
 
   describe "/posts/new" do

@@ -23,6 +23,27 @@ describe PostQuery do
       10.times { insert_post }
       PostQuery.new.latest.results.size.should eq 5
     end
+
+    it "accepts a page param" do
+      7.times { insert_post }
+      PostQuery.new.latest(page: 2).results.size.should eq 2
+    end
+
+    it "can be counted" do
+      PostQuery.new.latest.count.should eq 0
+      2.times { insert_post }
+      PostQuery.new.latest.count.should eq 2
+    end
+  end
+
+  describe "#published" do
+    it "yields only published posts" do
+      insert_post title: "published", published_at: Time.now - 1.days
+      insert_post title: "not published", published_at: Time.now + 1.day
+
+      PostQuery.new.published.results
+        .map(&.title).should eq ["published"]
+    end
   end
 
   describe "#find_published_by_slug" do

@@ -32,8 +32,31 @@ describe Blog::IndexPage do
     html.should contain "</p><br id=\"must-remain\"><p>"
     html.should contain "</p><i>hi</i><p>"
   end
+
+  it "shows next page link for more than 5 posts" do
+    html = rendered([] of Post, posts_count: 7)
+
+    html.should contain "<a href=\"/?page=2\">Next page &raquo;</a>"
+  end
+
+  it "shows prev page link when on page 2" do
+    html = rendered([] of Post, posts_count: 7, on_page: 2)
+
+    html.should contain "<a href=\"/\">&laquo; Previous page</a>"
+  end
+
+  it "shows third and first page link when on page 2" do
+    html = rendered([] of Post, posts_count: 14, on_page: 2)
+
+    html.should contain "<a href=\"/\">&laquo; Previous page</a>"
+    html.should contain "<a href=\"/?page=3\">Next page &raquo;</a>"
+  end
 end
 
-private def rendered(posts)
-  Blog::IndexPage.new(flash: empty_flash, posts: posts).render.to_s
+private def rendered(posts, posts_count = 5, on_page = 1)
+  Blog::IndexPage.new(
+    flash: empty_flash,
+    posts: posts,
+    posts_count: posts_count,
+    current_page: on_page).render.to_s
 end
