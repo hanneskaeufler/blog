@@ -29,13 +29,9 @@ class Blog::IndexPage < MainLayout
   private def render_posts(posts : Array(Post))
     section class: "posts-container" do
       @posts.each { |post| single_post(post) }
-      if has_previous_page?
-        raw "<a href=\"#{Blog::Index.path(previous_page)}\">&laquo; Previous page</a>"
-      end
+      link(to: Blog::Index.path(previous_page)) { raw "&laquo; Previous page" } if has_previous_page?
       raw " &middot; " if has_previous_page? && has_next_page?
-      if has_next_page?
-        raw "<a href=\"#{Blog::Index.path(next_page)}\">Next page &raquo;</a>"
-      end
+      link(to: Blog::Index.path(next_page)) { raw "Next page &raquo;" } if has_next_page?
     end
   end
 
