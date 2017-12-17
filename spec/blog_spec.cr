@@ -34,6 +34,12 @@ describe Blog do
       visitor.should contain "title 6"
       visitor.should contain "title 7"
     end
+
+    it "redirects to root for invalid pages" do
+      visitor = AppVisitor.new
+      visitor.visit("/?page=0")
+      visitor.should redirect_to(Blog::Index.path(page: 1))
+    end
   end
 
   describe "/posts/new" do
