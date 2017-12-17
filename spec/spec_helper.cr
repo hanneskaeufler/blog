@@ -15,6 +15,6 @@ def empty_flash
   Lucky::Flash::Store.new
 end
 
-def build_post(content)
-  Post.new(1, Time.now, Time.now, "title", content, Time.now)
+def build_post(content, published_at = Time.now)
+  Post.new(1, Time.now, Time.now, "title", content, published_at)
 end
