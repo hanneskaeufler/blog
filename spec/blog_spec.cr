@@ -85,6 +85,23 @@ describe Blog do
         PostQuery.new.latest.results.size.should eq 1
       end
     end
+
+    context "post with same title exists" do
+      it "shows an error" do
+        insert_post(title: "some title")
+
+        visitor = AppVisitor.new
+        data = {
+          "post:title" => "some title",
+          "post:content" => "some content"
+        }
+
+        visitor.post("/posts/create", data)
+
+        PostQuery.new.latest.results.size.should eq 1
+        visitor.should contain "Title already exists"
+      end
+    end
   end
 
   context "with a post titled 'welcome'" do
