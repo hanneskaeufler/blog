@@ -7,6 +7,10 @@
 /* For example, add `static/css/components/btn.pcss` and uncomment the next line */
 /* @import "components/**.pcss"; */
 
+:root {
+    --highlightColor: #6772e5;
+}
+
 body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
@@ -16,7 +20,7 @@ body {
 }
 
 a:link, a:visited {
-    color: #6772e5;
+    color: var(--highlightColor);
 }
 
 a:hover {
@@ -57,7 +61,7 @@ a:hover {
 }
 
 .tag-line h1 {
-    color: #6772e5;
+    color: var(--highlightColor);
     text-align: center;
 }
 
@@ -86,6 +90,7 @@ a:hover {
     content: "\201C";
     font-size: 4em;
     opacity: .5;
+    color: var(--highlightColor);
 }
 
 .post-title h2 {
@@ -210,8 +215,8 @@ a:hover {
 .post-editor input[type=submit] {
     background: #fff;
     border-radius: 4px;
-    border: 1px solid #6772e5;
-    color: #6772e5;
+    border: 1px solid var(--highlightColor);
+    color: var(--highlightColor);
     font-size: 1em;
     line-height: 1.5;
     margin: 0;
