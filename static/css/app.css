@@ -226,7 +226,7 @@ a:hover {
     content: "💥"
 }
 
-.flash-notice {
+.flash-success {
     z-index: 3;
     position: absolute;
     top: 0;
