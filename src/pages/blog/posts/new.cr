@@ -1,4 +1,5 @@
 class Blog::Posts::NewPage < MainLayout
+  include Blog::Components
 
   needs post_form : PostForm
 
@@ -9,6 +10,9 @@ class Blog::Posts::NewPage < MainLayout
   end
 
   def inner
+    header class: "blog-title-small" do
+      render_tagline
+    end
     section class: "post-editor" do
       render_post_form(@post_form)
     end

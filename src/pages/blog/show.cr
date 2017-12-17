@@ -21,9 +21,7 @@ class Blog::ShowPage < MainLayout
         div do
           link "« All posts", to: Blog::Index.path
         end
-        div do
-          render_tagline
-        end
+        render_tagline
       end
     end
   end
