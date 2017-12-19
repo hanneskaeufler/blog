@@ -104,6 +104,21 @@ describe Blog do
     end
   end
 
+  describe "/posts/:id/edit" do
+    it "renders the form" do
+      insert_post(title: "some title")
+      post = PostQuery.new.first
+      visitor = AppVisitor.new
+      visitor.visit("/posts/#{post.id}/edit")
+
+      visitor.should contain "Edit post"
+      visitor.should contain "action=\"/posts/#{post.id}/update\""
+      visitor.should contain <<-HTML
+      <input type="text" id="post_title" name="post:title" value="some title"/>
+      HTML
+    end
+  end
+
   context "with a post titled 'welcome'" do
     describe "/posts/welcome" do
       it "renders a single post" do
