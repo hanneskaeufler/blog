@@ -16,5 +16,5 @@ def empty_flash
 end
 
 def build_post(content, published_at = Time.now)
-  Post.new(1, Time.now, Time.now, "title", content, published_at)
+  Post.new(1, Time.now, Time.now, "title", content, published_at, "title")
 end

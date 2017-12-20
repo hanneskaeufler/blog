@@ -3,10 +3,17 @@ class PostForm < Post::BaseForm
   allow content
 
   def prepare
-    published_at.value = Time.now
     validate_required title
-    validate_uniqueness_of_title
     validate_required content
+    validate_uniqueness_of_title
+    published_at.value = Time.now
+    generate_slug
+  end
+
+  private def generate_slug
+    slug.value = title.value.try do |value|
+      value.downcase.gsub(" ", "-")
+    end
   end
 
   private def validate_uniqueness_of_title
