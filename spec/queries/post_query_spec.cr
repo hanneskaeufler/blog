@@ -54,9 +54,14 @@ describe PostQuery do
       post.title.should eq "Published Post"
     end
 
-    it "raises when title does not exist" do
+    it "raises when slug does not exist or not published" do
       expect_raises(LuckyRecord::RecordNotFoundError) do |exc|
         PostQuery.new.find_published_by_slug("published")
+      end
+
+      insert_post title: "unpublished", published_at: Time.now + 1.days
+      expect_raises(LuckyRecord::RecordNotFoundError) do |exc|
+        PostQuery.new.find_published_by_slug("unpublished")
       end
     end
 
