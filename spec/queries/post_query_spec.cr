@@ -59,5 +59,12 @@ describe PostQuery do
         PostQuery.new.find_published_by_slug("published")
       end
     end
+
+    it "finds by slugs with dashes" do
+      insert_post title: "Open-Source", published_at: Time.now - 1.days
+
+      post = PostQuery.new.find_published_by_slug("open-source")
+      post.title.should eq "Open-Source"
+    end
   end
 end
