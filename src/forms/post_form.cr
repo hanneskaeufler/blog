@@ -3,8 +3,6 @@ class PostForm < Post::BaseForm
   allow content
 
   def prepare
-    validate_required title
-    validate_required content
     validate_uniqueness_of_title
     published_at.value = Time.now
     generate_slug
