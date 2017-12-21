@@ -1,6 +1,6 @@
-require "../../spec_helper"
+require "../../../spec_helper"
 
-describe Blog::IndexPage do
+describe Blog::Posts::IndexPage do
   it "renders markdown to html" do
     post = build_post(content: "Hi [Google](http://google.de). ~~bam bam.~~")
 
@@ -54,7 +54,7 @@ describe Blog::IndexPage do
 end
 
 private def rendered(posts, posts_count = 5, on_page = 1)
-  Blog::IndexPage.new(
+  Blog::Posts::IndexPage.new(
     flash: empty_flash,
     posts: posts,
     posts_count: posts_count,

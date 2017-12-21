@@ -5,7 +5,7 @@ abstract class AdminAction < BrowserAction
 
   private def require_dev
     if Lucky::Env.production?
-      redirect to: Blog::Index
+      redirect to: Blog::Posts::Index
     else
       continue
     end

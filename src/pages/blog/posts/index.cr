@@ -1,5 +1,4 @@
-
-class Blog::IndexPage < MainLayout
+class Blog::Posts::IndexPage < MainLayout
   include Blog::Components
   include Blog::Posts::Components
 
@@ -29,9 +28,9 @@ class Blog::IndexPage < MainLayout
   private def render_posts(posts : Array(Post))
     section class: "posts-container" do
       @posts.each { |post| single_post(post) }
-      link(to: Blog::Index.path(previous_page)) { raw "&laquo; Previous page" } if has_previous_page?
+      link(to: Blog::Posts::Index.path(previous_page)) { raw "&laquo; Previous page" } if has_previous_page?
       raw " &middot; " if has_previous_page? && has_next_page?
-      link(to: Blog::Index.path(next_page)) { raw "Next page &raquo;" } if has_next_page?
+      link(to: Blog::Posts::Index.path(next_page)) { raw "Next page &raquo;" } if has_next_page?
     end
   end
 

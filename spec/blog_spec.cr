@@ -33,7 +33,7 @@ describe Blog do
 
     it "redirects to root for invalid pages" do
       visitor.visit("/?page=0")
-      visitor.should redirect_to(Blog::Index.path(page: 1))
+      visitor.should redirect_to(Blog::Posts::Index.path(page: 1))
     end
   end
 
@@ -137,7 +137,7 @@ describe Blog do
         post = PostQuery.new.first
         visitor.put("/posts/#{post.id}/update", data)
 
-        visitor.should redirect_to Blog::Index.path
+        visitor.should redirect_to Blog::Posts::Index.path
       end
     end
 

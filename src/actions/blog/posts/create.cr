@@ -3,7 +3,7 @@ class Blog::Posts::Create < AdminAction
     PostForm.create(params) do |form, post|
       if post
         flash.success = "Post successfully published."
-        redirect Blog::Index
+        redirect Blog::Posts::Index
       else
         render Blog::Posts::NewPage, post_form: form
       end
