@@ -1,10 +1,10 @@
 require "./spec_helper"
 
 describe Blog do
+  visitor = AppVisitor.new
+
   describe "/" do
     it "shows a title" do
-      visitor = AppVisitor.new
-
       visitor.visit("/")
 
       visitor.should contain "<title>Hannes Käufler: Blog</title>"
@@ -13,8 +13,6 @@ describe Blog do
     it "shows posts" do
       insert_post title: "Sample post"
       insert_post title: "Lorem ipsum"
-
-      visitor = AppVisitor.new
 
       visitor.visit("/")
 
@@ -27,8 +25,6 @@ describe Blog do
         insert_post title: "title #{index}", published_at: Time.now - index.days
       end
 
-      visitor = AppVisitor.new
-
       visitor.visit("/?page=2")
 
       visitor.should contain "title 6"
@@ -36,7 +32,6 @@ describe Blog do
     end
 
     it "redirects to root for invalid pages" do
-      visitor = AppVisitor.new
       visitor.visit("/?page=0")
       visitor.should redirect_to(Blog::Index.path(page: 1))
     end
@@ -44,8 +39,6 @@ describe Blog do
 
   describe "/posts/new" do
     it "shows an editor and a button" do
-      visitor = AppVisitor.new
-
       visitor.visit("/posts/new")
 
       visitor.should contain "<h1>New post</h1>"
@@ -58,7 +51,6 @@ describe Blog do
   describe "/posts/create" do
     context "none of the fields filled" do
       it "rerenders the form with errors" do
-        visitor = AppVisitor.new
         data = {
           "post:title" => "",
           "post:content" => ""
@@ -73,7 +65,6 @@ describe Blog do
 
     context "all fields filled" do
       it "pusblishes a new post" do
-        visitor = AppVisitor.new
         data = {
           "post:title" => "some title",
           "post:content" => "some content"
@@ -90,7 +81,6 @@ describe Blog do
       it "shows an error" do
         insert_post(title: "some title")
 
-        visitor = AppVisitor.new
         data = {
           "post:title" => "some title",
           "post:content" => "some content"
@@ -108,7 +98,7 @@ describe Blog do
     it "renders the form" do
       insert_post(title: "some title")
       post = PostQuery.new.first
-      visitor = AppVisitor.new
+
       visitor.visit("/posts/#{post.id}/edit")
 
       visitor.should contain "Edit post"
@@ -119,12 +109,31 @@ describe Blog do
     end
   end
 
+  describe "/posts/:id/update" do
+    context "fields filled incorrectly" do
+      it "renders the form" do
+        insert_post(title: "some title")
+
+        data = {
+          "post:title" => "",
+          "post:content" => "some content"
+        }
+        post = PostQuery.new.first
+        visitor.put("/posts/#{post.id}/update", data)
+
+        visitor.should contain "Edit post"
+        visitor.should contain "action=\"/posts/#{post.id}/update\""
+        visitor.should contain <<-HTML
+        <input type="text" id="post_title" name="post:title" value=""/>
+        HTML
+      end
+    end
+  end
+
   context "with a post titled 'welcome'" do
     describe "/posts/welcome" do
       it "renders a single post" do
         insert_post title: "Welcome", published_at: Time.now - 1.days
-
-        visitor = AppVisitor.new
 
         visitor.visit("/posts/welcome")
 
@@ -139,7 +148,6 @@ describe Blog do
     it "renders a valid json feed" do
       headers = HTTP::Headers.new
       headers.add("content-type", "application/json")
-      visitor = AppVisitor.new
       published = Time.epoch((2 * 24 * 60 * 60) + 60)
       updated = Time.epoch((3 * 24 * 60 * 60) + 50)
       insert_post title: "post title", content: "\n# post\ncontent", published_at: published, updated_at: updated
