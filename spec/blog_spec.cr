@@ -110,6 +110,21 @@ describe Blog do
   end
 
   describe "/posts/:id/update" do
+    context "fields correctly" do
+      it "redirects and saves" do
+        insert_post(title: "some title")
+
+        data = {
+          "post:title" => "some title",
+          "post:content" => "some updated content"
+        }
+        post = PostQuery.new.first
+        visitor.put("/posts/#{post.id}/update", data)
+
+        visitor.should redirect_to Blog::Index.path
+      end
+    end
+
     context "fields filled incorrectly" do
       it "renders the form" do
         insert_post(title: "some title")

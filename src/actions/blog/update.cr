@@ -1,6 +1,12 @@
 class Blog::Posts::Update < BrowserAction
   put "/posts/:id/update" do
-    form = PostForm.new(PostQuery.new.find(id))
-    render_text "foo"
+    post = PostQuery.new.find(id)
+    PostForm.update(post, params, current_title: post.title) do |form, updated_post|
+      if form.errors.empty?
+        redirect Blog::Index
+      else
+        render Blog::Posts::EditPage, post: updated_post, post_form: form
+      end
+    end
   end
 end
