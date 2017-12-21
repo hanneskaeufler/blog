@@ -1,6 +1,6 @@
-require "../../spec_helper"
+require "../../../spec_helper"
 
-describe Blog::ShowPage do
+describe Blog::Posts::ShowPage do
   it "shows the published date" do
     post = build_post("Boring content", Time.new(2012, 4, 30))
     rendered(post).should contain("Published on April 30, 2012")
@@ -8,5 +8,5 @@ describe Blog::ShowPage do
 end
 
 private def rendered(post)
-  Blog::ShowPage.new(flash: empty_flash, post: post).render.to_s
+  Blog::Posts::ShowPage.new(flash: empty_flash, post: post).render.to_s
 end

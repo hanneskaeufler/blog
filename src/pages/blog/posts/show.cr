@@ -1,4 +1,4 @@
-class Blog::ShowPage < MainLayout
+class Blog::Posts::ShowPage < MainLayout
   include Blog::Components
   include Blog::Posts::Components
 
@@ -19,7 +19,7 @@ class Blog::ShowPage < MainLayout
     header class: "blog-title-small" do
       section do
         div do
-          link "« All posts", to: Blog::Index.path
+          link "« All posts", to: Blog::Posts::Index.path
         end
         render_tagline
       end

@@ -2,10 +2,12 @@ class PostForm < Post::BaseForm
   allow title
   allow content
 
+  needs current_title : String, on: :update
+
   def prepare
-    validate_uniqueness_of_title
-    published_at.value = Time.now
     generate_slug
+    validate_uniqueness_of_slug if title_changed_or_new_post
+    published_at.value = Time.now
   end
 
   private def generate_slug
@@ -14,11 +16,18 @@ class PostForm < Post::BaseForm
     end
   end
 
-  private def validate_uniqueness_of_title
-    existing_posts_with_title = PostQuery.new.title(title.value).count > 0
+  private def validate_uniqueness_of_slug
+    existing_posts_with_slug = PostQuery.new.slug(slug.value).count > 0
 
-    if existing_posts_with_title
+    if existing_posts_with_slug
       title.add_error "already exists"
     end
+  end
+
+  private def title_changed_or_new_post
+    current_title.try do |the_title|
+      return title.value != the_title
+    end
+    true
   end
 end
