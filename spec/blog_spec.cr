@@ -92,6 +92,22 @@ describe Blog do
         visitor.should contain "Title already exists"
       end
     end
+
+    context "post with same slug exists" do
+      it "shows an error" do
+        insert_post(title: "some-title")
+
+        data = {
+          "post:title" => "some title",
+          "post:content" => "some content"
+        }
+
+        visitor.post("/posts/create", data)
+
+        PostQuery.new.latest.results.size.should eq 1
+        visitor.should contain "Title already exists"
+      end
+    end
   end
 
   describe "/posts/:id/edit" do
