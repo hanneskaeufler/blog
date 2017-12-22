@@ -3,10 +3,10 @@ class Blog::Feed < ApiAction
 
   get "/feed.json" do
     json({
-      "version": "https://jsonfeed.org/version/1",
+      "version":       "https://jsonfeed.org/version/1",
       "home_page_url": Blog::Posts::Index.url,
-      "feed_url": Blog::Feed.url,
-      "items": items
+      "feed_url":      Blog::Feed.url,
+      "items":         items,
     })
   end
 
@@ -16,12 +16,12 @@ class Blog::Feed < ApiAction
 
   private def post_json(post : Post)
     {
-      "id": "#{post.id}",
-      "title": post.title,
-      "content_html": @renderer.render(post),
-      "url": Blog::Posts::Show.with(post.slug).url,
+      "id":             "#{post.id}",
+      "title":          post.title,
+      "content_html":   @renderer.render(post),
+      "url":            Blog::Posts::Show.with(post.slug).url,
       "date_published": Time::Format::ISO_8601_DATE_TIME.format(post.published_at),
-      "date_updated": Time::Format::ISO_8601_DATE_TIME.format(post.updated_at),
+      "date_updated":   Time::Format::ISO_8601_DATE_TIME.format(post.updated_at),
     }
   end
 end

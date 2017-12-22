@@ -3,10 +3,10 @@ class Blog::Posts::IndexPage < MainLayout
   include Blog::Posts::Components
 
   SOCIALS = {
-    :github => "https://github.com/hanneskaeufler",
+    :github   => "https://github.com/hanneskaeufler",
     :facebook => "https://facebook.com/hanneskaeufler",
-    :twitter => "https://twitter.com/hanneskaeufler",
-    :xing => "https://www.xing.com/profile/Hannes_Kaeufler"
+    :twitter  => "https://twitter.com/hanneskaeufler",
+    :xing     => "https://www.xing.com/profile/Hannes_Kaeufler",
   }
 
   needs posts : Array(Post)

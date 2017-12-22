@@ -9,8 +9,8 @@ class PostContentRenderer
 
     while scanner.skip_until(/RAW_HTML_START(.+?)RAW_HTML_END/)
       if scanner[0]? && scanner[1]?
-          matches << scanner[0]
-          html_snippets << scanner[1]
+        matches << scanner[0]
+        html_snippets << scanner[1]
       end
     end
 

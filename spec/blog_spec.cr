@@ -52,8 +52,8 @@ describe Blog do
     context "none of the fields filled" do
       it "rerenders the form with errors" do
         data = {
-          "post:title" => "",
-          "post:content" => ""
+          "post:title"   => "",
+          "post:content" => "",
         }
 
         visitor.post("/posts/create", data)
@@ -66,8 +66,8 @@ describe Blog do
     context "all fields filled" do
       it "pusblishes a new post" do
         data = {
-          "post:title" => "some title",
-          "post:content" => "some content"
+          "post:title"   => "some title",
+          "post:content" => "some content",
         }
 
         visitor.post("/posts/create", data)
@@ -82,8 +82,8 @@ describe Blog do
         insert_post(title: "some title")
 
         data = {
-          "post:title" => "some title",
-          "post:content" => "some content"
+          "post:title"   => "some title",
+          "post:content" => "some content",
         }
 
         visitor.post("/posts/create", data)
@@ -98,8 +98,8 @@ describe Blog do
         insert_post(title: "some-title")
 
         data = {
-          "post:title" => "some title",
-          "post:content" => "some content"
+          "post:title"   => "some title",
+          "post:content" => "some content",
         }
 
         visitor.post("/posts/create", data)
@@ -131,8 +131,8 @@ describe Blog do
         insert_post(title: "some title")
 
         data = {
-          "post:title" => "some title",
-          "post:content" => "some updated content"
+          "post:title"   => "some title",
+          "post:content" => "some updated content",
         }
         post = PostQuery.new.first
         visitor.put("/posts/#{post.id}/update", data)
@@ -146,8 +146,8 @@ describe Blog do
         insert_post(title: "some title")
 
         data = {
-          "post:title" => "",
-          "post:content" => "some content"
+          "post:title"   => "",
+          "post:content" => "some content",
         }
         post = PostQuery.new.first
         visitor.put("/posts/#{post.id}/update", data)
@@ -187,19 +187,19 @@ describe Blog do
       response = visitor.visit("/feed.json", headers)
 
       response.body.should eq({
-        "version": "https://jsonfeed.org/version/1",
+        "version":       "https://jsonfeed.org/version/1",
         "home_page_url": "http://hannesdotkaeuflerdotnet.herokuapp.com/",
-        "feed_url": "http://hannesdotkaeuflerdotnet.herokuapp.com/feed.json",
-        "items": [
+        "feed_url":      "http://hannesdotkaeuflerdotnet.herokuapp.com/feed.json",
+        "items":         [
           {
-            "id": "#{post_id}",
-            "title": "post title",
-            "content_html": "<h2>post</h2>\n\n<p>content</p>",
-            "url": "http://hannesdotkaeuflerdotnet.herokuapp.com/posts/post-title",
+            "id":             "#{post_id}",
+            "title":          "post title",
+            "content_html":   "<h2>post</h2>\n\n<p>content</p>",
+            "url":            "http://hannesdotkaeuflerdotnet.herokuapp.com/posts/post-title",
             "date_published": "1970-01-03T00:01:00+0000",
-            "date_updated": "1970-01-04T00:00:50+0000",
-          }
-        ]
+            "date_updated":   "1970-01-04T00:00:50+0000",
+          },
+        ],
       }.to_json)
     end
   end

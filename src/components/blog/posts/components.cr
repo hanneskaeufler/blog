@@ -28,5 +28,4 @@ module Blog::Posts::Components
   private def post_date(post : Post)
     Time::Format.new("%B %-d, %Y").format(post.published_at)
   end
-
 end

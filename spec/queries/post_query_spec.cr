@@ -8,7 +8,7 @@ describe PostQuery do
       insert_post title: "middle_post", published_at: Time.now - 2.days
 
       PostQuery.new.latest.results
-        .map(&.title).should eq ["later_post", "middle_post", "earlier_post"]
+                          .map(&.title).should eq ["later_post", "middle_post", "earlier_post"]
     end
 
     it "only returns published posts" do
@@ -16,7 +16,7 @@ describe PostQuery do
       insert_post title: "not published", published_at: Time.now + 1.day
 
       PostQuery.new.latest.results
-        .map(&.title).should eq ["published"]
+                          .map(&.title).should eq ["published"]
     end
 
     it "shows 5 posts at most" do
@@ -42,7 +42,7 @@ describe PostQuery do
       insert_post title: "not published", published_at: Time.now + 1.day
 
       PostQuery.new.published.results
-        .map(&.title).should eq ["published"]
+                             .map(&.title).should eq ["published"]
     end
   end
 
