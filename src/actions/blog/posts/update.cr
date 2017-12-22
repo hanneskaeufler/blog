@@ -2,7 +2,7 @@ class Blog::Posts::Update < AdminAction
   put "/posts/:id/update" do
     post = PostQuery.new.find(id)
     PostForm.update(post, params, current_title: post.title) do |form, updated_post|
-      if form.errors.empty?
+      if form.save_succeeded?
         flash.success = "Post successfully edited."
         redirect Blog::Posts::Index
       else
