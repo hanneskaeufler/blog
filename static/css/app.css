@@ -41,13 +41,6 @@ a:hover {
     lost-center: 980px;
 }
 
-.blog-title-small a:link, .blog-title-small a:visited {
-    padding: 5px 10px;
-    border-radius: 4px;
-    background: white;
-    text-decoration: none;
-}
-
 .blog-title-small section > div {
     lost-column: 1/2;
 }

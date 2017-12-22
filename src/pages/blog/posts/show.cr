@@ -18,7 +18,6 @@ class Blog::Posts::ShowPage < MainLayout
     header class: "blog-title-small" do
       section do
         div do
-          link "« All posts", to: Blog::Posts::Index.path
         end
         render_tagline
       end
@@ -28,6 +27,9 @@ class Blog::Posts::ShowPage < MainLayout
   private def render_post(post : Post)
     section class: "posts-container" do
       single_post(@post)
+      div do
+        link "« Back to all posts", to: Blog::Posts::Index.path
+      end
     end
   end
 end

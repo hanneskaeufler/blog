@@ -169,7 +169,7 @@ describe Blog do
         visitor.visit("/posts/welcome")
 
         visitor.should contain "<h2>Welcome"
-        visitor.should contain "<a href=\"/\">« All posts</a>"
+        visitor.should contain "<a href=\"/\">« Back to all posts</a>"
         visitor.should contain "Welcome</title>"
       end
     end
