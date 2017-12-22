@@ -4,8 +4,8 @@ class Blog::Feed < ApiAction
   get "/feed.json" do
     json({
       "version": "https://jsonfeed.org/version/1",
-      "home_page_url": "http://hannesdotkaeuflerdotnet.herokuapp.com",
-      "feed_url": "http://hannesdotkaeuflerdotnet.herokuapp.com/feed.json",
+      "home_page_url": Blog::Posts::Index.url,
+      "feed_url": Blog::Feed.url,
       "items": items
     })
   end

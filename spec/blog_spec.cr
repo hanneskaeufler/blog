@@ -188,7 +188,7 @@ describe Blog do
 
       response.body.should eq({
         "version": "https://jsonfeed.org/version/1",
-        "home_page_url": "http://hannesdotkaeuflerdotnet.herokuapp.com",
+        "home_page_url": "http://hannesdotkaeuflerdotnet.herokuapp.com/",
         "feed_url": "http://hannesdotkaeuflerdotnet.herokuapp.com/feed.json",
         "items": [
           {
