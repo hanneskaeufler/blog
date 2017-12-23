@@ -1,12 +1,14 @@
 class PostForm < Post::BaseForm
   allow title, content
+  allow_virtual published : Bool
 
   needs current_title : String, on: :update
 
   def prepare
     generate_slug
     validate_uniqueness_of_slug if title_changed_or_new_post
-    published_at.value = Time.now
+    validate_required published
+    published_at.value = published.value ? Time.now : nil
   end
 
   private def generate_slug

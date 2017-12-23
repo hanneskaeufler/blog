@@ -1,4 +1,8 @@
 class PostContentRenderer
+  def render(published : PublishedPost) : String
+    render(published.post)
+  end
+
   def render(post : Post) : String
     content = downgrade_headings(post.content)
 

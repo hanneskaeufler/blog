@@ -30,6 +30,11 @@ class Blog::Posts::NewPage < MainLayout
         textarea f.content
         errors_for f.content
       end
+      div class: "form-row" do
+        label_for f.published
+        checkbox f.published
+        errors_for f.published
+      end
 
       submit "Save Post"
     end

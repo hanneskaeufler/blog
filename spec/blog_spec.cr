@@ -54,26 +54,43 @@ describe Blog do
         data = {
           "post:title"   => "",
           "post:content" => "",
+          "post:published" => "",
         }
 
         visitor.post("/posts/create", data)
 
         visitor.should contain "Title is required"
         visitor.should contain "Content is required"
+        visitor.should contain "Published is invalid, is required"
       end
     end
 
     context "all fields filled" do
-      it "pusblishes a new post" do
+      it "pusblishes a new post when published is checked" do
         data = {
-          "post:title"   => "some title",
-          "post:content" => "some content",
+          "post:title"     => "some title",
+          "post:content"   => "some content",
+          "post:published" => "1",
         }
 
         visitor.post("/posts/create", data)
 
         visitor.should redirect_to("/")
         PostQuery.new.latest.results.size.should eq 1
+      end
+
+      it "doesnt publish a new post when published is unchecked" do
+        data = {
+          "post:title"     => "some title",
+          "post:content"   => "some content",
+          "post:published" => "0",
+        }
+
+        visitor.post("/posts/create", data)
+
+        visitor.should redirect_to("/")
+        PostQuery.new.count.should eq 1
+        PostQuery.new.first.published_at.should be_nil
       end
     end
 
@@ -84,6 +101,7 @@ describe Blog do
         data = {
           "post:title"   => "some title",
           "post:content" => "some content",
+          "post:published" => "1",
         }
 
         visitor.post("/posts/create", data)
@@ -100,6 +118,7 @@ describe Blog do
         data = {
           "post:title"   => "some title",
           "post:content" => "some content",
+          "post:published" => "1",
         }
 
         visitor.post("/posts/create", data)
@@ -133,6 +152,7 @@ describe Blog do
         data = {
           "post:title"   => "some title",
           "post:content" => "some updated content",
+          "post:published" => "1",
         }
         post = PostQuery.new.first
         visitor.put("/posts/#{post.id}/update", data)
@@ -148,6 +168,7 @@ describe Blog do
         data = {
           "post:title"   => "",
           "post:content" => "some content",
+          "post:published" => "1",
         }
         post = PostQuery.new.first
         visitor.put("/posts/#{post.id}/update", data)

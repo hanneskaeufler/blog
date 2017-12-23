@@ -22,10 +22,10 @@ class Blog::Feed < ApiAction
   end
 
   private def items
-    PostQuery.new.latest.map { |post| post_json(post) }
+    PostQuery.new.latest.map { |post| post_json(PublishedPost.new(post)) }
   end
 
-  private def post_json(post : Post)
+  private def post_json(post : PublishedPost)
     {
       "id":             "#{post.id}",
       "title":          post.title,
