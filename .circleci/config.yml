@@ -20,7 +20,7 @@ jobs:
           command: crystal tool format src spec --check
       - run:
           name: "Migrate database"
-          command: LUCKY_ENV=test lucky db.migrate
+          command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
           name: "Running specs"
           command: crystal spec
