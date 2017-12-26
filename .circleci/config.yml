@@ -29,6 +29,8 @@ jobs:
       - run:
           name: "Running specs"
           command: crystal spec --junit_output $CIRCLE_TEST_REPORTS/reports
+      - store_test_results:
+          path: $CIRCLE_TEST_REPORTS/reports
       - run:
           name: "Install rubygems"
           command: bundle
