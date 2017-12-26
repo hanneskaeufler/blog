@@ -1,8 +1,8 @@
 database = "blog_#{Lucky::Env.name}"
 
 LuckyRecord::Repo.configure do
-  if Lucky::Env.production?
-    settings.url = ENV.fetch("DATABASE_URL")
+  if url = ENV["DATABASE_URL"]?
+    settings.url = url
   else
     settings.url = LuckyRecord::PostgresURL.build(
       hostname: "localhost",
