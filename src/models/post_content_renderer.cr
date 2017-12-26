@@ -1,9 +1,5 @@
 class PostContentRenderer
-  def render(published : PublishedPost) : String
-    render(published.post)
-  end
-
-  def render(post : Post) : String
+  def render(post) : String
     content = downgrade_headings(post.content)
 
     matches = [] of String

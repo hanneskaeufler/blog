@@ -7,8 +7,4 @@ class PublishedPost
   def published_at : Time
     @post.published_at || Time.now
   end
-
-  def post
-    @post
-  end
 end
