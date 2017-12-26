@@ -32,6 +32,8 @@ jobs:
       - run:
           name: "Install rubygems"
           command: bundle
+          when: always
       - run:
           name: "Run danger"
           command: bundle exec danger
+          when: always
