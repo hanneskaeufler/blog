@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/hanneskaeufler/blog.svg?style=svg)](https://circleci.com/gh/hanneskaeufler/blog)
+
 # blog
 
 This is my personal website/blog written using [Lucky](https://luckyframework.org). Enjoy!
