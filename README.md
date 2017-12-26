@@ -17,3 +17,8 @@ Lucky uses the [Crystal](https://crystal-lang.org) programming language. You can
 ### Deploying
 
 Run `git push heroku master`. To export/import the database see: https://devcenter.heroku.com/articles/heroku-postgres-import-export#import-to-heroku-postgres
+
+### Deploying locally with Docker
+
+Start the database and app by running `docker-compose up`.
+Run  `docker-compose run app crystal tasks.cr -- db.migrate` to setup the db.
