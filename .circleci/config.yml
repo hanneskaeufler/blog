@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: crystallang/crystal
+      - image: hanneskaeufler/crystal-node-ruby
         environment:
           DATABASE_URL: postgres://blog-user@127.0.0.1/blog-test
       - image: postgres:9.6.2-alpine
@@ -17,6 +17,9 @@ jobs:
       - run:
           name: "Check formatting"
           command: crystal tool format src spec --check
+      - run:
+          name: "Compiling assets"
+          command: ./bin/compile_assets build
       - run:
           name: "Migrate database"
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
