@@ -12,14 +12,17 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Install dependencies"
+          name: "Install node dependencies"
+          command: yarn install
+      - run:
+          name: "Compiling assets"
+          command: ./bin/compile_assets build
+      - run:
+          name: "Install crystal dependencies"
           command: crystal deps
       - run:
           name: "Check formatting"
           command: crystal tool format src spec --check
-      - run:
-          name: "Compiling assets"
-          command: ./bin/compile_assets build
       - run:
           name: "Migrate database"
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
