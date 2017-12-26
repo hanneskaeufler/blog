@@ -4,25 +4,44 @@ jobs:
     docker:
       - image: hanneskaeufler/crystal-node-ruby
         environment:
-          DATABASE_URL: postgres://blog-user@127.0.0.1/blog-test
+          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
       - image: postgres:9.6.2-alpine
         environment:
-          POSTGRES_DB: blog-test
-          POSTGRES_USER: blog-user
+          POSTGRES_DB: blog_test
+          POSTGRES_USER: blog_test_user
     steps:
       - checkout
       - run:
-          name: "Install dependencies"
+          name: "Install node dependencies"
+          command: yarn install
+      - run:
+          name: "Compiling assets"
+          command: ./bin/compile_assets build
+      - run:
+          name: "Install crystal dependencies"
           command: crystal deps
       - run:
           name: "Check formatting"
           command: crystal tool format src spec --check
       - run:
-          name: "Compiling assets"
-          command: ./bin/compile_assets build
-      - run:
           name: "Migrate database"
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
+          name: "Create test artifacts directory"
+          command: mkdir -p ~/reports
+      - run:
           name: "Running specs"
-          command: crystal spec
+          command: crystal spec --junit_output=~/reports
+      - run:
+          name: "Whut"
+          command: cat ~/reports/*
+      - store_test_results:
+          path: ~/reports/
+      - run:
+          name: "Install rubygems"
+          command: bundle
+          when: always
+      - run:
+          name: "Run danger"
+          command: bundle exec danger
+          when: always

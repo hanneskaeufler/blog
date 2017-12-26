@@ -10,7 +10,8 @@ describe Blog::Posts::IndexPage do
   it "downgrades headings by one" do
     post = build_post(content: "\n# H1 Heading")
 
-    rendered([post]).should contain "<h2>H1 Heading</h2>"
+    # TODO: This is an intentional test failure
+    rendered([post]).should contain "<h2>H1 HHeading</h2>"
   end
 
   it "can handle raw html, and assumes closing and opening paragraphs" do
