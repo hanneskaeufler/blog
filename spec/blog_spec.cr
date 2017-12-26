@@ -52,8 +52,8 @@ describe Blog do
     context "none of the fields filled" do
       it "rerenders the form with errors" do
         data = {
-          "post:title"   => "",
-          "post:content" => "",
+          "post:title"     => "",
+          "post:content"   => "",
           "post:published" => "",
         }
 
@@ -99,8 +99,8 @@ describe Blog do
         insert_post(title: "some title")
 
         data = {
-          "post:title"   => "some title",
-          "post:content" => "some content",
+          "post:title"     => "some title",
+          "post:content"   => "some content",
           "post:published" => "1",
         }
 
@@ -116,8 +116,8 @@ describe Blog do
         insert_post(title: "some-title")
 
         data = {
-          "post:title"   => "some title",
-          "post:content" => "some content",
+          "post:title"     => "some title",
+          "post:content"   => "some content",
           "post:published" => "1",
         }
 
@@ -150,8 +150,8 @@ describe Blog do
         insert_post(title: "some title")
 
         data = {
-          "post:title"   => "some title",
-          "post:content" => "some updated content",
+          "post:title"     => "some title",
+          "post:content"   => "some updated content",
           "post:published" => "1",
         }
         post = PostQuery.new.first
@@ -166,8 +166,8 @@ describe Blog do
         insert_post(title: "some title")
 
         data = {
-          "post:title"   => "",
-          "post:content" => "some content",
+          "post:title"     => "",
+          "post:content"   => "some content",
           "post:published" => "1",
         }
         post = PostQuery.new.first
