@@ -28,16 +28,16 @@ jobs:
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
           name: "Create test artifacts directory"
-          command: mkdir -p ~/reports
+          command: mkdir -p /root/reports
       - run:
           name: "Running specs"
-          command: crystal spec --junit_output=~/reports
+          command: crystal spec --junit_output=/root/reports
       - run:
           name: "Whut"
-          command: ls ~/reports
+          command: ls /root/reports
           when: always
       - store_test_results:
-          path: ~/reports
+          path: /root/reports
           when: always
       - run:
           name: "Install rubygems"
