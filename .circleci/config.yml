@@ -35,10 +35,10 @@ jobs:
       - run:
           name: "Whut"
           command: ls ~/reports
-          run: always
+          when: always
       - store_test_results:
           path: ~/reports
-          run: always
+          when: always
       - run:
           name: "Install rubygems"
           command: bundle
