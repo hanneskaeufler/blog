@@ -29,3 +29,9 @@ jobs:
       - run:
           name: "Running specs"
           command: crystal spec
+      - run:
+          name: "Install rubygems"
+          command: bundle
+      - run:
+          name: "Run danger"
+          command: bundle exec danger
