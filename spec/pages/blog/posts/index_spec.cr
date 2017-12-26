@@ -10,6 +10,7 @@ describe Blog::Posts::IndexPage do
   it "downgrades headings by one" do
     post = build_post(content: "\n# H1 Heading")
 
+    # TODO: This is an intentional test failure
     rendered([post]).should contain "<h2>H1 HHeading</h2>"
   end
 
