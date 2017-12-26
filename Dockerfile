@@ -17,5 +17,8 @@ RUN crystal deps
 # install app dependencies (node)
 RUN yarn install
 
+# precompile assets (via brunch)
+RUN ./bin/compile_assets build --production
+
 RUN crystal build src/server.cr
 CMD ./server
