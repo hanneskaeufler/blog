@@ -34,9 +34,11 @@ jobs:
           command: crystal spec --junit_output=~/reports
       - run:
           name: "Whut"
-          command: cat ~/reports/*
+          command: ls ~/reports
+          run: always
       - store_test_results:
-          path: ~/reports/
+          path: ~/reports
+          run: always
       - run:
           name: "Install rubygems"
           command: bundle
