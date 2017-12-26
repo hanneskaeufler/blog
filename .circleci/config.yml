@@ -28,7 +28,7 @@ jobs:
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
           name: "Running specs"
-          command: crystal spec --junit_output junit
+          command: crystal spec --junit_output $CIRCLE_TEST_REPORTS/reports
       - run:
           name: "Install rubygems"
           command: bundle

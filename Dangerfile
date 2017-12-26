@@ -16,5 +16,5 @@ fail("fit left in tests") if `grep -r fit spec/ `.length > 1
 todoist.fail_for_todos
 todoist.print_todos_table
 
-junit.parse "junit/output.xml"
+junit.parse "#{ENV['CIRCLE_TEST_REPORTS']}/reports/output.xml"
 junit.report
