@@ -28,7 +28,9 @@ jobs:
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
           name: "Running specs"
-          command: mkdir -p ~/reports && crystal spec --junit_output ~/reports
+          command: |
+            mkdir ~/reports
+            crystal spec --junit_output ~/reports
       - store_test_results:
           path: ~/reports
       - run:
