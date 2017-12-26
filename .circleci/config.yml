@@ -3,9 +3,12 @@ jobs:
   build:
     docker:
       - image: hanneskaeufler/crystal-node-ruby
+        environment:
+          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog-test
       - image: postgres:9.6.2-alpine
         environment:
           POSTGRES_DB: blog_test
+          POSTGRES_USER: blog_test_user
     steps:
       - checkout
       - run:
