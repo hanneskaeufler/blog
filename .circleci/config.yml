@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: hanneskaeufler/crystal-node-ruby
         environment:
-          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog-test
+          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
       - image: postgres:9.6.2-alpine
         environment:
           POSTGRES_DB: blog_test
