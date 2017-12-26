@@ -27,6 +27,9 @@ jobs:
           name: "Migrate database"
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
+          name: "Create test artifacts directory"
+          command: mkdir -p ~/reports
+      - run:
           name: "Running specs"
           command: crystal spec --junit_output=~/reports
       - store_test_results:
