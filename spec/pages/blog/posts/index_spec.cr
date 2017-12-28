@@ -55,7 +55,7 @@ end
 
 private def rendered(posts, posts_count = 5, on_page = 1)
   Blog::Posts::IndexPage.new(
-    flash: empty_flash,
+    context: context,
     posts: posts,
     posts_count: posts_count,
     current_page: on_page).render.to_s
