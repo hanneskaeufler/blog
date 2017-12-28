@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby
+      - image: hanneskaeufler/crystal-node-ruby:0.24.1
         environment:
           DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
       - image: postgres:9.6.2-alpine
