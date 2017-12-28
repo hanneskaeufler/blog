@@ -3,8 +3,6 @@ abstract class MainLayout
   include Shared::FieldErrorsComponent
   include Shared::FlashComponent
 
-  needs flash : Lucky::Flash::Store
-
   def inner_head
   end
 
@@ -20,6 +18,7 @@ abstract class MainLayout
         title page_title
         css_link asset("css/app.css")
         js_link asset("js/app.js")
+        csrf_meta_tags
         inner_head
         google_analytics
       end

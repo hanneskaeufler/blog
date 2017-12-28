@@ -1,4 +1,5 @@
 abstract class BrowserAction < Lucky::Action
+  include Lucky::ProtectFromForgery
   # If something should always be exposed to your pages, expose them here.
   #
   # Example:
@@ -10,5 +11,4 @@ abstract class BrowserAction < Lucky::Action
   #  end
   #
   # Then add an assign for it in your MainPage
-  expose flash
 end
