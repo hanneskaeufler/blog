@@ -7,6 +7,7 @@ require "../src/app"
 
 include AppVisitor::Matchers
 
+# TODO: I think I can remove this because of https://github.com/luckyframework/lucky_record/commit/a2edad4f2177f94f00924ba212720d258b749cba
 Spec.before_each do
   PostQuery.new.destroy_all
 end
