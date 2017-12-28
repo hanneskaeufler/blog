@@ -14,11 +14,11 @@ abstract class MainLayout
     html lang: "en" do
       head do
         utf8_charset
+        csrf_meta_tags
         css_link(asset("images/favicon.png"), rel: "icon")
         title page_title
         css_link asset("css/app.css")
         js_link asset("js/app.js")
-        csrf_meta_tags
         inner_head
         google_analytics
       end
