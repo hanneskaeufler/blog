@@ -79,7 +79,7 @@ describe Blog do
         PostQuery.new.latest.results.size.should eq 1
       end
 
-      it "doesnt publish a new post when published is unchecked" do
+      it "doesn't publish a new post when published is unchecked" do
         data = {
           "post:title"     => "some title",
           "post:content"   => "some content",
