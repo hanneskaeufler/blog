@@ -8,7 +8,7 @@ jobs:
       - image: postgres:9.6.2-alpine
         environment:
           POSTGRES_DB: blog_test
-          POSTGRES_USER: blog_test_user
+          POSTGRES_USER: break
     steps:
       - checkout
       - run:
