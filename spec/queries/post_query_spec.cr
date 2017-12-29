@@ -20,13 +20,19 @@ describe PostQuery do
     end
 
     it "shows 5 posts at most" do
-      10.times { insert_post }
+      10.times { |i| insert_post title: i.to_s }
       PostQuery.new.latest.results.size.should eq 5
     end
 
     it "accepts a page param" do
-      7.times { insert_post }
+      7.times { |i| insert_post title: i.to_s }
       PostQuery.new.latest(page: 2).results.size.should eq 2
+    end
+
+    it "can be counted" do
+      PostQuery.new.latest.count.should eq 0
+      2.times { |i| insert_post title: i.to_s }
+      PostQuery.new.latest.count.should eq 2
     end
   end
 
