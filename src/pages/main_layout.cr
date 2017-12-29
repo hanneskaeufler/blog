@@ -3,8 +3,6 @@ abstract class MainLayout
   include Shared::FieldErrorsComponent
   include Shared::FlashComponent
 
-  needs flash : Lucky::Flash::Store
-
   def inner_head
   end
 
@@ -16,6 +14,7 @@ abstract class MainLayout
     html lang: "en" do
       head do
         utf8_charset
+        csrf_meta_tags
         css_link(asset("images/favicon.png"), rel: "icon")
         title page_title
         css_link asset("css/app.css")

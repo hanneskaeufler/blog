@@ -15,7 +15,7 @@ license: MIT
 dependencies:
   lucky:
     github: luckyframework/lucky
-    branch: master
+    version: ~> 0.7.3
   lucky_migrator:
     github: luckyframework/lucky_migrator
-    version: ~> 0.3.0
+    version: ~> 0.4.0

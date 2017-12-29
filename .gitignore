@@ -7,3 +7,4 @@ yarn-error.log
 server
 Gemfile.lock
 /junit/
+*.dwarf

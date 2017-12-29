@@ -1,6 +1,8 @@
 require "http/client"
 
 class AppVisitor
+  CSRF_TOKEN = "statictesttoken"
+
   getter! response
   @response : HTTP::Client::Response? = nil
 
@@ -10,11 +12,16 @@ class AppVisitor
   end
 
   def put(path : String, body : Hash(String, String))
-    request_with_body("PUT", path, body)
+    request_with_body("PUT", path, with_csrf_token(body))
   end
 
   def post(path : String, body : Hash(String, String))
-    request_with_body("POST", path, body)
+    request_with_body("POST", path, with_csrf_token(body))
+  end
+
+  private def with_csrf_token(body : Hash(String, String))
+    body[Lucky::ProtectFromForgery::PARAM_KEY] = CSRF_TOKEN
+    body
   end
 
   private def request_with_body(method : String, path : String, body : Hash(String, String))
@@ -30,6 +37,7 @@ class AppVisitor
     io = IO::Memory.new
     response = HTTP::Server::Response.new(io)
     context = HTTP::Server::Context.new(request, response)
+    context.session[Lucky::ProtectFromForgery::SESSION_KEY] = CSRF_TOKEN
     middlewares.call context
     response.close
     io.rewind

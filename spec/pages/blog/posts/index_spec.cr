@@ -36,7 +36,7 @@ describe Blog::Posts::IndexPage do
   it "shows next page link for more than 5 posts" do
     html = rendered([] of Post, posts_count: 7)
 
-    html.should contain "<a href=\"/?page&#61;2\">Next page &raquo;</a>"
+    html.should contain "<a href=\"/?page=2\">Next page &raquo;</a>"
   end
 
   it "shows prev page link when on page 2" do
@@ -49,13 +49,13 @@ describe Blog::Posts::IndexPage do
     html = rendered([] of Post, posts_count: 14, on_page: 2)
 
     html.should contain "<a href=\"/\">&laquo; Previous page</a>"
-    html.should contain "<a href=\"/?page&#61;3\">Next page &raquo;</a>"
+    html.should contain "<a href=\"/?page=3\">Next page &raquo;</a>"
   end
 end
 
 private def rendered(posts, posts_count = 5, on_page = 1)
   Blog::Posts::IndexPage.new(
-    flash: empty_flash,
+    context: context,
     posts: posts,
     posts_count: posts_count,
     current_page: on_page).render.to_s
