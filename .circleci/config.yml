@@ -42,7 +42,7 @@ jobs:
           when: always
   deploy:
     docker:
-      - image: busybox
+      - image: ubuntu
     steps:
       - checkout
       - run:
