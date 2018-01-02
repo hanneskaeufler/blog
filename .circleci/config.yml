@@ -41,6 +41,8 @@ jobs:
           command: bundle exec danger
           when: always
   deploy:
+    docker:
+      - image: hanneskaeufler/crystal-node-ruby:0.24.1
     steps:
       - run:
           name: Run setup script
