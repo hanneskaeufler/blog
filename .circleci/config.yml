@@ -40,3 +40,21 @@ jobs:
           name: "Run danger"
           command: bundle exec danger
           when: always
+  deploy:
+    steps:
+      - run:
+          name: Run setup script
+          command: bash .circleci/setup-heroku.sh
+
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+        requires:
+          - build
+        # filters:
+        #   branches:
+        #     only: master
