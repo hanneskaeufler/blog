@@ -5,10 +5,10 @@ class Blog::Feed < ApiAction
 
   get "/feed.json" do
     feed = {
-      "version" =>       "https://jsonfeed.org/version/1",
+      "version"       => "https://jsonfeed.org/version/1",
       "home_page_url" => Blog::Posts::Index.url,
-      "feed_url" =>      Blog::Feed.url,
-      "items" =>       items,
+      "feed_url"      => Blog::Feed.url,
+      "items"         => items,
     }
 
     if has_next_page
