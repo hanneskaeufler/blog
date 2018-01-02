@@ -44,6 +44,7 @@ jobs:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.24.1
     steps:
+      - checkout
       - run:
           name: Run setup script
           command: bash .circleci/setup-heroku.sh
