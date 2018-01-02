@@ -6,7 +6,7 @@ class Blog::Posts::Index < BrowserAction
       return redirect to: Blog::Posts::Index
     end
 
-    posts_count = Int32.new(PostQuery.new.published.count)
+    posts_count = PostQuery.new.published.count.to_i
     posts = PostQuery.new.latest(page: page).results
     render Blog::Posts::IndexPage, posts: posts, posts_count: posts_count, current_page: page
   end
