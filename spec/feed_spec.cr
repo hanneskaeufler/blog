@@ -16,6 +16,7 @@ describe Blog::Feed do
         "version":       "https://jsonfeed.org/version/1",
         "home_page_url": "http://hannesdotkaeuflerdotnet.herokuapp.com/",
         "feed_url":      "http://hannesdotkaeuflerdotnet.herokuapp.com/feed.json",
+        "description":   Blog::Components::TAGLINE,
         "items":         [
           {
             "id":             "#{post_id}",

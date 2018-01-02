@@ -8,6 +8,7 @@ class Blog::Feed < ApiAction
       "version"       => "https://jsonfeed.org/version/1",
       "home_page_url" => Blog::Posts::Index.url,
       "feed_url"      => Blog::Feed.url,
+      "description"   => Blog::Components::TAGLINE,
       "items"         => items,
     }
 

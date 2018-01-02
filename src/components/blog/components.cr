@@ -1,8 +1,10 @@
 module Blog::Components
+  TAGLINE = "racing &middot; software &middot; open-source"
+
   private def render_tagline
     div class: "tag-line" do
       h1 do
-        raw "racing &middot; software &middot; open-source"
+        raw TAGLINE
       end
     end
   end
