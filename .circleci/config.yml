@@ -42,7 +42,7 @@ jobs:
           when: always
   deploy:
     docker:
-      - image: ubuntu
+      - image: hanneskaeufler/heroku-deploy
     steps:
       - checkout
       - run:
