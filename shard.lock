@@ -6,7 +6,7 @@ shards:
 
   db:
     github: crystal-lang/crystal-db
-    version: 0.4.3
+    version: 0.5.0
 
   habitat:
     github: luckyframework/habitat
@@ -38,7 +38,7 @@ shards:
 
   pg:
     github: will/crystal-pg
-    version: 0.14.0
+    version: 0.14.1
 
   shell-table:
     github: jwaldrip/shell-table.cr
