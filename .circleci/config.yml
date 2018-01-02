@@ -42,7 +42,7 @@ jobs:
           when: always
   deploy:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.24.1
+      - image: busybox
     steps:
       - checkout
       - run:
