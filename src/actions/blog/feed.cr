@@ -39,7 +39,8 @@ class Blog::Feed < ApiAction
   private def has_next_page
     posts_count = PostQuery.new.published.count.to_i
     not_last_page = page * PostQuery::PER_PAGE < posts_count
-    posts_count > PostQuery::PER_PAGE && not_last_page
+    more_than_one_page = posts_count > PostQuery::PER_PAGE
+    more_than_one_page && not_last_page
   end
 
   private def host
