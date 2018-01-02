@@ -10,6 +10,7 @@ class Blog::Feed < ApiAction
       "feed_url"      => Blog::Feed.url,
       "description"   => Blog::Components::TAGLINE,
       "author"        => {"name" => "Hannes Käufler"},
+      "favicon"       => "#{host}/favicon.ico",
       "items"         => items,
     }
 
@@ -39,5 +40,9 @@ class Blog::Feed < ApiAction
     posts_count = PostQuery.new.published.count.to_i
     not_last_page = page * PostQuery::PER_PAGE < posts_count
     posts_count > PostQuery::PER_PAGE && not_last_page
+  end
+
+  private def host
+    Lucky::RouteHelper.settings.domain
   end
 end
