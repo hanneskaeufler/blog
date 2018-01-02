@@ -42,7 +42,7 @@ jobs:
           when: always
   deploy:
     docker:
-      - image: hanneskaeufler/heroku-deploy
+      - image: hanneskaeufler/crystal-node-ruby:0.24.1
     steps:
       - checkout
       - run:
