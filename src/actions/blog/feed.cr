@@ -9,6 +9,7 @@ class Blog::Feed < ApiAction
       "home_page_url" => Blog::Posts::Index.url,
       "feed_url"      => Blog::Feed.url,
       "description"   => Blog::Components::TAGLINE,
+      "author"        => {"name" => "Hannes Käufler"},
       "items"         => items,
     }
 

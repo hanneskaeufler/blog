@@ -17,6 +17,7 @@ describe Blog::Feed do
         "home_page_url": "http://hannesdotkaeuflerdotnet.herokuapp.com/",
         "feed_url":      "http://hannesdotkaeuflerdotnet.herokuapp.com/feed.json",
         "description":   Blog::Components::TAGLINE,
+        "author":        {"name": "Hannes Käufler"},
         "items":         [
           {
             "id":             "#{post_id}",
