@@ -30,7 +30,7 @@ jobs:
           name: "Running specs"
           command: crystal spec --junit_output=/root/reports
       - run:
-          name: "Fix crystal junit output bug"
+          name: "Fix crystal junit output bug. Remove for crystal 0.24.2"
           command: sed -i 's/failed=/failures=/g' /root/reports/output.xml
       - store_test_results:
           path: /root/reports
