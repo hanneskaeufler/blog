@@ -52,6 +52,7 @@ class AppVisitor
       Lucky::ErrorHandler.new(action: Errors::Show),
       Lucky::RouteHandler.new,
       Lucky::StaticFileHandler.new("./public", false),
+      NotFoundHandler.new,
     ])
   end
 

@@ -11,6 +11,7 @@ server = HTTP::Server.new(host, port, [
   Lucky::ErrorHandler.new(action: Errors::Show),
   Lucky::RouteHandler.new,
   Lucky::StaticFileHandler.new("./public", false),
+  NotFoundHandler.new,
 ])
 
 puts "Listening on http://#{host}:#{port}"
