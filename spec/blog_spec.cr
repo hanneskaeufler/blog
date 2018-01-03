@@ -7,7 +7,7 @@ describe Blog do
     it "shows a title" do
       visitor.visit("/")
 
-      visitor.should contain "<title>Hannes äufler: Blog</title>"
+      visitor.should contain "<title>Hannes Käufler: Blog</title>"
     end
 
     it "shows posts" do
