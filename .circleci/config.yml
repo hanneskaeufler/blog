@@ -32,6 +32,7 @@ jobs:
       - run:
           name: "Fix crystal junit output bug. Remove for crystal 0.24.2"
           command: sed -i 's/failed=/failures=/g' /root/reports/output.xml
+          when: always
       - store_test_results:
           path: /root/reports
           when: always
