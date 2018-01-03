@@ -7,5 +7,6 @@ describe Blog do
     visitor.visit("/surelynonexistent")
 
     visitor.should contain "<h1>Not Found</h1>"
+    visitor.response.status_code.should eq 404
   end
 end
