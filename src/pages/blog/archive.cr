@@ -10,7 +10,7 @@ class Blog::ArchivePage < MainLayout
   end
 
   private def posts_by_year(posts)
-    posts.group_by { |post| post.published_at.year  }
+    posts.group_by { |post| post.published_at.year }
   end
 
   private def render_post_titles(posts_by_year)
