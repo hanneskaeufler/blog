@@ -81,4 +81,27 @@ describe PostQuery do
       post.title.should eq "Open-Source"
     end
   end
+
+  describe "#published_search" do
+    it "is like #published without a term" do
+      insert_post title: "Jo dude", published_at: Time.now - 1.days
+      insert_post title: "Whateves", published_at: Time.now - 1.days
+      insert_post title: "Unpublished", published_at: Time.now + 1.days
+
+      ref = PostQuery.new.published.results
+      posts = PostQuery.new.published_search(nil).results
+
+      posts.should eq ref
+    end
+
+    it "only returns matching posts" do
+      insert_post content: "matcher", published_at: Time.now - 2.days
+      insert_post content: "a match this", published_at: Time.now - 1.days
+      insert_post published_at: Time.now - 1.days
+
+      posts = PostQuery.new.published_search("match").results
+
+      posts.map(&.content).should eq ["a match this", "matcher"]
+    end
+  end
 end

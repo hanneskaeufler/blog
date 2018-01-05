@@ -211,8 +211,11 @@ a:hover {
     color: #6b7c93;
     border: 1px solid #ddd;
     padding: 10px 15px;
-    width: calc(100% - 30px - 2px);
     border-radius: 4px;
+}
+
+.post-editor input[type=text] {
+    width: calc(100% - 30px - 2px);
 }
 
 .post-editor input[type=submit] {

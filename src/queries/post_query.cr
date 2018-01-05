@@ -12,6 +12,14 @@ class PostQuery < Post::BaseQuery
     published_at.lte(Time.now).published_at.desc_order
   end
 
+  def published_search(term : String?)
+    if term
+      published.content.ilike("%#{term}%")
+    else
+      published
+    end
+  end
+
   def find_published_by_slug(slug : String) : Post
     post = published.slug(slug).first? ||
            raise LuckyRecord::RecordNotFoundError.new(:post, slug)
