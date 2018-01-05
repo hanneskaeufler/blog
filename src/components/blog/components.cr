@@ -11,11 +11,7 @@ module Blog::Components
 
   private def render_small_header
     header class: "blog-title-small" do
-      section do
-        div do
-        end
-        render_tagline
-      end
+      render_tagline
     end
   end
 
