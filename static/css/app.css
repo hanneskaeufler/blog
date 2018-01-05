@@ -70,7 +70,7 @@ a:hover {
     margin: 0.5em;
 }
 
-.posts-container {
+.posts-container, .posts-archive {
     lost-utility: clearfix;
     lost-center: 980px;
 }
@@ -84,6 +84,16 @@ a:hover {
     font-size: 4em;
     opacity: .5;
     color: var(--highlightColor);
+}
+
+.posts-archive ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.posts-archive li span {
+    min-width: 120px;
+    display: inline-block;
 }
 
 .post-title h2 {

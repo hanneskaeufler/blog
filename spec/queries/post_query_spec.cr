@@ -44,6 +44,15 @@ describe PostQuery do
       PostQuery.new.published.results
                              .map(&.title).should eq ["published"]
     end
+
+    it "orders by published data" do
+      insert_post title: "middle", published_at: Time.now - 2.day
+      insert_post title: "oldest", published_at: Time.now - 3.day
+      insert_post title: "newest", published_at: Time.now - 1.days
+
+      PostQuery.new.published.results
+                             .map(&.title).should eq ["newest", "middle", "oldest"]
+    end
   end
 
   describe "#find_published_by_slug" do

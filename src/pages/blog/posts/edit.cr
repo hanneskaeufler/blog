@@ -11,9 +11,7 @@ class Blog::Posts::EditPage < MainLayout
   end
 
   def inner
-    header class: "blog-title-small" do
-      render_tagline
-    end
+    render_small_header
     section class: "post-editor" do
       render_post_form(@post_form)
     end
