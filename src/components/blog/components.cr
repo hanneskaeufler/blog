@@ -9,6 +9,16 @@ module Blog::Components
     end
   end
 
+  private def render_small_header
+    header class: "blog-title-small" do
+      section do
+        div do
+        end
+        render_tagline
+      end
+    end
+  end
+
   private def render_footer
     footer class: "blog-footer" do
       imprint

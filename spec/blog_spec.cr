@@ -175,6 +175,23 @@ describe Blog do
     end
   end
 
+  describe "/archive" do
+    context "with a few posts" do
+      it "shows published posts in chronological order" do
+        insert_post title: "A Post", published_at: Time.now - 1.days
+        insert_post title: "Another Post", published_at: Time.now - 1.days
+        insert_post title: "Unpublished", published_at: Time.now + 1.days
+
+        visitor.visit("/archive")
+
+        visitor.should contain "<h2>Archive</h2>"
+        visitor.should contain "A Post</a>"
+        visitor.should contain "Another Post</a>"
+        visitor.should_not contain "Unpublished"
+      end
+    end
+  end
+
   # context "with no posts" do
   #   it "renders a generic not found error" do
   #       visitor = AppVisitor.new
