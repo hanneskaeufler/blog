@@ -253,7 +253,7 @@ a:hover {
     margin-right: 10px;
 }
 
-.posts-archive button[type=submit]:hover {
+.posts-archive button[type=submit]:hover, .post-editor input[type=submit]:hover {
     color: white;
     background: var(--highlightColor);
 }
