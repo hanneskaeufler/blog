@@ -244,13 +244,14 @@ a:hover {
 }
 
 .posts-archive button[type=submit] {
+    background: white;
     border-bottom-right-radius: var(--defaultBorderRadius);
     border-color: var(--highlightColor);
     border-top-right-radius: var(--defaultBorderRadius);
     color: var(--highlightColor);
     margin-left: -1px;
-    padding: 10px 15px;
     margin-right: 10px;
+    padding: 10px 15px;
 }
 
 .posts-archive button[type=submit]:hover, .post-editor input[type=submit]:hover {
