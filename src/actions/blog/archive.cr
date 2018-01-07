@@ -1,6 +1,5 @@
 class Blog::Archive < BrowserAction
   get "/archive" do
-    posts = PostQuery.new.published.results
-    render Blog::ArchivePage, posts: posts
+    render Blog::ArchivePage, posts: PostQuery.new.published.results, current_search_term: ""
   end
 end

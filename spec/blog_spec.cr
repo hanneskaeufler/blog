@@ -176,6 +176,12 @@ describe Blog do
   end
 
   describe "/archive" do
+    it "renders a search form" do
+      visitor.visit("/archive")
+
+      visitor.should contain "action=\"/search\""
+    end
+
     context "with a few posts" do
       it "shows published posts in chronological order" do
         insert_post title: "A Post", published_at: Time.now - 1.days
@@ -188,6 +194,29 @@ describe Blog do
         visitor.should contain "A Post</a>"
         visitor.should contain "Another Post</a>"
         visitor.should_not contain "Unpublished"
+      end
+
+      context "with a search term" do
+        it "only finds matching posts" do
+          insert_post title: "Find me", content: "find me", published_at: Time.now - 1.days
+          insert_post title: "Other", content: "mefind me as well", published_at: Time.now - 1.days
+          insert_post title: "But not me", content: "not me", published_at: Time.now - 1.days
+
+          body = {"q" => "find me"}
+          visitor.post("/search", body)
+
+          visitor.should contain "Find me</a>"
+          visitor.should contain "Other</a>"
+          visitor.should_not contain "But not me"
+          visitor.should contain "value=\"find me\""
+        end
+
+        it "shows a message for no matches" do
+          body = {"q" => "whatever since no posts"}
+          visitor.post("/search", body)
+
+          visitor.should contain "No posts found."
+        end
       end
     end
   end
