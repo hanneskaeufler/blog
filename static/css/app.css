@@ -9,6 +9,7 @@
 
 :root {
     --highlightColor: #6772e5;
+    --defaultBorderRadius: 4px;
 }
 
 body {
@@ -49,7 +50,7 @@ a:hover {
     lost-utility: clearfix;
     lost-center: 980px;
     background: white;
-    border-radius: 4px;
+    border-radius: var(--defaultBorderRadius);
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
 
@@ -207,11 +208,11 @@ a:hover {
     margin-bottom: 20px;
 }
 
-.post-editor input[type=text] {
+.post-editor input[type=text], .posts-archive input[type=text] {
     color: #6b7c93;
     border: 1px solid #ddd;
     padding: 10px 15px;
-    border-radius: 4px;
+    border-radius: var(--defaultBorderRadius);
 }
 
 .post-editor input[type=text] {
@@ -220,7 +221,7 @@ a:hover {
 
 .post-editor input[type=submit] {
     background: #fff;
-    border-radius: 4px;
+    border-radius: var(--defaultBorderRadius);
     border: 1px solid var(--highlightColor);
     color: var(--highlightColor);
     font-size: 1em;
@@ -237,10 +238,30 @@ a:hover {
     content: "💥"
 }
 
+.posts-archive input[type=text] {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.posts-archive button[type=submit] {
+    border-bottom-right-radius: var(--defaultBorderRadius);
+    border-color: var(--highlightColor);
+    border-top-right-radius: var(--defaultBorderRadius);
+    color: var(--highlightColor);
+    margin-left: -1px;
+    padding: 10px 15px;
+    margin-right: 10px;
+}
+
+.posts-archive button[type=submit]:hover {
+    color: white;
+    background: var(--highlightColor);
+}
+
 .flash-success {
     background-color: #d4edda;
-    border-top: 4px solid shade(#c3e6cb, 40%);
-    border-radius: 4px;
+    border-top: var(--defaultBorderRadius) solid shade(#c3e6cb, 40%);
+    border-radius: var(--defaultBorderRadius);
     color: #155724;
     width: 950px;
     margin: 10px auto;
