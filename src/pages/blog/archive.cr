@@ -19,14 +19,11 @@ class Blog::ArchivePage < MainLayout
   end
 
   private def render_search_form(current_search_term)
-    raw <<-HTML
-    <form method="POST" action="/search">
-      <input type="text" name="q" placeholder="Search here ..." value="#{current_search_term}">
-      <button type="submit">Search</button>
-      <a href="#{Blog::Archive.path}">Reset</a>
-      <input type="hidden" name="_csrf" value="">
-    </form>
-    HTML
+    form_for Blog::Search do
+      input type: "text", value: current_search_term, name: "q", placeholder: "Search here ..."
+      raw "<button type=\"submit\">Search</button>"
+      link "Reset", to: Blog::Archive
+    end
 
     if @posts.empty?
       div do

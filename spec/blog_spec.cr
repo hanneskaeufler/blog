@@ -208,7 +208,7 @@ describe Blog do
           visitor.should contain "Find me</a>"
           visitor.should contain "Other</a>"
           visitor.should_not contain "But not me"
-          visitor.should contain "value=\"find me\">"
+          visitor.should contain "value=\"find me\""
         end
 
         it "shows a message for no matches" do
