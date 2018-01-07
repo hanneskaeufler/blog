@@ -24,15 +24,15 @@ class Blog::ArchivePage < MainLayout
       raw "<button type=\"submit\">Search</button>"
       link "Reset", to: Blog::Archive
     end
-
-    if @posts.empty?
-      div do
-        para "No posts found."
-      end
-    end
   end
 
   private def render_post_titles(posts_by_year)
+    if posts_by_year.empty?
+      return div do
+        para "No posts found."
+      end
+    end
+
     ul do
       posts_by_year.each do |year, posts|
         h3 year
