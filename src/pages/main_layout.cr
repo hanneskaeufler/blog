@@ -15,6 +15,7 @@ abstract class MainLayout
       head do
         utf8_charset
         csrf_meta_tags
+        responsive_meta_tag
         css_link(asset("images/favicon.png"), rel: "icon")
         title page_title
         css_link asset("css/app.css")
