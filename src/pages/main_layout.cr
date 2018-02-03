@@ -6,7 +6,7 @@ abstract class MainLayout
   def inner_head
   end
 
-  abstract def inner
+  abstract def content
 
   def render
     html_doctype
@@ -25,7 +25,7 @@ abstract class MainLayout
 
       body do
         render_flash
-        inner
+        content
       end
     end
   end

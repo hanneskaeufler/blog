@@ -8,7 +8,7 @@ class Blog::Posts::ShowPage < MainLayout
     " - #{@post.title}"
   end
 
-  def inner
+  def content
     render_small_header
     render_post(@post)
     render_footer
