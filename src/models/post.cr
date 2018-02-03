@@ -1,8 +1,8 @@
 class Post < BaseModel
   table :posts do
-    field title : String
-    field content : String
-    field published_at : Time
-    field slug : String
+    column title : String
+    column content : String
+    column published_at : Time
+    column slug : String
   end
 end
