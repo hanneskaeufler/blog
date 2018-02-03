@@ -8,3 +8,4 @@ server
 Gemfile.lock
 /junit/
 *.dwarf
+/bin/lucky/
