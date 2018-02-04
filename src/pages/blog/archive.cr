@@ -9,7 +9,7 @@ class Blog::ArchivePage < MainLayout
     section class: "posts-archive" do
       h2 "Archive"
       render_search_form(@current_search_term)
-      render_post_titles(posts_by_year(@posts))
+      render_post_titles(posts_by_year(@posts.map { |post| PublishedPost.new(post) }))
     end
     render_footer
   end
