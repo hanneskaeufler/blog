@@ -1,7 +1,7 @@
 class Blog::NotFoundPage < MainLayout
   include Blog::Components
 
-  def inner
+  def content
     section class: "posts-container" do
       h1 "Not Found"
       para do

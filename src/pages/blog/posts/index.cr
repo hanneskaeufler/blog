@@ -13,7 +13,7 @@ class Blog::Posts::IndexPage < MainLayout
   needs posts_count : Int32
   needs current_page : Int32
 
-  def inner
+  def content
     render_header
     render_posts(@posts)
     render_footer

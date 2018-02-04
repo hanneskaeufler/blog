@@ -1,11 +1,13 @@
 Lucky::Server.configure do
   if Lucky::Env.production?
     settings.secret_key_base = secret_key_from_env
+    settings.host = "0.0.0.0"
+    settings.port = ENV["PORT"].to_i
   else
     settings.secret_key_base = "R8fU9/vlqNwvGDBxq2+b1gckVcKoV0/XH26StJY/SXk="
+    settings.host = Lucky::ServerSettings.host
+    settings.port = Lucky::ServerSettings.port
   end
-  settings.host = "0.0.0.0"
-  settings.port = (ENV["PORT"]? || 8080).to_i
 end
 
 Lucky::RouteHelper.configure do

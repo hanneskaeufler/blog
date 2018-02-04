@@ -9,6 +9,7 @@ LuckyRecord::Repo.configure do
       database: database
     )
   end
+  settings.lazy_load_enabled = Lucky::Env.production?
 end
 
 LuckyMigrator::Runner.configure do

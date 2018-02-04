@@ -10,7 +10,7 @@ class Blog::Posts::EditPage < MainLayout
     raw "<script>document.addEventListener('DOMContentLoaded', function() { var simplemde = new SimpleMDE(); }, false);</script>"
   end
 
-  def inner
+  def content
     render_small_header
     section class: "post-editor" do
       render_post_form(@post_form)

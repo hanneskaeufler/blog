@@ -4,7 +4,7 @@ class Blog::ArchivePage < MainLayout
   needs posts : Array(Post)
   needs current_search_term : String
 
-  def inner
+  def content
     render_small_header
     section class: "posts-archive" do
       h2 "Archive"

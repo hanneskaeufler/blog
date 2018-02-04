@@ -1,6 +1,5 @@
 class PostForm < Post::BaseForm
-  allow title
-  allow content
+  allow title, content
 
   needs current_title : String, on: :update
 
@@ -17,7 +16,7 @@ class PostForm < Post::BaseForm
   end
 
   private def validate_uniqueness_of_slug
-    existing_posts_with_slug = PostQuery.new.slug(slug.value).count > 0
+    existing_posts_with_slug = PostQuery.new.slug(slug.value || "").count > 0
 
     if existing_posts_with_slug
       title.add_error "already exists"
