@@ -80,11 +80,19 @@ a:hover {
     margin-bottom: 80px;
 }
 
+.posts-container article blockquote {
+    position: relative;
+    padding-left: 1em;
+}
+
 .posts-container article blockquote:before {
+    color: var(--highlightColor);
     content: "\201C";
     font-size: 4em;
+    left: -40px;
     opacity: .5;
-    color: var(--highlightColor);
+    position: absolute;
+    top: -40px;
 }
 
 .posts-container article > p > img {
