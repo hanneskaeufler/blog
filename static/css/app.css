@@ -87,6 +87,11 @@ a:hover {
     color: var(--highlightColor);
 }
 
+.posts-container article > p > img {
+    display: block;
+    margin: 0 auto;
+}
+
 .posts-archive ul {
     list-style-type: none;
     padding: 0;
