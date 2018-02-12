@@ -32,6 +32,6 @@ class PostContentRenderer
   end
 
   private def downgrade_headings(content : String)
-    content.gsub(/\n#/, "##")
+    content.gsub(/\n#/, "\n##")
   end
 end
