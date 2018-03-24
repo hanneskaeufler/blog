@@ -10,7 +10,7 @@ class Post < BaseModel
   end
 
   def word_count
-    content.split(" ").reject { |word| word.empty? }.size
+    content.split(" ").reject(&.empty?).size
   end
 
   def reading_time
