@@ -7,6 +7,10 @@ class Errors::Show < Lucky::ErrorAction
     end
   end
 
+  def handle_error(error : LuckyRecord::RecordNotFoundError)
+    render Blog::NotFoundPage
+  end
+
   def handle_error(error : Exception)
     head status: 500
   end
