@@ -5,6 +5,11 @@ describe Blog::Posts::ShowPage do
     post = build_post("Boring content", Time.new(2012, 4, 30))
     rendered(post).should contain("Published on April 30, 2012")
   end
+
+  it "shows a word count" do
+    post = build_post("this post has exactly six words")
+    rendered(post).should contain(" · 6 words")
+  end
 end
 
 private def rendered(post)
