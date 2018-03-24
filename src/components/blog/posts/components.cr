@@ -25,7 +25,7 @@ module Blog::Posts::Components
     meta = [
       "Published on #{post_date(post)}",
       "#{post.word_count} words",
-      "#{post.reading_time} reading time"
+      "#{post.reading_time} reading time",
     ]
     span meta.join(" · "), class: "post-title-meta"
   end

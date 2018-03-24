@@ -1,5 +1,4 @@
 class Post < BaseModel
-
   private READING_SPEED = 200
 
   table :posts do
