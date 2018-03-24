@@ -22,7 +22,7 @@ module Blog::Posts::Components
   end
 
   private def post_meta(post : Post)
-    span "Published on #{post_date(post)}", class: "post-title-meta"
+    span "Published on #{post_date(post)} · #{post.word_count} words", class: "post-title-meta"
   end
 
   private def post_date(post : Post)
