@@ -5,4 +5,8 @@ class Post < BaseModel
     column published_at : Time
     column slug : String
   end
+
+  def word_count
+    content.split(" ").reject { |word| word.empty? }.size
+  end
 end
