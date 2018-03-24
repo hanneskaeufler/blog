@@ -22,7 +22,12 @@ module Blog::Posts::Components
   end
 
   private def post_meta(post : Post)
-    span "Published on #{post_date(post)} · #{post.word_count} words", class: "post-title-meta"
+    meta = [
+      "Published on #{post_date(post)}",
+      "#{post.word_count} words",
+      "#{post.reading_time} reading time"
+    ]
+    span meta.join(" · "), class: "post-title-meta"
   end
 
   private def post_date(post : Post)

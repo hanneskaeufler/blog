@@ -10,6 +10,11 @@ describe Blog::Posts::ShowPage do
     post = build_post("this post has exactly six words")
     rendered(post).should contain(" · 6 words")
   end
+
+  it "shows a estimated reading time" do
+    post = build_post("this post has exactly six words")
+    rendered(post).should contain(" · less than a minute reading time")
+  end
 end
 
 private def rendered(post)

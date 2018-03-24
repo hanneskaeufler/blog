@@ -1,4 +1,7 @@
 class Post < BaseModel
+
+  private READING_SPEED = 200
+
   table :posts do
     column title : String
     column content : String
@@ -8,5 +11,12 @@ class Post < BaseModel
 
   def word_count
     content.split(" ").reject { |word| word.empty? }.size
+  end
+
+  def reading_time
+    return "less than a minute" if word_count < 200
+    minutes = word_count / READING_SPEED
+
+    "about #{minutes} min"
   end
 end
