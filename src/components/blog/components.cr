@@ -1,6 +1,13 @@
 module Blog::Components
   TAGLINE = "racing &middot; software &middot; open-source"
 
+  SOCIALS = {
+    :github   => "https://github.com/hanneskaeufler",
+    :facebook => "https://facebook.com/hanneskaeufler",
+    :twitter  => "https://twitter.com/hanneskaeufler",
+    :xing     => "https://www.xing.com/profile/Hannes_Kaeufler",
+  }
+
   private def render_tagline
     div class: "tag-line" do
       h1 do
@@ -30,6 +37,17 @@ module Blog::Components
         text "Gotenstraße 17"
         br
         text "89610 Oberdischingen"
+        br
+        br
+        ul do
+          SOCIALS.each do |name, href|
+            li do
+              link to: href do
+                img src: dynamic_asset("logos/#{name}.svg")
+              end
+            end
+          end
+        end
       end
       div do
         h4 "From Germany with ❤️"
@@ -42,6 +60,9 @@ module Blog::Components
         text " and built with the awesome "
         link "Lucky Framework", to: "https://luckyframework.org"
         text "."
+        br
+        br
+        raw "&copy #{Time.now.year}"
       end
     end
   end

@@ -203,6 +203,23 @@ a:hover {
     color: #32325d;
 }
 
+.blog-footer ul {
+    list-style-type: none;
+    lost-utility: clearfix;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-footer li {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.blog-footer a img {
+    width: 15px; height: 15px;
+    opacity: 0.6;
+}
+
 .blog-footer section {
     lost-utility: clearfix;
     lost-center: 980px;

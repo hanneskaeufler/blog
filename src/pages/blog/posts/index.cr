@@ -2,13 +2,6 @@ class Blog::Posts::IndexPage < MainLayout
   include Blog::Components
   include Blog::Posts::Components
 
-  SOCIALS = {
-    :github   => "https://github.com/hanneskaeufler",
-    :facebook => "https://facebook.com/hanneskaeufler",
-    :twitter  => "https://twitter.com/hanneskaeufler",
-    :xing     => "https://www.xing.com/profile/Hannes_Kaeufler",
-  }
-
   needs posts : Array(Post)
   needs posts_count : Int32
   needs current_page : Int32
