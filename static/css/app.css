@@ -11,6 +11,7 @@
     --highlightColor: #6772e5;
     --defaultBorderRadius: 4px;
     --accentColor: #24b47e;
+    --textColor: #6b7c93;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
     font-weight: 300;
     line-height: 1.5;
     font-size: 1.5em;
-    color: #6b7c93;
+    color: var(--textColor);
 }
 
 a:link, a:visited {
@@ -127,9 +128,8 @@ a:hover {
 }
 
 .post-title-meta {
-    color: #6b7c93;
+    color: lighten(var(--textColor), 0.4);
     font-size: 0.8em;
-    opacity: .6;
 }
 
 .intro ul {
@@ -240,7 +240,7 @@ a:hover {
 }
 
 .post-editor input[type=text], .posts-archive input[type=text] {
-    color: #6b7c93;
+    color: var(--textColor);
     border: 1px solid #ddd;
     padding: 10px 15px;
     border-radius: var(--defaultBorderRadius);
