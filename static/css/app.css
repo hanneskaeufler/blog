@@ -8,8 +8,11 @@
 /* @import "components/**.pcss"; */
 
 :root {
-    --highlightColor: #6772e5;
+    --accentColor: #24b47e;
     --defaultBorderRadius: 4px;
+    --gridWidth: 980px;
+    --highlightColor: #6772e5;
+    --textColor: #6b7c93;
 }
 
 body {
@@ -17,7 +20,7 @@ body {
     font-weight: 300;
     line-height: 1.5;
     font-size: 1.5em;
-    color: #6b7c93;
+    color: var(--textColor);
 }
 
 a:link, a:visited {
@@ -39,7 +42,7 @@ a:hover {
 
 .blog-title-small section {
     lost-utility: clearfix;
-    lost-center: 980px;
+    lost-center: var(--gridWidth);
 }
 
 .blog-title-small section > div {
@@ -48,7 +51,7 @@ a:hover {
 
 .tag-line {
     lost-utility: clearfix;
-    lost-center: 980px;
+    lost-center: var(--gridWidth);
     background: white;
     border-radius: var(--defaultBorderRadius);
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
@@ -73,31 +76,31 @@ a:hover {
 
 .posts-container, .posts-archive {
     lost-utility: clearfix;
-    lost-center: 980px;
+    lost-center: var(--gridWidth);
 }
 
 .posts-container article {
     margin-bottom: 80px;
-}
 
-.posts-container article blockquote {
-    position: relative;
-    padding-left: 1em;
-}
+    blockquote {
+        border-left: 4px solid var(--accentColor);
+        font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        margin: 0;
+        padding-left: 1em;
 
-.posts-container article blockquote:before {
-    color: var(--highlightColor);
-    content: "\201C";
-    font-size: 4em;
-    left: -40px;
-    opacity: .5;
-    position: absolute;
-    top: -40px;
-}
+        &:before {
+            content: "\201C";
+        }
 
-.posts-container article > p > img {
-    display: block;
-    margin: 0 auto;
+        &:after {
+            content: "\201D";
+        }
+    }
+
+    > p > img {
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 .posts-archive ul {
@@ -126,9 +129,8 @@ a:hover {
 }
 
 .post-title-meta {
-    color: #6b7c93;
+    color: lighten(var(--textColor), 0.4);
     font-size: 0.8em;
-    opacity: .6;
 }
 
 .intro ul {
@@ -222,7 +224,7 @@ a:hover {
 
 .blog-footer section {
     lost-utility: clearfix;
-    lost-center: 980px;
+    lost-center: var(--gridWidth);
 }
 
 .blog-footer div {
@@ -231,7 +233,7 @@ a:hover {
 
 .post-editor {
     lost-utility: clearfix;
-    lost-center: 980px;
+    lost-center: var(--gridWidth);
 }
 
 .post-editor .form-row {
@@ -239,7 +241,7 @@ a:hover {
 }
 
 .post-editor input[type=text], .posts-archive input[type=text] {
-    color: #6b7c93;
+    color: var(--textColor);
     border: 1px solid #ddd;
     padding: 10px 15px;
     border-radius: var(--defaultBorderRadius);
