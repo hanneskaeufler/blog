@@ -43,7 +43,7 @@ module Blog::Components
           SOCIALS.each do |name, href|
             li do
               link to: href do
-                img src: dynamic_asset("logos/#{name}.svg")
+                img src: dynamic_asset("logos/#{name}.svg"), alt: "social logo #{name}"
               end
             end
           end
@@ -62,7 +62,7 @@ module Blog::Components
         text "."
         br
         br
-        raw "&copy #{Time.now.year}"
+        raw "&copy; #{Time.now.year}"
       end
     end
   end
