@@ -10,6 +10,7 @@
 :root {
     --highlightColor: #6772e5;
     --defaultBorderRadius: 4px;
+    --accentColor: #24b47e;
 }
 
 body {
@@ -78,26 +79,26 @@ a:hover {
 
 .posts-container article {
     margin-bottom: 80px;
-}
 
-.posts-container article blockquote {
-    position: relative;
-    padding-left: 1em;
-}
+    blockquote {
+        border-left: 4px solid var(--accentColor);
+        font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        margin: 0;
+        padding-left: 1em;
 
-.posts-container article blockquote:before {
-    color: var(--highlightColor);
-    content: "\201C";
-    font-size: 4em;
-    left: -40px;
-    opacity: .5;
-    position: absolute;
-    top: -40px;
-}
+        &:before {
+            content: "\201C";
+        }
 
-.posts-container article > p > img {
-    display: block;
-    margin: 0 auto;
+        &:after {
+            content: "\201D";
+        }
+    }
+
+    > p > img {
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 .posts-archive ul {
