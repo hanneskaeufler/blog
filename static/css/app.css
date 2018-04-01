@@ -8,9 +8,10 @@
 /* @import "components/**.pcss"; */
 
 :root {
-    --highlightColor: #6772e5;
-    --defaultBorderRadius: 4px;
     --accentColor: #24b47e;
+    --defaultBorderRadius: 4px;
+    --gridWidth: 980px;
+    --highlightColor: #6772e5;
     --textColor: #6b7c93;
 }
 
@@ -41,7 +42,7 @@ a:hover {
 
 .blog-title-small section {
     lost-utility: clearfix;
-    lost-center: 980px;
+    lost-center: var(--gridWidth);
 }
 
 .blog-title-small section > div {
@@ -50,7 +51,7 @@ a:hover {
 
 .tag-line {
     lost-utility: clearfix;
-    lost-center: 980px;
+    lost-center: var(--gridWidth);
     background: white;
     border-radius: var(--defaultBorderRadius);
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
@@ -75,7 +76,7 @@ a:hover {
 
 .posts-container, .posts-archive {
     lost-utility: clearfix;
-    lost-center: 980px;
+    lost-center: var(--gridWidth);
 }
 
 .posts-container article {
@@ -223,7 +224,7 @@ a:hover {
 
 .blog-footer section {
     lost-utility: clearfix;
-    lost-center: 980px;
+    lost-center: var(--gridWidth);
 }
 
 .blog-footer div {
@@ -232,7 +233,7 @@ a:hover {
 
 .post-editor {
     lost-utility: clearfix;
-    lost-center: 980px;
+    lost-center: var(--gridWidth);
 }
 
 .post-editor .form-row {
