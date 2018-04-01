@@ -33,9 +33,9 @@ class Blog::ArchivePage < MainLayout
       end
     end
 
-    ul do
-      posts_by_year.each do |year, posts|
-        h3 year
+    posts_by_year.each do |year, posts|
+      h3 year
+      ul do
         posts.each do |post|
           li do
             span post.published_at.to_s("%b %-d")

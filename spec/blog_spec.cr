@@ -191,6 +191,7 @@ describe Blog do
         visitor.visit("/archive")
 
         visitor.should contain "<h2>Archive</h2>"
+        visitor.should contain "<h3>#{Time.now.year}</h3>"
         visitor.should contain "A Post</a>"
         visitor.should contain "Another Post</a>"
         visitor.should_not contain "Unpublished"
