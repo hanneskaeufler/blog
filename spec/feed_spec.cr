@@ -34,7 +34,7 @@ describe Blog::Feed do
 
     context "more than five posts" do
       it "adds a next_url link" do
-        (PostQuery::PER_PAGE + 1).times { |i| insert_post title: i.to_s  }
+        (PostQuery::PER_PAGE + 1).times { |i| insert_post title: i.to_s }
 
         response = visitor.visit("/feed.json", headers)
 
