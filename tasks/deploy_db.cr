@@ -10,12 +10,15 @@ class DeployDb < LuckyCli::Task
   banner "Export database and prepare to mirror it to heroku"
 
   def call
-    read_line
-    # dump_db
-    # copy_db_to_dropbox
-    # open_dropbox_to_get_link
-    # link = wait_for_public_link
-    # puts "Okay, heroku pg:backups:restore '#{link}' DATABASE_URL"
+    dump_db
+    copy_db_to_dropbox
+    open_dropbox_to_get_link
+    link = wait_for_public_link
+    restore_db_from_dump(link)
+  end
+
+  private def restore_db_from_dump(link)
+    `heroku pg:backups:restore '#{link}' DATABASE_URL`
   end
 
   private def wait_for_public_link
@@ -24,7 +27,7 @@ class DeployDb < LuckyCli::Task
   end
 
   private def open_dropbox_to_get_link
-    # `open #{DROPBOX}`
+    `open #{DROPBOX}`
   end
 
   private def copy_db_to_dropbox
