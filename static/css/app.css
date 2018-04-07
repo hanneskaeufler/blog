@@ -278,15 +278,15 @@ a:hover {
 }
 
 .posts-archive input[type=text] {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 1em;
 }
 
 .posts-archive button[type=submit] {
     background: white;
-    border-bottom-right-radius: var(--defaultBorderRadius);
+    border-radius: var(--defaultBorderRadius);
     border-color: var(--highlightColor);
-    border-top-right-radius: var(--defaultBorderRadius);
     color: var(--highlightColor);
     margin-left: -1px;
     margin-right: 10px;
@@ -324,6 +324,17 @@ a:hover {
 
     .posts-container {
         padding-top: 50px;
+    }
+
+    .posts-archive input[type=text] {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        width: 75%;
+    }
+
+    .posts-archive button[type=submit] {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
     }
 }
 
