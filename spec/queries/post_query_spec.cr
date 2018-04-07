@@ -28,12 +28,6 @@ describe PostQuery do
       7.times { |i| insert_post title: i.to_s }
       PostQuery.new.latest(page: 2).results.size.should eq 2
     end
-
-    it "can be counted" do
-      PostQuery.new.latest.count.should eq 0
-      2.times { |i| insert_post title: i.to_s }
-      PostQuery.new.latest.count.should eq 2
-    end
   end
 
   describe "#published" do
