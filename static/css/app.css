@@ -339,15 +339,6 @@ a:hover {
 }
 
 @media (min-width: 992px) {
-    .intro li a:link {
-        color: white;
-        font-size: 0.8em;
-    }
-
-    .intro li img {
-        margin-right: 10px;
-    }
-
     .posts-container {
         padding-top: 100px;
     }
