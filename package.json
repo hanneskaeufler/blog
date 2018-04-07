@@ -23,6 +23,7 @@
   },
   "scripts": {
     "test": "backstop test",
+    "approve": "backstop approve",
     "heroku-postbuild": "bin/compile_assets build --production"
   }
 }
