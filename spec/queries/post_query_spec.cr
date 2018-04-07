@@ -20,12 +20,12 @@ describe PostQuery do
     end
 
     it "shows 5 posts at most" do
-      10.times { insert_post }
+      10.times { |i| insert_post title: i.to_s }
       PostQuery.new.latest.results.size.should eq 5
     end
 
     it "accepts a page param" do
-      7.times { insert_post }
+      7.times { |i| insert_post title: i.to_s }
       PostQuery.new.latest(page: 2).results.size.should eq 2
     end
   end
@@ -89,9 +89,9 @@ describe PostQuery do
     end
 
     it "only returns matching posts" do
-      insert_post content: "matcher", published_at: Time.now - 2.days
-      insert_post content: "a match this", published_at: Time.now - 1.days
-      insert_post published_at: Time.now - 1.days
+      insert_post title: "title 1", content: "matcher", published_at: Time.now - 2.days
+      insert_post title: "title 2", content: "a match this", published_at: Time.now - 1.days
+      insert_post title: "title 3", published_at: Time.now - 1.days
 
       posts = PostQuery.new.published_search("match").results
 
