@@ -12,7 +12,7 @@
     "glob": "^7.1.2",
     "jquery": "^3.2.1",
     "lost": "^8.2.0",
-    "normalize.css": "^7.0.0",
+    "normalize.css": "^8.0.0",
     "path-complete-extname": "^0.1.0",
     "postcss-brunch": "luckyframework/postcss-brunch",
     "postcss-cssnext": "^3.0.2",
