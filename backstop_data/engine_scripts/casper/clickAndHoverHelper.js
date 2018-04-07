@@ -20,6 +20,5 @@ module.exports = function(casper, scenario) {
     });
   }
 
-  // TODO: if postInteractionWait === integer then do ==> wait(postInteractionWait) || elsevvv
   waitFor(postInteractionWait);
 };
