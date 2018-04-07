@@ -131,22 +131,22 @@ a:hover {
 }
 
 .intro ul {
-    list-style-type: none;
+    align-items: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
+    list-style-type: none;
 }
 
 .intro li a:link {
-    color: white;
     background: rgba(0,0,0,.2);
+    border-radius: 20px;
+    color: transparent;
     display: inline-block;
+    font-size: 0;
     margin: 5px;
     padding: 6px 14px;
     text-decoration: none;
-    border-radius: 20px;
-    font-size: 0.8em;
 }
 
 .intro li a:hover {
@@ -160,7 +160,6 @@ a:hover {
 .intro li img {
     color: white;
     height: 15px;
-    margin-right: 10px;
     opacity: .2;
 }
 
@@ -215,8 +214,9 @@ a:hover {
 }
 
 .blog-footer a img {
-    width: 15px; height: 15px;
+    height: 15px;
     opacity: 0.6;
+    width: 15px;
 }
 
 .blog-footer section {
@@ -303,12 +303,30 @@ a:hover {
 }
 
 @media (min-width: 768px) {
+    .intro li a:link {
+        color: white;
+        font-size: 0.8em;
+    }
+
+    .intro li img {
+        margin-right: 10px;
+    }
+
     .posts-container {
         padding-top: 50px;
     }
 }
 
 @media (min-width: 992px) {
+    .intro li a:link {
+        color: white;
+        font-size: 0.8em;
+    }
+
+    .intro li img {
+        margin-right: 10px;
+    }
+
     .posts-container {
         padding-top: 100px;
     }
