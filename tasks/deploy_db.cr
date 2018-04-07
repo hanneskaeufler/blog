@@ -1,5 +1,4 @@
 require "lucky_cli"
-require "readline"
 
 class DeployDb < LuckyCli::Task
   PG_DUMP = "/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump"
