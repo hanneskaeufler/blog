@@ -73,6 +73,7 @@ a:hover {
 .posts-container, .posts-archive {
     lost-utility: clearfix;
     lost-center: var(--gridWidth);
+    padding: 0px 1em;
 }
 
 .posts-container article {
@@ -199,7 +200,7 @@ a:hover {
     border-top: 2px solid rgba(207,215,223,.25);
     font-size: .8em;
     margin-top: 100px;
-    padding-bottom: 20px;
+    padding: 0 1em 20px 1em;
 }
 
 .blog-footer a:hover {
