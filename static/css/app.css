@@ -31,10 +31,6 @@ a:hover {
     color: #32325d;
 }
 
-.blog-title {
-    height: 300px;
-}
-
 .blog-title-small {
     background: rgba(36,180,126,.4);
     padding: 10px;
@@ -301,4 +297,19 @@ a:hover {
     margin: 10px auto;
     padding: 10px 15px;
     text-align: center;
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+    .posts-container {
+        padding-top: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .posts-container {
+        padding-top: 100px;
+    }
 }
