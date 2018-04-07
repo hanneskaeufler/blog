@@ -130,12 +130,17 @@ a:hover {
     font-size: 0.8em;
 }
 
-.intro ul {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style-type: none;
+.intro {
+    padding: 0 1em;
+
+    ul {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+    }
 }
 
 .intro li a:link {
