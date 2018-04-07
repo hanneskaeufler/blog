@@ -95,9 +95,9 @@ describe PostQuery do
     end
 
     it "only returns matching posts" do
-      insert_post content: "matcher", published_at: Time.now - 2.days
-      insert_post content: "a match this", published_at: Time.now - 1.days
-      insert_post published_at: Time.now - 1.days
+      insert_post title: "title 1", content: "matcher", published_at: Time.now - 2.days
+      insert_post title: "title 2", content: "a match this", published_at: Time.now - 1.days
+      insert_post title: "title 3", published_at: Time.now - 1.days
 
       posts = PostQuery.new.published_search("match").results
 

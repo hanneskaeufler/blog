@@ -34,7 +34,7 @@ describe Blog::Feed do
 
     context "more than five posts" do
       it "adds a next_url link" do
-        (PostQuery::PER_PAGE + 1).times { insert_post }
+        (PostQuery::PER_PAGE + 1).times { |i| insert_post title: i.to_s  }
 
         response = visitor.visit("/feed.json", headers)
 
@@ -42,7 +42,7 @@ describe Blog::Feed do
       end
 
       it "does not show a next_url when on the last page" do
-        (PostQuery::PER_PAGE + 1).times { insert_post }
+        (PostQuery::PER_PAGE + 1).times { |i| insert_post title: i.to_s }
 
         response = visitor.visit("/feed.json?page=2", headers)
 
