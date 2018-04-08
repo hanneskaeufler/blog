@@ -5,7 +5,6 @@
     "babel-brunch": "^6.1.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.0",
-    "backstopjs": "^3.1.21",
     "browser-sync": "^2.18.13",
     "brunch": "^2.10.10",
     "fingerprinter-brunch": "^0.0.2",
@@ -25,5 +24,8 @@
     "test": "backstop test",
     "approve": "backstop approve",
     "heroku-postbuild": "bin/compile_assets build --production"
+  },
+  "devDependencies": {
+    "backstopjs": "^3.1.21"
   }
 }
