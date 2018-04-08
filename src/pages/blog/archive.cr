@@ -1,5 +1,6 @@
 class Blog::ArchivePage < MainLayout
   include Blog::Components
+  include Blog::Archive::Components
 
   needs posts : Array(Post)
   needs current_search_term : String
@@ -8,6 +9,7 @@ class Blog::ArchivePage < MainLayout
     render_small_header
     section class: "posts-archive" do
       h2 "Archive"
+      render_activity(@posts) if @current_search_term.empty?
       render_search_form(@current_search_term)
       render_post_titles(posts_by_year(@posts))
     end

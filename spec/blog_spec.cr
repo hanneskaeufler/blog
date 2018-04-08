@@ -177,6 +177,8 @@ describe Blog do
 
   describe "/archive" do
     it "renders a search form" do
+      insert_post
+
       visitor.visit("/archive")
 
       visitor.should contain "action=\"/search\""
