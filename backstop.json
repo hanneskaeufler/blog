@@ -22,57 +22,15 @@
   "scenarios": [
     {
       "label": "Blog Index",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://localhost:5000",
-      "referenceUrl": "",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
+      "url": "http://localhost:5000"
     },
     {
       "label": "Blog Sample Post",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://localhost:5000/posts/sample-post",
-      "referenceUrl": "",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
+      "url": "http://localhost:5000/posts/sample-post"
     },
     {
       "label": "Blog Archive",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://localhost:5000/archive",
-      "referenceUrl": "",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
+      "url": "http://localhost:5000/archive"
     }
   ],
   "paths": {
