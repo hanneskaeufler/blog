@@ -151,7 +151,7 @@ a:hover {
         position: relative;
 
         &.start_of_year {
-            border-left: 2px solid var(--highlightColor);
+            border-left: 2px solid var(--textColor);
             padding-left: 0.2em;
         }
 
