@@ -48,7 +48,7 @@ jobs:
       - run:
           name: "ls"
           command: ls coverage
-      - store_test_results:
+      - store_artifacts:
           path: ./coverage
       - store_test_results:
           path: /root/reports
