@@ -47,6 +47,10 @@ jobs:
           command: yarn danger ci
           when: always
       - run:
+          name: "Run webserver"
+          command: ./app
+          background: true
+      - run:
           name: "Run BackstopJS"
           command: yarn test
   deploy:
