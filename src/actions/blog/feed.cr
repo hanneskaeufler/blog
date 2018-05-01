@@ -1,3 +1,5 @@
+require "../api_action"
+
 class Blog::Feed < ApiAction
   param page : Int32 = 1
 
