@@ -45,8 +45,11 @@ jobs:
       - run:
           name: "Generate coverage report"
           command: bin/crystal-coverage spec/blog_spec.cr
+      - run:
+          name: "ls"
+          command: ls
       - store_test_results:
-          path: /root/coverage
+          path: ./coverage
       - store_test_results:
           path: /root/reports
           when: always
