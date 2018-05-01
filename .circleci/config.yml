@@ -45,6 +45,9 @@ jobs:
           path: /root/reports
           when: always
       - run:
+          name: "Force existance of coverage folder"
+          command: mkdir coverage
+      - run:
           name: "Generate coverage report"
           command: bin/crystal-coverage spec/blog_spec.cr
       - store_test_results:
