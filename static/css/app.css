@@ -126,6 +126,10 @@ a:hover {
     padding-left: 10px;
 }
 
+.post-title a:before {
+    content: '#';
+}
+
 .post-title:hover a:link {
     opacity: 1;
 }
