@@ -45,6 +45,11 @@ jobs:
           path: /root/reports
           when: always
       - run:
+          name: "Generate coverage report"
+          command: crystal-coverage spec/blog_spec.cr
+      - store_test_results:
+          path: /root/coverage
+      - run:
           name: "Run danger"
           command: npm run danger-ci
           when: always
