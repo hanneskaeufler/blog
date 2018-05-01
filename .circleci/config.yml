@@ -46,6 +46,9 @@ jobs:
           name: "Run danger"
           command: yarn danger ci
           when: always
+      - run:
+          name: "Run BackstopJS"
+          command: yarn test
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.24.1
