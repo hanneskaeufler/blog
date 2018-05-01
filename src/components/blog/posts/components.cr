@@ -9,7 +9,7 @@ module Blog::Posts::Components
       header class: "post-title" do
         h2 do
           text post.title
-          link "#", to: Blog::Posts::Show.with(post.slug)
+          link "", to: Blog::Posts::Show.with(post.slug)
         end
         post_meta(post)
       end
