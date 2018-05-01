@@ -50,8 +50,11 @@ jobs:
       - run:
           name: "Generate coverage report"
           command: bin/crystal-coverage spec/blog_spec.cr
+      - run:
+          name: "ls"
+          command: ls
       - store_test_results:
-          path: /root/coverage
+          path: ./coverage
       - run:
           name: "Run danger"
           command: npm run danger-ci
