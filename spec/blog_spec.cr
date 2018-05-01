@@ -16,8 +16,8 @@ describe Blog do
 
       visitor.visit("/")
 
-      visitor.should contain "Sample post<a href=\"/posts/sample-post\">#</a>"
-      visitor.should contain "Lorem ipsum<a href=\"/posts/lorem-ipsum\">#</a>"
+      visitor.should contain "Sample post<a href=\"/posts/sample-post\"></a>"
+      visitor.should contain "Lorem ipsum<a href=\"/posts/lorem-ipsum\"></a>"
     end
 
     it "shows the second page of posts" do
