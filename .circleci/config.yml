@@ -47,7 +47,7 @@ jobs:
           command: bin/crystal-coverage spec/blog_spec.cr
       - run:
           name: "ls"
-          command: ls
+          command: ls coverage
       - store_test_results:
           path: ./coverage
       - store_test_results:
