@@ -25,11 +25,22 @@
     "approve": "backstop approve",
     "heroku-postbuild": "bin/compile_assets build --production"
   },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "indentation": 4,
+        "property-no-unknown": [true, {
+            "ignoreProperties": ["/^lost-/"]
+        }]
+    }
+  },
   "devDependencies": {
     "backstopjs": "^3.2.15",
     "danger": "^3.6.4",
     "danger-plugin-fixme": "^1.0.0",
     "danger-plugin-mentor": "^0.6.0",
-    "danger-plugin-yarn": "^1.3.0"
+    "danger-plugin-yarn": "^1.3.0",
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0"
   }
 }

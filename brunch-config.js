@@ -28,10 +28,11 @@ exports.plugins = {
   },
   postcss: {
     processors: [
+      require("stylelint"),
       require("precss"),
       require("lost"),
       require("postcss-cssnext")(),
-      require("postcss-sass-color-functions")
+      require("postcss-sass-color-functions"),
     ]
   }
 }
