@@ -26,6 +26,6 @@
     "heroku-postbuild": "bin/compile_assets build --production"
   },
   "devDependencies": {
-    "backstopjs": "^3.1.21"
+    "backstopjs": "^3.2.15"
   }
 }
