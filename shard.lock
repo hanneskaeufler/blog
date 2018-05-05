@@ -1,8 +1,12 @@
 version: 1.0
 shards:
+  ameba:
+    github: veelenga/ameba
+    version: 0.5.1
+
   blank:
     github: kostya/blank
-    commit: 9106c23080fb08f271dcd00d4de75fd6481a1de6
+    version: 0.1.0
 
   db:
     github: crystal-lang/crystal-db

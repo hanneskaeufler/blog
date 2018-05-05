@@ -21,17 +21,17 @@ class Blog::Posts::IndexPage < MainLayout
   private def render_posts(posts : Array(Post))
     section class: "posts-container" do
       @posts.each { |post| single_post(post) }
-      link(to: Blog::Posts::Index.path(previous_page)) { raw "&laquo; Previous page" } if has_previous_page?
-      raw " &middot; " if has_previous_page? && has_next_page?
-      link(to: Blog::Posts::Index.path(next_page)) { raw "Next page &raquo;" } if has_next_page?
+      link(to: Blog::Posts::Index.path(previous_page)) { raw "&laquo; Previous page" } if previous_page_exists?
+      raw " &middot; " if previous_page_exists? && next_page_exists?
+      link(to: Blog::Posts::Index.path(next_page)) { raw "Next page &raquo;" } if next_page_exists?
     end
   end
 
-  private def has_previous_page?
+  private def previous_page_exists?
     @current_page > 1
   end
 
-  private def has_next_page?
+  private def next_page_exists?
     @current_page * PostQuery::PER_PAGE < @posts_count
   end
 

@@ -24,6 +24,9 @@ jobs:
           name: "Check formatting"
           command: crystal tool format src spec --check
       - run:
+          name: "Static analysis"
+          command: ./bin/ameba
+      - run:
           name: "Migrate database"
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
