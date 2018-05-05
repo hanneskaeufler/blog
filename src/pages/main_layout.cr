@@ -21,7 +21,7 @@ abstract class MainLayout
         css_link asset("css/app.css")
         js_link asset("js/app.js")
         inner_head
-        google_analytics
+        google_analytics if Lucky::Env.production?
       end
 
       body do
