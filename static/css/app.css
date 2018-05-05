@@ -101,7 +101,18 @@ a:hover {
     > p > img {
         display: block;
         margin: 0 auto;
+        max-height: 500px;
         max-width: 100%;
+    }
+
+    .image-container-two {
+        text-align: center;
+
+        img {
+            max-width: 50%;
+            display: inline;
+            max-height: 500px;
+        }
     }
 }
 
