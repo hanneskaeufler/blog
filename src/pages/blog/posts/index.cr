@@ -15,6 +15,7 @@ class Blog::Posts::IndexPage < MainLayout
   private def render_header
     header class: "blog-title" do
       intro
+      navigation
     end
   end
 
@@ -56,6 +57,23 @@ class Blog::Posts::IndexPage < MainLayout
         end
       end
       render_tagline
+    end
+  end
+
+  private def navigation
+    nav do
+      ul do
+        li do
+          link to: "#" do
+            text "Home"
+          end
+        end
+        li do
+          link to: "#" do
+            text "Archive"
+          end
+        end
+      end
     end
   end
 end

@@ -53,7 +53,8 @@ a:hover {
     lost-utility: clearfix;
     lost-center: var(--gridWidth);
     background: white;
-    border-radius: var(--defaultBorderRadius);
+    border-top-left-radius: var(--defaultBorderRadius);
+    border-top-right-radius: var(--defaultBorderRadius);
     box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 }
 
@@ -188,30 +189,61 @@ a:hover {
     opacity: .2;
 }
 
-.blog-title:after {
-    opacity: .4;
-    background: #ddd;
-    content: '';
-    height: 2000px;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: -1800px;
-    transform: skew(0,-12deg);
-    z-index: -1;
-}
+.blog-title {
+    nav {
+        lost-center: var(--gridWidth);
+        border-top: 2px solid grey;
+        background: white;
+        border-bottom-left-radius: var(--defaultBorderRadius);
+        border-bottom-right-radius: var(--defaultBorderRadius);
+        box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
 
-.blog-title:before {
-    opacity: .4;
-    background: #24b47e;
-    content: '';
-    height: 2000px;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: -1800px;
-    transform: skew(0,6deg);
-    z-index: -1;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            padding: 0;
+            display: inline-block;
+        }
+
+        a:link {
+            padding: 15px;
+            display: inline-block;
+        }
+
+        a:hover {
+            background: grey;
+        }
+    }
+
+    &:after {
+        opacity: .4;
+        background: #ddd;
+        content: '';
+        height: 2000px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: -1800px;
+        transform: skew(0,-12deg);
+        z-index: -1;
+    }
+
+    &:before {
+        opacity: .4;
+        background: #24b47e;
+        content: '';
+        height: 2000px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: -1800px;
+        transform: skew(0,6deg);
+        z-index: -1;
+    }
 }
 
 .blog-footer {
