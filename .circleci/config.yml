@@ -40,10 +40,6 @@ jobs:
           path: /root/reports
           when: always
       - run:
-          name: "Install rubygems"
-          command: bundle
-          when: always
-      - run:
           name: "Run danger"
           command: yarn danger ci
           when: always
