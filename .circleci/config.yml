@@ -45,7 +45,7 @@ jobs:
           when: always
       - run:
           name: "Run danger"
-          command: bundle exec danger
+          command: yarn danger ci
           when: always
   deploy:
     docker:
