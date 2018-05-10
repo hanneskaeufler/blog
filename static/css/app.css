@@ -169,7 +169,7 @@ a:hover {
     color: #32325d;
 }
 
-.post-title a:before {
+.post-title a::before {
     content: '#';
 }
 
