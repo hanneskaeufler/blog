@@ -228,6 +228,11 @@ a:hover {
     font-size: 0.8em;
     margin-top: 100px;
     padding: 0 1em 20px 1em;
+
+    address {
+        font-style: normal;
+        margin-bottom: 1em;
+    }
 }
 
 .blog-footer ul {

@@ -32,13 +32,13 @@ module Blog::Components
     section do
       div do
         h4 "Imprint"
-        text "Dipl.-Ing. Hannes Käufler"
-        br
-        text "Gotenstraße 17"
-        br
-        text "89610 Oberdischingen"
-        br
-        br
+        address do
+          text "Dipl.-Ing. Hannes Käufler"
+          br
+          text "Gotenstraße 17"
+          br
+          text "89610 Oberdischingen"
+        end
         ul do
           SOCIALS.each do |name, href|
             li do
@@ -51,17 +51,17 @@ module Blog::Components
       end
       div do
         h4 "From Germany with ❤️"
-        text "This blog is open source, check it out on "
-        link "Github", to: "https://github.com/hanneskaeufler/blog"
-        text ". It is served by "
-        link "Heroku", to: "https://heroku.com"
-        text ", written in "
-        link "Crystal", to: "https://crystal-lang.org"
-        text " and built with the awesome "
-        link "Lucky Framework", to: "https://luckyframework.org"
-        text "."
-        br
-        br
+        para do
+          text "This blog is open source, check it out on "
+          link "Github", to: "https://github.com/hanneskaeufler/blog"
+          text ". It is served by "
+          link "Heroku", to: "https://heroku.com"
+          text ", written in "
+          link "Crystal", to: "https://crystal-lang.org"
+          text " and built with the awesome "
+          link "Lucky Framework", to: "https://luckyframework.org"
+          text "."
+        end
         raw "&copy; #{Time.now.year}"
       end
     end
