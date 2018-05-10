@@ -15,6 +15,9 @@ jobs:
           name: "Install node dependencies"
           command: yarn install
       - run:
+          name: "Stylelint"
+          command: "yarn lint"
+      - run:
           name: "Compiling assets"
           command: ./bin/compile_assets build
       - run:
