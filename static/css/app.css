@@ -1,8 +1,9 @@
 @import "normalize.css";
 
+@custom-media --mediumViewport (min-width: 768px);
+@custom-media --largeViewport (min-width: 992px);
+
 :root {
-    --breakpointMedium: 768px;
-    --breakpointLarge: 992px;
     --accentColor: #24b47e;
     --defaultBorderRadius: 4px;
     --gridWidth: 980px;
@@ -323,7 +324,7 @@ a:hover {
     text-align: center;
 }
 
-@media (min-width: var(--breakpointMedium)) {
+@media (--mediumViewport) {
     .intro li a:link {
         color: white;
         font-size: 0.8em;
@@ -349,7 +350,7 @@ a:hover {
     }
 }
 
-@media (min-width: var(--breakpointLarge)) {
+@media (--largeViewport) {
     .posts-container {
         padding-top: 100px;
     }
