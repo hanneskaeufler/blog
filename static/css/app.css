@@ -1,11 +1,7 @@
 @import "normalize.css";
 
-/* Uncomment these when you add files to variables, mixins or components */
-
-/* @import "variables/**.pcss"; */
-/* @import "mixins/**.pcss"; */
-/* For example, add `static/css/components/btn.pcss` and uncomment the next line */
-/* @import "components/**.pcss"; */
+@custom-media --mediumViewport (min-width: 768px);
+@custom-media --largeViewport (min-width: 992px);
 
 :root {
     --accentColor: #24b47e;
@@ -27,7 +23,8 @@ p strong {
     font-weight: bold;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     color: var(--highlightColor);
 }
 
@@ -36,17 +33,17 @@ a:hover {
 }
 
 .blog-title-small {
-    background: rgba(36,180,126,.4);
+    background: rgba(36, 180, 126, 0.4);
     padding: 10px;
-}
 
-.blog-title-small section {
-    lost-utility: clearfix;
-    lost-center: var(--gridWidth);
-}
+    section {
+        lost-utility: clearfix;
+        lost-center: var(--gridWidth);
 
-.blog-title-small section > div {
-    lost-column: 1/2;
+        > div {
+            lost-column: 1/2;
+        }
+    }
 }
 
 .tag-line {
@@ -54,7 +51,7 @@ a:hover {
     lost-center: var(--gridWidth);
     background: white;
     border-radius: var(--defaultBorderRadius);
-    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
 }
 
 .tag-line h1 {
@@ -66,18 +63,31 @@ a:hover {
     font-size: 0.3em;
     box-shadow: none;
     background: transparent;
+
+    h1 {
+        color: rgba(0, 0, 0, 0.2);
+        text-align: right;
+        margin: 0.5em;
+    }
 }
 
-.blog-title-small .tag-line h1 {
-    color: rgba(0,0,0,.2);
-    text-align: right;
-    margin: 0.5em;
-}
-
-.posts-container, .posts-archive {
+.posts-container,
+.posts-archive {
     lost-utility: clearfix;
     lost-center: var(--gridWidth);
-    padding: 0px 1em;
+    padding: 0 1em;
+}
+
+.intro li img {
+    color: white;
+    height: 15px;
+    opacity: 0.2;
+}
+
+.blog-footer a img {
+    height: 15px;
+    opacity: 0.6;
+    width: 15px;
 }
 
 .posts-container article {
@@ -89,11 +99,11 @@ a:hover {
         margin: 0;
         padding-left: 1em;
 
-        &:before {
+        &::before {
             content: "\201C";
         }
 
-        &:after {
+        &::after {
             content: "\201D";
         }
     }
@@ -126,18 +136,41 @@ a:hover {
     display: inline-block;
 }
 
+.post-title a:link {
+    opacity: 0.1;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.blog-footer a:hover {
+    color: #32325d;
+}
+
+.intro li a:link {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    color: transparent;
+    display: inline-block;
+    font-size: 0;
+    margin: 5px;
+    padding: 6px 14px;
+    text-decoration: none;
+}
+
+.intro li a:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.intro li a:visited {
+    color: white;
+}
+
 .post-title h2 {
     margin-bottom: 0.1em;
     color: #32325d;
 }
 
-.post-title a:link {
-    opacity: .1;
-    text-decoration: none;
-    padding-left: 10px;
-}
-
-.post-title a:before {
+.post-title a::before {
     content: '#';
 }
 
@@ -163,33 +196,8 @@ a:hover {
     }
 }
 
-.intro li a:link {
-    background: rgba(0,0,0,.2);
-    border-radius: 20px;
-    color: transparent;
-    display: inline-block;
-    font-size: 0;
-    margin: 5px;
-    padding: 6px 14px;
-    text-decoration: none;
-}
-
-.intro li a:hover {
-    background: rgba(0,0,0,.4);
-}
-
-.intro li a:visited {
-    color: white;
-}
-
-.intro li img {
-    color: white;
-    height: 15px;
-    opacity: .2;
-}
-
-.blog-title:after {
-    opacity: .4;
+.blog-title::after {
+    opacity: 0.4;
     background: #ddd;
     content: '';
     height: 2000px;
@@ -197,12 +205,12 @@ a:hover {
     position: absolute;
     right: 0;
     top: -1800px;
-    transform: skew(0,-12deg);
+    transform: skew(0, -12deg);
     z-index: -1;
 }
 
-.blog-title:before {
-    opacity: .4;
+.blog-title::before {
+    opacity: 0.4;
     background: #24b47e;
     content: '';
     height: 2000px;
@@ -210,20 +218,16 @@ a:hover {
     position: absolute;
     right: 0;
     top: -1800px;
-    transform: skew(0,6deg);
+    transform: skew(0, 6deg);
     z-index: -1;
 }
 
 .blog-footer {
     background: #f6f9fc;
-    border-top: 2px solid rgba(207,215,223,.25);
-    font-size: .8em;
+    border-top: 2px solid rgba(207, 215, 223, 0.25);
+    font-size: 0.8em;
     margin-top: 100px;
     padding: 0 1em 20px 1em;
-}
-
-.blog-footer a:hover {
-    color: #32325d;
 }
 
 .blog-footer ul {
@@ -238,58 +242,53 @@ a:hover {
     margin: 0 10px 0 0;
 }
 
-.blog-footer a img {
-    height: 15px;
-    opacity: 0.6;
-    width: 15px;
-}
-
 .blog-footer section {
     lost-utility: clearfix;
     lost-center: var(--gridWidth);
-}
 
-.blog-footer div {
-    lost-column: 1/2;
+    div {
+        lost-column: 1/2;
+    }
 }
 
 .post-editor {
     lost-utility: clearfix;
     lost-center: var(--gridWidth);
+
+    .form-row {
+        margin-bottom: 20px;
+    }
+
+    input[type=text] {
+        width: calc(100% - 30px - 2px);
+    }
+
+    input[type=submit] {
+        background: #fff;
+        border-radius: var(--defaultBorderRadius);
+        border: 1px solid var(--highlightColor);
+        color: var(--highlightColor);
+        font-size: 1em;
+        line-height: 1.5;
+        margin: 0;
+        vertical-align: middle;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .error::before {
+        content: "💥";
+    }
 }
 
-.post-editor .form-row {
-    margin-bottom: 20px;
-}
-
-.post-editor input[type=text], .posts-archive input[type=text] {
+.post-editor input[type=text],
+.posts-archive input[type=text] {
     color: var(--textColor);
     border: 1px solid #ddd;
     padding: 10px 15px;
     border-radius: var(--defaultBorderRadius);
-}
-
-.post-editor input[type=text] {
-    width: calc(100% - 30px - 2px);
-}
-
-.post-editor input[type=submit] {
-    background: #fff;
-    border-radius: var(--defaultBorderRadius);
-    border: 1px solid var(--highlightColor);
-    color: var(--highlightColor);
-    font-size: 1em;
-    line-height: 1.5;
-    margin: 0;
-    vertical-align: middle;
-}
-
-.post-editor .error {
-    color: red;
-}
-
-.post-editor .error:before {
-    content: "💥"
 }
 
 .posts-archive input[type=text] {
@@ -308,7 +307,8 @@ a:hover {
     padding: 10px 15px;
 }
 
-.posts-archive button[type=submit]:hover, .post-editor input[type=submit]:hover {
+.posts-archive button[type=submit]:hover,
+.post-editor input[type=submit]:hover {
     color: white;
     background: var(--highlightColor);
 }
@@ -324,10 +324,7 @@ a:hover {
     text-align: center;
 }
 
-@media (min-width: 576px) {
-}
-
-@media (min-width: 768px) {
+@media (--mediumViewport) {
     .intro li a:link {
         color: white;
         font-size: 0.8em;
@@ -353,7 +350,7 @@ a:hover {
     }
 }
 
-@media (min-width: 992px) {
+@media (--largeViewport) {
     .posts-container {
         padding-top: 100px;
     }
