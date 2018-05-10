@@ -12,6 +12,7 @@
     "jquery": "^3.2.1",
     "lost": "^8.2.0",
     "normalize.css": "^8.0.0",
+    "npm": "^6.0.1",
     "path-complete-extname": "^0.1.0",
     "postcss-brunch": "luckyframework/postcss-brunch",
     "postcss-cssnext": "^3.0.2",
@@ -28,10 +29,15 @@
   "stylelint": {
     "extends": "stylelint-config-standard",
     "rules": {
-        "indentation": 4,
-        "property-no-unknown": [true, {
-            "ignoreProperties": ["/^lost-/"]
-        }]
+      "indentation": 4,
+      "property-no-unknown": [
+        true,
+        {
+          "ignoreProperties": [
+            "/^lost-/"
+          ]
+        }
+      ]
     }
   },
   "devDependencies": {
