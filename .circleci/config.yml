@@ -48,7 +48,7 @@ jobs:
           when: always
       - run:
           name: "Run webserver"
-          command: ./app
+          command: crystal --release ./src/app.cr
           background: true
       - run:
           name: "Run BackstopJS"
