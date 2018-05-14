@@ -47,8 +47,11 @@ jobs:
           command: yarn danger ci
           when: always
       - run:
+          name: "Compile blog"
+          command: crystal build ./src/blog.cr --release -o app
+      - run:
           name: "Run webserver"
-          command: crystal --release ./src/app.cr
+          command: ./app
           background: true
       - run:
           name: "Run BackstopJS"
