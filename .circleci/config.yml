@@ -50,6 +50,9 @@ jobs:
           name: "Compile blog"
           command: crystal build ./src/blog.cr --release -o app
       - run:
+          name: "Create database"
+          command: LUCKY_ENV=visual_test crystal tasks.cr -- db.create
+      - run:
           name: "Migrate database"
           command: LUCKY_ENV=visual_test crystal tasks.cr -- db.migrate
       - run:
