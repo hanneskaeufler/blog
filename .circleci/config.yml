@@ -51,7 +51,7 @@ jobs:
           command: crystal build ./src/blog.cr --release -o app
       - run:
           name: "Restore visual test database"
-          command: psql -h 127.0.0.1 -p 5432 blog_visual_test < blog_visual_test.dump
+          command: psql -U postgres -h 127.0.0.1 -p 5432 blog_visual_test < blog_visual_test.dump
       - run:
           name: "Run webserver"
           command: LUCKY_ENV=visual_test ./app
