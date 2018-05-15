@@ -50,8 +50,8 @@ jobs:
           name: "Compile blog"
           command: crystal build ./src/blog.cr --release -o app
       - run:
-          name: "Migrate database"
-          command: LUCKY_ENV=visual_test crystal tasks.cr -- db.migrate
+          name: "Restore visual test database"
+          command: psql < blog_visual_test.dump
       - run:
           name: "Run webserver"
           command: LUCKY_ENV=visual_test ./app
