@@ -42,7 +42,6 @@
   },
   "report": ["ci"],
   "engine": "puppeteer",
-  "engineFlags": [],
   "engineOptions": {
     "args": ["--no-sandbox", "--disable-setuid-sandbox"]
   },
