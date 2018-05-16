@@ -60,7 +60,7 @@ jobs:
           command: psql -U postgres -h 127.0.0.1 -p 5432 blog_visual_test < blog_visual_test.dump
       - run:
           name: "Run webserver"
-          command: ./app
+          command: LUCKY_ENV=visual_test ./app
           background: true
       - run:
           name: "Run BackstopJS"
