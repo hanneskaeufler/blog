@@ -59,9 +59,6 @@ jobs:
           name: "Restore visual test database contents"
           command: psql -U postgres -h 127.0.0.1 -p 5432 blog_visual_test < blog_visual_test.dump
       - run:
-          name: "Debug db"
-          command: pg_dump -U postgres -h 127.0.0.1 -p 5432 blog_visual_test
-      - run:
           name: "Run webserver"
           command: LUCKY_ENV=visual_test ./app
           background: true
