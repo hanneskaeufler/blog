@@ -54,7 +54,7 @@ jobs:
           command: createdb -U postgres -h 127.0.0.1 -p 5432 blog_visual_test
       - run:
           name: "Migrate database"
-          command: LUCKY_ENV=visual_test crystal tasks.cr -- db.migrate
+          command: DATABASE_URL=postgres://blog_test_user@127.0.0.1/blog_visual_test crystal tasks.cr -- db.migrate
       - run:
           name: "Restore visual test database contents"
           command: psql -U postgres -h 127.0.0.1 -p 5432 blog_visual_test < blog_visual_test.dump
@@ -65,6 +65,8 @@ jobs:
       - run:
           name: "Run BackstopJS"
           command: yarn test
+      - store_artifacts:
+          path: /root/project/backstop_data/bitmaps_test
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.24.1
