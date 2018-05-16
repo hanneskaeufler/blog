@@ -48,19 +48,19 @@ jobs:
           when: always
       - run:
           name: "Compile blog"
-          command: crystal build ./src/blog.cr --release -o app
+          command: LUCKY_ENV=visual_test crystal build ./src/blog.cr --release -o app
       - run:
           name: "Create database"
-          command: LUCKY_ENV=visual_test crystal tasks.cr -- db.create
+          command: DATABASE_URL=postgres://blog_test_user@127.0.0.1/blog_visual_test crystal tasks.cr -- db.create
       - run:
           name: "Migrate database"
-          command: LUCKY_ENV=visual_test crystal tasks.cr -- db.migrate
+          command: DATABASE_URL=postgres://blog_test_user@127.0.0.1/blog_visual_test crystal tasks.cr -- db.migrate
       - run:
-          name: "Restore visual test database"
+          name: "Restore visual test database contents"
           command: psql -U postgres -h 127.0.0.1 -p 5432 blog_visual_test < blog_visual_test.dump
       - run:
           name: "Run webserver"
-          command: LUCKY_ENV=visual_test ./app
+          command: ./app
           background: true
       - run:
           name: "Run BackstopJS"
