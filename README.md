@@ -28,6 +28,7 @@ The following checks are run (see also `.circleci/config.yml`):
     * Keep `node` dependencies in check with `danger-plugin-yarn`
     * Avoid "fixme/todo" comments in code
 * Accessibility testing with the chrome developer tools via `yarn accessibility-test`
+    * It is based on [Google Chrome's a11y dev tools](https://github.com/GoogleChrome/accessibility-developer-tools)
 
 ### Learning Lucky
 
