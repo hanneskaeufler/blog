@@ -30,6 +30,9 @@ The following checks are run (see also `.circleci/config.yml`):
 * Accessibility testing with the chrome developer tools via `yarn accessibility-test`
     * It is based on [Google Chrome's a11y dev tools](https://github.com/GoogleChrome/accessibility-developer-tools)
 
+- [ ] Performance testing
+- [ ] Mutation testing
+
 ### Learning Lucky
 
 Lucky uses the [Crystal](https://crystal-lang.org) programming language. You can learn about Lucky from the [Lucky Guides](http://luckyframework.org/guides).
