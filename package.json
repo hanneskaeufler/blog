@@ -14,6 +14,7 @@
   "scripts": {
     "lint": "stylelint static/**/*.scss",
     "test": "backstop --config=backstop.js test",
+    "accessibility-test": "node accessibility-testing/accessibility-test.js",
     "approve": "backstop approve",
     "local-test": "docker run --rm -v $(pwd):/src hanneskaeufler/crystal-ruby-node:0.24.1 --config=/src/backstop.js test",
     "heroku-postbuild": "yarn prod && yarn prod",
@@ -42,6 +43,7 @@
     "danger-plugin-fixme": "^1.0.0",
     "danger-plugin-mentor": "^0.6.0",
     "danger-plugin-yarn": "^1.3.0",
+    "puppeteer": "^1.4.0",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0"
   }
