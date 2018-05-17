@@ -27,6 +27,7 @@ The following checks are run (see also `.circleci/config.yml`):
 * Pull request trigger a run of `danger-js` which tries to do the following:
     * Keep `node` dependencies in check with `danger-plugin-yarn`
     * Avoid "fixme/todo" comments in code
+* Accessibility testing with the chrome developer tools via `yarn accessibility-test`
 
 ### Learning Lucky
 
