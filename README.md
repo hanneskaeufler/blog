@@ -33,8 +33,9 @@ The following checks are run (see also `.circleci/config.yml`):
 
 Lucky uses the [Crystal](https://crystal-lang.org) programming language. You can learn about Lucky from the [Lucky Guides](http://luckyframework.org/guides).
 
-### Deploying
+### Deploying manually
 
+This project is continually deployed with a workflow on circleci. You can however deploy manually:
 Run `git push heroku master`. To export/import the database see: https://devcenter.heroku.com/articles/heroku-postgres-import-export#import-to-heroku-postgres
 
 ### Deploying locally with Docker
