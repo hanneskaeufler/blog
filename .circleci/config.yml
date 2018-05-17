@@ -43,6 +43,9 @@ jobs:
           path: /root/reports
           when: always
       - run:
+          name: "Accessibility testing"
+          command: yarn accessibility-test
+      - run:
           name: "Run danger"
           command: yarn danger ci
           when: always
