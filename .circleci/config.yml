@@ -48,7 +48,7 @@ jobs:
           when: always
       - run:
           name: "Compile blog for visual testing"
-          command: LUCKY_ENV=visual_test crystal build ./src/blog.cr --release -o app
+          command: DATABASE_URL=postgres://blog_test_user@127.0.0.1/blog_visual_test crystal build ./src/blog.cr --release -o app
       - run:
           name: "Create database for visual testing"
           command: createdb -U postgres -h 127.0.0.1 -p 5432 blog_visual_test
