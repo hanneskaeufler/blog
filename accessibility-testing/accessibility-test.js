@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   const page = await browser.newPage();
   await page.goto('http://localhost:5000', { waitUntil: ['networkidle0', 'domcontentloaded'] });
   await page.addScriptTag({ path: './accessibility-testing/axs_testing.js' });
