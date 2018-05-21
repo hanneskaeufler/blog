@@ -21,6 +21,6 @@ class PostQuery < Post::BaseQuery
   end
 
   def find_published_by_slug(slug : String) : Post
-    post = published.slug(slug).first
+    published.slug(slug).first
   end
 end
