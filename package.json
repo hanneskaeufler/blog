@@ -15,7 +15,7 @@
     "lint": "stylelint static/**/*.css",
     "test": "backstop test",
     "approve": "backstop approve",
-    "heroku-postbuild": "bin/compile_assets build --production",
+    "heroku-postbuild": "yarn prod",
     "dev": "yarn run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "yarn run webpack --watch --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "NODE_ENV=production yarn run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js"
