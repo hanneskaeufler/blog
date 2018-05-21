@@ -29,9 +29,9 @@ mix
   // Set public path so manifest gets output here
   .setPublicPath("public")
   // Copies static assets like images and fonts
-  .copyDirectory("static/assets", "public/assets")
+  .copyDirectory("static/assets", "public")
   // Add assets to the manifest
-  .version(["public/assets"])
+  .version(["public/images", "public/logos"])
   // Silence most output from webpack
   .webpackConfig({ stats: "errors-only" })
   .disableSuccessNotifications();
