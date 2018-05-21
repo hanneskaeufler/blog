@@ -19,7 +19,7 @@ jobs:
           command: "yarn lint"
       - run:
           name: "Compiling assets"
-          command: yarn prod
+          command: yarn prod && yarn prod
       - run:
           name: "Install crystal dependencies"
           command: crystal deps
