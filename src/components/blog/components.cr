@@ -43,7 +43,7 @@ module Blog::Components
           SOCIALS.each do |name, href|
             li do
               link to: href do
-                img src: dynamic_asset("logos/#{name}.svg"), alt: "social logo #{name}"
+                img src: dynamic_asset("assets/logos/#{name}.svg"), alt: "social logo #{name}"
               end
             end
           end

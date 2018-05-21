@@ -49,7 +49,7 @@ class Blog::Posts::IndexPage < MainLayout
         SOCIALS.each do |name, href|
           li do
             link to: href do
-              img src: dynamic_asset("logos/#{name}.svg"), alt: "social logo #{name}"
+              img src: dynamic_asset("assets/logos/#{name}.svg"), alt: "social logo #{name}"
               text name.to_s
             end
           end
