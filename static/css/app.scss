@@ -1,7 +1,7 @@
 @import "~normalize-scss/sass/normalize/import-now";
 
-// @custom-media --mediumViewport (min-width: 768px);
-// @custom-media --largeViewport (min-width: 992px);
+$mediumBreakpoint: 768px;
+$largeBreakpoint: 992px;
 
 $accentColor: #24b47e;
 $defaultBorderRadius: 4px;
@@ -327,34 +327,34 @@ a:hover {
     text-align: center;
 }
 
-// @media (--mediumViewport) {
-//     .intro li a:link {
-//         color: white;
-//         font-size: 0.8em;
-//     }
+@media (min-width: $mediumBreakpoint) {
+    .intro li a:link {
+        color: white;
+        font-size: 0.8em;
+    }
 
-//     .intro li img {
-//         margin-right: 10px;
-//     }
+    .intro li img {
+        margin-right: 10px;
+    }
 
-//     .posts-container {
-//         padding-top: 50px;
-//     }
+    .posts-container {
+        padding-top: 50px;
+    }
 
-//     .posts-archive input[type=text] {
-//         border-bottom-right-radius: 0;
-//         border-top-right-radius: 0;
-//         width: 75%;
-//     }
+    .posts-archive input[type=text] {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        width: 75%;
+    }
 
-//     .posts-archive button[type=submit] {
-//         border-bottom-left-radius: 0;
-//         border-top-left-radius: 0;
-//     }
-// }
+    .posts-archive button[type=submit] {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
 
-// @media (--largeViewport) {
-//     .posts-container {
-//         padding-top: 100px;
-//     }
-// }
+@media (min-width: $largeBreakpoint) {
+    .posts-container {
+        padding-top: 100px;
+    }
+}
