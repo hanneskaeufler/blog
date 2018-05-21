@@ -16,7 +16,7 @@ abstract class MainLayout
         utf8_charset
         csrf_meta_tags
         responsive_meta_tag
-        css_link(asset("images/favicon.png"), rel: "icon")
+        css_link(asset("assets/images/favicon.png"), rel: "icon")
         title page_title
         css_link asset("css/app.css")
         js_link asset("js/app.js")
