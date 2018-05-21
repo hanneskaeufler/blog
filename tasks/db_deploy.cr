@@ -1,6 +1,6 @@
 require "lucky_cli"
 
-class DeployDb < LuckyCli::Task
+class Db::Deploy < LuckyCli::Task
   PG_DUMP = "/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump"
   DUMP_NAME = "blog_development.dump"
   DB_NAME = "blog_development"
