@@ -1,5 +1,5 @@
 class PostForm < Post::BaseForm
-  allow title, content
+  fillable title, content
 
   needs current_title : String, on: :update
 

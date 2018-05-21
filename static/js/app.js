@@ -2,6 +2,9 @@
 import RailsUjs from "rails-ujs"
 import Turbolinks from "turbolinks"
 
+RailsUjs.start();
+Turbolinks.start();
+
 // gist embeds are wonky because of document.write
 // https://gist.github.com/danshearmur/1993718
 document._write = document.write;

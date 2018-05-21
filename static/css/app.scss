@@ -1,22 +1,20 @@
-@import "normalize.css";
+@import "~normalize-scss/sass/normalize/import-now";
 
-@custom-media --mediumViewport (min-width: 768px);
-@custom-media --largeViewport (min-width: 992px);
+$mediumBreakpoint: 768px;
+$largeBreakpoint: 992px;
 
-:root {
-    --accentColor: #24b47e;
-    --defaultBorderRadius: 4px;
-    --gridWidth: 980px;
-    --highlightColor: #6772e5;
-    --textColor: #6b7c93;
-}
+$accentColor: #24b47e;
+$defaultBorderRadius: 4px;
+$gridWidth: 980px;
+$highlightColor: #6772e5;
+$textColor: #6b7c93;
 
 body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
     line-height: 1.5;
     font-size: 1.5em;
-    color: var(--textColor);
+    color: $textColor;
 }
 
 p strong {
@@ -25,7 +23,7 @@ p strong {
 
 a:link,
 a:visited {
-    color: var(--highlightColor);
+    color: $highlightColor;
 }
 
 a:hover {
@@ -38,7 +36,7 @@ a:hover {
 
     section {
         lost-utility: clearfix;
-        lost-center: var(--gridWidth);
+        lost-center: $gridWidth;
 
         > div {
             lost-column: 1/2;
@@ -48,14 +46,14 @@ a:hover {
 
 .tag-line {
     lost-utility: clearfix;
-    lost-center: var(--gridWidth);
+    lost-center: $gridWidth;
     background: white;
-    border-radius: var(--defaultBorderRadius);
+    border-radius: $defaultBorderRadius;
     box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
 }
 
 .tag-line h1 {
-    color: var(--highlightColor);
+    color: $highlightColor;
     text-align: center;
 }
 
@@ -74,7 +72,7 @@ a:hover {
 .posts-container,
 .posts-archive {
     lost-utility: clearfix;
-    lost-center: var(--gridWidth);
+    lost-center: $gridWidth;
     padding: 0 1em;
 }
 
@@ -94,7 +92,7 @@ a:hover {
     margin-bottom: 80px;
 
     blockquote {
-        border-left: 4px solid var(--accentColor);
+        border-left: 4px solid $accentColor;
         font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         margin: 0;
         padding-left: 1em;
@@ -179,7 +177,7 @@ a:hover {
 }
 
 .post-title-meta {
-    color: lighten(var(--textColor), 0.4);
+    color: rgb(166, 176, 191);
     font-size: 0.8em;
 }
 
@@ -249,7 +247,7 @@ a:hover {
 
 .blog-footer section {
     lost-utility: clearfix;
-    lost-center: var(--gridWidth);
+    lost-center: $gridWidth;
 
     div {
         lost-column: 1/2;
@@ -258,7 +256,7 @@ a:hover {
 
 .post-editor {
     lost-utility: clearfix;
-    lost-center: var(--gridWidth);
+    lost-center: $gridWidth;
 
     .form-row {
         margin-bottom: 20px;
@@ -270,9 +268,9 @@ a:hover {
 
     input[type=submit] {
         background: #fff;
-        border-radius: var(--defaultBorderRadius);
-        border: 1px solid var(--highlightColor);
-        color: var(--highlightColor);
+        border-radius: $defaultBorderRadius;
+        border: 1px solid $highlightColor;
+        color: $highlightColor;
         font-size: 1em;
         line-height: 1.5;
         margin: 0;
@@ -290,10 +288,10 @@ a:hover {
 
 .post-editor input[type=text],
 .posts-archive input[type=text] {
-    color: var(--textColor);
+    color: $textColor;
     border: 1px solid #ddd;
     padding: 10px 15px;
-    border-radius: var(--defaultBorderRadius);
+    border-radius: $defaultBorderRadius;
 }
 
 .posts-archive input[type=text] {
@@ -304,9 +302,9 @@ a:hover {
 
 .posts-archive button[type=submit] {
     background: white;
-    border-radius: var(--defaultBorderRadius);
-    border-color: var(--highlightColor);
-    color: var(--highlightColor);
+    border-radius: $defaultBorderRadius;
+    border-color: $highlightColor;
+    color: $highlightColor;
     margin-left: -1px;
     margin-right: 10px;
     padding: 10px 15px;
@@ -315,13 +313,13 @@ a:hover {
 .posts-archive button[type=submit]:hover,
 .post-editor input[type=submit]:hover {
     color: white;
-    background: var(--highlightColor);
+    background: $highlightColor;
 }
 
 .flash-success {
     background-color: #d4edda;
-    border-top: var(--defaultBorderRadius) solid shade(#c3e6cb, 40%);
-    border-radius: var(--defaultBorderRadius);
+    border-top: $defaultBorderRadius solid shade(#c3e6cb, 40%);
+    border-radius: $defaultBorderRadius;
     color: #155724;
     width: 950px;
     margin: 10px auto;
@@ -329,7 +327,7 @@ a:hover {
     text-align: center;
 }
 
-@media (--mediumViewport) {
+@media (min-width: $mediumBreakpoint) {
     .intro li a:link {
         color: white;
         font-size: 0.8em;
@@ -355,7 +353,7 @@ a:hover {
     }
 }
 
-@media (--largeViewport) {
+@media (min-width: $largeBreakpoint) {
     .posts-container {
         padding-top: 100px;
     }

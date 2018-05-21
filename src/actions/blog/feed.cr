@@ -44,6 +44,6 @@ class Blog::Feed < ApiAction
   end
 
   private def host
-    Lucky::RouteHelper.settings.domain
+    Lucky::RouteHelper.settings.base_uri
   end
 end

@@ -1,2 +1,2 @@
-web: lucky watch
-assets: bin/compile_assets watch
+web: lucky watch --reload-browser
+assets: yarn watch

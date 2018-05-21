@@ -8,6 +8,7 @@ class Errors::Show < Lucky::ErrorAction
   end
 
   def handle_error(error : LuckyRecord::RecordNotFoundError)
+    context.response.status_code = 404
     render Blog::NotFoundPage
   end
 
