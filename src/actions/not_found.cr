@@ -1,3 +1,5 @@
+require "./browser_action"
+
 class Blog::NotFound < BrowserAction
   def call
     view = Blog::NotFoundPage.new(context)

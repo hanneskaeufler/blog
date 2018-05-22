@@ -52,3 +52,7 @@ shards:
     github: bcardiff/teeplate
     commit: 27475f26c2fba4f7ece929f89b6c0808cafcadb5
 
+  crystal-coverage:
+    github: anykeyh/crystal-coverage
+    commit: 1a36be42a05c8018c203ac41d8748fd8a0f6c235
+

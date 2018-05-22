@@ -39,6 +39,17 @@ jobs:
           name: "Fix crystal junit output bug. Remove for crystal 0.24.2"
           command: sed -i 's/failed=/failures=/g' /root/reports/output.xml
           when: always
+      - run:
+          name: "Force existance of coverage folder"
+          command: mkdir coverage
+      - run:
+          name: "Generate coverage report"
+          command: bin/crystal-coverage spec/blog_spec.cr
+      - run:
+          name: "ls"
+          command: ls coverage
+      - store_artifacts:
+          path: ./coverage
       - store_test_results:
           path: /root/reports
           when: always
