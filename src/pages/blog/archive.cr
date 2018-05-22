@@ -38,8 +38,8 @@ class Blog::ArchivePage < MainLayout
       ul do
         posts.each do |post|
           li do
-            span post.published_at.to_s("%b %-d")
             link post.title, to: Blog::Posts::Show.with(post.slug)
+            span " · #{post.published_at.to_s("%b %-d")}"
           end
         end
       end
