@@ -11,7 +11,7 @@ class PostForm < Post::BaseForm
 
   private def generate_slug
     slug.value = title.value.try do |value|
-      value.downcase.gsub(" ", "-")
+      value.downcase.gsub(" ", "-").gsub(/[^\w-]/, "")
     end
   end
 
