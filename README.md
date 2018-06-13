@@ -19,6 +19,8 @@ The following checks are run (see also `.circleci/config.yml`):
 * Code formatting checks on crystal code with `crystal tool format --check`
 * Unit / Integration tests with `crystal spec`
 * Visual regression testing with `yarn test` (using backstopjs)
+    - To generate reference images on the mac, run `docker run --rm -v $(pwd):/src backstopjs/backstopjs test/approve`
+    - Switch the host in `backstop.json` to `host.docker.internal:5000`, see [docker guides](https://docs.docker.com/docker-for-mac/networking/#use-cases-and-workarounds)
 * CSS linting with `yarn lint` (using stylelint)
 * Pull request trigger a run of `danger-js` which tries to do the following:
     * Keep `node` dependencies in check with `danger-plugin-yarn`
