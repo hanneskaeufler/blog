@@ -21,6 +21,8 @@ The following checks are run (see also `.circleci/config.yml`):
 * Visual regression testing with `yarn test` (using backstopjs)
     - To generate reference images on the mac, run `docker run --rm -v $(pwd):/src backstopjs/backstopjs test/approve`
     - Switch the host in `backstop.json` to `host.docker.internal:5000`, see [docker guides](https://docs.docker.com/docker-for-mac/networking/#use-cases-and-workarounds)
+    - To export the local visual regression test database, run `/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump --no-acl --no-owner --data-only --table=posts blog_visual_test > blog_visual_test.dump`
+    - Also, duh: https://github.com/garris/BackstopJS/issues/796
 * CSS linting with `yarn lint` (using stylelint)
 * Pull request trigger a run of `danger-js` which tries to do the following:
     * Keep `node` dependencies in check with `danger-plugin-yarn`
