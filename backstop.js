@@ -1,4 +1,4 @@
-var isCI = process.env.CI == true;
+var isCI = process.env.CI == "true";
 var host = isCI ? "http://localhost:5000" : "http://host.docker.internal:5000";
 
 module.exports = {
