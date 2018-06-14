@@ -23,6 +23,7 @@
   "stylelint": {
     "extends": "stylelint-config-standard",
     "rules": {
+      "no-descending-specificity": null,
       "indentation": 4,
       "property-no-unknown": [
         true,

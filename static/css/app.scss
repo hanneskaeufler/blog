@@ -8,6 +8,7 @@ $defaultBorderRadius: 4px;
 $gridWidth: 980px;
 $highlightColor: #6772e5;
 $textColor: #6b7c93;
+$alternateBackgroundColor: #f6f9fc;
 
 body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -106,11 +107,35 @@ a:hover {
         }
     }
 
-    > p > img {
-        display: block;
-        margin: 0 auto;
-        max-height: 500px;
-        max-width: 100%;
+    > p {
+        a:link,
+        a:visited {
+            border-bottom: 2px solid $highlightColor;
+            box-shadow: inset 0 -9px 0 lighten($highlightColor, 30%);
+            color: $textColor;
+            text-decoration: none;
+            transition: box-shadow 0.16s ease;
+        }
+
+        a:hover {
+            color: white;
+            box-shadow: inset 0 -1.2em 0 $highlightColor;
+        }
+
+        code {
+            background: $alternateBackgroundColor;
+            border-radius: 3px;
+            border: 1px solid $highlightColor;
+            font-size: 0.9em;
+            padding: 0.05em 0.1em;
+        }
+
+        > img {
+            display: block;
+            margin: 0 auto;
+            max-height: 500px;
+            max-width: 100%;
+        }
     }
 
     .image-container-two {
@@ -129,46 +154,25 @@ a:hover {
     padding: 0;
 }
 
-.post-title a:link {
-    opacity: 0.1;
-    text-decoration: none;
-    padding-left: 10px;
-}
+.post-title {
+    a:link {
+        opacity: 0.1;
+        text-decoration: none;
+        padding-left: 10px;
+    }
 
-.blog-footer a:hover {
-    color: #32325d;
-}
+    h2 {
+        margin-bottom: 0.1em;
+        color: #32325d;
+    }
 
-.intro li a:link {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    color: transparent;
-    display: inline-block;
-    font-size: 0;
-    margin: 5px;
-    padding: 6px 14px;
-    text-decoration: none;
-}
+    a::before {
+        content: '#';
+    }
 
-.intro li a:hover {
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.intro li a:visited {
-    color: white;
-}
-
-.post-title h2 {
-    margin-bottom: 0.1em;
-    color: #32325d;
-}
-
-.post-title a::before {
-    content: '#';
-}
-
-.post-title:hover a:link {
-    opacity: 1;
+    &:hover a:link {
+        opacity: 1;
+    }
 }
 
 .post-title-meta {
@@ -186,6 +190,25 @@ a:hover {
         justify-content: center;
         list-style-type: none;
         padding: 0;
+    }
+
+    a:link {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        color: transparent;
+        display: inline-block;
+        font-size: 0;
+        margin: 5px;
+        padding: 6px 14px;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: white;
+    }
+
+    a:hover {
+        background: rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -216,7 +239,11 @@ a:hover {
 }
 
 .blog-footer {
-    background: #f6f9fc;
+    a:hover {
+        color: #32325d;
+    }
+
+    background: $alternateBackgroundColor;
     border-top: 2px solid rgba(207, 215, 223, 0.25);
     font-size: 0.8em;
     margin-top: 100px;
@@ -226,26 +253,26 @@ a:hover {
         font-style: normal;
         margin-bottom: 1em;
     }
-}
 
-.blog-footer ul {
-    list-style-type: none;
-    lost-utility: clearfix;
-    margin: 0;
-    padding: 0;
-}
+    ul {
+        list-style-type: none;
+        lost-utility: clearfix;
+        margin: 0;
+        padding: 0;
+    }
 
-.blog-footer li {
-    float: left;
-    margin: 0 10px 0 0;
-}
+    li {
+        float: left;
+        margin: 0 10px 0 0;
+    }
 
-.blog-footer section {
-    lost-utility: clearfix;
-    lost-center: $gridWidth;
+    section {
+        lost-utility: clearfix;
+        lost-center: $gridWidth;
 
-    div {
-        lost-column: 1/2;
+        div {
+            lost-column: 1/2;
+        }
     }
 }
 
