@@ -154,46 +154,25 @@ a:hover {
     padding: 0;
 }
 
-.post-title a:link {
-    opacity: 0.1;
-    text-decoration: none;
-    padding-left: 10px;
-}
+.post-title {
+    a:link {
+        opacity: 0.1;
+        text-decoration: none;
+        padding-left: 10px;
+    }
 
-.blog-footer a:hover {
-    color: #32325d;
-}
+    h2 {
+        margin-bottom: 0.1em;
+        color: #32325d;
+    }
 
-.intro li a:link {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    color: transparent;
-    display: inline-block;
-    font-size: 0;
-    margin: 5px;
-    padding: 6px 14px;
-    text-decoration: none;
-}
+    a::before {
+        content: '#';
+    }
 
-.intro li a:hover {
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.intro li a:visited {
-    color: white;
-}
-
-.post-title h2 {
-    margin-bottom: 0.1em;
-    color: #32325d;
-}
-
-.post-title a::before {
-    content: '#';
-}
-
-.post-title:hover a:link {
-    opacity: 1;
+    &:hover a:link {
+        opacity: 1;
+    }
 }
 
 .post-title-meta {
@@ -211,6 +190,25 @@ a:hover {
         justify-content: center;
         list-style-type: none;
         padding: 0;
+    }
+
+    a:link {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        color: transparent;
+        display: inline-block;
+        font-size: 0;
+        margin: 5px;
+        padding: 6px 14px;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: white;
+    }
+
+    a:hover {
+        background: rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -241,6 +239,10 @@ a:hover {
 }
 
 .blog-footer {
+    a:hover {
+        color: #32325d;
+    }
+
     background: $alternateBackgroundColor;
     border-top: 2px solid rgba(207, 215, 223, 0.25);
     font-size: 0.8em;
@@ -251,26 +253,26 @@ a:hover {
         font-style: normal;
         margin-bottom: 1em;
     }
-}
 
-.blog-footer ul {
-    list-style-type: none;
-    lost-utility: clearfix;
-    margin: 0;
-    padding: 0;
-}
+    ul {
+        list-style-type: none;
+        lost-utility: clearfix;
+        margin: 0;
+        padding: 0;
+    }
 
-.blog-footer li {
-    float: left;
-    margin: 0 10px 0 0;
-}
+    li {
+        float: left;
+        margin: 0 10px 0 0;
+    }
 
-.blog-footer section {
-    lost-utility: clearfix;
-    lost-center: $gridWidth;
+    section {
+        lost-utility: clearfix;
+        lost-center: $gridWidth;
 
-    div {
-        lost-column: 1/2;
+        div {
+            lost-column: 1/2;
+        }
     }
 }
 
