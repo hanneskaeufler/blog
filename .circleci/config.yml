@@ -43,9 +43,6 @@ jobs:
           path: /root/reports
           when: always
       - run:
-          name: "Accessibility testing"
-          command: yarn accessibility-test
-      - run:
           name: "Run danger"
           command: yarn danger ci
           when: always
@@ -70,6 +67,9 @@ jobs:
           command: yarn test
       - store_artifacts:
           path: /root/project/backstop_data/bitmaps_test
+      - run:
+          name: "Accessibility testing"
+          command: yarn accessibility-test
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.24.1
