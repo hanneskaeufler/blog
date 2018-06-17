@@ -37,11 +37,11 @@ module.exports = {
     }
   ],
   "paths": {
-    "bitmaps_reference": "/src/backstop_data/bitmaps_reference",
-    "bitmaps_test": "/src/backstop_data/bitmaps_test",
-    "engine_scripts": "/src/backstop_data/engine_scripts",
-    "html_report": "/src/backstop_data/html_report",
-    "ci_report": "/src/backstop_data/ci_report"
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
   },
   "report": ["ci"],
   "engine": "puppeteer",
