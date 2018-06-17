@@ -1,4 +1,7 @@
-{
+var isCI = process.env.CI == "true";
+var host = isCI ? "http://localhost:5000" : "http://host.docker.internal:5000";
+
+module.exports = {
   "id": "backstop_default",
   "viewports": [
     {
@@ -22,15 +25,15 @@
   "scenarios": [
     {
       "label": "Blog Index",
-      "url": "http://localhost:5000"
+      "url": host
     },
     {
       "label": "Blog Sample Post",
-      "url": "http://localhost:5000/posts/sample-post"
+      "url": host + "/posts/sample-post"
     },
     {
       "label": "Blog Archive",
-      "url": "http://localhost:5000/archive"
+      "url": host + "/archive"
     }
   ],
   "paths": {
@@ -40,9 +43,8 @@
     "html_report": "backstop_data/html_report",
     "ci_report": "backstop_data/ci_report"
   },
-  "report": ["browser"],
+  "report": ["ci"],
   "engine": "puppeteer",
-  "engineFlags": [],
   "engineOptions": {
     "args": ["--no-sandbox", "--disable-setuid-sandbox"]
   },

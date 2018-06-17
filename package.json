@@ -13,8 +13,9 @@
   },
   "scripts": {
     "lint": "stylelint static/**/*.scss",
-    "test": "backstop test",
+    "test": "backstop --config=backstop.js test",
     "approve": "backstop approve",
+    "local-test": "docker run --rm -v $(pwd):/src hanneskaeufler/crystal-ruby-node:0.24.1 --config=/src/backstop.js test",
     "heroku-postbuild": "yarn prod && yarn prod",
     "dev": "yarn run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "yarn run webpack --watch --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
