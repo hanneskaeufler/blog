@@ -28,7 +28,7 @@ const puppeteer = require('puppeteer'),
   console.log(axs.report);
 
   axs.results.forEach((res) => {
-    if (res.result === 'FAIL') {
+    if (res.result === 'FAIL' && res.rule.severity === 'Severe') {
       console.error('There have been accessibility failures!');
       exit();
     }
