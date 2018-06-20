@@ -27,13 +27,19 @@ The following checks are run (see also `.circleci/config.yml`):
 * Pull request trigger a run of `danger-js` which tries to do the following:
     * Keep `node` dependencies in check with `danger-plugin-yarn`
     * Avoid "fixme/todo" comments in code
+* Accessibility testing with the chrome developer tools via `yarn accessibility-test`
+    * It is based on [Google Chrome's a11y dev tools](https://github.com/GoogleChrome/accessibility-developer-tools)
+
+- [ ] Performance testing
+- [ ] Mutation testing
 
 ### Learning Lucky
 
 Lucky uses the [Crystal](https://crystal-lang.org) programming language. You can learn about Lucky from the [Lucky Guides](http://luckyframework.org/guides).
 
-### Deploying
+### Deploying manually
 
+This project is continually deployed with a workflow on circleci. You can however deploy manually:
 Run `git push heroku master`. To export/import the database see: https://devcenter.heroku.com/articles/heroku-postgres-import-export#import-to-heroku-postgres
 
 ### Deploying locally with Docker

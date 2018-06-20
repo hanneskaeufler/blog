@@ -7,7 +7,9 @@ $accentColor: #24b47e;
 $defaultBorderRadius: 4px;
 $gridWidth: 980px;
 $highlightColor: #6772e5;
-$textColor: #6b7c93;
+$textColor: darken(#6b7c93, 0.1);
+$contrastAccentColor: #24b47e;
+$headingTextColor: #32325d;
 
 body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -15,6 +17,14 @@ body {
     line-height: 1.5;
     font-size: 1.5em;
     color: $textColor;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $headingTextColor;
 }
 
 p strong {
@@ -27,7 +37,7 @@ a:visited {
 }
 
 a:hover {
-    color: #32325d;
+    color: darken($highlightColor, 0.5);
 }
 
 .blog-title-small {
@@ -160,7 +170,6 @@ a:hover {
 
 .post-title h2 {
     margin-bottom: 0.1em;
-    color: #32325d;
 }
 
 .post-title a::before {
@@ -189,6 +198,19 @@ a:hover {
     }
 }
 
+.blog-title::before {
+    opacity: 0.4;
+    background: $contrastAccentColor;
+    content: '';
+    height: 2000px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -1800px;
+    transform: skew(0, 6deg);
+    z-index: -1;
+}
+
 .blog-title::after {
     opacity: 0.4;
     background: #ddd;
@@ -199,19 +221,6 @@ a:hover {
     right: 0;
     top: -1800px;
     transform: skew(0, -12deg);
-    z-index: -1;
-}
-
-.blog-title::before {
-    opacity: 0.4;
-    background: #24b47e;
-    content: '';
-    height: 2000px;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: -1800px;
-    transform: skew(0, 6deg);
     z-index: -1;
 }
 
