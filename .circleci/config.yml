@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.24.1
+      - image: hanneskaeufler/crystal-node-ruby:0.25.0
         environment:
           DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
       - image: postgres:9.6.2-alpine
@@ -35,10 +35,6 @@ jobs:
       - run:
           name: "Running specs"
           command: crystal spec --junit_output=/root/reports
-      - run:
-          name: "Fix crystal junit output bug. Remove for crystal 0.24.2"
-          command: sed -i 's/failed=/failures=/g' /root/reports/output.xml
-          when: always
       - store_test_results:
           path: /root/reports
           when: always
@@ -72,7 +68,7 @@ jobs:
           command: yarn accessibility-test
   deploy:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.24.1
+      - image: hanneskaeufler/crystal-node-ruby:0.25.0
     steps:
       - checkout
       - run:
