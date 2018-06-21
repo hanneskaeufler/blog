@@ -22,7 +22,7 @@ jobs:
           command: yarn prod && yarn prod
       - run:
           name: "Install crystal dependencies"
-          command: crystal deps
+          command: shards deps
       - run:
           name: "Check formatting"
           command: crystal tool format src spec --check
