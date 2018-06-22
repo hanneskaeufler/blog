@@ -17,7 +17,7 @@
     "accessibility-test": "node accessibility-testing/accessibility-test.js",
     "approve": "backstop --config=backstop.js approve",
     "local-test": "docker run --rm -v $(pwd):/src hanneskaeufler/crystal-node-ruby:0.24.1 backstop --config=/src/backstop.js test",
-    "heroku-postbuild": "yarn prod && yarn prod",
+    "heroku-postbuild": "yarn prod",
     "dev": "yarn run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "yarn run webpack --watch --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "NODE_ENV=production yarn run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js"

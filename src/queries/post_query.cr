@@ -3,9 +3,9 @@ class PostQuery < Post::BaseQuery
 
   def latest(page : Int = 1)
     published_at.lte(Time.now)
-                .published_at.desc_order
-                             .limit(PER_PAGE)
-                             .offset(PER_PAGE * (page - 1))
+      .published_at.desc_order
+      .limit(PER_PAGE)
+      .offset(PER_PAGE * (page - 1))
   end
 
   def published

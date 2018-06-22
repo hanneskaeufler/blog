@@ -3,7 +3,7 @@ require "./app"
 host = Lucky::Server.settings.host
 port = Lucky::Server.settings.port
 
-server = HTTP::Server.new(host, port, [
+server = HTTP::Server.new([
   Lucky::HttpMethodOverrideHandler.new,
   Lucky::LogHandler.new,
   Lucky::SessionHandler.new,
@@ -20,4 +20,5 @@ Signal::INT.trap do
   server.close
 end
 
+server.bind_tcp host, port
 server.listen

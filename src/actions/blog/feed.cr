@@ -31,8 +31,8 @@ class Blog::Feed < ApiAction
       "title":          post.title,
       "content_html":   @renderer.render(post),
       "url":            Blog::Posts::Show.with(post.slug).url,
-      "date_published": Time::Format::ISO_8601_DATE_TIME.format(post.published_at),
-      "date_updated":   Time::Format::ISO_8601_DATE_TIME.format(post.updated_at),
+      "date_published": post.published_at.to_rfc3339,
+      "date_updated":   post.updated_at.to_rfc3339,
     }
   end
 
