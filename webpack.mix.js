@@ -14,9 +14,9 @@ mix
   //
   // More info and options (like React support) here:
   // https://github.com/JeffreyWay/laravel-mix/blob/master/docs/mixjs.md
-  .js("static/js/app.js", "public/js")
+  .js("src/js/app.js", "public/js")
   // SASS entry file. Uses autoprefixer automatically.
-  .sass("static/css/app.scss", "public/css")
+  .sass("src/css/app.scss", "public/css")
   // Customize postCSS:
   // https://github.com/JeffreyWay/laravel-mix/blob/master/docs/css-preprocessors.md#postcss-plugins
   .options({
@@ -24,14 +24,14 @@ mix
     postCss: [require("lost")],
     // If you want to process images, change this to true and add options from
     // https://github.com/tcoopman/image-webpack-loader
-    imgLoaderOptions: { enabled: false }
+    imgLoaderOptions: { enabled: false },
+    // Stops Mix from clearing the console when compilation succeeds
+    clearConsole: false
   })
   // Set public path so manifest gets output here
   .setPublicPath("public")
-  // Copies static assets like images and fonts
-  .copyDirectory("static/assets", "public")
   // Add assets to the manifest
-  .version(["public/images", "public/logos"])
+  .version(["public/assets"])
   // Silence most output from webpack
   .webpackConfig({ stats: "errors-only" })
   .disableSuccessNotifications();
