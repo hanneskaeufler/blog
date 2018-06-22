@@ -26,8 +26,8 @@ describe Blog::Feed do
             "title":          "post title",
             "content_html":   "<h2>post</h2>\n\n<p>content</p>",
             "url":            "http://0.0.0.0:5000/posts/post-title",
-            "date_published": "1970-01-03T00:01:00+0000",
-            "date_updated":   "1970-01-04T00:00:50+0000",
+            "date_published": "1970-01-03T00:01:00Z",
+            "date_updated":   "1970-01-04T00:00:50Z",
           },
         ],
       }.to_json)
