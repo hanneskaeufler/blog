@@ -16,7 +16,7 @@ def empty_flash
 end
 
 def build_post(content, published_at = Time.now)
-  Post.new(UUID.random().to_s, Time.now, Time.now, "title", content, published_at, "title")
+  Post.new(UUID.random.to_s, Time.now, Time.now, "title", content, published_at, "title")
 end
 
 def context
