@@ -1,7 +1,7 @@
 class Post < BaseModel
   private READING_SPEED = 200
 
-  table :posts do
+  table :posts, primary_key_type: :uuid do
     column title : String
     column content : String
     column published_at : Time
