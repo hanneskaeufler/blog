@@ -9,7 +9,7 @@ class Sitemap::Generate < LuckyCli::Task
       c.use_index = false
       c.host = Lucky::RouteHelper.settings.base_uri
       c.max_urls = 500
-      c.compress = false
+      c.compress = true
     end
 
     sitemaps = Sitemapper.build do
@@ -21,6 +21,6 @@ class Sitemap::Generate < LuckyCli::Task
       end
     end
 
-    Sitemapper.store(sitemaps, "public/sitemaps/")
+    Sitemapper.store(sitemaps, "./")
   end
 end
