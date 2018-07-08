@@ -19,6 +19,9 @@ dependencies:
   lucky_migrator:
     github: luckyframework/lucky_migrator
     version: ~> 0.6.0
+  sitemapper:
+    github: hanneskaeufler/sitemapper
+    branch: master
 
 development_dependencies:
   ameba:

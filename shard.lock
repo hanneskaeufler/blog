@@ -48,6 +48,10 @@ shards:
     github: jwaldrip/shell-table.cr
     version: 0.9.2
 
+  sitemapper:
+    github: hanneskaeufler/sitemapper
+    commit: 57cc46f8e0f21da641217e6f3871b18499f97316
+
   teeplate:
     github: mosop/teeplate
     version: 0.6.1
