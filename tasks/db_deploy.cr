@@ -1,10 +1,10 @@
 require "lucky_cli"
 
 class Db::Deploy < LuckyCli::Task
-  PG_DUMP = "/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump"
+  PG_DUMP   = "/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump"
   DUMP_NAME = "blog_development.dump"
-  DB_NAME = "blog_development"
-  DROPBOX = "~/Dropbox/Public"
+  DB_NAME   = "blog_development"
+  DROPBOX   = "~/Dropbox/Public"
 
   banner "Export database and prepare to mirror it to heroku"
 
