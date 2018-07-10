@@ -7,7 +7,7 @@ class PostContentRenderer
 
     scanner = StringScanner.new(content)
 
-    while scanner.skip_until(/RAW_HTML_START(.+?)RAW_HTML_END/)
+    while scanner.skip_until(/RAW_HTML_START(.+?)RAW_HTML_END/m)
       if scanner[0]? && scanner[1]?
         matches << scanner[0]
         html_snippets << scanner[1]
