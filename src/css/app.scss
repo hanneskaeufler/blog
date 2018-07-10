@@ -116,7 +116,8 @@ a:hover {
         }
     }
 
-    > p > img {
+    > p > img,
+    > svg {
         display: block;
         margin: 0 auto;
         max-height: 500px;
