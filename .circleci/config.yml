@@ -12,14 +12,20 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Install greenkeeper lockfile updater"
+          command: yarn global add patkub/greenkeeper-lockfile
+      - run:
           name: "Install node dependencies"
           command: yarn install
       - run:
+          name: "Update lockfile"
+          command: greenkeeper-lockfile-update
+      - run:
           name: "Stylelint"
-          command: "yarn lint"
+          command: yarn lint
       - run:
           name: "Compiling assets"
-          command: yarn prod && yarn prod
+          command: yarn prod
       - run:
           name: "Install crystal dependencies"
           command: shards install
@@ -66,6 +72,9 @@ jobs:
       - run:
           name: "Accessibility testing"
           command: yarn accessibility-test
+      - run:
+          name: "Upload lockfile"
+          command: greenkeeper-lockfile-upload
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.25.0
