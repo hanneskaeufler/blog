@@ -12,6 +12,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Install greenkeeper lockfile updater"
+          command: yarn global add patkub/greenkeeper-lockfile
+      - run:
           name: "Install node dependencies"
           command: yarn install
       - run:
@@ -66,6 +69,12 @@ jobs:
       - run:
           name: "Accessibility testing"
           command: yarn accessibility-test
+      - run:
+          name: "Update lockfile"
+          command: greenkeeper-lockfile-update
+      - run:
+          name: "Upload lockfile"
+          command: greenkeeper-lockfile-upload
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.25.0
