@@ -15,11 +15,11 @@ jobs:
           name: "Install greenkeeper lockfile updater"
           command: yarn global add patkub/greenkeeper-lockfile
       - run:
-          name: "Install node dependencies"
-          command: yarn install
-      - run:
           name: "Update lockfile"
           command: greenkeeper-lockfile-update
+      - run:
+          name: "Install node dependencies"
+          command: yarn install
       - run:
           name: "Stylelint"
           command: yarn lint
