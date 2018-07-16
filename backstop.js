@@ -1,5 +1,6 @@
 var isCI = process.env.CI == "true";
 var host = isCI ? "http://localhost:5000" : "http://host.docker.internal:5000";
+var dataDir = isCI ? "backstop_data" : "src/backstop_data";
 
 module.exports = {
   "id": "backstop_default",
@@ -37,11 +38,11 @@ module.exports = {
     }
   ],
   "paths": {
-    "bitmaps_reference": "backstop_data/bitmaps_reference",
-    "bitmaps_test": "backstop_data/bitmaps_test",
-    "engine_scripts": "backstop_data/engine_scripts",
-    "html_report": "backstop_data/html_report",
-    "ci_report": "backstop_data/ci_report"
+    "bitmaps_reference": dataDir + "/bitmaps_reference",
+    "bitmaps_test": dataDir + "/bitmaps_test",
+    "engine_scripts": dataDir + "/engine_scripts",
+    "html_report": dataDir + "/html_report",
+    "ci_report": dataDir + "/ci_report"
   },
   "report": ["ci"],
   "engine": "puppeteer",
