@@ -127,7 +127,8 @@ a:hover {
     .image-container-two {
         text-align: center;
 
-        img {
+        img,
+        svg {
             max-width: 50%;
             display: inline;
             max-height: 500px;
