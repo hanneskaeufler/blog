@@ -19,7 +19,7 @@ jobs:
           command: greenkeeper-lockfile-update
       - run:
           name: "Install node dependencies"
-          command: npm install
+          command: npm ci
       - run:
           name: "Stylelint"
           command: npm run lint
