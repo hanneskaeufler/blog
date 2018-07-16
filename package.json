@@ -7,7 +7,7 @@
     "laravel-mix": "^2.1.11",
     "lost": "^8.2.0",
     "normalize-scss": "^7.0.1",
-    "npm": "^6.0.1",
+    "npm": "^6.2.0",
     "rails-ujs": "^5.1.4",
     "turbolinks": "^5.0.3"
   },
@@ -17,10 +17,10 @@
     "accessibility-test": "node accessibility-testing/accessibility-test.js",
     "approve": "backstop --config=backstop.js approve",
     "local-test": "docker run --rm -v $(pwd):/src hanneskaeufler/crystal-node-ruby:0.24.1 backstop --config=/src/backstop.js test",
-    "heroku-postbuild": "yarn prod",
-    "dev": "yarn run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "yarn run webpack --watch --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "NODE_ENV=production yarn run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "heroku-postbuild": "prod",
+    "dev": "npm run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run webpack --watch --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "NODE_ENV=production npm run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
