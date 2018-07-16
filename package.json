@@ -18,9 +18,10 @@
     "approve": "backstop --config=backstop.js approve",
     "local-test": "docker run --rm -v $(pwd):/src hanneskaeufler/crystal-node-ruby:0.24.1 backstop --config=/src/backstop.js test",
     "heroku-postbuild": "prod",
-    "dev": "npm run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run webpack --watch --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "NODE_ENV=production npm run webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "danger": "danger",
+    "dev": "webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "webpack --watch --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "NODE_ENV=production webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",

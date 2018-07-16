@@ -13,19 +13,19 @@ jobs:
       - checkout
       - run:
           name: "Install greenkeeper lockfile updater"
-          command: yarn global add patkub/greenkeeper-lockfile
+          command: npm install --global patkub/greenkeeper-lockfile
       - run:
           name: "Update lockfile"
           command: greenkeeper-lockfile-update
       - run:
           name: "Install node dependencies"
-          command: yarn install
+          command: npm install
       - run:
           name: "Stylelint"
-          command: yarn lint
+          command: npm run lint
       - run:
           name: "Compiling assets"
-          command: yarn prod
+          command: npm run prod
       - run:
           name: "Install crystal dependencies"
           command: shards install
@@ -46,7 +46,7 @@ jobs:
           when: always
       - run:
           name: "Run danger"
-          command: yarn danger ci
+          command: npm run danger ci
           when: always
       - run:
           name: "Compile blog for visual testing"
@@ -66,12 +66,12 @@ jobs:
           background: true
       - run:
           name: "Run BackstopJS - visual tests"
-          command: yarn test
+          command: npm test
       - store_artifacts:
           path: /root/project/backstop_data/bitmaps_test
       - run:
           name: "Accessibility testing"
-          command: yarn accessibility-test
+          command: npm run accessibility-test
       - run:
           name: "Upload lockfile"
           command: greenkeeper-lockfile-upload
