@@ -35,9 +35,9 @@ module Blog::Components
         address do
           text "Dipl.-Ing. Hannes Käufler"
           br
-          text "Gotenstraße 17"
+          text "Gluthstraße 8"
           br
-          text "89610 Oberdischingen"
+          text "80807 München"
         end
         ul do
           SOCIALS.each do |name, href|
