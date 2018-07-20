@@ -6,6 +6,7 @@ class Blog::Feed < ApiAction
   get "/feed.json" do
     feed = {
       "version"       => "https://jsonfeed.org/version/1",
+      "title"         => "racing · software · open-source",
       "home_page_url" => Blog::Posts::Index.url,
       "feed_url"      => Blog::Feed.url,
       "description"   => Blog::Components::TAGLINE,
