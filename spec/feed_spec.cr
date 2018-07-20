@@ -15,7 +15,7 @@ describe Blog::Feed do
 
       response.body.should eq({
         "version":       "https://jsonfeed.org/version/1",
-        "title": "racing · software · open-source",
+        "title":         "racing · software · open-source",
         "home_page_url": "#{host}/",
         "feed_url":      "#{host}/feed.json",
         "description":   Blog::Components::TAGLINE,
