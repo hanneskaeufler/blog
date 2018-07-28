@@ -2,13 +2,13 @@ require "../spec_helper"
 
 describe ForceCustomDomainHandler do
   it "redirects to the custom domain when the heroku domain is requested" do
-    req = request(host: "hannesdotkaeuflerdotnet.herokuapp.com")
+    req = request(host: "hannesdotkaeuflerdotnet.herokuapp.com", path: "/posts/my-post")
     context = HTTP::Server::Context.new(req, response)
 
     middlewares.call context
 
     context.response.status_code.should eq 301
-    context.response.headers["Location"].should eq Lucky::RouteHelper.settings.base_uri
+    context.response.headers["Location"].should eq "#{Lucky::RouteHelper.settings.base_uri}/posts/my-post"
   end
 
   it "simply calls the next handler when the custom domain is already used" do
@@ -40,6 +40,6 @@ def response
   HTTP::Server::Response.new(IO::Memory.new)
 end
 
-def request(host : String)
-  HTTP::Request.new("GET", "/", headers: HTTP::Headers{"host" => host})
+def request(host : String, path : String = "/")
+  HTTP::Request.new("GET", path, headers: HTTP::Headers{"host" => host})
 end
