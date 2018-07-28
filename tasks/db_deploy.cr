@@ -13,7 +13,15 @@ class Db::Deploy < LuckyCli::Task
     copy_db_to_dropbox
     open_dropbox_to_get_link
     link = wait_for_public_link
-    restore_db_from_dump(link)
+    restore_db_from_dump(fix_dropbox_link(link))
+  end
+
+  private def fix_dropbox_link(link : Nil)
+    raise ArgumentError.new("Please enter a link.")
+  end
+
+  private def fix_dropbox_link(link : String) : String
+    link.gsub("www.dropbox.com", "dl.dropboxusercontent.com")
   end
 
   private def restore_db_from_dump(link)
