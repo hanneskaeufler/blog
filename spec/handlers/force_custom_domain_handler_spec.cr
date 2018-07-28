@@ -37,7 +37,7 @@ def middlewares(last = FakeHandler.new)
 end
 
 def response
-  response = HTTP::Server::Response.new(IO::Memory.new)
+  HTTP::Server::Response.new(IO::Memory.new)
 end
 
 def request(host : String)
