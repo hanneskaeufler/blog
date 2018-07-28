@@ -4,6 +4,7 @@ host = Lucky::Server.settings.host
 port = Lucky::Server.settings.port
 
 server = HTTP::Server.new([
+  ForceCustomDomainHandler.new,
   Lucky::HttpMethodOverrideHandler.new,
   Lucky::LogHandler.new,
   Lucky::SessionHandler.new,
