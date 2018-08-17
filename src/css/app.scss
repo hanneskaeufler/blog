@@ -93,7 +93,6 @@ a:hover {
     @include grid;
     @include clearfix;
 
-    display: grid;
     padding: 0 1em;
 }
 
@@ -250,10 +249,11 @@ a:hover {
     }
 
     > section {
+        @include grid;
+
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin: 0 auto;
-        max-width: $gridWidth;
+        grid-column-gap: 30px;
     }
 }
 
