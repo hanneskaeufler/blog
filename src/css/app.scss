@@ -11,6 +11,23 @@ $textColor: darken(#6b7c93, 0.1);
 $contrastAccentColor: #24b47e;
 $headingTextColor: #32325d;
 
+@mixin grid() {
+    margin: 0 auto;
+    max-width: $gridWidth;
+}
+
+@mixin clearfix() {
+    &::before,
+    &::after {
+        content: " ";
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+}
+
 body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
@@ -43,35 +60,15 @@ a:hover {
 .blog-title-small {
     background: rgba(36, 180, 126, 0.4);
     padding: 10px;
-
-    section {
-        // lost-utility: clearfix;
-        // lost-center: $gridWidth;
-
-        > div {
-            // lost-column: 1/2;
-        }
-    }
 }
 
 .tag-line {
-    &::before,
-    &::after {
-        content: " ";
-        display: table;
-    }
-
-    &::after {
-        clear: both;
-    }
+    @include clearfix;
+    @include grid;
 
     background: white;
     border-radius: $defaultBorderRadius;
     box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-    margin: 0 auto;
-    max-width: $gridWidth;
-    // lost-utility: clearfix;
-    // lost-center: $gridWidth;
 }
 
 .tag-line h1 {
@@ -93,12 +90,11 @@ a:hover {
 
 .posts-container,
 .posts-archive {
+    @include grid;
+    @include clearfix;
+
     display: grid;
-    margin: 0 auto;
-    max-width: $gridWidth;
     padding: 0 1em;
-    // lost-utility: clearfix;
-    // lost-center: $gridWidth;
 }
 
 .intro li img {
@@ -262,8 +258,9 @@ a:hover {
 }
 
 .blog-footer ul {
+    @include clearfix;
+
     list-style-type: none;
-    // lost-utility: clearfix;
     margin: 0;
     padding: 0;
 }
@@ -273,20 +270,8 @@ a:hover {
     margin: 0 10px 0 0;
 }
 
-.blog-footer section {
-    // lost-utility: clearfix;
-    // lost-center: $gridWidth;
-
-    div {
-        // lost-column: 1/2;
-    }
-}
-
 .post-editor {
-    // lost-utility: clearfix;
-    // lost-center: $gridWidth;
-    margin: 0 auto;
-    max-width: $gridWidth;
+    @include grid;
 
     .form-row {
         margin-bottom: 20px;
