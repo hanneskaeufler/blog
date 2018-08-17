@@ -221,14 +221,4 @@ describe Blog do
       end
     end
   end
-
-  # context "with no posts" do
-  #   it "renders a generic not found error" do
-  #       visitor = AppVisitor.new
-
-  #       visitor.visit("/posts/welcome")
-
-  #       visitor.should contain "<h1>Not found</h1>"
-  #   end
-  # end
 end
