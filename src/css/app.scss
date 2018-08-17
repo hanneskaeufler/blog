@@ -45,21 +45,33 @@ a:hover {
     padding: 10px;
 
     section {
-        lost-utility: clearfix;
-        lost-center: $gridWidth;
+        // lost-utility: clearfix;
+        // lost-center: $gridWidth;
 
         > div {
-            lost-column: 1/2;
+            // lost-column: 1/2;
         }
     }
 }
 
 .tag-line {
-    lost-utility: clearfix;
-    lost-center: $gridWidth;
+    &::before,
+    &::after {
+        content: " ";
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+
     background: white;
     border-radius: $defaultBorderRadius;
     box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    margin: 0 auto;
+    max-width: $gridWidth;
+    // lost-utility: clearfix;
+    // lost-center: $gridWidth;
 }
 
 .tag-line h1 {
@@ -81,9 +93,12 @@ a:hover {
 
 .posts-container,
 .posts-archive {
-    lost-utility: clearfix;
-    lost-center: $gridWidth;
+    display: grid;
+    margin: 0 auto;
+    max-width: $gridWidth;
     padding: 0 1em;
+    // lost-utility: clearfix;
+    // lost-center: $gridWidth;
 }
 
 .intro li img {
@@ -237,11 +252,18 @@ a:hover {
         font-style: normal;
         margin-bottom: 1em;
     }
+
+    > section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        max-width: $gridWidth;
+    }
 }
 
 .blog-footer ul {
     list-style-type: none;
-    lost-utility: clearfix;
+    // lost-utility: clearfix;
     margin: 0;
     padding: 0;
 }
@@ -252,17 +274,19 @@ a:hover {
 }
 
 .blog-footer section {
-    lost-utility: clearfix;
-    lost-center: $gridWidth;
+    // lost-utility: clearfix;
+    // lost-center: $gridWidth;
 
     div {
-        lost-column: 1/2;
+        // lost-column: 1/2;
     }
 }
 
 .post-editor {
-    lost-utility: clearfix;
-    lost-center: $gridWidth;
+    // lost-utility: clearfix;
+    // lost-center: $gridWidth;
+    margin: 0 auto;
+    max-width: $gridWidth;
 
     .form-row {
         margin-bottom: 20px;
