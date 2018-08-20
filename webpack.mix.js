@@ -30,6 +30,7 @@ mix
   .setPublicPath("public")
   // Add assets to the manifest
   .version(["public/assets"])
+  .minify("public/css/app.css")
   // Silence most output from webpack
   .webpackConfig({ stats: "errors-only" })
   .disableSuccessNotifications();
