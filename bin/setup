@@ -9,17 +9,17 @@ indent() {
   done
 }
 
-if ! command -v yarn > /dev/null; then
-  printf 'Yarn is not installed.\n'
-  printf 'See https://yarnpkg.com/lang/en/docs/install/ for install instructions.\n'
+if ! command -v npm > /dev/null; then
+  printf 'NPM is not installed.\n'
+  printf 'See https://docs.npmjs.com/cli/npm for install instructions.\n'
   exit 1
 fi
 
 echo -e "\n▸ Installing node dependencies"
-yarn install --silent | indent
+npm ci | indent
 
 echo -e "\n▸ Compiling assets"
-yarn dev | indent
+npm run dev | indent
 
 echo -e "\n▸ Installing shards"
 crystal deps | indent

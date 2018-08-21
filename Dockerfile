@@ -8,7 +8,7 @@ WORKDIR /app
 RUN crystal deps
 
 # install app dependencies (node)
-RUN yarn install
+RUN npm ci
 
 # precompile assets (via brunch)
 RUN ./bin/compile_assets build --production
