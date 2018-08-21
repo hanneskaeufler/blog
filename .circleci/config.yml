@@ -66,9 +66,6 @@ jobs:
       - run:
           name: "Accessibility testing"
           command: npm run accessibility-test
-      - run:
-          name: "Upload lockfile"
-          command: greenkeeper-lockfile-upload
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.25.0
