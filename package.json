@@ -40,7 +40,7 @@
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "backstopjs": "^3.2.15",
-    "danger": "^4.0.1",
+    "danger": "^4.3.0",
     "danger-plugin-fixme": "^1.0.0",
     "danger-plugin-mentor": "^0.6.0",
     "puppeteer": "^1.4.0",
