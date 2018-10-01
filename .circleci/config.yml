@@ -12,6 +12,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Install greenkeeper-lockfile-update and run it"
+          command: npm i -g greenkeeper-lockfile && greenkeeper-lockfile-update
+      - run:
           name: "Install node dependencies"
           command: npm ci
       - run:
