@@ -1,4 +1,3 @@
-import fixme from "danger-plugin-fixme"
 import mentor from "danger-plugin-mentor"
 import { message, warn, fail, markdown } from "danger"
 
@@ -12,4 +11,3 @@ if (danger.github.pr.additions + danger.github.pr.deletions > bigPRThreshold) {
 }
 
 mentor()
-fixme()
