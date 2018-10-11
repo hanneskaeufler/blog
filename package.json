@@ -41,7 +41,7 @@
     "babel-preset-env": "^1.7.0",
     "backstopjs": "^3.8.2",
     "danger": "^4.3.3",
-    "danger-plugin-mentor": "^0.7.1",
+    "danger-plugin-mentor": "^0.8.0",
     "puppeteer": "^1.4.0",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0"
