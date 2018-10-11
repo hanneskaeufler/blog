@@ -4,6 +4,14 @@ shards:
     github: veelenga/ameba
     version: 0.8.0
 
+  awscr-s3:
+    github: taylorfinnell/awscr-s3
+    version: 0.3.2
+
+  awscr-signer:
+    github: taylorfinnell/awscr-signer
+    version: 0.5.2
+
   blank:
     github: kostya/blank
     version: 0.1.0
@@ -34,7 +42,7 @@ shards:
 
   lucky_record:
     github: luckyframework/lucky_record
-    version: 0.6.0
+    version: 0.6.1
 
   lucky_router:
     github: luckyframework/lucky_router
@@ -49,8 +57,8 @@ shards:
     commit: 078a04ea58ead5203bb435a3b5fff448ddabaeea
 
   sitemapper:
-    github: hanneskaeufler/sitemapper
-    commit: 57cc46f8e0f21da641217e6f3871b18499f97316
+    github: jwoertink/sitemapper
+    version: 0.4.0
 
   teeplate:
     github: mosop/teeplate
