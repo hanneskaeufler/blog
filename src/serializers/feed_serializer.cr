@@ -14,7 +14,7 @@ class FeedSerializer < Lucky::Serializer
       items:         items,
     }
 
-    return feed.merge({ next_url: next_page_url }) if has_next_page
+    return feed.merge({next_url: next_page_url}) if has_next_page
 
     feed
   end
