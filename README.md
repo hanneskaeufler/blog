@@ -15,22 +15,28 @@ This is my personal website/blog written using [Lucky](https://luckyframework.or
 This is a bit of an experiment to be as pedantic about each and every bit of code as we can be realistically.
 The following checks are run (see also `.circleci/config.yml`):
 
-* Static analysis on crystal code with `./bin/ameba`
-* Code formatting checks on crystal code with `crystal tool format --check`
-* Unit / Integration tests with `crystal spec`
-* Visual regression testing with `npm test` (using backstopjs)
-    - To generate reference images on the mac, run `docker run --rm -v $(pwd):/src hanneskaeufler/crystal-node-ruby:0.25.1 backstop --config=/src/backstop.js`
-    - Switch the host in `backstop.json` to `host.docker.internal:5000`, see [docker guides](https://docs.docker.com/docker-for-mac/networking/#use-cases-and-workarounds)
-    - To export the local visual regression test database, run `/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump --no-acl --no-owner --data-only --table=posts blog_visual_test > blog_visual_test.dump`
-    - Also, duh: https://github.com/garris/BackstopJS/issues/796
-* CSS linting with `npm run lint` (using stylelint)
-* Pull request trigger a run of `danger-js` which tries to do the following:
-    * Avoid "fixme/todo" comments in code
-* Accessibility testing with the chrome developer tools via `npm run accessibility-test`
-    * It is based on [Google Chrome's a11y dev tools](https://github.com/GoogleChrome/accessibility-developer-tools)
+| Check | Description |
+| ----  | ------------|
+| Static analysis| Checks for unused variables etc. Run with `./bin/ameba` |
+| Code formatting | Can check formatting with `crystal tool format --check` and also autofix when omitting `--check` |
+| Unit tests | Run em with `crystal spec` |
+| Integration tests | Some of the tests hit the database and are not necessarily micro-test. Run em through the same runner with `crystal spec` |
+| Visual regression tests | Uses [backstopjs](https://github.com/garris/BackstopJS). Was a bit trickier to get running smoothly on CI. Needs a few pointers, see below. Run with `npm test` |
+| CSS linting | Uses stylelint, run with `rpm run lint` |
+| Automated code review | Pull requests trigger a run of `danger-js` which looks for basics like PR descriptions, small-ish PRs. |
+| Accessibility testing | The chrome dev tools can analyse contrast etc. Run with `npm run accessibility-test` which uses a script heavily based on [Google Chrome's a11y dev tools](https://github.com/GoogleChrome/accessibility-developer-tools) |
+| Security testing | On the frontend side we can make sure not to have major security holes in the dependencies, which is checked by `npm audit` |
 
 - [ ] Performance testing
 - [ ] Mutation testing
+
+#### Visual regression testing
+
+* To generate reference images on the mac, run `docker run --rm -v $(pwd):/src hanneskaeufler/crystal-node-ruby:0.25.1 backstop --config=/src/backstop.js`
+* Switch the host in `backstop.json` to `host.docker.internal:5000`, see [docker guides](https://docs.docker.com/docker-for-mac/networking/#use-cases-and-workarounds)
+* To export the local visual regression test database, run `/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump --no-acl --no-owner --data-only --table=posts blog_visual_test > blog_visual_test.dump`
+* Also, duh: https://github.com/garris/BackstopJS/issues/796
+
 
 ### Learning Lucky
 
