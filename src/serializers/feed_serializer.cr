@@ -4,21 +4,23 @@ class FeedSerializer < Lucky::Serializer
 
   def render
     feed = {
-      "version"       => "https://jsonfeed.org/version/1",
-      "title"         => "racing · software · open-source",
-      "home_page_url" => Blog::Posts::Index.url,
-      "feed_url"      => Blog::Feed.url,
-      "description"   => Blog::Components::TAGLINE,
-      "author"        => {"name" => "Hannes Käufler"},
-      "favicon"       => "#{host}/favicon.ico",
-      "items"         => items,
+      version:       "https://jsonfeed.org/version/1",
+      title:         "racing · software · open-source",
+      home_page_url: Blog::Posts::Index.url,
+      feed_url:      Blog::Feed.url,
+      description:   Blog::Components::TAGLINE,
+      author:        {name: "Hannes Käufler"},
+      favicon:       "#{host}/favicon.ico",
+      items:         items,
     }
 
-    if has_next_page
-      feed["next_url"] = Blog::Feed.with(@page + 1).url
-    end
+    return feed.merge({ next_url: next_page_url }) if has_next_page
 
     feed
+  end
+
+  private def next_page_url
+    Blog::Feed.with(@page + 1).url
   end
 
   private def items
