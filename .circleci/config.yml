@@ -45,14 +45,11 @@ jobs:
           path: /root/reports
           when: always
       - run:
-          name: "Force existance of coverage folder"
-          command: mkdir coverage
-      - run:
           name: "Generate coverage report"
           command: bin/crystal-coverage --output-format=Coveralls spec/blog_spec.cr
       - run:
           name: "Upload coverage to coveralls"
-          command: curl -S -F json_file=@coveralls.json https://coveralls.io/api/v1/jobs
+          command: curl -S -F json_file=@coveralls.json https://coveralls.io/github/hanneskaeufler/blog
       - run:
           name: "Run danger"
           command: npm run danger-ci
