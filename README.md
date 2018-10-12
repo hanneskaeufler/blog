@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/hanneskaeufler/blog.svg?style=svg)](https://circleci.com/gh/hanneskaeufler/blog) [![Greenkeeper badge](https://badges.greenkeeper.io/hanneskaeufler/blog.svg)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/hanneskaeufler/blog.svg?style=svg)](https://circleci.com/gh/hanneskaeufler/blog) [![Greenkeeper badge](https://badges.greenkeeper.io/hanneskaeufler/blog.svg)](https://greenkeeper.io/) [![Coverage Status](https://coveralls.io/repos/github/hanneskaeufler/blog/badge.svg?branch=master)](https://coveralls.io/github/hanneskaeufler/blog?branch=master)
 
 # blog
 
