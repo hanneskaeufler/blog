@@ -52,7 +52,7 @@ jobs:
           command: bin/crystal-coverage --output-format=Coveralls spec/blog_spec.cr
       - run:
           name: "Upload coverage to coveralls"
-          command: curl -S -F json_file=@${coveralls.json} https://coveralls.io/api/v1/jobs
+          command: curl -S -F json_file=@coveralls.json https://coveralls.io/api/v1/jobs
       - run:
           name: "Run danger"
           command: npm run danger-ci
