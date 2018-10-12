@@ -8,7 +8,7 @@ describe Blog::Feed do
     it "renders a valid json feed" do
       a = 2 * 24 * 60 * 60
       b = 3 * 24 * 60 * 60
-      published = Time.epoch(a+ 60)
+      published = Time.epoch(a + 60)
       updated = Time.epoch(b + 50)
       insert_post title: "post title", content: "\n# post\ncontent", published_at: published, updated_at: updated
       post_id = PostQuery.new.first.id
