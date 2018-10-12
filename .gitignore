@@ -15,3 +15,6 @@ Gemfile.lock
 /backstop_data/bitmaps_test/
 /bin/ameba
 sitemap.xml.gz
+bin/crystal-coverage
+coverage/
+coveralls.json
