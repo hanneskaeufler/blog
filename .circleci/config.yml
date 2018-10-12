@@ -50,11 +50,9 @@ jobs:
       - run:
           name: "Generate coverage report"
           command: bin/crystal-coverage --output-format=Coveralls spec/blog_spec.cr
-      - store_artifacts:
-          path: ./coverage
       - run:
           name: "Upload coverage to coveralls"
-          command: cat coveralls.json
+          command: curl -S -F json_file=@${coveralls.json} https://coveralls.io/api/v1/jobs
       - run:
           name: "Run danger"
           command: npm run danger-ci
