@@ -32,6 +32,8 @@ describe Blog do
     end
 
     it "redirects to root for invalid pages" do
+      visitor.visit("/?page=-1")
+      visitor.should redirect_to(Blog::Posts::Index.path(page: 1))
       visitor.visit("/?page=0")
       visitor.should redirect_to(Blog::Posts::Index.path(page: 1))
     end
