@@ -6,8 +6,10 @@ describe Blog::Feed do
 
   describe "/feed.json" do
     it "renders a valid json feed" do
-      published = Time.epoch((2 * 24 * 60 * 60) + 60)
-      updated = Time.epoch((3 * 24 * 60 * 60) + 50)
+      a = 2 * 24 * 60 * 60
+      b = 3 * 24 * 60 * 60
+      published = Time.epoch(a+ 60)
+      updated = Time.epoch(b + 50)
       insert_post title: "post title", content: "\n# post\ncontent", published_at: published, updated_at: updated
       post_id = PostQuery.new.first.id
 
@@ -36,7 +38,8 @@ describe Blog::Feed do
 
     context "more than five posts" do
       it "adds a next_url link" do
-        (PostQuery::PER_PAGE + 1).times { |i| insert_post title: i.to_s }
+        pages = PostQuery::PER_PAGE + 1
+        pages.times { |i| insert_post title: i.to_s }
 
         response = visitor.visit("/feed.json", headers)
 
@@ -44,7 +47,8 @@ describe Blog::Feed do
       end
 
       it "does not show a next_url when on the last page" do
-        (PostQuery::PER_PAGE + 1).times { |i| insert_post title: i.to_s }
+        pages = PostQuery::PER_PAGE + 1
+        pages.times { |i| insert_post title: i.to_s }
 
         response = visitor.visit("/feed.json?page=2", headers)
 
