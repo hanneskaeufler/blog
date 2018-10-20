@@ -72,6 +72,12 @@ jobs:
       - run:
           name: "Accessibility testing"
           command: npm run accessibility-test
+      - run:
+          name: "Check mutation test coverage"
+          command: |
+            ./bin/crytic --subject src/serializers/feed_serializer.cr spec/feed_spec.cr && \
+            ./bin/crytic --subject src/actions/blog/feed.cr spec/feed_spec.cr && \
+            ./bin/crytic --subject src/models/post.cr spec/models/post_spec.cr
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.25.0

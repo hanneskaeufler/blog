@@ -1,3 +1,5 @@
+require "../spec_helper"
+
 describe Post do
   describe "#word_count" do
     it "returns the number of words in the post content" do
