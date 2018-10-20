@@ -26,9 +26,9 @@ The following checks are run (see also `.circleci/config.yml`):
 | Automated code review | Pull requests trigger a run of `danger-js` which looks for basics like PR descriptions, small-ish PRs. |
 | Accessibility testing | The chrome dev tools can analyse contrast etc. Run with `npm run accessibility-test` which uses a script heavily based on [Google Chrome's a11y dev tools](https://github.com/GoogleChrome/accessibility-developer-tools) |
 | Security testing | On the frontend side we can make sure not to have major security holes in the dependencies, which is checked by `npm audit` |
+| Mutation testing | We can inject intentional code changes that must fail the test-suite to check if they do. This is using my own mutation test librabry [crytic](https://github.com/hanneskaeufler/crytic) |
 
 - [ ] Performance testing
-- [ ] Mutation testing
 
 #### Visual regression testing
 
