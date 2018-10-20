@@ -16,9 +16,17 @@ shards:
     github: kostya/blank
     version: 0.1.0
 
+  crytic:
+    github: hanneskaeufler/crytic
+    commit: ca76db61e38757b20c1d379ef91b3b6b1be869ca
+
   db:
     github: crystal-lang/crystal-db
     version: 0.5.0
+
+  diff:
+    github: hanneskaeufler/crystal-diff
+    commit: 63227e2dc60adc04e6ad219e05c3e8c40c786c00
 
   habitat:
     github: luckyframework/habitat

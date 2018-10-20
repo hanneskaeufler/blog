@@ -26,3 +26,5 @@ dependencies:
 development_dependencies:
   ameba:
     github: veelenga/ameba
+  crytic:
+    github: hanneskaeufler/crytic
