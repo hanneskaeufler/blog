@@ -11,7 +11,7 @@ describe Blog do
   end
 
   it "renders a not found page for invalid posts" do
-    Lucky::ErrorHandler.configure { settings.show_debug_output = false }
+    Lucky::ErrorHandler.configure { |settings| settings.show_debug_output = false }
     visitor = AppVisitor.new
 
     visitor.visit("/posts/not-there")

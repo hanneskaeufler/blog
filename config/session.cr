@@ -1,6 +1,5 @@
 require "./server"
 
-Lucky::Session::Store.configure do
-  settings.key = "blog"
-  settings.secret = Lucky::Server.settings.secret_key_base
+Lucky::Session.configure do |settings|
+  settings.key = "blog_0_12_0"
 end

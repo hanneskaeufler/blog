@@ -6,8 +6,8 @@ describe Blog::Feed do
 
   describe "/feed.json" do
     it "renders a valid json feed" do
-      published = Time.epoch((2 * 24 * 60 * 60) + 60)
-      updated = Time.epoch((3 * 24 * 60 * 60) + 50)
+      published = Time.unix((2 * 24 * 60 * 60) + 60)
+      updated = Time.unix((3 * 24 * 60 * 60) + 50)
       insert_post title: "post title", content: "\n# post\ncontent", published_at: published, updated_at: updated
       post_id = PostQuery.new.first.id
 

@@ -1,5 +1,5 @@
-Lucky::RouteHelper.configure do
-  if Lucky::Env.production?
+Lucky::RouteHelper.configure do |settings|
+  if ENV["APP_DOMAIN"]?
     # APP_DOMAIN must be set in heroku
     settings.base_uri = ENV.fetch("APP_DOMAIN")
   else

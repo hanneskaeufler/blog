@@ -4,7 +4,7 @@ class Blog::Posts::Index < BrowserAction
   get "/" do
     return redirect to: Blog::Posts::Index if page <= 0
 
-    posts_count = PostQuery.new.published.count.to_i
+    posts_count = PostQuery.new.published.select_count.to_i
     posts = PostQuery.new.latest(page: page).results
     render Blog::Posts::IndexPage,
       posts: posts,
