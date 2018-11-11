@@ -122,7 +122,7 @@ describe Blog do
       visitor.should contain "Edit post"
       visitor.should contain "action=\"/posts/#{post.id}/update\""
       visitor.should contain <<-HTML
-      <input type="text" id="post_title" name="post:title" value="some title"/>
+      <input type="text" id="post_title" name="post:title" value="some title">
       HTML
     end
   end
@@ -157,7 +157,7 @@ describe Blog do
         visitor.should contain "Edit post"
         visitor.should contain "action=\"/posts/#{post.id}/update\""
         visitor.should contain <<-HTML
-        <input type="text" id="post_title" name="post:title" value=""/>
+        <input type="text" id="post_title" name="post:title" value="">
         HTML
       end
     end

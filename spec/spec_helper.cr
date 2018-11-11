@@ -20,5 +20,7 @@ def build_post(content, published_at = Time.now)
 end
 
 def context
-  HTTP::Server::Context.new(HTTP::Request.new("GET", "/"), HTTP::Server::Response.new(IO::Memory.new))
+  con = HTTP::Server::Context.new(HTTP::Request.new("GET", "/"), HTTP::Server::Response.new(IO::Memory.new))
+  con.session.set(Lucky::ProtectFromForgery::SESSION_KEY, "statictoken")
+  con
 end

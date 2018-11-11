@@ -37,7 +37,7 @@ class AppVisitor
     io = IO::Memory.new
     response = HTTP::Server::Response.new(io)
     context = HTTP::Server::Context.new(request, response)
-    context.session[Lucky::ProtectFromForgery::SESSION_KEY] = CSRF_TOKEN
+    context.session.set(Lucky::ProtectFromForgery::SESSION_KEY, CSRF_TOKEN)
     middlewares.call context
     response.close
     io.rewind
@@ -48,7 +48,7 @@ class AppVisitor
     HTTP::Server.build_middleware([
       Lucky::HttpMethodOverrideHandler.new,
       Lucky::SessionHandler.new,
-      Lucky::Flash::Handler.new,
+      Lucky::FlashHandler.new,
       Lucky::ErrorHandler.new(action: Errors::Show),
       Lucky::RouteHandler.new,
       Lucky::StaticFileHandler.new("./public", false),
@@ -68,12 +68,12 @@ class AppVisitor
 
     def match(visitor : AppVisitor)
       visitor.response.status_code == 302 &&
-        visitor.response.headers.fetch("Location") == @expected_path
+        visitor.response.headers["Location"] == @expected_path
     end
 
     def failure_message(visitor : AppVisitor)
       if visitor.response.headers.["Location"]?
-        "Expected to redirect to \"#{@expected_path}\", but redirected to #{visitor.response.headers.fetch("Location")}"
+        "Expected to redirect to \"#{@expected_path}\", but redirected to #{visitor.response.headers["Location"]}"
       else
         "Expected to redirect to \"#{@expected_path}\", but did not redirected at all"
       end

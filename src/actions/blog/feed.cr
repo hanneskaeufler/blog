@@ -3,7 +3,7 @@ class Blog::Feed < ApiAction
 
   get "/feed.json" do
     json(FeedSerializer.new(PostQuery.new.latest.results,
-      PostQuery.new.published.count,
+      PostQuery.new.published.select_count,
       page))
   end
 end

@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:latest
+      - image: hanneskaeufler/crystal-node-ruby:0.27.0
         environment:
           DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
       - image: postgres:9.6.2-alpine
@@ -17,9 +17,6 @@ jobs:
       - run:
           name: "Install node dependencies"
           command: npm ci
-      - run:
-          name: "Audit node dependenceis for security vulnerabilities"
-          command: npm audit
       - run:
           name: "Stylelint"
           command: npm run lint

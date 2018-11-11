@@ -6,55 +6,63 @@ shards:
 
   awscr-s3:
     github: taylorfinnell/awscr-s3
-    version: 0.3.2
+    version: 0.3.3
 
   awscr-signer:
     github: taylorfinnell/awscr-signer
-    version: 0.5.2
+    version: 0.5.3
 
   blank:
     github: kostya/blank
     version: 0.1.0
 
+  callback:
+    github: mosop/callback
+    version: 0.6.3
+
+  cli:
+    github: mosop/cli
+    version: 0.7.0
+
+  cry:
+    github: paulcsmith/cry
+    version: 0.4.0
+
   crytic:
     github: hanneskaeufler/crytic
-    commit: ae5f5185c5cf90cbad9b4aa354341647f8c3b118
+    commit: 8e74318def30011649e5fbe793a66321fca77941
 
   db:
     github: crystal-lang/crystal-db
-    version: 0.5.0
+    version: 0.5.1
 
-  diff:
-    github: hanneskaeufler/crystal-diff
-    commit: 63227e2dc60adc04e6ad219e05c3e8c40c786c00
+  exception_page:
+    github: crystal-loot/exception_page
+    version: 0.1.1
 
   habitat:
     github: luckyframework/habitat
-    version: 0.3.0
+    version: 0.4.0
 
   lucky:
     github: luckyframework/lucky
-    version: 0.11.1
+    version: 0.12.0
 
   lucky_cli:
     github: luckyframework/lucky_cli
-    version: 0.11.0
-
-  lucky_inflector:
-    github: luckyframework/lucky_inflector
-    version: 0.1.1
-
-  lucky_migrator:
-    github: luckyframework/lucky_migrator
-    version: 0.6.0
+    version: 0.12.0
 
   lucky_record:
     github: luckyframework/lucky_record
-    version: 0.6.1
+    version: 0.7.0
 
   lucky_router:
     github: luckyframework/lucky_router
-    version: 0.2.1
+    version: 0.2.2
+
+  optarg:
+    github: mosop/optarg
+    version: 0.5.8
 
   pg:
     github: will/crystal-pg
@@ -68,7 +76,15 @@ shards:
     github: jwoertink/sitemapper
     version: 0.4.0
 
+  string_inflection:
+    github: mosop/string_inflection
+    version: 0.2.1
+
   teeplate:
     github: mosop/teeplate
-    version: 0.6.1
+    version: 0.7.0
+
+  wordsmith:
+    github: luckyframework/wordsmith
+    version: 0.2.0
 
