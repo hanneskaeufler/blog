@@ -1,4 +1,4 @@
-class MakeSlugNonNilable::V20171220205424 < LuckyMigrator::Migration::V1
+class MakeSlugNonNilable::V20171220205424 < LuckyRecord::Migrator::Migration::V1
   def migrate
     execute "ALTER table posts ALTER slug SET NOT NULL"
   end
