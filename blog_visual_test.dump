@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 10.4
--- Dumped by pg_dump version 10.4
+-- Dumped from database version 10.5
+-- Dumped by pg_dump version 10.5
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -19,16 +19,9 @@ SET row_security = off;
 -- Data for Name: posts; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.posts (id, created_at, updated_at, title, content, published_at, slug) FROM stdin;
-1	2018-04-07 20:05:33+02	2018-04-07 20:05:33+02	Sample post	# This is an h2\r\n## This is an h3\r\n### This is an h4\r\nSome `inline code`. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit [amet](http://amet.com). Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\r\n\r\n**Bold text** followed by *italic text* and ~~strikethrough text~~\r\n\r\n> One of my recent weekend side projects, an e-ink / raspberrypi driven build status dashboard, was a great playground for doing TDD powered by visual snapshots. But let's rewind a bit.\r\n\r\n* Create a list\r\n* Add some points\r\n* Do more stuff\r\n\r\n1. This is weird\r\n2. However, it's fine\r\n\r\n	2018-04-07 20:05:33+02	sample-post
+COPY public.posts (created_at, updated_at, title, content, published_at, slug, id) FROM stdin;
+2018-04-07 20:05:33+02	2018-04-07 20:05:33+02	Sample post	# This is an h2\r\n## This is an h3\r\n### This is an h4\r\nSome `inline code`. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit [amet](http://amet.com). Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\r\n\r\n**Bold text** followed by *italic text* and ~~strikethrough text~~\r\n\r\n> One of my recent weekend side projects, an e-ink / raspberrypi driven build status dashboard, was a great playground for doing TDD powered by visual snapshots. But let's rewind a bit.\r\n\r\n* Create a list\r\n* Add some points\r\n* Do more stuff\r\n\r\n1. This is weird\r\n2. However, it's fine\r\n\r\n	2018-04-07 20:05:33+02	sample-post	8ce93d42-0380-4606-a72c-5ae559a4db83
 \.
-
-
---
--- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
-SELECT pg_catalog.setval('public.posts_id_seq', 1, true);
 
 
 --
