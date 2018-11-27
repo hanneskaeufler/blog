@@ -43,7 +43,7 @@
     "danger": "^6.1.2",
     "danger-plugin-mentor": "^0.8.0",
     "puppeteer": "^1.4.0",
-    "stylelint": "^9.2.0",
+    "stylelint": "^9.9.0",
     "stylelint-config-standard": "^18.2.0"
   }
 }
