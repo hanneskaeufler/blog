@@ -18,6 +18,9 @@ jobs:
           name: "Install node dependencies"
           command: npm ci
       - run:
+          name: "Audit node dependenceis for security vulnerabilities"
+          command: npm audit
+      - run:
           name: "Stylelint"
           command: npm run lint
       - run:
