@@ -22,7 +22,7 @@ document.write = function(str) {
   else if (str.indexOf('<div id=\"gist') == 0) {
     var idMatch = /<a href=\"https:\/\/gist\.github\.com\/hanneskaeufler\/(\w+)\//.exec(str);
     var id = idMatch[1];
-    var script = document.querySelector('script[src="https://gist.github.com/hanneskaeufler/' + id + '.js"]');
+    var script = document.querySelector(`script[src="https://gist.github.com/hanneskaeufler/${id}.js"]`);
     var div = document.createElement('div');
     div.innerHTML = str;
     script.parentNode.insertBefore(div, script.nextElementSibling);
