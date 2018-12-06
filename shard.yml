@@ -8,7 +8,7 @@ targets:
   blog:
     main: src/blog.cr
 
-crystal: 0.27.1
+crystal: 0.27.0
 
 license: MIT
 
@@ -23,6 +23,7 @@ dependencies:
 development_dependencies:
   ameba:
     github: veelenga/ameba
+    version: ~> 0.8.1
   crytic:
     github: hanneskaeufler/crytic
-    branch: hk-autofind-files
+    version: ~> 2.0.0
