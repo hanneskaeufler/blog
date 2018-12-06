@@ -77,7 +77,7 @@ jobs:
           command: |
             ./bin/crytic --subject src/serializers/feed_serializer.cr spec/feed_spec.cr && \
             ./bin/crytic --subject src/actions/blog/feed.cr spec/feed_spec.cr && \
-            ./bin/crytic --subject src/models/post.cr spec/models/post_spec.cr
+            STRYKER_DASHBOARD_API_KEY=$STRYKER_KEY ./bin/crytic --subject src/models/post.cr spec/models/post_spec.cr
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.25.0
