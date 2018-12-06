@@ -30,7 +30,7 @@ shards:
 
   crytic:
     github: hanneskaeufler/crytic
-    commit: 5961bdfb3aa368d7f3186e9caf2e99cde81088b6
+    commit: 3afd715a9f1bdebe46e360f6ac1e093ab49e8c87
 
   db:
     github: crystal-lang/crystal-db
