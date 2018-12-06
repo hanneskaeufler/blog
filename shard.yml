@@ -25,4 +25,4 @@ development_dependencies:
     github: veelenga/ameba
   crytic:
     github: hanneskaeufler/crytic
-    branch: master
+    branch: hk-issue-9
