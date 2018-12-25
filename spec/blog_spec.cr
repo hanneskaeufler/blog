@@ -188,6 +188,7 @@ describe Blog do
       visitor.visit("/archive")
 
       visitor.should contain "action=\"/search\""
+      visitor.should contain "type=\"text\" value=\"\""
     end
 
     context "with a few posts" do
