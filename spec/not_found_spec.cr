@@ -8,6 +8,7 @@ describe Blog do
 
     visitor.should contain "<h1>Not Found</h1>"
     visitor.response.status_code.should eq 404
+    visitor.response.headers["Content-Type"].should eq "text/html"
   end
 
   it "renders a not found page for invalid posts" do
