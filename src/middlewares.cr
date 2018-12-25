@@ -1,5 +1,5 @@
 module Blog
-  def self.middlewares()
+  def self.middlewares
     [
       ForceCustomDomainHandler.new,
       Lucky::HttpMethodOverrideHandler.new,
