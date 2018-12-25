@@ -1,4 +1,5 @@
 require "http/client"
+require "../../src/middlewares"
 
 class AppVisitor
   CSRF_TOKEN = "statictesttoken"
@@ -45,15 +46,7 @@ class AppVisitor
   end
 
   def middlewares
-    HTTP::Server.build_middleware([
-      Lucky::HttpMethodOverrideHandler.new,
-      Lucky::SessionHandler.new,
-      Lucky::FlashHandler.new,
-      Lucky::ErrorHandler.new(action: Errors::Show),
-      Lucky::RouteHandler.new,
-      Lucky::StaticFileHandler.new("./public", false),
-      NotFoundHandler.new,
-    ])
+    HTTP::Server.build_middleware(Blog.middlewares.reject(&.is_a?(Lucky::LogHandler)))
   end
 
   module Matchers

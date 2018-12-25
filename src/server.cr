@@ -1,19 +1,10 @@
 require "./app"
+require "./middlewares"
 
 host = Lucky::Server.settings.host
 port = Lucky::Server.settings.port
 
-server = HTTP::Server.new([
-  ForceCustomDomainHandler.new,
-  Lucky::HttpMethodOverrideHandler.new,
-  Lucky::LogHandler.new,
-  Lucky::SessionHandler.new,
-  Lucky::FlashHandler.new,
-  Lucky::ErrorHandler.new(action: Errors::Show),
-  Lucky::RouteHandler.new,
-  Lucky::StaticFileHandler.new("./public", false),
-  NotFoundHandler.new,
-])
+server = HTTP::Server.new(Blog.middlewares)
 
 puts "Listening on http://#{host}:#{port}"
 

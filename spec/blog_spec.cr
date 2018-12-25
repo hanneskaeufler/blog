@@ -3,6 +3,12 @@ require "./spec_helper"
 describe Blog do
   visitor = AppVisitor.new
 
+  it "renders static assets" do
+    visitor.visit("/assets/logos/xing.svg")
+
+    visitor.should contain "simpleicons-xing-icon"
+  end
+
   describe "/" do
     it "shows a title" do
       visitor.visit("/")
