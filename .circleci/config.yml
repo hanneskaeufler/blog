@@ -90,6 +90,12 @@ jobs:
           name: "Migrate database"
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
+          name: "Install node dependencies"
+          command: npm ci
+      - run:
+          name: "Compiling assets"
+          command: npm run prod
+      - run:
           name: "Check mutation test coverage"
           command: ./bin/crytic
   deploy:
