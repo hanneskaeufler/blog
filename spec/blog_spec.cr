@@ -193,14 +193,15 @@ describe Blog do
 
     context "with a few posts" do
       it "shows published posts in chronological order" do
-        insert_post title: "A Post", published_at: Time.now - 1.days
-        insert_post title: "Another Post", published_at: Time.now - 1.days
+        reference = Time.utc(2015, 10, 10)
+        insert_post title: "A Post", published_at: reference - 1.days
+        insert_post title: "Another Post", published_at: reference - 2.days
         insert_post title: "Unpublished", published_at: Time.now + 1.days
 
         visitor.visit("/archive")
 
         visitor.should contain "<h2>Archive</h2>"
-        visitor.should contain "<h3>#{Time.now.year}</h3>"
+        visitor.should contain "<h3>#{reference.year}</h3>"
         visitor.should contain "A Post</a>"
         visitor.should contain "Another Post</a>"
         visitor.should_not contain "Unpublished"
