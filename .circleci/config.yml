@@ -96,6 +96,7 @@ workflows:
   build-deploy:
     jobs:
       - build
+      - test-mutations
       - deploy:
           requires:
             - build
