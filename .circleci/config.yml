@@ -72,12 +72,32 @@ jobs:
       - run:
           name: "Accessibility testing"
           command: npm run accessibility-test
+  test-mutations:
+    docker:
+      - image: hanneskaeufler/crystal-node-ruby:0.27.0
+        environment:
+          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
+      - image: postgres:9.6.2-alpine
+        environment:
+          POSTGRES_DB: blog_test
+          POSTGRES_USER: blog_test_user
+    steps:
+      - checkout
+      - run:
+          name: "Install node dependencies"
+          command: npm ci
+      - run:
+          name: "Compiling assets"
+          command: npm run prod
+      - run:
+          name: "Install crystal dependencies"
+          command: shards install
+      - run:
+          name: "Migrate database"
+          command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
           name: "Check mutation test coverage"
-          command: |
-            ./bin/crytic --subject src/serializers/feed_serializer.cr spec/feed_spec.cr && \
-            ./bin/crytic --subject src/actions/blog/feed.cr spec/feed_spec.cr && \
-            ./bin/crytic --subject src/models/post.cr spec/models/post_spec.cr
+          command: ./bin/crytic --min-msi 50.0
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.25.0
@@ -102,3 +122,13 @@ workflows:
           filters:
             branches:
               only: master
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only: master
+    jobs:
+      - build
+      - test-mutations
