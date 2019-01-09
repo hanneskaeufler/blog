@@ -97,7 +97,7 @@ jobs:
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
           name: "Check mutation test coverage"
-          command: ./bin/crytic
+          command: ./bin/crytic --min-msi 50.0
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.25.0
