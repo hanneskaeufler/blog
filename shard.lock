@@ -30,7 +30,7 @@ shards:
 
   crytic:
     github: hanneskaeufler/crytic
-    version: 3.2.1
+    version: 3.2.2
 
   db:
     github: crystal-lang/crystal-db
