@@ -81,6 +81,7 @@ describe Blog do
         visitor.post("/posts/create", data)
 
         visitor.should redirect_to("/")
+        visitor.should have_success_flash("Post successfully published.")
         PostQuery.new.latest.results.size.should eq 1
       end
     end
@@ -146,6 +147,7 @@ describe Blog do
         visitor.put("/posts/#{post.id}/update", data)
 
         visitor.should redirect_to Blog::Posts::Index.path
+        visitor.should have_success_flash("Post successfully edited.")
       end
     end
 

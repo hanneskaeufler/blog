@@ -1,11 +1,12 @@
 require "http/client"
+require "http/server"
 require "../../src/middlewares"
 
 class AppVisitor
   CSRF_TOKEN = "statictesttoken"
 
-  getter! response
-  @response : HTTP::Client::Response? = nil
+  getter! response : HTTP::Client::Response
+  getter! context : HTTP::Server::Context
 
   def visit(path : String, headers : HTTP::Headers? = nil)
     request = HTTP::Request.new("GET", path, headers)
@@ -37,7 +38,7 @@ class AppVisitor
   private def process_request(request)
     io = IO::Memory.new
     response = HTTP::Server::Response.new(io)
-    context = HTTP::Server::Context.new(request, response)
+    @context = HTTP::Server::Context.new(request, response)
     context.session.set(Lucky::ProtectFromForgery::SESSION_KEY, CSRF_TOKEN)
     middlewares.call context
     response.close
@@ -52,6 +53,23 @@ class AppVisitor
   module Matchers
     def redirect_to(path : String)
       RedirectToExpectation.new(path)
+    end
+
+    def have_success_flash(flash : String)
+      FlashExpectation.new(flash)
+    end
+  end
+
+  struct FlashExpectation
+    def initialize(@flash : String)
+    end
+
+    def match(visitor : AppVisitor)
+      visitor.context.flash.success == @flash
+    end
+
+    def failure_message(visitor : AppVisitor)
+      "Expected a success flash of \"#{@flash}\", but got \"#{visitor.context.flash.success}\""
     end
   end
 
