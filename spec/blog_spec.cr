@@ -72,7 +72,7 @@ describe Blog do
     end
 
     context "all fields filled" do
-      it "pusblishes a new post" do
+      it "publishes a new post" do
         data = {
           "post:title"   => "some title",
           "post:content" => "some content",
