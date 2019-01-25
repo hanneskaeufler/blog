@@ -2,7 +2,7 @@ version: 1.0
 shards:
   ameba:
     github: veelenga/ameba
-    version: 0.8.1
+    version: 0.9.0
 
   awscr-s3:
     github: taylorfinnell/awscr-s3
@@ -30,7 +30,7 @@ shards:
 
   crytic:
     github: hanneskaeufler/crytic
-    version: 3.2.2
+    version: 3.2.3
 
   db:
     github: crystal-lang/crystal-db

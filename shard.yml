@@ -23,7 +23,7 @@ dependencies:
 development_dependencies:
   ameba:
     github: veelenga/ameba
-    version: ~> 0.8.1
+    version: ~> 0.8
   crytic:
     github: hanneskaeufler/crytic
-    version: ~> 3.2.2
+    version: ~> 3
