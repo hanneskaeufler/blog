@@ -26,4 +26,4 @@ development_dependencies:
     version: ~> 0.8
   crytic:
     github: hanneskaeufler/crytic
-    version: ~> 3
+    version: ~> 4
