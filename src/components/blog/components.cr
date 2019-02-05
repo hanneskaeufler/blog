@@ -2,10 +2,9 @@ module Blog::Components
   TAGLINE = "racing &middot; software &middot; open-source"
 
   SOCIALS = {
-    :github   => "https://github.com/hanneskaeufler",
-    :facebook => "https://facebook.com/hanneskaeufler",
-    :twitter  => "https://twitter.com/hanneskaeufler",
-    :xing     => "https://www.xing.com/profile/Hannes_Kaeufler",
+    :github  => "https://github.com/hanneskaeufler",
+    :twitter => "https://twitter.com/hanneskaeufler",
+    :xing    => "https://www.xing.com/profile/Hannes_Kaeufler",
   }
 
   private def render_tagline
