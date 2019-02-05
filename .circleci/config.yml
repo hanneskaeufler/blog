@@ -48,6 +48,26 @@ jobs:
           name: "Run danger"
           command: npm run danger-ci
           when: always
+  test-visual:
+    docker:
+      - image: hanneskaeufler/crystal-node-ruby:0.27.0
+        environment:
+          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
+      - image: postgres:9.6.2-alpine
+        environment:
+          POSTGRES_DB: blog_test
+          POSTGRES_USER: blog_test_user
+    steps:
+      - checkout
+      - run:
+          name: "Install node dependencies"
+          command: npm ci
+      - run:
+          name: "Compiling assets"
+          command: npm run prod
+      - run:
+          name: "Install crystal dependencies"
+          command: shards install
       - run:
           name: "Compile blog for visual testing"
           command: DATABASE_URL=postgres://blog_test_user@127.0.0.1/blog_visual_test crystal build ./src/blog.cr --release -o app
@@ -116,6 +136,7 @@ workflows:
   build-deploy:
     jobs:
       - build
+      - test-visual
       - deploy:
           requires:
             - build
@@ -131,4 +152,5 @@ workflows:
               only: master
     jobs:
       - build
+      - test-visual
       - test-mutations
