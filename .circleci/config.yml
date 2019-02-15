@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.27.0
         environment:
@@ -48,6 +48,32 @@ jobs:
           name: "Run danger"
           command: npm run danger-ci
           when: always
+  test-coverage:
+    docker:
+      - image: hanneskaeufler/crystal-node-ruby:latest
+        environment:
+          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
+      - image: postgres:9.6.2-alpine
+        environment:
+          POSTGRES_DB: blog_test
+          POSTGRES_USER: blog_test_user
+    steps:
+      - checkout
+      - run:
+          name: "Install node dependencies"
+          command: npm ci
+      - run:
+          name: "Compiling assets"
+          command: npm run prod
+      - run:
+          name: "Install crystal dependencies"
+          command: shards install
+      - run:
+          name: "Migrate database"
+          command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
+      - run:
+          name: "Running specs"
+          command: ./bin/test-coverage
   test-visual:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.27.0
@@ -135,11 +161,12 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build
+      - test
       - test-visual
+      - test-coverage
       - deploy:
           requires:
-            - build
+            - test
           filters:
             branches:
               only: master
@@ -151,6 +178,7 @@ workflows:
             branches:
               only: master
     jobs:
-      - build
+      - test
       - test-visual
       - test-mutations
+      - test-coverage
