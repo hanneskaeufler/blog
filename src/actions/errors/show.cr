@@ -1,5 +1,5 @@
 class Errors::Show < Lucky::ErrorAction
-  def handle_error(error : LuckyRecord::RecordNotFoundError)
+  def handle_error(error : Avram::RecordNotFoundError)
     context.response.status_code = 404
     render Blog::NotFoundPage
   end

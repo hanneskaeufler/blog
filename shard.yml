@@ -8,14 +8,14 @@ targets:
   blog:
     main: src/blog.cr
 
-crystal: 0.27.0
+crystal: 0.27.2
 
 license: MIT
 
 dependencies:
   lucky:
     github: luckyframework/lucky
-    version: ~> 0.12.0
+    version: ~> 0.13
   sitemapper:
     github: jwoertink/sitemapper
     version: ~> 0.4.0

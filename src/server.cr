@@ -1,16 +1,14 @@
 require "./app"
-require "./middlewares"
 
-host = Lucky::Server.settings.host
-port = Lucky::Server.settings.port
+if Lucky::Env.development?
+  Avram::Migrator::Runner.new.ensure_migrated!
+end
+Habitat.raise_if_missing_settings!
 
-server = HTTP::Server.new(Blog.middlewares)
-
-puts "Listening on http://#{host}:#{port}"
+app = App.new
+puts "Listening on #{app.base_uri}"
+app.listen
 
 Signal::INT.trap do
-  server.close
+  app.close
 end
-
-server.bind_tcp host, port
-server.listen

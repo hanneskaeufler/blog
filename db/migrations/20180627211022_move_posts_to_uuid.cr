@@ -1,4 +1,4 @@
-class MovePostsToUUID::V20180627211022 < LuckyRecord::Migrator::Migration::V1
+class MovePostsToUUID::V20180627211022 < Avram::Migrator::Migration::V1
   def migrate
     ids = all_current_post_ids
     execute "ALTER TABLE posts ADD COLUMN new_id uuid"
@@ -18,7 +18,7 @@ class MovePostsToUUID::V20180627211022 < LuckyRecord::Migrator::Migration::V1
 
   def all_current_post_ids
     ids = [] of Int32
-    LuckyRecord::Repo.db.query "SELECT id FROM posts" do |rs|
+    Avram::Repo.db.query "SELECT id FROM posts" do |rs|
       rs.each do
         ids << rs.read(Int32)
       end

@@ -2,7 +2,7 @@ require "lucky_cli"
 require "sitemapper"
 
 class Sitemap::Generate < LuckyCli::Task
-  banner "Generate sitemap"
+  summary "Generate sitemap tarball for manual upload to uri as can be seen in public/robots.txt"
 
   def call
     Sitemapper.configure do |c|

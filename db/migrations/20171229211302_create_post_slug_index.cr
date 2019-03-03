@@ -1,4 +1,4 @@
-class CreatePostSlugIndex::V20171229211302 < LuckyRecord::Migrator::Migration::V1
+class CreatePostSlugIndex::V20171229211302 < Avram::Migrator::Migration::V1
   def migrate
     create_index :posts, :slug, unique: true
   end
