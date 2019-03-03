@@ -73,7 +73,7 @@ jobs:
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
           name: "Running specs"
-          command: ./bin/test-coverage
+          command: ./script/test-coverage
   test-visual:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.27.0

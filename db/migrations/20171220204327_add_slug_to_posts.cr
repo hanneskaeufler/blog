@@ -1,4 +1,4 @@
-class AddSlugToPosts::V20171220204327 < LuckyRecord::Migrator::Migration::V1
+class AddSlugToPosts::V20171220204327 < Avram::Migrator::Migration::V1
   def migrate
     alter :posts do
       add slug : String?

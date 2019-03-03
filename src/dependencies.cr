@@ -1,2 +1,2 @@
-require "lucky_record"
+require "avram"
 require "lucky"

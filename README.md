@@ -7,7 +7,7 @@ This is my personal website/blog written using [Lucky](https://luckyframework.or
 ### Setting up the project
 
 1. [Install required dependencies](http://luckyframework.org/guides/installing.html#install-required-dependencies)
-1. Run `bin/setup`
+1. Run `script/setup`
 1. Run `lucky dev` to start the app
 
 ### Development

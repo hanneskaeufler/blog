@@ -58,12 +58,12 @@ describe PostQuery do
     end
 
     it "raises when slug does not exist or not published" do
-      expect_raises(LuckyRecord::RecordNotFoundError) do
+      expect_raises(Avram::RecordNotFoundError) do
         PostQuery.new.find_published_by_slug("published")
       end
 
       insert_post title: "unpublished", published_at: Time.now + 1.days
-      expect_raises(LuckyRecord::RecordNotFoundError) do
+      expect_raises(Avram::RecordNotFoundError) do
         PostQuery.new.find_published_by_slug("unpublished")
       end
     end
