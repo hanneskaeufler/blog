@@ -34,7 +34,7 @@ shards:
 
   crytic:
     github: hanneskaeufler/crytic
-    version: 5.0.0
+    version: 5.0.1
 
   db:
     github: crystal-lang/crystal-db
@@ -42,7 +42,7 @@ shards:
 
   dexter:
     github: luckyframework/dexter
-    version: 0.1.0
+    version: 0.1.1
 
   exception_page:
     github: crystal-loot/exception_page
