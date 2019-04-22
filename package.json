@@ -40,7 +40,7 @@
     "babel-preset-env": "^1.7.0",
     "backstopjs": "^3.8.5",
     "danger": "^7.0.16",
-    "danger-plugin-mentor": "^0.8.0",
+    "danger-plugin-mentor": "^1.0.0",
     "puppeteer": "^1.11.0",
     "resolve-url-loader": "2.3.1",
     "sass": "^1.17.3",
