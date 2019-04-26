@@ -2,7 +2,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "jquery": "^3.2.1",
+    "jquery": "^3.4.0",
     "laravel-mix": "^4.0.15",
     "normalize-scss": "^7.0.1",
     "rails-ujs": "^5.2.2",
