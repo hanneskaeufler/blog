@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
-    "backstopjs": "^3.8.5",
+    "backstopjs": "^4.0.6",
     "danger": "^7.1.4",
     "danger-plugin-mentor": "^1.0.0",
     "puppeteer": "^1.14.0",
