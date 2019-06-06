@@ -38,7 +38,7 @@
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "backstopjs": "^4.0.6",
-    "danger": "^7.1.4",
+    "danger": "^8.0.0",
     "danger-plugin-mentor": "^1.0.0",
     "puppeteer": "^1.17.0",
     "resolve-url-loader": "2.3.1",
