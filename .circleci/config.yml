@@ -74,6 +74,7 @@ jobs:
       - run:
           name: "Running specs"
           command: ./script/test-coverage
+          sudo: required
   test-visual:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:latest
