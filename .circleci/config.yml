@@ -76,7 +76,7 @@ jobs:
           command: ./script/test-coverage
   test-visual:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.27.0
+      - image: hanneskaeufler/crystal-node-ruby:latest
         environment:
           DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
       - image: postgres:9.6.2-alpine
