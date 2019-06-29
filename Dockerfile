@@ -1,4 +1,4 @@
-FROM hanneskaeufler/crystal-node-ruby
+FROM hanneskaeufler/crystal-node-ruby:0.27.0
 
 # add application code
 ADD . /app

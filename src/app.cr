@@ -1,4 +1,4 @@
-require "./dependencies"
+require "./shards"
 require "./models/base_model"
 require "./models/mixins/**"
 require "./models/**"
@@ -14,12 +14,7 @@ require "./handlers/**"
 require "../config/env"
 require "../config/**"
 require "./middlewares"
+require "./app_server"
 
 Habitat.raise_if_missing_settings!
 Lucky::AssetHelpers.load_manifest
-
-class App < Lucky::BaseApp
-  def middleware
-    Blog.middlewares
-  end
-end

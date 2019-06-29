@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.27.0
+      - image: hanneskaeufler/crystal-node-ruby:latest
         environment:
           DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
       - image: postgres:9.6.2-alpine
@@ -76,7 +76,7 @@ jobs:
           command: ./script/test-coverage
   test-visual:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.27.0
+      - image: hanneskaeufler/crystal-node-ruby:latest
         environment:
           DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
       - image: postgres:9.6.2-alpine
@@ -120,7 +120,7 @@ jobs:
           command: npm run accessibility-test
   test-mutations:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.27.0
+      - image: hanneskaeufler/crystal-node-ruby:latest
         environment:
           DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
       - image: postgres:9.6.2-alpine
@@ -146,7 +146,7 @@ jobs:
           command: ./bin/crytic --min-msi 50.0
   deploy:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.25.0
+      - image: hanneskaeufler/crystal-node-ruby:latest
     steps:
       - checkout
       - run:
@@ -163,7 +163,6 @@ workflows:
     jobs:
       - test
       - test-visual
-      - test-coverage
       - deploy:
           requires:
             - test
@@ -180,5 +179,3 @@ workflows:
     jobs:
       - test
       - test-visual
-      - test-mutations
-      - test-coverage

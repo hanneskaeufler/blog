@@ -5,10 +5,9 @@ if Lucky::Env.development?
 end
 Habitat.raise_if_missing_settings!
 
-app = App.new
-puts "Listening on #{app.base_uri}"
-app.listen
+app_server = AppServer.new
+app_server.listen
 
 Signal::INT.trap do
-  app.close
+  app_server.close
 end
