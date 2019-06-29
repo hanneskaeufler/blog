@@ -2,11 +2,11 @@ version: 1.0
 shards:
   ameba:
     github: veelenga/ameba
-    version: 0.9.0
+    version: 0.10.0
 
   avram:
     github: luckyframework/avram
-    version: 0.9.3
+    version: 0.10.0
 
   awscr-s3:
     github: taylorfinnell/awscr-s3
@@ -14,7 +14,7 @@ shards:
 
   awscr-signer:
     github: taylorfinnell/awscr-signer
-    version: 0.5.3
+    version: 0.5.4
 
   blank:
     github: kostya/blank
@@ -50,15 +50,15 @@ shards:
 
   habitat:
     github: luckyframework/habitat
-    version: 0.4.1
+    version: 0.4.3
 
   lucky:
     github: luckyframework/lucky
-    version: 0.13.3
+    version: 0.15.1
 
   lucky_cli:
     github: luckyframework/lucky_cli
-    version: 0.13.2
+    version: 0.15.0
 
   lucky_router:
     github: luckyframework/lucky_router
@@ -70,7 +70,7 @@ shards:
 
   pg:
     github: will/crystal-pg
-    version: 0.15.0
+    version: 0.16.1
 
   shell-table:
     github: luckyframework/shell-table.cr
