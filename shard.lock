@@ -10,7 +10,7 @@ shards:
 
   awscr-s3:
     github: taylorfinnell/awscr-s3
-    version: 0.3.4
+    version: 0.4.0
 
   awscr-signer:
     github: taylorfinnell/awscr-signer
@@ -31,10 +31,6 @@ shards:
   cry:
     github: paulcsmith/cry
     version: 0.4.0
-
-  crytic:
-    github: hanneskaeufler/crytic
-    version: 5.0.1
 
   db:
     github: crystal-lang/crystal-db
