@@ -32,6 +32,10 @@ shards:
     github: paulcsmith/cry
     version: 0.4.0
 
+  crytic:
+    github: hanneskaeufler/crytic
+    version: 6.0.0
+
   db:
     github: crystal-lang/crystal-db
     version: 0.5.1

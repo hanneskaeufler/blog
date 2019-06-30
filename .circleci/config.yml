@@ -179,3 +179,4 @@ workflows:
     jobs:
       - test
       - test-visual
+      - test-mutations
