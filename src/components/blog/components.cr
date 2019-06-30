@@ -61,7 +61,7 @@ module Blog::Components
           link "Lucky Framework", to: "https://luckyframework.org"
           text "."
         end
-        raw "&copy; #{Time.now.year}"
+        raw "&copy; #{Time.local.year}"
       end
     end
   end

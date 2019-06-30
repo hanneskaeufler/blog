@@ -14,7 +14,7 @@ class Post < BaseModel
 
   def reading_time
     return "less than a minute" if word_count < 200
-    minutes = word_count / READING_SPEED
+    minutes = word_count // READING_SPEED
 
     "about #{minutes} min"
   end

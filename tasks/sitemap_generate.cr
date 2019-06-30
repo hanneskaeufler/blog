@@ -13,8 +13,8 @@ class Sitemap::Generate < LuckyCli::Task
     end
 
     sitemaps = Sitemapper.build do
-      add("/", lastmod: Time.now, priority: 1.0)
-      add("/archive", lastmod: Time.now, priority: 0.9)
+      add("/", lastmod: Time.local, priority: 1.0)
+      add("/archive", lastmod: Time.local, priority: 0.9)
 
       PostQuery.new.published.each do |post|
         add(Blog::Posts::Show.path(post.slug), lastmod: post.updated_at, priority: 0.8)

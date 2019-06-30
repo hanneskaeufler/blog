@@ -6,7 +6,7 @@ class PostForm < Post::BaseForm
   def prepare
     generate_slug
     validate_uniqueness_of_slug if title_changed_or_new_post
-    published_at.value = Time.now
+    published_at.value = Time.utc
   end
 
   private def generate_slug

@@ -3,17 +3,17 @@ require "../spec_helper"
 describe PostQuery do
   describe "#latest" do
     it "orders by published_at descending" do
-      insert_post title: "earlier_post", published_at: Time.now - 4.days
-      insert_post title: "later_post", published_at: Time.now - 1.days
-      insert_post title: "middle_post", published_at: Time.now - 2.days
+      insert_post title: "earlier_post", published_at: Time.local - 4.days
+      insert_post title: "later_post", published_at: Time.local - 1.days
+      insert_post title: "middle_post", published_at: Time.local - 2.days
 
       PostQuery.new.latest.results
         .map(&.title).should eq ["later_post", "middle_post", "earlier_post"]
     end
 
     it "only returns published posts" do
-      insert_post title: "published", published_at: Time.now - 1.days
-      insert_post title: "not published", published_at: Time.now + 1.day
+      insert_post title: "published", published_at: Time.local - 1.days
+      insert_post title: "not published", published_at: Time.local + 1.day
 
       PostQuery.new.latest.results
         .map(&.title).should eq ["published"]
@@ -32,17 +32,17 @@ describe PostQuery do
 
   describe "#published" do
     it "yields only published posts" do
-      insert_post title: "published", published_at: Time.now - 1.days
-      insert_post title: "not published", published_at: Time.now + 1.day
+      insert_post title: "published", published_at: Time.local - 1.days
+      insert_post title: "not published", published_at: Time.local + 1.day
 
       PostQuery.new.published.results
         .map(&.title).should eq ["published"]
     end
 
     it "orders by published data" do
-      insert_post title: "middle", published_at: Time.now - 2.day
-      insert_post title: "oldest", published_at: Time.now - 3.day
-      insert_post title: "newest", published_at: Time.now - 1.days
+      insert_post title: "middle", published_at: Time.local - 2.day
+      insert_post title: "oldest", published_at: Time.local - 3.day
+      insert_post title: "newest", published_at: Time.local - 1.days
 
       PostQuery.new.published.results
         .map(&.title).should eq ["newest", "middle", "oldest"]
@@ -51,7 +51,7 @@ describe PostQuery do
 
   describe "#find_published_by_slug" do
     it "finds by title when already published" do
-      insert_post title: "Published Post", published_at: Time.now - 1.days
+      insert_post title: "Published Post", published_at: Time.local - 1.days
 
       post = PostQuery.new.find_published_by_slug("published-post")
       post.title.should eq "Published Post"
@@ -62,14 +62,14 @@ describe PostQuery do
         PostQuery.new.find_published_by_slug("published")
       end
 
-      insert_post title: "unpublished", published_at: Time.now + 1.days
+      insert_post title: "unpublished", published_at: Time.local + 1.days
       expect_raises(Avram::RecordNotFoundError) do
         PostQuery.new.find_published_by_slug("unpublished")
       end
     end
 
     it "finds by slugs with dashes" do
-      insert_post title: "Open-Source", published_at: Time.now - 1.days
+      insert_post title: "Open-Source", published_at: Time.local - 1.days
 
       post = PostQuery.new.find_published_by_slug("open-source")
       post.title.should eq "Open-Source"
@@ -78,9 +78,9 @@ describe PostQuery do
 
   describe "#published_search" do
     it "is like #published without a term" do
-      insert_post title: "Jo dude", published_at: Time.now - 1.days
-      insert_post title: "Whateves", published_at: Time.now - 1.days
-      insert_post title: "Unpublished", published_at: Time.now + 1.days
+      insert_post title: "Jo dude", published_at: Time.local - 1.days
+      insert_post title: "Whateves", published_at: Time.local - 1.days
+      insert_post title: "Unpublished", published_at: Time.local + 1.days
 
       ref = PostQuery.new.published.results
       posts = PostQuery.new.published_search(nil).results
@@ -89,9 +89,9 @@ describe PostQuery do
     end
 
     it "only returns matching posts" do
-      insert_post title: "title 1", content: "matcher", published_at: Time.now - 2.days
-      insert_post title: "title 2", content: "a match this", published_at: Time.now - 1.days
-      insert_post title: "title 3", published_at: Time.now - 1.days
+      insert_post title: "title 1", content: "matcher", published_at: Time.local - 2.days
+      insert_post title: "title 2", content: "a match this", published_at: Time.local - 1.days
+      insert_post title: "title 3", published_at: Time.local - 1.days
 
       posts = PostQuery.new.published_search("match").results
 

@@ -28,7 +28,7 @@ describe Blog do
 
     it "shows the second page of posts" do
       (1..7).each do |index|
-        insert_post title: "title #{index}", published_at: Time.now - index.days
+        insert_post title: "title #{index}", published_at: Time.local - index.days
       end
 
       visitor.visit("/?page=2")
@@ -174,7 +174,7 @@ describe Blog do
   context "with a post titled 'welcome'" do
     describe "/posts/welcome" do
       it "renders a single post" do
-        insert_post title: "Welcome", published_at: Time.now - 1.days
+        insert_post title: "Welcome", published_at: Time.local - 1.days
 
         visitor.visit("/posts/welcome")
 
@@ -198,7 +198,7 @@ describe Blog do
         reference = Time.utc(2015, 10, 10)
         insert_post title: "A Post", published_at: reference - 1.days
         insert_post title: "Another Post", published_at: reference - 2.days
-        insert_post title: "Unpublished", published_at: Time.now + 1.days
+        insert_post title: "Unpublished", published_at: Time.local + 1.days
 
         visitor.visit("/archive")
 
@@ -211,9 +211,9 @@ describe Blog do
 
       context "with a search term" do
         it "only finds matching posts" do
-          insert_post title: "Find me", content: "find me", published_at: Time.now - 1.days
-          insert_post title: "Other", content: "mefind me as well", published_at: Time.now - 1.days
-          insert_post title: "But not me", content: "not me", published_at: Time.now - 1.days
+          insert_post title: "Find me", content: "find me", published_at: Time.local - 1.days
+          insert_post title: "Other", content: "mefind me as well", published_at: Time.local - 1.days
+          insert_post title: "But not me", content: "not me", published_at: Time.local - 1.days
 
           body = {"q" => "find me"}
           visitor.post("/search", body)

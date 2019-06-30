@@ -2,7 +2,7 @@ require "../../../spec_helper"
 
 describe Blog::Posts::ShowPage do
   it "shows the published date" do
-    post = build_post("Boring content", Time.new(2012, 4, 30))
+    post = build_post("Boring content", Time.local(2012, 4, 30))
     rendered_show_page(post).should contain("Published on April 30, 2012")
   end
 

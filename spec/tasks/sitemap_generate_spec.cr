@@ -14,7 +14,7 @@ describe Sitemap::Generate do
   end
 
   it "contains an entry for root, archive and each post" do
-    insert_post title: "earlier_post", published_at: Time.now - 4.days
+    insert_post title: "earlier_post", published_at: Time.utc - 4.days
 
     Sitemap::Generate.new.call
 
