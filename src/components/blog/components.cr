@@ -25,6 +25,24 @@ module Blog::Components
     end
   end
 
+  class Intro < BaseComponent
+    def render
+      section class: "intro" do
+        ul do
+          SOCIALS.each do |name, href|
+            li do
+              link to: href do
+                img src: dynamic_asset("logos/#{name}.svg"), alt: "social logo #{name}"
+                text name.to_s
+              end
+            end
+          end
+        end
+        mount Blog::Components::Tagline.new
+      end
+    end
+  end
+
   class Footer < BaseComponent
     def render
       footer class: "blog-footer" do

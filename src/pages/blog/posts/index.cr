@@ -13,7 +13,7 @@ class Blog::Posts::IndexPage < MainLayout
 
   private def render_header
     header class: "blog-title" do
-      intro
+      mount Blog::Components::Intro.new
     end
   end
 
@@ -40,21 +40,5 @@ class Blog::Posts::IndexPage < MainLayout
 
   private def next_page
     @current_page + 1
-  end
-
-  private def intro
-    section class: "intro" do
-      ul do
-        SOCIALS.each do |name, href|
-          li do
-            link to: href do
-              img src: dynamic_asset("logos/#{name}.svg"), alt: "social logo #{name}"
-              text name.to_s
-            end
-          end
-        end
-      end
-      mount Blog::Components::Tagline.new
-    end
   end
 end
