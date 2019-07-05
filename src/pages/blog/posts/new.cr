@@ -14,7 +14,7 @@ class Blog::Posts::NewPage < MainLayout
     section class: "post-editor" do
       render_post_form(@post_form)
     end
-    render_footer
+    mount Blog::Components::Footer.new
   end
 
   private def render_post_form(f)

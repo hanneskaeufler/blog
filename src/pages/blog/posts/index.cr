@@ -8,7 +8,7 @@ class Blog::Posts::IndexPage < MainLayout
   def content
     render_header
     render_posts(@posts)
-    render_footer
+    mount Blog::Components::Footer.new
   end
 
   private def render_header

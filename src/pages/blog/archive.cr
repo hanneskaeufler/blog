@@ -11,7 +11,7 @@ class Blog::ArchivePage < MainLayout
       render_search_form(@current_search_term)
       render_post_titles(posts_by_year(@posts))
     end
-    render_footer
+    mount Blog::Components::Footer.new
   end
 
   private def posts_by_year(posts)

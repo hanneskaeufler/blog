@@ -10,7 +10,7 @@ class Blog::Posts::ShowPage < MainLayout
   def content
     render_small_header
     render_post(@post)
-    render_footer
+    mount Blog::Components::Footer.new
   end
 
   private def render_post(post : Post)
