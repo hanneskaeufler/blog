@@ -1,6 +1,5 @@
 class Blog::Posts::EditPage < MainLayout
   include Blog::Components
-  include Shared::Field
 
   needs post_form : PostForm
   needs post : Post
@@ -22,8 +21,8 @@ class Blog::Posts::EditPage < MainLayout
   private def render_post_form(f)
     form_for Blog::Posts::Update.with(@post) do
       h1 "Edit post"
-      field(f.title) { |i| text_input i }
-      field(f.content) { |i| textarea i }
+      mount Shared::Field.new(f.title), &.text_input
+      mount Shared::Field.new(f.content), &.textarea
 
       submit "Save Post"
     end

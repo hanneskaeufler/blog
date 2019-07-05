@@ -1,6 +1,5 @@
 class Blog::Posts::NewPage < MainLayout
   include Blog::Components
-  include Shared::Field
 
   needs post_form : PostForm
 
@@ -21,8 +20,8 @@ class Blog::Posts::NewPage < MainLayout
   private def render_post_form(f)
     form_for Blog::Posts::Create do
       h1 "New post"
-      field(f.title) { |i| text_input i }
-      field(f.content) { |i| textarea i }
+      mount Shared::Field.new(f.title), &.text_input
+      mount Shared::Field.new(f.content), &.textarea
 
       submit "Save Post"
     end

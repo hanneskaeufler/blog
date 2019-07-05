@@ -11,6 +11,6 @@
 /public/js
 /public/mix-manifest.json
 /tmp/
-server
+start_server
 sitemap.xml.gz
 yarn-error.log

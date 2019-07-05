@@ -1,6 +1,5 @@
 abstract class MainLayout
   include Lucky::HTMLPage
-  include Shared::FieldErrors
   include Shared::FlashComponent
 
   def inner_head
