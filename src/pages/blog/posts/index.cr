@@ -1,6 +1,5 @@
 class Blog::Posts::IndexPage < MainLayout
   include Blog::Components
-  include Blog::Posts::Components
 
   needs posts : Array(Post)
   needs posts_count : Int32
@@ -20,7 +19,7 @@ class Blog::Posts::IndexPage < MainLayout
 
   private def render_posts(posts : Array(Post))
     section class: "posts-container" do
-      @posts.each { |post| single_post(post) }
+      @posts.each { |post| mount Blog::Posts::Components::FullPost.new(post) }
       link(to: Blog::Posts::Index.path(previous_page)) { raw "&laquo; Previous page" } if previous_page_exists?
       raw " &middot; " if previous_page_exists? && next_page_exists?
       link(to: Blog::Posts::Index.path(next_page)) { raw "Next page &raquo;" } if next_page_exists?

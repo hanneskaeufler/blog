@@ -1,19 +1,20 @@
 require "markdown"
 require "string_scanner"
 
-module Blog::Posts::Components
+class Blog::Posts::Components::FullPost < BaseComponent
+  needs post : Post
   @renderer = PostContentRenderer.new
 
-  private def single_post(post : Post)
+  def render
     article do
       header class: "post-title" do
         h2 do
-          text post.title
-          link "", to: Blog::Posts::Show.with(post.slug)
+          text @post.title
+          link "", to: Blog::Posts::Show.with(@post.slug)
         end
-        post_meta(post)
+        post_meta(@post)
       end
-      content(post)
+      content(@post)
     end
   end
 
