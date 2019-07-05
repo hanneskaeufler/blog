@@ -1,6 +1,5 @@
 abstract class MainLayout
   include Lucky::HTMLPage
-  include Shared::FlashComponent
 
   def inner_head
   end
@@ -25,7 +24,7 @@ abstract class MainLayout
       end
 
       body do
-        render_flash
+        mount Shared::FlashMessages.new(@context.flash)
         content
       end
     end
