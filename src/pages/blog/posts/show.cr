@@ -8,7 +8,7 @@ class Blog::Posts::ShowPage < MainLayout
   end
 
   def content
-    render_small_header
+    mount Blog::Components::SmallHeader.new
     render_post(@post)
     mount Blog::Components::Footer.new
   end

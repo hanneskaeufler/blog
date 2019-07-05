@@ -10,7 +10,7 @@ class Blog::Posts::NewPage < MainLayout
   end
 
   def content
-    render_small_header
+    mount Blog::Components::SmallHeader.new
     section class: "post-editor" do
       render_post_form(@post_form)
     end

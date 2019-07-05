@@ -5,7 +5,7 @@ class Blog::ArchivePage < MainLayout
   needs current_search_term : String
 
   def content
-    render_small_header
+    mount Blog::Components::SmallHeader.new
     section class: "posts-archive" do
       h2 "Archive"
       render_search_form(@current_search_term)

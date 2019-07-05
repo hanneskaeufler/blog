@@ -54,7 +54,7 @@ class Blog::Posts::IndexPage < MainLayout
           end
         end
       end
-      render_tagline
+      mount Blog::Components::Tagline.new
     end
   end
 end

@@ -1,23 +1,27 @@
 module Blog::Components
-  TAGLINE = "racing &middot; software &middot; open-source"
-
   SOCIALS = {
     :github  => "https://github.com/hanneskaeufler",
     :twitter => "https://twitter.com/hanneskaeufler",
     :xing    => "https://www.xing.com/profile/Hannes_Kaeufler",
   }
 
-  private def render_tagline
-    div class: "tag-line" do
-      h1 do
-        raw TAGLINE
+  class Tagline < BaseComponent
+    TAGLINE = "racing &middot; software &middot; open-source"
+
+    def render
+      div class: "tag-line" do
+        h1 do
+          raw TAGLINE
+        end
       end
     end
   end
 
-  private def render_small_header
-    header class: "blog-title-small" do
-      render_tagline
+  class SmallHeader < BaseComponent
+    def render
+      header class: "blog-title-small" do
+        mount Tagline.new
+      end
     end
   end
 
