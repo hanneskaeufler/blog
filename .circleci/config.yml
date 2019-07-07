@@ -143,7 +143,7 @@ jobs:
           command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
       - run:
           name: "Check mutation test coverage"
-          command: ./bin/crytic --min-msi 50.0
+          command: ./bin/crytic --min-msi=50.0 --reporters=Console,Stryker,ConsoleFileSummary
   deploy:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:latest
