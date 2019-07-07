@@ -1,5 +1,4 @@
 class Blog::NotFoundPage < MainLayout
-
   def content
     section class: "posts-container" do
       h1 "Not Found"
