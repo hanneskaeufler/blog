@@ -1,6 +1,5 @@
 class Blog::Posts::ShowPage < MainLayout
   include Blog::Components
-  include Blog::Posts::Components
 
   needs post : Post
 
@@ -9,14 +8,14 @@ class Blog::Posts::ShowPage < MainLayout
   end
 
   def content
-    render_small_header
+    mount Blog::Components::SmallHeader.new
     render_post(@post)
-    render_footer
+    mount Blog::Components::Footer.new
   end
 
   private def render_post(post : Post)
     section class: "posts-container" do
-      single_post(@post)
+      mount Blog::Posts::Components::FullPost.new(@post)
       div do
         link "« Back to all posts", to: Blog::Posts::Index.path
       end

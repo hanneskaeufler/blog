@@ -8,7 +8,7 @@ class FeedSerializer < Lucky::Serializer
       title:         "racing · software · open-source",
       home_page_url: Blog::Posts::Index.url,
       feed_url:      Blog::Feed.url,
-      description:   Blog::Components::TAGLINE,
+      description:   Blog::Components::Tagline::TAGLINE,
       author:        {name: "Hannes Käufler"},
       favicon:       "#{host}/favicon.ico",
       items:         items,

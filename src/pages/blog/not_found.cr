@@ -1,6 +1,4 @@
 class Blog::NotFoundPage < MainLayout
-  include Blog::Components
-
   def content
     section class: "posts-container" do
       h1 "Not Found"
@@ -11,6 +9,6 @@ class Blog::NotFoundPage < MainLayout
       end
       raw "<pre style=\"font-size: 5em;\">¯\\_(ツ)_/¯</pre>"
     end
-    render_footer
+    mount Blog::Components::Footer.new
   end
 end

@@ -1,6 +1,5 @@
 class Blog::Posts::IndexPage < MainLayout
   include Blog::Components
-  include Blog::Posts::Components
 
   needs posts : Array(Post)
   needs posts_count : Int32
@@ -9,18 +8,18 @@ class Blog::Posts::IndexPage < MainLayout
   def content
     render_header
     render_posts(@posts)
-    render_footer
+    mount Blog::Components::Footer.new
   end
 
   private def render_header
     header class: "blog-title" do
-      intro
+      mount Blog::Components::Intro.new
     end
   end
 
   private def render_posts(posts : Array(Post))
     section class: "posts-container" do
-      @posts.each { |post| single_post(post) }
+      @posts.each { |post| mount Blog::Posts::Components::FullPost.new(post) }
       link(to: Blog::Posts::Index.path(previous_page)) { raw "&laquo; Previous page" } if previous_page_exists?
       raw " &middot; " if previous_page_exists? && next_page_exists?
       link(to: Blog::Posts::Index.path(next_page)) { raw "Next page &raquo;" } if next_page_exists?
@@ -41,21 +40,5 @@ class Blog::Posts::IndexPage < MainLayout
 
   private def next_page
     @current_page + 1
-  end
-
-  private def intro
-    section class: "intro" do
-      ul do
-        SOCIALS.each do |name, href|
-          li do
-            link to: href do
-              img src: dynamic_asset("logos/#{name}.svg"), alt: "social logo #{name}"
-              text name.to_s
-            end
-          end
-        end
-      end
-      render_tagline
-    end
   end
 end
