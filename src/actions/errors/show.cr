@@ -5,6 +5,6 @@ class Errors::Show < Lucky::ErrorAction
   end
 
   def handle_error(error : Exception)
-    head status: 500
+    head status: HTTP::Status::INTERNAL_SERVER_ERROR
   end
 end
