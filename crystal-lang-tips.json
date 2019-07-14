@@ -1,0 +1,12 @@
+[
+    {
+        "text": "A condition in crystal can also occur as a suffix, an expression, as well as a ternary.",
+        "source": "https://crystal-lang.org/reference/syntax_and_semantics/if.html",
+        "tags": []
+    },
+    {
+        "text": "Crystal's philosophy is to require as few type restrictions as possible.",
+        "source": "https://crystal-lang.org/reference/syntax_and_semantics/type_inference.html",
+        "tags": []
+    }
+]
