@@ -166,6 +166,7 @@ workflows:
       - deploy:
           requires:
             - test
+            - test-visual
           filters:
             branches:
               only: master
