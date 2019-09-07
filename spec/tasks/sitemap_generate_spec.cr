@@ -1,6 +1,7 @@
 require "gzip"
 require "xml"
 require "../spec_helper"
+require "../../tasks/sitemap_generate"
 
 SITEMAP = "./sitemap.xml.gz"
 

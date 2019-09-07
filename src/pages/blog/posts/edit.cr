@@ -1,7 +1,7 @@
 class Blog::Posts::EditPage < MainLayout
   include Blog::Components
 
-  needs post_form : PostForm
+  needs post_form : SavePost
   needs post : Post
 
   def inner_head

@@ -1,8 +1,8 @@
 require "../spec_helper"
 
-describe PostForm do
+describe SavePost do
   it "generates a valid slug" do
-    form = PostForm.new
+    form = SavePost.new
 
     form.title.value = "is valid"
     form.prepare
@@ -11,7 +11,7 @@ describe PostForm do
   end
 
   it "generates a valid slug with chars that would need to be url escaped" do
-    form = PostForm.new
+    form = SavePost.new
 
     form.title.value = "this: is &a /crazy .post"
     form.prepare

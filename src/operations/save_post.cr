@@ -1,7 +1,8 @@
-class PostForm < Post::BaseForm
-  fillable title, content
+class SavePost < Post::SaveOperation
+  permit_columns title, content
 
   needs current_title : String, on: :update
+  before_save prepare
 
   def prepare
     generate_slug
