@@ -2,9 +2,13 @@ class SavePost < Post::SaveOperation
   permit_columns title, content
 
   needs current_title : String, on: :update
+
   before_save prepare
 
   def prepare
+    set_uuid
+    validate_required title
+    validate_required content
     generate_slug
     validate_uniqueness_of_slug if title_changed_or_new_post
     published_at.value = Time.utc
