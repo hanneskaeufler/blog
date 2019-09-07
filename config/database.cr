@@ -1,6 +1,6 @@
 database = "blog_#{Lucky::Env.name}"
 
-Avram::Repo.configure do |settings|
+AppDatabase.configure do |settings|
   if Lucky::Env.production?
     settings.url = ENV.fetch("DATABASE_URL")
   else
@@ -9,5 +9,9 @@ Avram::Repo.configure do |settings|
       database: database
     )
   end
+end
+
+Avram.configure do |settings|
+  settings.database_to_migrate = AppDatabase
   settings.lazy_load_enabled = Lucky::Env.production?
 end

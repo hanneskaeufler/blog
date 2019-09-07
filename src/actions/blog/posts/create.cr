@@ -1,6 +1,6 @@
 class Blog::Posts::Create < AdminAction
   post "/posts/create" do
-    PostForm.create(params) do |form, post|
+    SavePost.create(params) do |form, post|
       if post
         flash.success = "Post successfully published."
         redirect Blog::Posts::Index

@@ -20,7 +20,7 @@
 # You may also want to have more than one method if you render fields
 # differently in different parts of your app, e.g. `compact_field`
 class Shared::Field(T) < BaseComponent
-  needs field : Avram::FillableField(T)
+  needs field : Avram::PermittedAttribute(T)
 
   def render
     div class: "form-row" do

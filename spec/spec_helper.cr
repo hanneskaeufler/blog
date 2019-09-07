@@ -8,7 +8,7 @@ require "../src/app"
 include AppVisitor::Matchers
 
 Spec.before_each do
-  PostQuery.new.destroy_all
+  PostQuery.truncate
 end
 
 def empty_flash

@@ -18,11 +18,13 @@ class MovePostsToUUID::V20180627211022 < Avram::Migrator::Migration::V1
 
   def all_current_post_ids
     ids = [] of Int32
-    Avram::Repo.db.query "SELECT id FROM posts" do |rs|
-      rs.each do
-        ids << rs.read(Int32)
+    AppDatabase.run do |db|
+      db.query "SELECT id FROM posts" do |rs|
+        rs.each do
+          ids << rs.read(Int32)
+        end
+        ids
       end
     end
-    ids
   end
 end

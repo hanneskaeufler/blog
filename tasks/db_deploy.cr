@@ -6,7 +6,7 @@ class Db::Deploy < LuckyCli::Task
   DB_NAME   = "blog_development"
   DROPBOX   = "~/Dropbox/Public"
 
-  banner "Export database and prepare to mirror it to heroku"
+  summary "Export database and prepare to mirror it to heroku"
 
   def call
     dump_db

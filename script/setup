@@ -31,6 +31,13 @@ if [ -z "$CI" ]; then
 fi
 echo "✔ Done" | indent
 
+printf "\n▸ Checking that postgres is installed\n"
+check_postgres | indent
+printf "✔ Done\n" | indent
+
+printf "\n▸ Verifying postgres connection\n"
+lucky db.verify_connection | indent
+
 echo -e "\n▸ Setting up the database"
 lucky db.create | indent
 

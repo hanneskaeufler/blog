@@ -1,7 +1,7 @@
 class Blog::Posts::NewPage < MainLayout
   include Blog::Components
 
-  needs post_form : PostForm
+  needs post_form : SavePost
 
   def inner_head
     css_link "https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"
