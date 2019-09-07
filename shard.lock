@@ -6,31 +6,23 @@ shards:
 
   avram:
     github: luckyframework/avram
-    version: 0.10.0
+    version: 0.11.0
 
   awscr-s3:
-    github: taylorfinnell/awscr-s3
-    version: 0.4.0
+    github: sam0x17/awscr-s3
+    commit: ce1af10516970b8a9c5691ad80c4f240288e836f
 
   awscr-signer:
     github: taylorfinnell/awscr-signer
-    version: 0.5.4
+    version: 0.6.0
 
   blank:
     github: kostya/blank
     version: 0.1.0
 
-  callback:
-    github: mosop/callback
-    version: 0.6.3
-
-  cli:
-    github: mosop/cli
-    version: 0.7.0
-
   cry:
     github: paulcsmith/cry
-    version: 0.4.0
+    version: 0.4.1
 
   crytic:
     github: hanneskaeufler/crytic
@@ -38,11 +30,11 @@ shards:
 
   db:
     github: crystal-lang/crystal-db
-    version: 0.5.1
+    version: 0.6.0
 
   dexter:
     github: luckyframework/dexter
-    version: 0.1.1
+    version: 0.1.2
 
   exception_page:
     github: crystal-loot/exception_page
@@ -54,23 +46,19 @@ shards:
 
   lucky:
     github: luckyframework/lucky
-    version: 0.15.1
+    version: 0.17.0
 
   lucky_cli:
     github: luckyframework/lucky_cli
-    version: 0.15.0
+    version: 0.17.0
 
   lucky_router:
     github: luckyframework/lucky_router
     version: 0.2.2
 
-  optarg:
-    github: mosop/optarg
-    version: 0.5.8
-
   pg:
     github: will/crystal-pg
-    version: 0.16.1
+    version: 0.18.0
 
   shell-table:
     github: luckyframework/shell-table.cr
@@ -78,15 +66,11 @@ shards:
 
   sitemapper:
     github: jwoertink/sitemapper
-    version: 0.4.0
-
-  string_inflection:
-    github: mosop/string_inflection
-    version: 0.2.1
+    version: 0.5.0
 
   teeplate:
-    github: mosop/teeplate
-    version: 0.7.0
+    github: luckyframework/teeplate
+    version: 0.8.0
 
   wordsmith:
     github: luckyframework/wordsmith
