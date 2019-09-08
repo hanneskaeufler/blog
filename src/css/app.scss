@@ -63,17 +63,18 @@ a:hover {
 }
 
 .tag-line {
-    @include clearfix;
     @include grid;
 
     background: white;
     border-radius: $defaultBorderRadius;
     box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    text-align: center;
 }
 
 .tag-line h1 {
     color: $highlightColor;
     text-align: center;
+    display: inline-block;
 }
 
 .blog-title-small .tag-line {
@@ -91,15 +92,8 @@ a:hover {
 .posts-container,
 .posts-archive {
     @include grid;
-    @include clearfix;
 
     padding: 0 1em;
-}
-
-.intro li img {
-    color: white;
-    height: 15px;
-    opacity: 0.2;
 }
 
 .blog-footer a img {
@@ -161,25 +155,6 @@ a:hover {
     color: #32325d;
 }
 
-.intro li a:link {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    color: transparent;
-    display: inline-block;
-    font-size: 0;
-    margin: 5px;
-    padding: 6px 14px;
-    text-decoration: none;
-}
-
-.intro li a:hover {
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.intro li a:visited {
-    color: white;
-}
-
 .post-title h2 {
     margin-bottom: 0.1em;
 }
@@ -197,16 +172,76 @@ a:hover {
     font-size: 0.8em;
 }
 
+.blog-footer li {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
 .intro {
     padding: 0 1em;
 
-    ul {
-        align-items: center;
+    nav {
+        @include grid;
+
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        list-style-type: none;
-        padding: 0;
+        justify-content: flex-start;
+
+        ul.navigation {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                a:link,
+                a:visited {
+                    color: darken(#24b47e, 20);
+                    display: inline-block;
+                    font-weight: bold;
+                    padding: 5px 15px 5px 0;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        > div {
+            display: flex;
+            flex-grow: 1;
+            justify-content: flex-end;
+
+            ul.social {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    display: inline-block;
+                }
+
+                li img {
+                    color: white;
+                    height: 15px;
+                    opacity: 0.2;
+                }
+
+                li a:link {
+                    background: rgba(0, 0, 0, 0.2);
+                    border-radius: 9999px;
+                    color: transparent;
+                    font-size: 0;
+                    margin-left: 10px;
+                    padding: 6px 14px;
+                    text-decoration: none;
+                }
+
+                li a:hover {
+                    background: rgba(0, 0, 0, 0.4);
+                }
+
+                li a:visited {
+                    color: white;
+                }
+            }
+        }
     }
 }
 
@@ -277,11 +312,6 @@ a:hover {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-.blog-footer li {
-    float: left;
-    margin: 0 10px 0 0;
 }
 
 .post-editor {
@@ -357,13 +387,14 @@ a:hover {
 }
 
 @media (min-width: $mediumBreakpoint) {
-    .intro li a:link {
+    .intro nav > div ul.social li a:link {
         color: white;
-        font-size: 0.8em;
+        font-size: 0.5em;
     }
 
-    .intro li img {
+    .intro nav > div ul.social li img {
         margin-right: 10px;
+        height: 0.9em;
     }
 
     .posts-container {
