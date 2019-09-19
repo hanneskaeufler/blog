@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "jquery": "^3.4.1",
-    "laravel-mix": "^4.0.15",
+    "laravel-mix": "^5.0.0",
     "normalize-scss": "^7.0.1",
     "rails-ujs": "^5.2.2",
     "turbolinks": "^5.2.0"
