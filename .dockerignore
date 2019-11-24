@@ -1,0 +1,5 @@
+.git/
+backstop_data/
+lib/
+node_modules/
+bin/

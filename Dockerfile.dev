@@ -1,0 +1,21 @@
+FROM crystallang/crystal:0.31.1
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y curl && \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt-get install -y nodejs
+
+WORKDIR /app
+COPY package.json /app/package.json
+COPY package-lock.json /app/package-lock.json
+
+RUN npm config set prefix /home/node_modules
+RUN npm ci
+
+COPY shard.yml /app/shard.yml
+COPY shard.lock /app/shard.lock
+
+# RUN rm /app/package.json /app/package-lock.json
+
+# RUN shards install
+
+CMD ["/bin/sh", "lucky", "dev"]
