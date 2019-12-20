@@ -1,8 +1,23 @@
-FROM crystallang/crystal:0.31.1
+FROM crystallang/crystal:0.30.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     apt-get install -y nodejs
+
+RUN mkdir -p /home/tmp && \
+        cd /home/tmp && \
+        git clone https://github.com/luckyframework/lucky_cli && \
+        cd lucky_cli && \
+        git checkout v0.17.0 && \
+        shards install && \
+        crystal build src/lucky.cr && \
+        mv lucky /usr/local/bin/lucky
+
+RUN cd /home/tmp && \
+        curl -O https://bin.equinox.io/c/ekMN3bCZFUn/forego-stable-linux-amd64.tgz && \
+        ls -la && \
+        tar zxvf forego-stable-linux-amd64.tgz && \
+        mv forego /usr/local/bin/forego
 
 WORKDIR /app
 COPY package.json /app/package.json
@@ -14,8 +29,6 @@ RUN npm ci
 COPY shard.yml /app/shard.yml
 COPY shard.lock /app/shard.lock
 
-# RUN rm /app/package.json /app/package-lock.json
+RUN shards install
 
-# RUN shards install
-
-CMD ["/bin/sh", "lucky", "dev"]
+CMD ["sh", "-c", "lucky dev"]

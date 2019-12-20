@@ -1,19 +1,26 @@
 version: "3"
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: hanneskaeufler/blog-dev:latest
     links:
       - "db:localdb"
     environment:
-      - DATABASE_URL=postgres://postgres@localdb:5432/blog_test
-      - LUCKY_ENV=production
+      - DATABASE_URL=postgres://postgres@localdb:5432/blog_development
+      - LUCKY_ENV=development
       - SECRET_KEY_BASE=/KbI1VRVV1cWM0V1wL+F7pl9iXrkOjk0I3PVpE9tefg=
     ports:
-      - 8080:8080
+      - 5000:5000
+    volumes:
+      - .:/app
+      - /app/node_modules
   db:
     image: "postgres:9.6.2-alpine"
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_DB=blog_test
-
+      - POSTGRES_DB=blog_development
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
