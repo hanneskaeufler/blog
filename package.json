@@ -14,7 +14,7 @@
     "danger-ci": "danger ci",
     "dev": "webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
     "heroku-postbuild": "npm run prod",
-    "lint": "stylelint static/**/*.scss",
+    "lint": "stylelint src/css/**/*.scss",
     "local-test": "docker run --rm -v $(pwd):/src hanneskaeufler/crystal-node-ruby:0.25.1 backstop --config=/src/backstop.js test",
     "prod": "NODE_ENV=production webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
     "test": "backstop --config=backstop.js test",
@@ -44,7 +44,7 @@
     "resolve-url-loader": "2.3.1",
     "sass": "^1.23.0",
     "sass-loader": "7.*",
-    "stylelint": "^9.9.0",
+    "stylelint": "^12.0.0",
     "stylelint-config-standard": "^19.0.0",
     "vue-template-compiler": "^2.6.10"
   }
