@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/hanneskaeufler/blog.svg?style=svg)](https://circleci.com/gh/hanneskaeufler/blog) [![Greenkeeper badge](https://badges.greenkeeper.io/hanneskaeufler/blog.svg)](https://greenkeeper.io/) [![codecov](https://codecov.io/gh/hanneskaeufler/blog/branch/master/graph/badge.svg)](https://codecov.io/gh/hanneskaeufler/blog) ![Mutation Score Badge](https://badge.stryker-mutator.io/github.com/hanneskaeufler/blog/master)
+[![CircleCI](https://circleci.com/gh/hanneskaeufler/blog.svg?style=svg)](https://circleci.com/gh/hanneskaeufler/blog)  [![codecov](https://codecov.io/gh/hanneskaeufler/blog/branch/master/graph/badge.svg)](https://codecov.io/gh/hanneskaeufler/blog) ![Mutation Score Badge](https://badge.stryker-mutator.io/github.com/hanneskaeufler/blog/master)
 
 # blog
 
