@@ -1,0 +1,13 @@
+name: Danger
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  danger:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Danger JS Action
+      uses: danger/danger-js@9.1.8
