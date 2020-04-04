@@ -20,14 +20,15 @@ RUN cd /home/tmp && \
         mv forego /usr/local/bin/forego
 
 WORKDIR /app
-COPY package.json /app/package.json
-COPY package-lock.json /app/package-lock.json
 
-RUN npm config set prefix /home/node_modules
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+ENV NODE_ENV=development
 RUN npm ci
 
-COPY shard.yml /app/shard.yml
-COPY shard.lock /app/shard.lock
+COPY shard.yml shard.yml
+COPY shard.lock shard.lock
 
 RUN shards install
 
