@@ -1,2 +1,2 @@
 web: lucky watch
-assets: npm run create-asset-manifest
+assets: npm run watch
