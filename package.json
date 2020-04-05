@@ -1,13 +1,7 @@
 {
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "jquery": "^3.4.1",
-    "laravel-mix": "^5.0.1",
-    "normalize-scss": "^7.0.1",
-    "rails-ujs": "^5.2.4",
-    "turbolinks": "^5.2.0"
-  },
+  "dependencies": {},
   "scripts": {
     "accessibility-test": "node accessibility-testing/accessibility-test.js",
     "approve": "backstop --config=backstop.js approve",
@@ -36,16 +30,11 @@
   },
   "devDependencies": {
     "assets-manifest": "^1.0.3",
-    "babel-preset-env": "^1.7.0",
     "backstopjs": "^4.0.6",
     "danger": "^9.0.2",
     "danger-plugin-mentor": "^2.0.0",
     "puppeteer": "^2.1.0",
-    "resolve-url-loader": "2.3.1",
-    "sass": "^1.23.0",
-    "sass-loader": "7.*",
     "stylelint": "^13.2.0",
-    "stylelint-config-standard": "^20.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "stylelint-config-standard": "^20.0.0"
   }
 }
