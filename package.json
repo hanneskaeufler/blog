@@ -13,11 +13,11 @@
     "approve": "backstop --config=backstop.js approve",
     "danger-ci": "danger ci",
     "heroku-postbuild": "npm run prod",
-    "lint": "stylelint src/css/**/*.scss",
+    "lint": "stylelint public/css/**/*.css",
     "local-test": "docker run --rm -v $(pwd):/src hanneskaeufler/crystal-node-ruby:0.25.1 backstop --config=/src/backstop.js test",
-    "prod": "NODE_ENV=production webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run create-asset-manifest",
     "test": "backstop --config=backstop.js test",
-    "create-asset-manifest": "assets-manifest public/ ./public/mix-manifest.json && while true; do true; done"
+    "create-asset-manifest": "assets-manifest public ./public/mix-manifest.json && while true; do true; done"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
