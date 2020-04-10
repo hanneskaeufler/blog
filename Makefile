@@ -8,11 +8,14 @@ define load_db_dump
 	docker-compose exec db /bin/sh -c 'dropdb -U $(2) $(1); createdb -U $(2) $(1) && pg_restore -U $(2) -d $(1) < /tmp/$(3)'
 endef
 
+test:
+	docker-compose run app /bin/sh -c 'crystal spec'
+
 dev-server:
-	docker-compose up
+	docker-compose up -V
 
 rebuild-dev-server:
-	docker-compuse up --build
+	docker-compuse up --build -V
 
 load-blog-posts:
 	$(call load_db_dump,$(DBNAME),$(DBUSER),$(DUMPFILE))
@@ -23,4 +26,4 @@ load-visual-test-posts:
 	docker-compose exec app /bin/sh -c 'crystal tasks.cr -- db.migrate'
 	docker-compose exec db /bin/sh -c 'dropdb -U $(DBUSER) blog_development createdb -U $(DBUSER) blog_development && psql -U $(DBUSER) -d blog_development < /tmp/blog_visual_test.dump'
 
-.PHONY: dev-server rebuild-dev-server
+.PHONY: dev-server rebuild-dev-server test

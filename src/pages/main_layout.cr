@@ -31,6 +31,7 @@ abstract class MainLayout
         content
       end
     end
+    view.to_s
   end
 
   def page_title
