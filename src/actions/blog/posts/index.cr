@@ -6,7 +6,7 @@ class Blog::Posts::Index < BrowserAction
 
     posts_count = PostQuery.new.published.select_count.to_i
     posts = PostQuery.new.latest(page: page).results
-    render Blog::Posts::IndexPage,
+    html Blog::Posts::IndexPage,
       posts: posts,
       posts_count: posts_count,
       current_page: page

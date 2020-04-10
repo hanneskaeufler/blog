@@ -1,5 +1,5 @@
 class AppServer < Lucky::BaseAppServer
-  def middleware
+  def middleware : Array(HTTP::Handler)
     Blog.middlewares
   end
 end

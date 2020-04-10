@@ -6,7 +6,7 @@ shards:
 
   avram:
     github: luckyframework/avram
-    version: 0.11.2
+    version: 0.12.4
 
   awscr-s3:
     github: sam0x17/awscr-s3
@@ -21,24 +21,24 @@ shards:
     version: 0.1.0
 
   cry:
-    github: paulcsmith/cry
-    version: 0.4.1
+    github: luckyframework/cry
+    version: 0.4.2
 
   crytic:
     github: hanneskaeufler/crytic
-    version: 6.0.0
+    version: 7.0.0
 
   db:
     github: crystal-lang/crystal-db
-    version: 0.6.0
+    version: 0.8.0
 
   dexter:
     github: luckyframework/dexter
-    version: 0.1.2
+    version: 0.1.3
 
   exception_page:
     github: crystal-loot/exception_page
-    version: 0.1.2
+    version: 0.1.4
 
   habitat:
     github: luckyframework/habitat
@@ -46,19 +46,23 @@ shards:
 
   lucky:
     github: luckyframework/lucky
-    version: 0.17.0
+    version: 0.18.3
 
   lucky_cli:
     github: luckyframework/lucky_cli
-    version: 0.17.0
+    version: 0.18.4
 
   lucky_router:
     github: luckyframework/lucky_router
     version: 0.2.2
 
+  markd:
+    github: icyleaf/markd
+    version: 0.2.0
+
   pg:
     github: will/crystal-pg
-    version: 0.18.0
+    version: 0.20.0
 
   shell-table:
     github: luckyframework/shell-table.cr

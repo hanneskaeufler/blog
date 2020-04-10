@@ -14,6 +14,7 @@ services:
       - 5000:5000
     volumes:
       - /app/node_modules/ # to make sure we ignore any modules in the local folder
+      - /app/lib/ # to make sure we ignore any shards in the local folder
       - .:/app
   db:
     image: "postgres:10.12-alpine"

@@ -1,4 +1,4 @@
-FROM crystallang/crystal:0.30.1
+FROM crystallang/crystal:0.31.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
@@ -8,7 +8,7 @@ RUN mkdir -p /home/tmp && \
         cd /home/tmp && \
         git clone https://github.com/luckyframework/lucky_cli && \
         cd lucky_cli && \
-        git checkout v0.17.0 && \
+        git checkout v0.18.0 && \
         shards install && \
         crystal build src/lucky.cr && \
         mv lucky /usr/local/bin/lucky

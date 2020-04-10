@@ -1,3 +1,5 @@
+require "markd"
+
 class PostContentRenderer
   def render(post : Post) : String
     content = downgrade_headings(post.content)
@@ -18,7 +20,7 @@ class PostContentRenderer
       content = content.gsub(match, "RAW_HTML_#{index}")
     end
 
-    markdown = Markdown.to_html(content)
+    markdown = Markd.to_html(content)
 
     html_snippets.each_with_index do |snippet, index|
       markdown = markdown.gsub("RAW_HTML_#{index}", "</p>#{snippet}<p>")

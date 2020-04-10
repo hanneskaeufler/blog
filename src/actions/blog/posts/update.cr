@@ -6,7 +6,7 @@ class Blog::Posts::Update < AdminAction
         flash.success = "Post successfully edited."
         redirect Blog::Posts::Index
       else
-        render Blog::Posts::EditPage, post: updated_post, post_form: form
+        html Blog::Posts::EditPage, post: updated_post, post_form: form
       end
     end
   end
