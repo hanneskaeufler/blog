@@ -12,7 +12,7 @@
     "prod": "npm run create-asset-manifest",
     "test": "backstop --config=backstop.js test",
     "create-asset-manifest": "assets-manifest public ./public/mix-manifest.json",
-    "watch": "create-asset-manifest && while true; do true; done"
+    "watch": "npm run create-asset-manifest && while true; do true; done"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
