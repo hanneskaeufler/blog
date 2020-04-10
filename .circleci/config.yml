@@ -9,7 +9,7 @@ jobs:
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
-          POSTGRESS_PASSWORD: blog_test_password
+          POSTGRES_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
@@ -58,7 +58,7 @@ jobs:
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
-          POSTGRESS_PASSWORD: blog_test_password
+          POSTGRES_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
@@ -85,7 +85,7 @@ jobs:
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
-          POSTGRESS_PASSWORD: blog_test_password
+          POSTGRES_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
@@ -130,7 +130,7 @@ jobs:
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
-          POSTGRESS_PASSWORD: blog_test_password
+          POSTGRES_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
