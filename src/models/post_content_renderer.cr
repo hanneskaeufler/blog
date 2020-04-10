@@ -20,7 +20,7 @@ class PostContentRenderer
       content = content.gsub(match, "RAW_HTML_#{index}")
     end
 
-    markdown = Markd.to_html(content)
+    markdown = Markd.to_html(content).rstrip("\n")
 
     html_snippets.each_with_index do |snippet, index|
       markdown = markdown.gsub("RAW_HTML_#{index}", "</p>#{snippet}<p>")
