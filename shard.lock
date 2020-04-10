@@ -9,19 +9,19 @@ shards:
     version: 0.12.4
 
   awscr-s3:
-    github: sam0x17/awscr-s3
-    commit: ce1af10516970b8a9c5691ad80c4f240288e836f
+    github: taylorfinnell/awscr-s3
+    commit: 48bb79a87d9bf25a2c48a8d0ad8c973c3d30892b
 
   awscr-signer:
     github: taylorfinnell/awscr-signer
-    version: 0.6.0
+    version: 0.7.0
 
   blank:
     github: kostya/blank
     version: 0.1.0
 
   cry:
-    github: luckyframework/cry
+    github: paulcsmith/cry
     version: 0.4.2
 
   crytic:
@@ -46,7 +46,7 @@ shards:
 
   lucky:
     github: luckyframework/lucky
-    version: 0.18.3
+    version: 0.19.0
 
   lucky_cli:
     github: luckyframework/lucky_cli
@@ -70,7 +70,7 @@ shards:
 
   sitemapper:
     github: jwoertink/sitemapper
-    version: 0.5.0
+    version: 0.6.0
 
   teeplate:
     github: luckyframework/teeplate
