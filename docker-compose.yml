@@ -16,7 +16,7 @@ services:
       - /app/node_modules/ # to make sure we ignore any modules in the local folder
       - .:/app
   db:
-    image: "postgres:10.11-alpine"
+    image: "postgres:10.12-alpine"
     ports:
       - 5432:5432
     environment:

@@ -4,11 +4,12 @@ jobs:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.30.1
         environment:
-          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
-      - image: postgres:9.6.2-alpine
+          DATABASE_URL: postgres://blog_test_user:blog_test_password@127.0.0.1/blog_test
+      - image: postgres:10.12-alpine
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
+          POSTGRESS_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
@@ -52,11 +53,12 @@ jobs:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.30.1
         environment:
-          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
-      - image: postgres:9.6.2-alpine
+          DATABASE_URL: postgres://blog_test_user:blog_test_password@127.0.0.1/blog_test
+      - image: postgres:10.12-alpine
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
+          POSTGRESS_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
@@ -78,11 +80,12 @@ jobs:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.30.1
         environment:
-          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
-      - image: postgres:9.6.2-alpine
+          DATABASE_URL: postgres://blog_test_user:blog_test_password@127.0.0.1/blog_test
+      - image: postgres:10.12-alpine
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
+          POSTGRESS_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
@@ -122,11 +125,12 @@ jobs:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.30.1
         environment:
-          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
-      - image: postgres:9.6.2-alpine
+          DATABASE_URL: postgres://blog_test_user:blog_test_password@127.0.0.1/blog_test
+      - image: postgres:10.12-alpine
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
+          POSTGRESS_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
