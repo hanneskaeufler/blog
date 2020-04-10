@@ -2,6 +2,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {},
+  "engines": {
+      "node": "12.16.1",
+      "npm": "6.13.4"
+  },
   "scripts": {
     "accessibility-test": "node accessibility-testing/accessibility-test.js",
     "approve": "backstop --config=backstop.js approve",

@@ -29,7 +29,7 @@ class AppVisitor
   private def request_with_body(method : String, path : String, body : Hash(String, String))
     body_strings = [] of String
     body.each do |key, value|
-      body_strings << "#{URI.escape(key)}=#{URI.escape(value)}"
+      body_strings << "#{URI.encode(key)}=#{URI.encode(value)}"
     end
     request = HTTP::Request.new(method, path, nil, body_strings.join("&"))
     @response = process_request(request)

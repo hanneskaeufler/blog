@@ -1,5 +1,5 @@
 module Blog
-  def self.middlewares
+  def self.middlewares : Array(HTTP::Handler)
     [
       ForceCustomDomainHandler.new,
       Lucky::HttpMethodOverrideHandler.new,
@@ -10,6 +10,6 @@ module Blog
       Lucky::RouteHandler.new,
       Lucky::StaticFileHandler.new("./public", false),
       NotFoundHandler.new,
-    ]
+    ] of HTTP::Handler
   end
 end

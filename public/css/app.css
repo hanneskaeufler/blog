@@ -112,11 +112,17 @@ a:hover {
     padding-left: 1em;
 }
 
-.posts-container article blockquote::before {
+.posts-container article blockquote > p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.posts-container article blockquote > p::before {
     content: "“";
 }
 
-.posts-container article blockquote::after {
+.posts-container article blockquote > p::after {
     content: "”";
 }
 

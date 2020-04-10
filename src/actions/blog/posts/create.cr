@@ -5,7 +5,7 @@ class Blog::Posts::Create < AdminAction
         flash.success = "Post successfully published."
         redirect Blog::Posts::Index
       else
-        render Blog::Posts::NewPage, post_form: form
+        html Blog::Posts::NewPage, post_form: form
       end
     end
   end

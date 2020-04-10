@@ -1,4 +1,3 @@
-require "markdown"
 require "string_scanner"
 
 class Blog::Posts::Components::FullPost < BaseComponent
