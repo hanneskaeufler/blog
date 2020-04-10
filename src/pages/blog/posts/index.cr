@@ -7,7 +7,7 @@ class Blog::Posts::IndexPage < MainLayout
 
   def content
     render_header
-    render_posts(@posts)
+    render_posts
     mount Blog::Components::Footer.new
   end
 
@@ -17,28 +17,28 @@ class Blog::Posts::IndexPage < MainLayout
     end
   end
 
-  private def render_posts(posts : Array(Post))
+  private def render_posts
     section class: "posts-container" do
-      @posts.each { |post| mount Blog::Posts::Components::FullPost.new(post) }
-      link(to: Blog::Posts::Index.path(previous_page)) { raw "&laquo; Previous page" } if previous_page_exists?
+      posts.each { |post| mount Blog::Posts::Components::FullPost.new(post) }
+      link(to: Blog::Posts::Index.with(page: previous_page)) { raw "&laquo; Previous page" } if previous_page_exists?
       raw " &middot; " if previous_page_exists? && next_page_exists?
-      link(to: Blog::Posts::Index.path(next_page)) { raw "Next page &raquo;" } if next_page_exists?
+      link(to: Blog::Posts::Index.with(page: next_page)) { raw "Next page &raquo;" } if next_page_exists?
     end
   end
 
   private def previous_page_exists?
-    @current_page > 1
+    current_page > 1
   end
 
   private def next_page_exists?
-    @current_page * PostQuery::PER_PAGE < @posts_count
+    current_page * PostQuery::PER_PAGE < posts_count
   end
 
   private def previous_page
-    @current_page - 1
+    current_page - 1
   end
 
   private def next_page
-    @current_page + 1
+    current_page + 1
   end
 end

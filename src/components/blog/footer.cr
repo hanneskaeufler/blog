@@ -19,7 +19,7 @@ class Blog::Components::Footer < BaseComponent
         ul do
           SOCIALS.each do |name, href|
             li do
-              link to: href do
+              a href: href do
                 img src: dynamic_asset("logos/#{name}.svg"), alt: "social logo #{name}"
               end
             end
@@ -30,13 +30,13 @@ class Blog::Components::Footer < BaseComponent
         h4 "From Germany with ❤️"
         para do
           text "This blog is open source, check it out on "
-          link "Github", to: "https://github.com/hanneskaeufler/blog"
+          a "Github", href: "https://github.com/hanneskaeufler/blog"
           text ". It is served by "
-          link "Heroku", to: "https://heroku.com"
+          a "Heroku", href: "https://heroku.com"
           text ", written in "
-          link "Crystal", to: "https://crystal-lang.org"
+          a "Crystal", href: "https://crystal-lang.org"
           text " and built with the awesome "
-          link "Lucky Framework", to: "https://luckyframework.org"
+          a "Lucky Framework", href: "https://luckyframework.org"
           text "."
         end
         raw "&copy; #{Time.local.year}"

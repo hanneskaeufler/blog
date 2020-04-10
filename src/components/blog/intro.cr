@@ -4,7 +4,7 @@ class Blog::Components::Intro < BaseComponent
       ul do
         SOCIALS.each do |name, href|
           li do
-            link to: href do
+            a href: href do
               img src: dynamic_asset("logos/#{name}.svg"), alt: "social logo #{name}"
               text name.to_s
             end
