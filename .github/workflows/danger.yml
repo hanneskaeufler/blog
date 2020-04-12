@@ -16,3 +16,10 @@ jobs:
       uses: danger/danger-js@9.1.8
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  mentor:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: hanneskaeufler/github-action-mentor@v1.0.0
+      if: github.event_name == 'pull_request'
+      with:
+        githubToken: ${{ secrets.GITHUB_TOKEN }}
