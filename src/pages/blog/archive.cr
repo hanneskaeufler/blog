@@ -8,8 +8,8 @@ class Blog::ArchivePage < MainLayout
     mount Blog::Components::SmallHeader.new
     section class: "posts-archive" do
       h2 "Archive"
-      render_search_form(@current_search_term)
-      render_post_titles(posts_by_year(@posts))
+      render_search_form(current_search_term)
+      render_post_titles(posts_by_year(posts))
     end
     mount Blog::Components::Footer.new
   end

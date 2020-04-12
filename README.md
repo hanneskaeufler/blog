@@ -6,9 +6,8 @@ This is my personal website/blog written using [Lucky](https://luckyframework.or
 
 ### Setting up the project
 
-1. [Install required dependencies](http://luckyframework.org/guides/installing.html#install-required-dependencies)
-1. Run `script/setup`
-1. Run `lucky dev` to start the app
+1. Run `make dev-server` to start the app
+2. Visit `localhost:5000` in the browser
 
 ### Development
 
@@ -36,7 +35,6 @@ The following checks are run (see also `.circleci/config.yml`):
 * Switch the host in `backstop.json` to `host.docker.internal:5000`, see [docker guides](https://docs.docker.com/docker-for-mac/networking/#use-cases-and-workarounds)
 * To export the local visual regression test database, run `/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump --no-acl --no-owner --data-only --table=posts blog_visual_test > blog_visual_test.dump`
 * Also, duh: https://github.com/garris/BackstopJS/issues/796
-
 
 ### Learning Lucky
 

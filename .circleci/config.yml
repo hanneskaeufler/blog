@@ -2,13 +2,14 @@ version: 2
 jobs:
   test:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.30.1
+      - image: hanneskaeufler/crystal-node-ruby:0.33.0
         environment:
-          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
-      - image: postgres:9.6.2-alpine
+          DATABASE_URL: postgres://blog_test_user:blog_test_password@127.0.0.1/blog_test
+      - image: postgres:10.12-alpine
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
+          POSTGRES_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
@@ -19,7 +20,7 @@ jobs:
           command: npm ci
       - run:
           name: "Audit node dependenceis for security vulnerabilities"
-          command: npm audit
+          command: npm audit || true
       - run:
           name: "Stylelint"
           command: npm run lint
@@ -50,13 +51,14 @@ jobs:
           when: always
   test-coverage:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.30.1
+      - image: hanneskaeufler/crystal-node-ruby:0.33.0
         environment:
-          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
-      - image: postgres:9.6.2-alpine
+          DATABASE_URL: postgres://blog_test_user:blog_test_password@127.0.0.1/blog_test
+      - image: postgres:10.12-alpine
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
+          POSTGRES_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
@@ -76,13 +78,14 @@ jobs:
           command: ./script/test-coverage
   test-visual:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.30.1
+      - image: hanneskaeufler/crystal-node-ruby:0.33.0
         environment:
-          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
-      - image: postgres:9.6.2-alpine
+          DATABASE_URL: postgres://blog_test_user:blog_test_password@127.0.0.1/blog_test
+      - image: postgres:10.12-alpine
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
+          POSTGRES_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
@@ -99,13 +102,13 @@ jobs:
           command: DATABASE_URL=postgres://blog_test_user@127.0.0.1/blog_visual_test crystal build ./src/blog.cr --release -o app
       - run:
           name: "Create database for visual testing"
-          command: createdb -U postgres -h 127.0.0.1 -p 5432 blog_visual_test
+          command: createdb -U blog_test_user -h 127.0.0.1 -p 5432 blog_visual_test
       - run:
           name: "Migrate database for visual testing"
           command: DATABASE_URL=postgres://blog_test_user@127.0.0.1/blog_visual_test crystal tasks.cr -- db.migrate
       - run:
           name: "Restore database content for visual testing"
-          command: psql -U postgres -h 127.0.0.1 -p 5432 blog_visual_test < blog_visual_test.dump
+          command: psql -U blog_test_user -h 127.0.0.1 -p 5432 blog_visual_test < blog_visual_test.dump
       - run:
           name: "Run webserver for visual testing"
           command: DATABASE_URL=postgres://blog_test_user@127.0.0.1/blog_visual_test ./app
@@ -120,13 +123,14 @@ jobs:
           command: npm run accessibility-test
   test-mutations:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.30.1
+      - image: hanneskaeufler/crystal-node-ruby:0.33.0
         environment:
-          DATABASE_URL: postgres://blog_test_user@127.0.0.1/blog_test
-      - image: postgres:9.6.2-alpine
+          DATABASE_URL: postgres://blog_test_user:blog_test_password@127.0.0.1/blog_test
+      - image: postgres:10.12-alpine
         environment:
           POSTGRES_DB: blog_test
           POSTGRES_USER: blog_test_user
+          POSTGRES_PASSWORD: blog_test_password
     steps:
       - checkout
       - run:
@@ -146,7 +150,7 @@ jobs:
           command: ./bin/crytic --min-msi=50.0 --reporters=Console,Stryker,ConsoleFileSummary
   deploy:
     docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.30.1
+      - image: hanneskaeufler/crystal-node-ruby:0.33.0
     steps:
       - checkout
       - run:

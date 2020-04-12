@@ -7,8 +7,6 @@
 /junit/
 /lib/
 /node_modules
-/public/css
-/public/js
 /public/mix-manifest.json
 /tmp/
 start_server

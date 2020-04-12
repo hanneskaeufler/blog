@@ -1,24 +1,22 @@
 {
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "jquery": "^3.4.1",
-    "laravel-mix": "^5.0.1",
-    "normalize-scss": "^7.0.1",
-    "rails-ujs": "^5.2.4",
-    "turbolinks": "^5.2.0"
+  "dependencies": {},
+  "engines": {
+      "node": "12.16.1",
+      "npm": "6.13.4"
   },
   "scripts": {
     "accessibility-test": "node accessibility-testing/accessibility-test.js",
     "approve": "backstop --config=backstop.js approve",
     "danger-ci": "danger ci",
-    "dev": "webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
     "heroku-postbuild": "npm run prod",
-    "lint": "stylelint src/css/**/*.scss",
+    "lint": "stylelint public/css/**/*.css",
     "local-test": "docker run --rm -v $(pwd):/src hanneskaeufler/crystal-node-ruby:0.25.1 backstop --config=/src/backstop.js test",
-    "prod": "NODE_ENV=production webpack --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run create-asset-manifest",
     "test": "backstop --config=backstop.js test",
-    "watch": "webpack --watch --progress --hide-modules --color --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "create-asset-manifest": "assets-manifest public ./public/mix-manifest.json",
+    "watch": "npm run create-asset-manifest && while true; do true; done"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
@@ -36,16 +34,13 @@
     }
   },
   "devDependencies": {
+    "assets-manifest": "^1.0.3",
     "babel-preset-env": "^1.7.0",
-    "backstopjs": "^4.0.6",
-    "danger": "^9.0.2",
-    "danger-plugin-mentor": "^2.0.0",
-    "puppeteer": "^2.1.0",
-    "resolve-url-loader": "2.3.1",
-    "sass": "^1.23.0",
-    "sass-loader": "7.*",
-    "stylelint": "^13.2.0",
-    "stylelint-config-standard": "^20.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "backstopjs": "^4.5.1",
+    "danger": "^9.4.0",
+    "danger-plugin-mentor": "^2.0.1",
+    "puppeteer": "^2.1.1",
+    "stylelint": "^13.3.0",
+    "stylelint-config-standard": "^20.0.0"
   }
 }

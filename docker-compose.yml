@@ -4,7 +4,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    image: hanneskaeufler/blog-dev:latest
     links:
       - "db:localdb"
     environment:
@@ -14,10 +13,12 @@ services:
     ports:
       - 5000:5000
     volumes:
+      - /app/node_modules/ # to make sure we ignore any modules in the local folder
+      - /app/lib/ # to make sure we ignore any shards in the local folder
+      - /app/.shards/ # ignore shards cache
       - .:/app
-      - /app/node_modules
   db:
-    image: "postgres:9.6.2-alpine"
+    image: "postgres:10.12-alpine"
     ports:
       - 5432:5432
     environment:

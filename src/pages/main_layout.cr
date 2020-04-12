@@ -17,7 +17,10 @@ abstract class MainLayout
         meta rel: "alternate", title: Blog::Components::Tagline::TAGLINE, href: "/feed.json"
         css_link(asset("images/favicon.png"), rel: "icon")
         title page_title
+        css_link "https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
         css_link asset("css/app.css")
+        js_link "https://cdn.jsdelivr.net/npm/rails-ujs@5.2.4-2/lib/assets/compiled/rails-ujs.min.js"
+        js_link "https://cdn.jsdelivr.net/npm/turbolinks@5.2.0/dist/turbolinks.min.js"
         js_link asset("js/app.js")
         inner_head
         mount Blog::Components::GoogleAnalytics.new(Lucky::Env.production?)
@@ -28,6 +31,7 @@ abstract class MainLayout
         content
       end
     end
+    view.to_s
   end
 
   def page_title

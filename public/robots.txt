@@ -1,1 +1,3 @@
 SITEMAP: http://heinz-kaeufler.de/hannes/blog/sitemap.xml.gz
+User-agent: *
+Disallow:

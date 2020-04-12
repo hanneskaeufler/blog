@@ -1,7 +1,7 @@
 .circleci/
 .git/
 .shards/
-.sitemap.xml.gz
+sitemap.xml.gz
 backstop_data/
 bin/
 lib/

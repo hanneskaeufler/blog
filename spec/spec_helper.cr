@@ -7,6 +7,9 @@ require "../src/app"
 
 include AppVisitor::Matchers
 
+Avram::Migrator::Runner.new.ensure_migrated!
+Avram::SchemaEnforcer.ensure_correct_column_mappings!
+
 Spec.before_each do
   PostQuery.truncate
 end
