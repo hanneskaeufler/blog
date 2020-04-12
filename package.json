@@ -3,8 +3,8 @@
   "private": true,
   "dependencies": {},
   "engines": {
-      "node": "12.16.1",
-      "npm": "6.13.4"
+    "node": "12.16.1",
+    "npm": "6.13.4"
   },
   "scripts": {
     "accessibility-test": "node accessibility-testing/accessibility-test.js",
@@ -38,7 +38,6 @@
     "babel-preset-env": "^1.7.0",
     "backstopjs": "^4.5.1",
     "danger": "^9.4.0",
-    "danger-plugin-mentor": "^2.0.1",
     "puppeteer": "^2.1.1",
     "stylelint": "^13.3.0",
     "stylelint-config-standard": "^20.0.0"
