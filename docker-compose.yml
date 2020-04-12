@@ -13,6 +13,7 @@ services:
     ports:
       - 5000:5000
     volumes:
+      - /app/bin/ # some shards produce binary executables
       - /app/node_modules/ # to make sure we ignore any modules in the local folder
       - /app/lib/ # to make sure we ignore any shards in the local folder
       - /app/.shards/ # ignore shards cache

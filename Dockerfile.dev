@@ -27,10 +27,10 @@ COPY package-lock.json package-lock.json
 ENV NODE_ENV=development
 RUN npm ci
 
-ENV SKIP_LUCKY_TASK_PRECOMPILATION=true
 COPY shard.yml shard.yml
 COPY shard.lock shard.lock
 
+ENV SKIP_LUCKY_TASK_PRECOMPILATION=true
 RUN shards install
 
 CMD ["sh", "-c", "lucky dev"]
