@@ -13,24 +13,12 @@ describe Blog::Posts::IndexPage do
     rendered([post]).should contain "<h2>H1 Heading</h2>"
   end
 
-  it "can handle raw html, and assumes closing and opening paragraphs" do
-    # what. a. hack. https://github.com/crystal-lang/crystal/issues/4613
-    post = build_post(content: "Some text. RAW_HTML_START<br id=\"must-remain\">RAW_HTML_END. More text")
+  it "can handle raw html" do
+    post = build_post(content: "Some text. <br id=\"must-remain\">. More text")
 
     html = rendered([post])
 
-    html.should contain "</p><br id=\"must-remain\"><p>"
-    html.should_not contain "RAW_HTML_START"
-    html.should_not contain "RAW_HTML_END"
-  end
-
-  it "can handle multiple raw html blocks" do
-    post = build_post(content: "Some text. RAW_HTML_START<br id=\"must-remain\">RAW_HTML_END. More text. RAW_HTML_START<i>hi</i>RAW_HTML_END")
-
-    html = rendered([post])
-
-    html.should contain "</p><br id=\"must-remain\"><p>"
-    html.should contain "</p><i>hi</i><p>"
+    html.should contain "<br id=\"must-remain\">"
   end
 
   it "shows next page link for more than 5 posts" do

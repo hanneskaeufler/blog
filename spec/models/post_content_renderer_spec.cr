@@ -17,23 +17,23 @@ describe PostContentRenderer do
 
   it "replaces raw html between placeholders" do
     renderer = PostContentRenderer.new
-    post = build_post(content: "Just some RAW_HTML_START<br />RAW_HTML_END text")
+    post = build_post(content: "Just some <br /> text")
 
-    renderer.render(post).should eq("<p>Just some </p><br /><p> text</p>")
+    renderer.render(post).should eq("<p>Just some <br /> text</p>")
   end
 
   it "replaces raw html with line breaks between placeholders" do
     renderer = PostContentRenderer.new
     post = build_post <<-CONTENT
-    Just some RAW_HTML_START
-    <br />
-    RAW_HTML_END text
+    Just some
+    <raw-html></raw-html>
+    text
     CONTENT
 
     renderer.render(post).should eq <<-CONTENT
-    <p>Just some </p>
-    <br />
-    <p> text</p>
+    <p>Just some
+    <raw-html></raw-html>
+    text</p>
     CONTENT
   end
 end
