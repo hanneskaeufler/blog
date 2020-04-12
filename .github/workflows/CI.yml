@@ -9,3 +9,11 @@ jobs:
       uses: actions/checkout@v2.1.0
     - name: Setup
       run: ./script/setup
+    - name: Lint Frontend
+      run: ./script/lint-frontend
+    - name: Check formatting
+      run: ./script/check-formatting
+    - name: Static analysis
+      run: ./script/static-analysis
+    - name: Test
+      run: ./script/test --junit_output=./reports
