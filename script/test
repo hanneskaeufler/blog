@@ -1,1 +1,1 @@
-docker-compose run --rm app /bin/sh -c 'npm run create-asset-manifest && crystal spec "$@"'
+docker-compose run --rm app /bin/sh -c 'npm run create-asset-manifest && lucky db.create && crystal spec "$@"'
