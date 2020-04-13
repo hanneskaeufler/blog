@@ -5,9 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     links:
-      - "db:localdb"
+      - "db"
     environment:
-      - DATABASE_URL=postgres://postgres@localdb:5432/blog_development
+      - DATABASE_URL=postgres://postgres@db:5432/blog_development
       - LUCKY_ENV=development
       - SECRET_KEY_BASE=/KbI1VRVV1cWM0V1wL+F7pl9iXrkOjk0I3PVpE9tefg=
     ports:
