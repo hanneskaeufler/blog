@@ -1,1 +1,1 @@
-docker-compose run --rm app crystal spec "$@"
+docker-compose run --rm app /bin/sh -c 'npm run create-asset-manifest && crystal spec "$@"'
