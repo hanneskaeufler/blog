@@ -5,6 +5,12 @@ on:
     branches: [ master ]
 
 jobs:
+  danger:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: docker://dangersystems/danger-rb:latest
+      env:
+        DANGER_GITHUB_API_TOKEN: "abc"
   mentor:
     runs-on: ubuntu-latest
     steps:
