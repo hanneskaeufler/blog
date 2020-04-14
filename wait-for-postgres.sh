@@ -1,12 +1,10 @@
 #!/bin/sh
 set -e
 
-host="$1"
-shift
-cmd="$@"
+connection="$1"
 
 connection_is_ready () {
-    pg_isready --dbname=$DATABASE_URL;
+    pg_isready --dbname=$connection;
 }
 
 until connection_is_ready; do
@@ -15,5 +13,4 @@ until connection_is_ready; do
     fi
 done
 
->&2 echo "Postgres is up - executing command"
-exec $cmd
+echo "Postgres is up"
