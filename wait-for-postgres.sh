@@ -5,9 +5,14 @@ host="$1"
 shift
 cmd="$@"
 
-until PGPASSWORD=$POSTGRES_PASSWORD psql -h "$host" -U "postgres" -c '\q'; do
-  >&2 echo "Postgres is unavailable - sleeping"
-  sleep 1
+connection_is_ready () {
+    pg_isready --dbname=$DATABASE_URL;
+}
+
+until connection_is_ready; do
+    if [ $? -ne 0 ]; then
+        sleep 1
+    fi
 done
 
 >&2 echo "Postgres is up - executing command"
