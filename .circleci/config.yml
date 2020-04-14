@@ -1,47 +1,5 @@
 version: 2
 jobs:
-  test:
-    docker:
-      - image: hanneskaeufler/crystal-node-ruby:0.33.0
-        environment:
-          DATABASE_URL: postgres://blog_test_user:blog_test_password@127.0.0.1/blog_test
-      - image: postgres:10.12-alpine
-        environment:
-          POSTGRES_DB: blog_test
-          POSTGRES_USER: blog_test_user
-          POSTGRES_PASSWORD: blog_test_password
-    steps:
-      - checkout
-      - run:
-          name: "Install node dependencies"
-          command: npm ci
-      - run:
-          name: "Audit node dependenceis for security vulnerabilities"
-          command: npm audit || true
-      - run:
-          name: "Stylelint"
-          command: npm run lint
-      - run:
-          name: "Compiling assets"
-          command: npm run prod
-      - run:
-          name: "Install crystal dependencies"
-          command: shards install
-      - run:
-          name: "Check formatting"
-          command: crystal tool format src spec --check
-      - run:
-          name: "Static analysis"
-          command: ./bin/ameba
-      - run:
-          name: "Migrate database"
-          command: LUCKY_ENV=test crystal tasks.cr -- db.migrate
-      - run:
-          name: "Running specs"
-          command: crystal spec --junit_output=/root/reports
-      - store_test_results:
-          path: /root/reports
-          when: always
   test-coverage:
     docker:
       - image: hanneskaeufler/crystal-node-ruby:0.33.0
@@ -158,11 +116,9 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - test
       - test-visual
       - deploy:
           requires:
-            - test
             - test-visual
           filters:
             branches:
@@ -175,6 +131,5 @@ workflows:
             branches:
               only: master
     jobs:
-      - test
       - test-visual
       - test-mutations
