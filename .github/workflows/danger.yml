@@ -8,7 +8,7 @@ jobs:
   mentor:
     runs-on: ubuntu-latest
     steps:
-    - uses: hanneskaeufler/github-action-mentor@v1.0.0
+    - uses: hanneskaeufler/github-action-mentor@v1.0.1
       if: github.event_name == 'pull_request'
       with:
         githubToken: ${{ secrets.GITHUB_TOKEN }}

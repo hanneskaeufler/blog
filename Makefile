@@ -15,7 +15,7 @@ dev-server:
 	docker-compose up -V
 
 rebuild-dev-server:
-	docker-compuse up --build -V
+	docker-compose up --build -V
 
 load-blog-posts:
 	$(call load_db_dump,$(DBNAME),$(DBUSER),$(DUMPFILE))
