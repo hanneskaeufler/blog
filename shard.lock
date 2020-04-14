@@ -2,11 +2,11 @@ version: 1.0
 shards:
   ameba:
     github: veelenga/ameba
-    version: 0.12.0
+    version: 0.12.1
 
   avram:
     github: luckyframework/avram
-    version: 0.13.0
+    version: 0.13.1
 
   awscr-s3:
     github: taylorfinnell/awscr-s3
@@ -30,7 +30,7 @@ shards:
 
   db:
     github: crystal-lang/crystal-db
-    version: 0.8.0
+    version: 0.9.0
 
   dexter:
     github: luckyframework/dexter
@@ -62,7 +62,7 @@ shards:
 
   pg:
     github: will/crystal-pg
-    version: 0.20.0
+    version: 0.21.0
 
   shell-table:
     github: luckyframework/shell-table.cr
