@@ -13,9 +13,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Install greenkeeper-lockfile-update and run it"
-          command: npm i -g greenkeeper-lockfile && greenkeeper-lockfile-update
-      - run:
           name: "Install node dependencies"
           command: npm ci
       - run:
@@ -44,10 +41,6 @@ jobs:
           command: crystal spec --junit_output=/root/reports
       - store_test_results:
           path: /root/reports
-          when: always
-      - run:
-          name: "Run danger"
-          command: npm run danger-ci
           when: always
   test-coverage:
     docker:

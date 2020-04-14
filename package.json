@@ -35,9 +35,7 @@
   },
   "devDependencies": {
     "assets-manifest": "^1.0.3",
-    "babel-preset-env": "^1.7.0",
     "backstopjs": "^4.5.1",
-    "danger": "^9.4.0",
     "puppeteer": "^2.1.1",
     "stylelint": "^13.3.2",
     "stylelint-config-standard": "^20.0.0"
