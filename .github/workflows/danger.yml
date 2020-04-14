@@ -8,7 +8,10 @@ jobs:
   danger:
     runs-on: ubuntu-latest
     steps:
-    - uses: docker://dangersystems/danger-rb:latest
+    - name: Checkout
+      uses: actions/checkout@v2.1.0
+    - name: Danger
+      uses: docker://dangersystems/danger-rb:latest
       env:
         DANGER_GITHUB_API_TOKEN: "abc"
   mentor:
