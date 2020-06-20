@@ -1,4 +1,4 @@
-FROM crystallang/crystal:0.34.0
+FROM crystallang/crystal:0.35.0
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
@@ -9,7 +9,7 @@ RUN mkdir -p /home/tmp && \
         cd /home/tmp && \
         git clone https://github.com/luckyframework/lucky_cli && \
         cd lucky_cli && \
-        git checkout v0.20.0 && \
+        git checkout v0.22.0 && \
         shards install && \
         crystal build src/lucky.cr && \
         mv lucky /usr/local/bin/lucky
@@ -29,9 +29,8 @@ ENV NODE_ENV=development
 RUN npm ci
 
 COPY shard.yml shard.yml
-COPY shard.lock shard.lock
 
 ENV SKIP_LUCKY_TASK_PRECOMPILATION=true
-RUN shards install
+RUN shards update
 
 CMD ["sh", "-c", "lucky dev"]
