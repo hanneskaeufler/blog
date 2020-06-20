@@ -56,7 +56,7 @@ jobs:
           command: createdb -U blog_test_user -h 127.0.0.1 -p 5432 blog_visual_test
       - run:
           name: "Migrate database for visual testing"
-          command: DATABASE_URL=postgres://blog_test_user@127.0.0.1/blog_visual_test crystal tasks.cr -- db.migrate
+          command: DATABASE_URL=postgres://blog_test_user@127.0.0.1/blog_visual_test crystal tasks.cr db.migrate
       - run:
           name: "Restore database content for visual testing"
           command: psql -U blog_test_user -h 127.0.0.1 -p 5432 blog_visual_test < blog_visual_test.dump
