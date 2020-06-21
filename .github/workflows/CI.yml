@@ -17,12 +17,3 @@ jobs:
         run: ./script/static-analysis
       - name: Test
         run: ./script/test --junit_output=./reports
-  test-mutations:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.1.0
-      - name: Setup
-        run: ./script/setup
-      - name: Mutation-Test
-        run: ./script/test-mutation
