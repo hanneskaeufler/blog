@@ -1,0 +1,86 @@
+version: 2.0
+shards:
+  ameba:
+    git: https://github.com/veelenga/ameba.git
+    version: 0.12.1
+
+  avram:
+    git: https://github.com/luckyframework/avram.git
+    version: 0.15.0
+
+  awscr-s3:
+    git: https://github.com/taylorfinnell/awscr-s3.git
+    version: 0.8.0+git.commit.547f5f48735a5067124b70b9f3e8a8819538c06f
+
+  awscr-signer:
+    git: https://github.com/taylorfinnell/awscr-signer.git
+    version: 0.8.0
+
+  blank:
+    git: https://github.com/kostya/blank.git
+    version: 0.1.0
+
+  cry:
+    git: https://github.com/paulcsmith/cry.git
+    version: 0.4.2
+
+  crytic:
+    git: https://github.com/hanneskaeufler/crytic.git
+    version: 7.0.0
+
+  db:
+    git: https://github.com/crystal-lang/crystal-db.git
+    version: 0.9.0
+
+  dexter:
+    git: https://github.com/luckyframework/dexter.git
+    version: 0.3.1
+
+  exception_page:
+    git: https://github.com/crystal-loot/exception_page.git
+    version: 0.1.4
+
+  future:
+    git: https://github.com/crystal-community/future.cr.git
+    version: 0.1.0
+
+  habitat:
+    git: https://github.com/luckyframework/habitat.git
+    version: 0.4.3
+
+  lucky:
+    git: https://github.com/luckyframework/lucky.git
+    version: 0.22.0
+
+  lucky_cli:
+    git: https://github.com/luckyframework/lucky_cli.git
+    version: 0.22.0
+
+  lucky_router:
+    git: https://github.com/luckyframework/lucky_router.git
+    version: 0.2.2
+
+  markd:
+    git: https://github.com/icyleaf/markd.git
+    version: 0.2.0
+
+  pg:
+    git: https://github.com/will/crystal-pg.git
+    version: 0.21.1
+
+  shell-table:
+    git: https://github.com/luckyframework/shell-table.cr.git
+    version: 0.9.2+git.commit.078a04ea58ead5203bb435a3b5fff448ddabaeea
+
+  sitemapper:
+    git: https://github.com/jwoertink/sitemapper.git
+    version: 0.6.0
+
+  teeplate:
+    git: https://github.com/luckyframework/teeplate.git
+    version: 0.8.2
+
+  wordsmith:
+    git: https://github.com/luckyframework/wordsmith.git
+    version: 0.2.0
+
