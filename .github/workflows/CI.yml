@@ -25,4 +25,4 @@ jobs:
       - name: Setup
         run: ./script/setup
       - name: Mutation-Test
-        run: ./bin/crytic --min-msi=50.0 --reporters=Console,Stryker,ConsoleFileSummary
+        run: ./script/test-mutation
