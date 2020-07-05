@@ -1,4 +1,4 @@
-FROM crystallang/crystal:0.35.0
+FROM crystallang/crystal:0.35.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_12.x | bash - && \

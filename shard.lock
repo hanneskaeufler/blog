@@ -6,11 +6,11 @@ shards:
 
   avram:
     git: https://github.com/luckyframework/avram.git
-    version: 0.15.0
+    version: 0.16.0
 
   awscr-s3:
     git: https://github.com/taylorfinnell/awscr-s3.git
-    version: 0.8.0+git.commit.547f5f48735a5067124b70b9f3e8a8819538c06f
+    version: 0.8.0+git.commit.d16e88438aff9989cdf05c8684fa8eb5e76799a8
 
   awscr-signer:
     git: https://github.com/taylorfinnell/awscr-signer.git
@@ -21,7 +21,7 @@ shards:
     version: 0.1.0
 
   cry:
-    git: https://github.com/paulcsmith/cry.git
+    git: https://github.com/luckyframework/cry.git
     version: 0.4.2
 
   crytic:
@@ -46,19 +46,19 @@ shards:
 
   habitat:
     git: https://github.com/luckyframework/habitat.git
-    version: 0.4.3
+    version: 0.4.4
 
   lucky:
     git: https://github.com/luckyframework/lucky.git
-    version: 0.22.0
+    version: 0.23.0
 
   lucky_cli:
     git: https://github.com/luckyframework/lucky_cli.git
-    version: 0.22.0
+    version: 0.23.0
 
   lucky_router:
     git: https://github.com/luckyframework/lucky_router.git
-    version: 0.2.2
+    version: 0.3.0
 
   markd:
     git: https://github.com/icyleaf/markd.git
