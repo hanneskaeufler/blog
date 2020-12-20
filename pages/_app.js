@@ -4,7 +4,7 @@ import { Github, Twitter, Xing } from "@/components/icons";
 
 function Footer() {
   return (
-    <footer className="mt-10 border-t-2 border-gray-200 bg-gray-100 text-gray-600">
+    <footer className="mt-10 border-t-2 border-gray-200 bg-gray-100 text-lg text-gray-600">
       <div class="container mx-auto grid md:grid-cols-2">
         <div className="py-6">
           <h4 className="font-bold text-gray-800 mb-6">Imprint</h4>
@@ -44,7 +44,7 @@ function Footer() {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="text-lg text-gray-800 antialiased min-h-screen flex flex-col">
+    <div className="text-xl text-gray-600 antialiased min-h-screen flex flex-col">
       <Component {...pageProps} />
       <Footer />
     </div>

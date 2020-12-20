@@ -3,11 +3,10 @@
 @tailwind utilities;
 
 .blog-title::before {
-  background: #24b47e;
+  background: #d1fae5;
   content: "";
   height: 2000px;
   left: 0;
-  opacity: 0.4;
   position: absolute;
   right: 0;
   top: -1800px;
