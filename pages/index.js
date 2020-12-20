@@ -22,7 +22,7 @@ function Banner() {
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto flex-grow">
       <div className="blog-title">
         <div className="flex space-x-2 py-8 justify-center">
           <QuickLink label="github" target="https://github.com/hanneskaeufler">

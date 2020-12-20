@@ -44,7 +44,7 @@ function Footer() {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="text-lg text-gray-800 antialiased">
+    <div className="text-lg text-gray-800 antialiased min-h-screen flex flex-col">
       <Component {...pageProps} />
       <Footer />
     </div>
