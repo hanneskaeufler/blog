@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Link from "next/link";
+import { Github, Twitter, Xing } from "@/components/icons";
 
 function Footer() {
   return (
@@ -12,6 +13,11 @@ function Footer() {
           Gluthstraße 8<br />
           80807 München
         </address>
+        <div className="flex items-center mt-6 space-x-2">
+          <Github className="w-4 h-4" />
+          <Twitter className="w-4 h-4" />
+          <Xing className="w-4 h-4" />
+        </div>
       </div>
       <div className="p-6">
         <h4 className="font-bold text-gray-800 mb-6">From Germany with ❤️</h4>
