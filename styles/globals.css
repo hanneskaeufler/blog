@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blog-title::before {
+  background: #24b47e;
+  content: "";
+  height: 2000px;
+  left: 0;
+  opacity: 0.4;
+  position: absolute;
+  right: 0;
+  top: -1800px;
+  transform: skew(0, 6deg);
+  transition: 1s ease-in-out;
+  z-index: -1;
+}
+.blog-title::after {
+  background: #ddd;
+  content: "";
+  height: 2000px;
+  left: 0;
+  opacity: 0.4;
+  position: absolute;
+  right: 0;
+  top: -1800px;
+  transform: skew(0, -12deg);
+  transition: 1s ease-in-out;
+  z-index: -1;
+}
+.blog-title:hover::before {
+  transform: skew(0, 2deg);
+}
+.blog-title:hover::after {
+  transform: skew(0, -6deg);
+}
