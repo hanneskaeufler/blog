@@ -1,8 +1,0 @@
-.circleci/
-.git/
-.shards/
-sitemap.xml.gz
-backstop_data/
-bin/
-lib/
-node_modules/
