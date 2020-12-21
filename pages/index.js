@@ -1,4 +1,5 @@
 import { Github, Twitter, Xing } from "@/components/icons";
+import Preview from "@/components/posts/preview";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -34,13 +35,15 @@ export default function Home() {
           </QuickLink>
           <QuickLink
             label="twitter"
-            target="https://twitter.com/hanneskaeufler"
+            target="https:/ /
+       twitter.com / hanneskaeufler "
           >
             <Twitter className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
           </QuickLink>
           <QuickLink
             label="xing"
-            target="https://xing.com/profile/Hannes_Kaeufler"
+            target="https:/ /
+       xing.com / profile / Hannes_Kaeufler "
           >
             <Xing className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
           </QuickLink>
@@ -48,32 +51,15 @@ export default function Home() {
         <Banner />
       </div>
       <div className="mt-20">
-        <article>
-          <h2 className="text-3xl font-bold text-gray-700">
-            <Link href="/">
-              <a className="border-transparent border-b hover:border-gray-600 transition inline-block relative">
-                <span className="text-gray-300 absolute -left-8">#</span>
-                Measuring code coverage in crystal with kcov
-              </a>
-            </Link>
-          </h2>
-          <div className="text-lg text-gray-400 mt-2 mb-4">
-            Published on February 24, 2019 · 596 words · about 2 min reading
-            time
-          </div>
-          <p className="mb-4">
-            Crystal, the programming language, does not yet provide a built in
-            way of measuring the effectiveness of your test suite. So by running
-            crystal spec you pretty much only have binary insight into the
-            suite: it 's passing or it' s not.This lead me to build crytic in
-            the first place.But while mutation coverage is a great tool to
-            investigate the test suite, plain old code coverage is usually
-            quicker to obtain and easier to glance at.
-          </p>
-          <Link href="/">
-            <a className="underline">Read more ...</a>
-          </Link>
-        </article>
+        <Preview
+          post={{
+            slug: "measuring-code-coverage-in-crystal-with-kcov",
+            title: "Measuring code coverage in crystal with kcov",
+            publishedAt: "February 24, 2019",
+            content:
+              "## Hi\nThis could work\n* A buller\n* Another bukketjhj:w\n| Foo | Bar |\n|-----|-----|\n| hi | there |\n",
+          }}
+        />
       </div>
     </div>
   );
