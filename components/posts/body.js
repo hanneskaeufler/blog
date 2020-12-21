@@ -3,7 +3,7 @@ import gfm from "remark-gfm";
 
 export default function Body({ post }) {
   return (
-    <div className="mb-4 prose">
+    <div className="mb-4 prose prose-lg">
       <ReactMarkdown
         plugins={[gfm]}
         children={post.content}
