@@ -23,7 +23,7 @@ export default function Head({ post }) {
         </Link>
       </h2>
       <div className="text-lg text-gray-400 mt-2 mb-4">
-        Published on{post.publishedAt} ·{wc} words · about {readingTime(wc)}{" "}
+        Published on{post.publishedAt} · {wc} words · about {readingTime(wc)}{" "}
         reading time
       </div>
     </div>
