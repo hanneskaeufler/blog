@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="container mx-auto flex-grow">
       <Head>
-        <title>Hannes Käufler: Blog</title>
+        <title key="title">Hannes Käufler: Blog</title>
       </Head>
       <div className="blog-title">
         <div className="flex space-x-2 py-7 justify-center text-lg">

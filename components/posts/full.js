@@ -6,7 +6,7 @@ export default function Full({ post }) {
   return (
     <div className="container mx-auto flex-grow">
       <Head>
-        <title>Hannes Käufler: Blog - {post.title}</title>
+        <title key="title">Hannes Käufler: Blog - {post.title}</title>
       </Head>
       <PostHead post={post} />
       <PostBody post={post} />
