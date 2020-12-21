@@ -35,8 +35,7 @@ Running the command without \`--include-path=./src\` will provide a coverage rep
 
 So far we have everything together to create code coverage analysis for your crystal program's test suite. Awesome! Go ahead, look at it and see what parts of your code are uncovered by the tests 🍿.
 As in so many cases, the analysis only gets useful if continually integrated into the development workflow. Luckily for us, kcov produces output that can be understood by various tools down the chain. I use [codecov.io](https://codecov.io) to upload the report and have it easily browseable online. See [this blogs report](https://codecov.io/gh/hanneskaeufler/blog) or [crytics report](https://codecov.io/gh/hanneskaeufler/crytic). The script I use on CI is as follows:
-
-<script src="https://gist.github.com/hanneskaeufler/bfcc0564fe24753a7d299750078d88eb.js"></script>`,
+`,
 };
 
 export default function Post() {
