@@ -30,7 +30,7 @@ export default function Footer() {
             <Link href="https://vercel.com">
               <a className="underline">Vercel</a>
             </Link>
-            , written in Javascript 😱 and build with the awesome{" "}
+            , written in Javascript 😱 and built with the awesome{" "}
             <Link href="https://nextjs.org">
               <a className="underline">Next.js</a>
             </Link>
