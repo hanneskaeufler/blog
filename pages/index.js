@@ -38,7 +38,10 @@ export default function Home() {
           >
             <Twitter className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
           </QuickLink>
-          <QuickLink label="xing" target="https://xing.com/hanneskaeufler">
+          <QuickLink
+            label="xing"
+            target="https://xing.com/profile/Hannes_Kaeufler"
+          >
             <Xing className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
           </QuickLink>
         </div>
