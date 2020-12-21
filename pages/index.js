@@ -22,7 +22,7 @@ function Banner() {
   );
 }
 
-export default function Home() {
+function Home({ posts }) {
   return (
     <div className="container mx-auto flex-grow">
       <Head>
@@ -50,17 +50,33 @@ export default function Home() {
         </div>
         <Banner />
       </div>
-      <div className="mt-20">
-        <Preview
-          post={{
-            slug: "measuring-code-coverage-in-crystal-with-kcov",
-            title: "Measuring code coverage in crystal with kcov",
-            publishedAt: "February 24, 2019",
-            content:
-              "## Hi\nThis could work\n* A buller\n* Another bukketjhj:w\n| Foo | Bar |\n|-----|-----|\n| hi | there |\n",
-          }}
-        />
+      <div className="mt-20 space-y-10">
+        {posts.map((post) => (
+          <Preview key={post.slug} post={post} />
+        ))}
       </div>
     </div>
   );
 }
+
+Home.getInitialProps = async () => {
+  return {
+    posts: [
+      {
+        slug: "f00",
+        title: "Fake news",
+        content: "~~nah~~",
+        publishedAt: "now",
+      },
+      {
+        slug: "measuring-code-coverage-in-crystal-with-kcov",
+        title: "Measuring code coverage in crystal with kcov",
+        publishedAt: "February 24, 2019",
+        content:
+          "## Hi\nThis could work\n* A buller\n* Another bukketjhj:w\n| Foo | Bar |\n|-----|-----|\n| hi | there |\n",
+      },
+    ],
+  };
+};
+
+export default Home;
