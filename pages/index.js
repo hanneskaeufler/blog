@@ -51,7 +51,8 @@ export default function Home() {
         <article>
           <h2 className="text-3xl font-bold text-gray-700">
             <Link href="/">
-              <a className="border-transparent border-b hover:border-gray-600 transition inline-block">
+              <a className="border-transparent border-b hover:border-gray-600 transition inline-block relative">
+                <span className="text-gray-300 absolute -left-8">#</span>
                 Measuring code coverage in crystal with kcov
               </a>
             </Link>
