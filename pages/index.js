@@ -5,9 +5,9 @@ import Link from "next/link";
 function QuickLink({ target, label, children, ...props }) {
   return (
     <Link href={target}>
-      <a className="bg-green-300 text-green-50 text rounded-full py-2 px-3 hover:bg-green-600 transition flex items-center">
+      <a className="bg-black bg-opacity-20 text-green-50 text rounded-full py-2 px-3 hover:bg-green-600 transition flex items-center">
         {children}
-        <span className="ml-2 hidden md:inline">{label}</span>
+        <span className="ml-1 hidden md:inline">{label}</span>
       </a>
     </Link>
   );
@@ -30,16 +30,16 @@ export default function Home() {
       <div className="blog-title">
         <div className="flex space-x-2 py-7 justify-center text-lg">
           <QuickLink label="github" target="https://github.com/hanneskaeufler">
-            <Github className="w-6 h-6 md:h-4 md:h-4 text-green-50" />
+            <Github className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
           </QuickLink>
           <QuickLink
             label="twitter"
             target="https://twitter.com/hanneskaeufler"
           >
-            <Twitter className="w-6 h-6 md:h-4 md:h-4 text-green-50" />
+            <Twitter className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
           </QuickLink>
           <QuickLink label="xing" target="https://xing.com/hanneskaeufler">
-            <Xing className="w-6 h-6 md:h-4 md:h-4 text-green-50" />
+            <Xing className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
           </QuickLink>
         </div>
         <Banner />
