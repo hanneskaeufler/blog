@@ -1,3 +1,6 @@
+import Full from "@/components/posts/full";
+import Layout from "@/components/layout";
+
 export const post = {
   slug: "my-2017-podcast-winners",
   title: "My 2017 podcast winners",
@@ -10,3 +13,11 @@ export const post = {
 * [The Bike Shed](https://overcast.fm/itunes935763119/the-bike-shed): This has nothing to do with bikes, but is a semi-random conversation between Derek Prior, Sean Griffin, Amanda Hill and various guests on IT topics such as Ruby on Rails, Active Record, Diesel, mixed with stories on consulting work, rockets and anything else that might come up. I find it provides a nice mix of interesting technical discussions and light-hearted banter.
 * [Accidental Tech Podcast](https://overcast.fm/itunes617416468/accidental-tech-podcast): The trio of Casey Liss, Marco Arment and John Siracusa do a great job of endlessly discussing the world of Apple and related surrounding topics. This is definitely the podcast I have been following for the longest time.`,
 };
+
+export default function Post() {
+  return (
+    <Layout>
+      <Full post={post} />
+    </Layout>
+  );
+}

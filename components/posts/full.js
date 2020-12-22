@@ -4,7 +4,7 @@ import PostBody from "@/components/posts/body";
 
 export default function Full({ post }) {
   return (
-    <div className="container mx-auto flex-grow">
+    <div className="container mx-auto">
       <Head>
         <title key="title">Hannes Käufler: Blog - {post.title}</title>
       </Head>

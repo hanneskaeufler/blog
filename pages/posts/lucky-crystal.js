@@ -1,3 +1,6 @@
+import Full from "@/components/posts/full";
+import Layout from "@/components/layout";
+
 export const post = {
   slug: "lucky-crystal",
   title: "Lucky Crystal",
@@ -17,3 +20,11 @@ As you can see it was trivial to extract methods to render reoccuring or more co
 
 I look forward to spending more time in Lucky and Crystal, they both get a thumbs up for now!`,
 };
+
+export default function Post() {
+  return (
+    <Layout>
+      <Full post={post} />
+    </Layout>
+  );
+}

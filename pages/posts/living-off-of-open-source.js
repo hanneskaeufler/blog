@@ -1,3 +1,6 @@
+import Full from "@/components/posts/full";
+import Layout from "@/components/layout";
+
 export const post = {
   slug: "living-off-of-open-source",
   title: "Living off of open-source",
@@ -13,3 +16,11 @@ Needless to say, I find that an awesome initiative, seeing that the world builds
 
 To finish this off I can't recommend participating in Hacktoberfest enough, and thanks to DigitalOcean to appreciate this by giving you a t-shirt.`,
 };
+
+export default function Post() {
+  return (
+    <Layout>
+      <Full post={post} />
+    </Layout>
+  );
+}

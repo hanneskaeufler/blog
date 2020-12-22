@@ -1,10 +1,22 @@
+import { Github, Twitter, Xing } from "@/components/icons";
+import Preview from "@/components/posts/preview";
 import Head from "next/head";
 import Link from "next/link";
 
-import { Github, Twitter, Xing } from "@/components/icons";
-import Preview from "@/components/posts/preview";
-
 import { post as crystalCoveragePost } from "./posts/measuring-code-coverage-in-crystal-with-kcov";
+
+// ||50 - million - lines - of - bugs.js||chrome - vs - safari.js||danger -
+//         todoist - celebrates - 200k - downloads.js||living - off - of - open -
+//         source.js||local - variable.js||lucky -
+//         crystal.js||lucky.js||measuring - code - coverage - in
+//     - crystal - with - kcov.js||my - 2017 - podcast - winners.js||saturday.js
+
+import { post as bugsPost } from "./posts/50-million-lines-of-bugs";
+import { post as dangerTodoistDownloadsPost } from "./posts/danger-todoist-celebrates-200k-downloads";
+import { post as openSourcePost } from "./posts/living-off-of-open-source";
+import { post as luckyCrystalPost } from "./posts/lucky-crystal";
+import { post as podcastWinnersPost } from "./posts/my-2017-podcast-winners";
+
 import { post as chromePost } from "./posts/chrome-vs-safari";
 import { post as luckyPost } from "./posts/lucky";
 import { post as localVariablePost } from "./posts/local-variable";
@@ -42,15 +54,13 @@ function Home({ posts }) {
           </QuickLink>
           <QuickLink
             label="twitter"
-            target="https:/ /
-       twitter.com / hanneskaeufler "
+            target="https://twitter.com/hanneskaeufler"
           >
             <Twitter className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
           </QuickLink>
           <QuickLink
             label="xing"
-            target="https:/ /
-       xing.com / profile / Hannes_Kaeufler "
+            target="https://xing.com/profile/Hannes_Kaeufler "
           >
             <Xing className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
           </QuickLink>
@@ -70,6 +80,11 @@ Home.getInitialProps = () => {
   return {
     posts: [
       crystalCoveragePost,
+      bugsPost,
+      dangerTodoistDownloadsPost,
+      openSourcePost,
+      luckyCrystalPost,
+      podcastWinnersPost,
       chromePost,
       luckyPost,
       localVariablePost,

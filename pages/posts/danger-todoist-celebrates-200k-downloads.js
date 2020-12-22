@@ -1,3 +1,6 @@
+import Full from "@/components/posts/full";
+import Layout from "@/components/layout";
+
 export const post = {
   slug: "danger-todoist-celebrates-200k-downloads",
   title: "Danger-todoist celebrates 200k downloads",
@@ -14,3 +17,11 @@ Hack on, and keep that code clean, and check it out on [github](https://github.c
 
 [![Build Status](https://travis-ci.org/hanneskaeufler/danger-todoist.svg?branch=master)](https://travis-ci.org/hanneskaeufler/danger-todoist) [![Gem Version](https://badge.fury.io/rb/danger-todoist.svg)](https://badge.fury.io/rb/danger-todoist) [![Code Climate](https://codeclimate.com/github/hanneskaeufler/danger-todoist/badges/gpa.svg)](https://codeclimate.com/github/hanneskaeufler/danger-todoist) [![Test Coverage](https://codeclimate.com/github/hanneskaeufler/danger-todoist/badges/coverage.svg)](https://codeclimate.com/github/hanneskaeufler/danger-todoist/coverage)`,
 };
+
+export default function Post() {
+  return (
+    <Layout>
+      <Full post={post} />
+    </Layout>
+  );
+}

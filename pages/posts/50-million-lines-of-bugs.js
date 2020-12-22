@@ -1,3 +1,6 @@
+import Full from "@/components/posts/full";
+import Layout from "@/components/layout";
+
 export const post = {
   slug: "50-million-lines-of-bugs",
   title: "50 Million Lines of Bugs",
@@ -10,3 +13,11 @@ In what world having whatever many lines of code should be something to brag abo
 
 While I don't have credible numbers to back this, I think we can agree more code correlates with more bugs in some way. So Mercedes-Benz, please, try to keep the number of lines of code in your cars as low as possibly can be.`,
 };
+
+export default function Post() {
+  return (
+    <Layout>
+      <Full post={post} />
+    </Layout>
+  );
+}

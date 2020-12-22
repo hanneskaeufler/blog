@@ -15,6 +15,7 @@ to a tiny annoyance of my incredibly blessed life:
 
 This will take all of your windows and tabs you currently have open in Google Chrome, and replicate them in Safari. Switch browsers with the touch of a button.`,
 };
+
 export default function Post() {
   return (
     <Layout>
