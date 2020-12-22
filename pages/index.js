@@ -5,6 +5,7 @@ import { Github, Twitter, Xing } from "@/components/icons";
 import Preview from "@/components/posts/preview";
 
 import { post as crystalCoveragePost } from "./posts/measuring-code-coverage-in-crystal-with-kcov";
+import { post as saturdayPost } from "./posts/saturday";
 
 function QuickLink({ target, label, children, ...props }) {
   return (
@@ -72,6 +73,7 @@ Home.getInitialProps = () => {
         publishedAt: "now",
       },
       crystalCoveragePost,
+      saturdayPost,
     ],
   };
 };
