@@ -3,14 +3,12 @@ import Preview from "@/components/posts/preview";
 import Head from "next/head";
 import Link from "next/link";
 
+import { post as favoritePost } from "./posts/my-favorite-continuous-integration-providers-may-2018";
 import { post as crystalCoveragePost } from "./posts/measuring-code-coverage-in-crystal-with-kcov";
-
-// ||50 - million - lines - of - bugs.js||chrome - vs - safari.js||danger -
-//         todoist - celebrates - 200k - downloads.js||living - off - of - open -
-//         source.js||local - variable.js||lucky -
-//         crystal.js||lucky.js||measuring - code - coverage - in
-//     - crystal - with - kcov.js||my - 2017 - podcast - winners.js||saturday.js
-
+import { post as deployingPost } from "./posts/ftp-lives-deploying-a-static-site-with-bitbucket-pipelines";
+import { post as shippingPost } from "./posts/shipping-code-from-the-iphone";
+import { post as refactoringCssPost } from "./posts/refactoring-css";
+import { post as snapshotPost } from "./posts/snapshot-tdd";
 import { post as bugsPost } from "./posts/50-million-lines-of-bugs";
 import { post as dangerTodoistDownloadsPost } from "./posts/danger-todoist-celebrates-200k-downloads";
 import { post as openSourcePost } from "./posts/living-off-of-open-source";
@@ -80,6 +78,11 @@ Home.getInitialProps = () => {
   return {
     posts: [
       crystalCoveragePost,
+      favoritePost,
+      deployingPost,
+      shippingPost,
+      refactoringCssPost,
+      snapshotPost,
       bugsPost,
       dangerTodoistDownloadsPost,
       openSourcePost,
