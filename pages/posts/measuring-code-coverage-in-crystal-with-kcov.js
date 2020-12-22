@@ -1,9 +1,10 @@
-import Link from "next/link";
 import Full from "@/components/posts/full";
+import Layout from "@/components/layout";
 
-const post = {
+export const post = {
   slug: "measuring-code-coverage-in-crystal-with-kcov",
   title: "Measuring code coverage in crystal with kcov",
+  publishedAt: "2019-02-24 16:37:43+00",
   content: `Crystal, the programming language, does [not yet](https://github.com/crystal-lang/crystal/issues/1157) provide a built in way of measuring the effectiveness of your test suite. So by running \`crystal spec\` you pretty much only have binary insight into the suite: it's passing or it's not.  This lead me to build [crytic](http://github.com/hanneskaeufler/crytic) in the first place. But while mutation coverage is a great tool to investigate the test suite, plain old code coverage is usually quicker to obtain and easier to glance at.
 
 ### The players
@@ -40,17 +41,8 @@ As in so many cases, the analysis only gets useful if continually integrated int
 
 export default function Post() {
   return (
-    <div>
-      <div className="py-4 bg-green-300 mb-14 text-sm font-bold relative">
-        <div className="container mx-auto">
-          <Link href="/">
-            <a className="inline-block border-b border-green-400 text-green-800 hover:border-green-800 transition">
-              Home
-            </a>
-          </Link>
-        </div>
-      </div>
+    <Layout>
       <Full post={post} />
-    </div>
+    </Layout>
   );
 }

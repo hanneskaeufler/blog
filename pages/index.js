@@ -1,7 +1,10 @@
-import { Github, Twitter, Xing } from "@/components/icons";
-import Preview from "@/components/posts/preview";
 import Head from "next/head";
 import Link from "next/link";
+
+import { Github, Twitter, Xing } from "@/components/icons";
+import Preview from "@/components/posts/preview";
+
+import { post as crystalCoveragePost } from "./posts/measuring-code-coverage-in-crystal-with-kcov";
 
 function QuickLink({ target, label, children, ...props }) {
   return (
@@ -59,7 +62,7 @@ function Home({ posts }) {
   );
 }
 
-Home.getInitialProps = async () => {
+Home.getInitialProps = () => {
   return {
     posts: [
       {
@@ -68,13 +71,7 @@ Home.getInitialProps = async () => {
         content: "~~nah~~",
         publishedAt: "now",
       },
-      {
-        slug: "measuring-code-coverage-in-crystal-with-kcov",
-        title: "Measuring code coverage in crystal with kcov",
-        publishedAt: "February 24, 2019",
-        content:
-          "## Hi\nThis could work\n* A buller\n* Another bukketjhj:w\n| Foo | Bar |\n|-----|-----|\n| hi | there |\n",
-      },
+      crystalCoveragePost,
     ],
   };
 };
