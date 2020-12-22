@@ -5,6 +5,8 @@ import { Github, Twitter, Xing } from "@/components/icons";
 import Preview from "@/components/posts/preview";
 
 import { post as crystalCoveragePost } from "./posts/measuring-code-coverage-in-crystal-with-kcov";
+import { post as chromePost } from "./posts/chrome-vs-safari";
+import { post as luckyPost } from "./posts/lucky";
 import { post as localVariablePost } from "./posts/local-variable";
 import { post as saturdayPost } from "./posts/saturday";
 
@@ -66,7 +68,13 @@ function Home({ posts }) {
 
 Home.getInitialProps = () => {
   return {
-    posts: [crystalCoveragePost, localVariablePost, saturdayPost],
+    posts: [
+      crystalCoveragePost,
+      chromePost,
+      luckyPost,
+      localVariablePost,
+      saturdayPost,
+    ],
   };
 };
 
