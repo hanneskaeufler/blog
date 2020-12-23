@@ -77,9 +77,12 @@ function Home({ posts }) {
   );
 }
 
-Home.getInitialProps = () => {
-  return {
-    posts: [
+Home.getInitialProps = async ({ query }) => {
+  const page = query.page ? query.page : 1,
+    perPage = 5,
+    start = (page - 1) * perPage,
+    end = start + perPage,
+    posts = [
       crystalCoveragePost,
       buildingMutationPost,
       introducingCryticPost,
@@ -99,8 +102,9 @@ Home.getInitialProps = () => {
       luckyPost,
       localVariablePost,
       saturdayPost,
-    ],
-  };
+    ].slice(start, end);
+
+  return { posts: posts };
 };
 
 export default Home;
