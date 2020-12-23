@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import Link from "next/link";
 
 function wordCount(content) {
@@ -6,6 +7,10 @@ function wordCount(content) {
 
 function readingTime(wc) {
   return "2 min";
+}
+
+function publishedAt(date) {
+  return `${dayjs(date).format("MMMM DD, YYYY")}`;
 }
 
 export default function Head({ post }) {
@@ -23,8 +28,8 @@ export default function Head({ post }) {
         </Link>
       </h2>
       <div className="text-lg text-gray-400 mt-2 mb-4">
-        Published on {post.publishedAt} · {wc} words · about {readingTime(wc)}{" "}
-        reading time
+        Published on {publishedAt(post.publishedAt)} · {wc} words · about{" "}
+        {readingTime(wc)} reading time
       </div>
     </div>
   );
