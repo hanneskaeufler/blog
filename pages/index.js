@@ -3,6 +3,10 @@ import Preview from "@/components/posts/preview";
 import Head from "next/head";
 import Link from "next/link";
 
+import { post as buildingMutationPost } from "./posts/building-a-mutation-test-framework-in-crystal---part-1";
+import { post as introducingCryticPost } from "./posts/introducing-crytic---mutation-testing-in-crystal-lang";
+import { post as testFeedbackPost } from "./posts/quick-test-feedback-with-fswatch";
+import { post as roboticPost } from "./posts/opinion-robotic-racing";
 import { post as favoritePost } from "./posts/my-favorite-continuous-integration-providers-may-2018";
 import { post as crystalCoveragePost } from "./posts/measuring-code-coverage-in-crystal-with-kcov";
 import { post as deployingPost } from "./posts/ftp-lives-deploying-a-static-site-with-bitbucket-pipelines";
@@ -78,6 +82,10 @@ Home.getInitialProps = () => {
   return {
     posts: [
       crystalCoveragePost,
+      buildingMutationPost,
+      introducingCryticPost,
+      testFeedbackPost,
+      roboticPost,
       favoritePost,
       deployingPost,
       shippingPost,
