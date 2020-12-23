@@ -18,7 +18,6 @@ import { post as dangerTodoistDownloadsPost } from "./posts/danger-todoist-celeb
 import { post as openSourcePost } from "./posts/living-off-of-open-source";
 import { post as luckyCrystalPost } from "./posts/lucky-crystal";
 import { post as podcastWinnersPost } from "./posts/my-2017-podcast-winners";
-
 import { post as chromePost } from "./posts/chrome-vs-safari";
 import { post as luckyPost } from "./posts/lucky";
 import { post as localVariablePost } from "./posts/local-variable";
