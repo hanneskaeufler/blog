@@ -77,23 +77,22 @@ function Home({ posts }) {
         </div>
         <Banner />
       </div>
-      <div className="mt-20 space-y-20">
+      <div className="mt-20 space-y-24">
         {currentPosts.map((post) => (
           <Preview key={post.slug} post={post} />
         ))}
       </div>
-      <div className="mt-20 flex flex-col md:flex-row space-y-2 md:space-y-0">
+      <div className="mt-20 flex flex-col md:flex-row space-y-2 md:space-y-0 justify-center">
         {currentPage > 1 && (
           <Link href={{ query: { page: currentPage - 1 } }}>
-            <a className="underline text-purple-700 text-center md:text-left hover:text-purple-900 bg-purple-100 md:bg-transparent rounded-full py-2">
-              &laquo; Prev page
+            <a className="text-indigo-600 hover:text-indigo-800 bg-indigo-100 hover:bg-indigo-200 rounded-full py-2 px-4 md:mr-10 transition">
+              &laquo; Previous page
             </a>
           </Link>
         )}
-        <div className="md:flex-grow"></div>
         {currentPage < maxPage && (
           <Link href={{ query: { page: currentPage + 1 } }}>
-            <a className="underline text-purple-700 text-center md:text-right hover:text-purple-900 bg-purple-100 md:bg-transparent rounded-full py-2">
+            <a className="text-indigo-600 hover:text-indigo-800 bg-indigo-100 hover:bg-indigo-200 rounded-full py-2 px-4 transition">
               Next page &raquo;
             </a>
           </Link>
