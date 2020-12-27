@@ -2,9 +2,13 @@ import Full from "@/components/posts/full";
 import Layout from "@/components/layout";
 
 export const post = {
-  slug: "refactoring-tdd",
+  slug: "refactoring-css",
   title: "Refactoring CSS",
   publishedAt: "2018-04-08 10:32:19+00",
+  type: "long-form",
+  summary: `One shortcoming of this permanently-work-in-progress blog of mine was the rendering on mobile devices. The experience of browsing the blog on a phone or tablet was less than ideal: text touching the borders of the screen, images overflowing the main section, social media links being out of place, and many more. It was a long standing [issue](https://github.com/hanneskaeufler/blog/issues/5). So I set off on fixing this. While digging straight into the first CSS changes and fiddling in the developer console of Chrome, I remembered what I wrote in the [Snapshot TDD](/posts/snapshot-tdd) post:
+
+> Things of visual nature are not unit-tested easily, which is why they are often simply untested. We usually don't test stylesheets, colors, images etc. However we can't say those things are unimportant.`,
   content: `One shortcoming of this permanently-work-in-progress blog of mine was the rendering on mobile devices. The experience of browsing the blog on a phone or tablet was less than ideal: text touching the borders of the screen, images overflowing the main section, social media links being out of place, and many more. It was a long standing [issue](https://github.com/hanneskaeufler/blog/issues/5). So I set off on fixing this. While digging straight into the first CSS changes and fiddling in the developer console of Chrome, I remembered what I wrote in the [Snapshot TDD](/posts/snapshot-tdd) post:
 
 > Things of visual nature are not unit-tested easily, which is why they are often simply untested. We usually don't test stylesheets, colors, images etc. However we can't say those things are unimportant.
