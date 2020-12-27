@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="py-6">
           <h4 className="font-bold text-gray-800 mb-6">From Germany with ❤️</h4>
           <p>
-            This blog is open source, check it out on{" "}
+            This blog is open-source, check it out on{" "}
             <Link href="https://github.com/hanneskaeufler/blog">
               <a className="underline">Github</a>
             </Link>
