@@ -82,13 +82,23 @@ function Home({ posts }) {
           <Preview key={post.slug} post={post} />
         ))}
       </div>
-      {currentPage < maxPage && (
-        <div className="mt-20">
-          <Link href={{ query: { page: currentPage + 1 } }}>
-            <a className="underline">Next page &raquo;</a>
+      <div className="mt-20 flex flex-col md:flex-row space-y-2 md:space-y-0">
+        {currentPage > 1 && (
+          <Link href={{ query: { page: currentPage - 1 } }}>
+            <a className="underline text-purple-700 text-center md:text-left hover:text-purple-900 bg-purple-100 md:bg-transparent rounded-full py-2">
+              &laquo; Prev page
+            </a>
           </Link>
-        </div>
-      )}
+        )}
+        <div className="md:flex-grow"></div>
+        {currentPage < maxPage && (
+          <Link href={{ query: { page: currentPage + 1 } }}>
+            <a className="underline text-purple-700 text-center md:text-right hover:text-purple-900 bg-purple-100 md:bg-transparent rounded-full py-2">
+              Next page &raquo;
+            </a>
+          </Link>
+        )}
+      </div>
     </div>
   );
 }
