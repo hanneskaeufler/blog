@@ -9,13 +9,13 @@ export const post = {
   summary: `After traveling abroad for more than two weeks, and then spending two days laying by the pool, I naturally got a bit of a tech craving. To spend the afternoon I set myself the challenge of fixing a small bug on this blog, having nothing more than some Hotel WiFi™ and my iPhone at hand. But that must be enough, right? Let‘s see how it went.`,
   content: `After traveling abroad for more than two weeks, and then spending two days laying by the pool, I naturally got a bit of a tech craving. To spend the afternoon I set myself the challenge of fixing a small bug on this blog, having nothing more than some Hotel WiFi™ and my iPhone at hand. But that must be enough, right? Let‘s see how it went.
 
-## The objective
+### The objective
 
 In this blog I display a permalink hash next to the blog posts title, which is a link to view the post separately as well. When using e.g. Safari‘s „Reader“ mode, this hash symbol is of no use and should not be there.
 
 ￼![Initial Bug](http://heinz-kaeufler.de/hannes/blog/initial-bug.jpg)
 
-## The journey
+### The journey
 
 So how can we get started on this? First we need access to the repo of course. I had come across an app called [Working Copy](https://itunes.apple.com/de/app/working-copy/id896694807?mt=8), and looking that up in the App Store was promising: I can check out the repo to my iPhone. What a time to be alive!
 ￼
@@ -25,19 +25,20 @@ Which lead to the first realization: I cannot run the tests on my iPhone. While 
 
 <!-- RAW_HTML_START --><p class="image-container-two"><img src="http://heinz-kaeufler.de/hannes/blog/fixed-bug.PNG" alt="Fixed bug"/><img src="http://heinz-kaeufler.de/hannes/blog/fixed-bug-visual.PNG" alt="Fixed bug visual"/></p><!-- RAW_HTML_END -->
 
-## The aftermath
+### The aftermath
 
 Switching between GitHub's mobile and desktop version was kind of clunky and still didn't allow me to upload any screenshots. I then realized that my twitter feed had mentioned [Ryan Nystroms](https://twitter.com/_ryannystrom) [GitHawk](https://itunes.apple.com/app/githawk-for-github/id1252320249) in the past. One more trip to the App Store and yes yes yes, that is much more pleasant than the website!
 
 Editing issues / PRs is way more comfortable and image upload works as intended. That will be a much better combo I think, I am looking forward to using that for the next exercise.
 
-## What Worked
+### What Worked
 
 * Making trivial code changes directly from within [@WorkingCopyApp](https://twitter.com/workingcopyapp)
 * Pushing that change to GitHub
 * Opening a pull request via the desktop version of github.com
 * Updating issues/PRs in [@githawk](https://twitter.com/githawk)
-## What didn‘t work
+
+### What didn‘t work
 
 * Building/pushing a new docker image. I could have tried to install via the Dockerfile, but without building and pushing the new image this still gets me nowhere
 * Uploading screenshots to issues on the github.com website
