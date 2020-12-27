@@ -9,7 +9,7 @@ export default function Full({ post }) {
         <title key="title">Hannes Käufler: Blog - {post.title}</title>
       </Head>
       <PostHead post={post} />
-      <PostBody post={post} />
+      <PostBody content={post.content} />
     </div>
   );
 }
