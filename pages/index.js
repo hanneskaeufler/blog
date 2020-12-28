@@ -93,7 +93,7 @@ function Home() {
         )}
         {currentPage < maxPage && (
           <Link href={{ query: { page: currentPage + 1 } }}>
-            <a className="text-indigo-600 hover:text-indigo-800 bg-indigo-100 hover:bg-indigo-200 rounded-full py-2 px-4 transition">
+            <a className="text-indigo-600 hover:text-indigo-800 text-right bg-indigo-100 hover:bg-indigo-200 rounded-full py-2 px-4 transition">
               Next page &raquo;
             </a>
           </Link>
