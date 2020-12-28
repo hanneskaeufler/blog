@@ -6,7 +6,14 @@ function wordCount(content) {
 }
 
 function readingTime(wc) {
-  return "2 min";
+  const speed = 200; // 200 words per minute
+  if (wc < speed) {
+    return "less than a minute";
+  }
+
+  const minutes = Math.floor(wc / speed);
+
+  return `about ${minutes} min`;
 }
 
 function publishedAt(date) {
@@ -28,7 +35,7 @@ export default function Head({ post }) {
         </Link>
       </h2>
       <div className="text-lg text-gray-400 mb-10">
-        Published on {publishedAt(post.publishedAt)} · {wc} words · about{" "}
+        Published on {publishedAt(post.publishedAt)} · {wc} words ·{" "}
         {readingTime(wc)} reading time
       </div>
     </div>
