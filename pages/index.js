@@ -46,11 +46,12 @@ function Banner() {
   );
 }
 
-function Home({ posts }) {
-  const router = useRouter();
-  const currentPosts = getPostsForPage(posts, router.query);
-  const currentPage = router.query.page ? parseInt(router.query.page, 10) : 1;
-  const maxPage = Math.ceil(posts.length / perPage);
+function Home() {
+  const router = useRouter(),
+    posts = getAllPosts(),
+    currentPosts = getPostsForPage(posts, router.query),
+    currentPage = router.query.page ? parseInt(router.query.page, 10) : 1,
+    maxPage = Math.ceil(posts.length / perPage);
 
   return (
     <div className="container mx-auto flex-grow">
@@ -109,8 +110,8 @@ function getPostsForPage(posts, query) {
   return posts.slice(start, end);
 }
 
-Home.getInitialProps = async () => {
-  const posts = [
+function getAllPosts() {
+  return [
     crystalCoveragePost,
     buildingMutationPost,
     introducingCryticPost,
@@ -131,8 +132,6 @@ Home.getInitialProps = async () => {
     localVariablePost,
     saturdayPost,
   ];
-
-  return { posts: posts };
-};
+}
 
 export default Home;
