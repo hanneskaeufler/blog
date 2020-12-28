@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
+import { post as sx2021Post } from "./posts/2021-supercross-predictions";
 import { post as bugsPost } from "./posts/50-million-lines-of-bugs";
 import { post as buildingMutationPost } from "./posts/building-a-mutation-test-framework-in-crystal---part-1";
 import { post as chromePost } from "./posts/chrome-vs-safari";
@@ -115,6 +116,7 @@ function getPostsForPage(posts, query) {
 
 function getAllPosts() {
   return [
+    sx2021Post,
     crystalCoveragePost,
     buildingMutationPost,
     introducingCryticPost,
