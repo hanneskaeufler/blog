@@ -18,18 +18,67 @@ We could go ahead and pull our trusty \`Regex\` trickery out of the bag and do a
 
 Are more robust way of doing this is to get an alternate representation of the code, versus only having a string. A better representation is the [abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST). The AST is a data structure used in compilers, such as the crystal compiler. We can obtain an AST from a string by using crystals own AST parser, like so:
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/a24c6af41b7442ab238a6a01904b64f1.js"></script><!-- RAW_HTML_END -->
+\`\`\`crystal
+require "compiler/crystal/syntax/*"
+
+code = <<-CODE
+def hello
+  puts "hello"
+end
+CODE
+
+ast = Crystal::Parser.parse(code)
+\`\`\`
 
 Now what? What good is the AST? Well, luckily, crystal also provides means of interacting with it. There are two types of classes in crystal to deal with the AST: \`Visitor\` and \`Transformer\`. Let's make a simplified distinction here. \`Visitor\` lives to _inspect_ the AST, and \`Transformer\` is the best choice to _modify_ the ast. So let's subclass \`Transformer\` and build ourselves a "mutant".
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/a90add4d07624173db93a142a5312c1a.js"></script><!-- RAW_HTML_END -->
+\`\`\`crystal
+require "compiler/crystal/syntax/*"
+
+code = <<-CODE
+def hello
+  true
+end
+CODE
+
+ast = Crystal::Parser.parse(code)
+
+class BooleanTransformer < Crystal::Transformer
+  def transform(node : Crystal::BoolLiteral)
+    Crystal::BoolLiteral.new(false)
+  end
+end
+
+puts ast.transform(BooleanTransformer.new)
+# => will print:
+# def hello
+#   false
+# end
+\`\`\`
 
 That's it! The AST will apply our transformer, which will be called for every \`BoolLiteral\`, and return a literal \`false\`.
 
 ### Mutating only certain code
 Let's go one step further and look at how we could decide whether to transform a certain piece of code, or not. Analysing the source code first can give us the benefit of knowing beforehand how many mutations we can perform, and possibly excluding certain nodes. Imagine multiple booleans inside the above \`def hello\`. Our current transformer would replace them all at the same time. Now for a mutation testing tool this is undesired, since we want to observe _one change at a time_. Implementing an aforementioned \`Visitor\` can give us a _location_ to every boolean:
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/1b51be2b6482db328d8613c1f3a07963.js"></script><!-- RAW_HTML_END -->
+\`\`\`crystal
+class BooleanVisitor < Crystal::Visitor
+  def visit(node : Crystal::BoolLiteral)
+    puts "Line: #{node.location.try &.line_number}"
+    puts "Column: #{node.location.try &.column_number}"
+    true
+  end
+
+  def visit(node : Crystal::ASTNode)
+    true
+  end
+end
+
+ast.accept(BooleanVisitor.new)
+# => will print:
+# Line: 2
+# Column: 3
+\`\`\`
 
 Now we can save that location, an instance of \`Crystal::Location\`, to the boolean or ignore it if we want.
 

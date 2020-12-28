@@ -11,7 +11,31 @@ with OS X. Tab sync to iOS's Safari being one of them. Generally using less memo
 I often start a new window in Chrome and browse for a few minutes before remembering that I wanted to use Safari. So here it is, the solution ~~to all of my problems~~
 to a tiny annoyance of my incredibly blessed life:
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/4b94e292372639fde003729726500669.js"></script><!-- RAW_HTML_END -->
+\`\`\`
+tell application "Google Chrome"
+	set allUrls to {}
+	repeat with theWindow in every window
+		set urlsInWindow to {}
+		repeat with theTab in every tab of theWindow
+			set currentUrl to the theTab's URL
+			set urlsInWindow to urlsInWindow & {currentUrl}
+		end repeat
+		set allUrls to allUrls & {urlsInWindow}
+	end repeat
+end tell
+
+tell application "Safari"
+	repeat with aWindow in every list of allUrls
+		make new document
+		activate
+		repeat with aUrl in every string of aWindow
+			open location aUrl
+		end repeat
+	end repeat
+end tell
+
+tell application "Google Chrome" to quit
+\`\`\`
 
 This will take all of your windows and tabs you currently have open in Google Chrome, and replicate them in Safari. Switch browsers with the touch of a button.`,
 };

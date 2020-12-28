@@ -17,7 +17,22 @@ export const post = {
 ### About code coverage
 You might say: "why the heck do I need this? I have a code coverage report that shows 100%, so I am golden!". However, take the following code as an example:
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/b8bfd04bd22cbeccc96b026586c1412d.js"></script><!-- RAW_HTML_END -->
+\`\`\`crystal
+# valid.cr
+def valid?
+  true
+end
+
+# valid_spec.cr
+require "./valid"
+require "spec"
+
+describe "valid?" do
+  it "works" do
+    valid?.should be_a(Bool)
+  end
+end
+\`\`\`
 
 This test will mark the \`valid?\` function as being 100% covered. But it does not at all make sure it works correctly. Returning \`false\` instead of \`true\` would still pass the test-suite at 100% coverage, but is obviously the opposite result.
 
@@ -27,7 +42,18 @@ So how to protect against this? Use crytic!
 
 Running \`crytic --subject valid.cr valid_spec.cr\` yields the following output:
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/83e4048e8e47a64b4e2a42979b7e273b.js"></script><!-- RAW_HTML_END -->
+\`\`\`
+Original suite: ✅
+Mutations covered by tests:
+
+    ❌ BoolLiteralFlip (x1)
+        The following change didn't fail the test-suite:
+            @@ -1,3 +1,3 @@
+             def valid?
+            -  true
+            +  false
+             end
+\`\`\`
 
 The line \`Original suite: ✅\` is there to tell you that the original spec passed. This is helpful, because there is no point running mutated source code against a failing initial test-suite, because there is nothing to be learned from trying to make fail already failing tests.
 
@@ -37,7 +63,22 @@ The line \`Original suite: ✅\` is there to tell you that the original spec pas
 
 Improve the tests! So let's go ahead and run crytic on the improved test here:
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/d8a1b7880515d5b09960c51f6b67b923.js"></script><!-- RAW_HTML_END -->
+\`\`\`
+# valid.cr
+def valid?
+  true
+end
+
+# valid_spec.cr
+require "./valid"
+require "spec"
+
+describe "valid?" do
+  it "works" do
+    valid?.should eq true
+  end
+end
+\`\`\`
 
 This will now show you \`✅ BoolLiteralFlip (x1)\` to tell you that indeed the test-suite detected the intentionally modified code. You can now be much more confident in your code coverage and refactoring your code.
 

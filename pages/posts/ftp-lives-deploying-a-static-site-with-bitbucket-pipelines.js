@@ -20,8 +20,22 @@ Having no tests or verification mechanism at all is not a great prerequisite for
 
 Bitbucket pipelines are configured through a \`bitbucket-pipelines.yml\` file. No surprises here, thats in essence how most of the CI providers do it. The two cornerstones of the pipeline are two docker images. One to run the visual regression tests, the other to do the deployment. That's a "test->deploy" pipeline in a nutshell. This is the configuration in it's entirety:
 
- <!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/1e812d3e796254a3ca0cec451c39dadb.js"></script><!-- RAW_HTML_END -->
- 
+\`\`\`yaml
+pipelines:
+  default:
+    - step:
+        name: "Run visual regression tests"
+        image: backstopjs/backstopjs:v3.2.15
+        script:
+          - backstop test
+    - step:
+        name: "Deploy to website"
+        image: fgch/alpine-gitftp
+        deployment: production
+        script:
+          - git ftp push -u $FTP_USER -p $FTP_PASSWORD $FTP_URL
+\`\`\`
+
  The test step, run directly on the official [backstopjs docker container](https://github.com/garris/BackstopJS/tree/master/docker), is simply executing the \`test\` task of backstopjs. This compares three  reference images (three because I set up three viewport sizes once more) against what is currently rendered when opening the \`index.html\`. When they are identical, the deploy pipeline step is triggered. Deploy is, as mentioned, as simple as copying the relevant files to the correct directory on the webspace. Already a while ago I found a git plugin to accomplish this. It is called [git-ftp](https://github.com/git-ftp/git-ftp) and solves my issue very smoothly. As for backstop, a docker image already exists just to run \`git ftp\`. So all I needed to do (and I have struggled to get this working in the past) was to create a separate ftp user (for security reasons), add the \`FTP_USER\`, \`FTP_PASSWORD\` and \`FTP_URL\` environment variables to the bitbucket pipelines settings and voilá, continuous deployment for a static site with the safety net of visual regression tests it is 🎉.
  \`git ftp\` can use a separate [ignore file](https://github.com/git-ftp/git-ftp/blob/master/man/git-ftp.1.md#ignoring-files-to-be-synced) to tune what content to deploy or omit.
 

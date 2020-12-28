@@ -18,7 +18,43 @@ Unhappy about the workflow I just started and taking into account the above thou
 ## Setup and usage
 Both setting up and using BackstopJS is dead simple and can be explained in this short snippet:
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/28bd5cf945630b04f943f4ef7c90453d.js"></script><!-- RAW_HTML_END -->
+\`\`\`sh
+# Install backstopjs locally
+yarn add backstopjs
+
+# Setup folders, configuration etc.
+./node_modules/.bin/backstopjs init
+
+# Edit backstop.json to configure the viewports you want to test on.
+# I use the following:
+#  "viewports": [
+#    {
+#      "label": "phone",
+#      "width": 320,
+#      "height": 480
+#    },
+#    {
+#      "label": "tablet",
+#      "width": 1024,
+#      "height": 768
+#    },
+#    {
+#      "label": "desktop",
+#      "width": 2880,
+#      "height": 1800
+#    }
+#  ]
+
+# Define some pages you want to visit/compare, e.g.
+#  "scenarios": [
+#    {
+#      "label": "Blog Index",
+#      "url": "http://localhost:5000"
+#    }
+
+# Finally run backstop tests to go ahead and capture first set of images
+./node_modules/.bin/backstop test
+\`\`\`
 
 You will get a really nice page telling you that the tests were failing. Why? Because you have not approved any reference images yet. Once you look at those images and assert that this is currently the way things are looking, go ahead and \`backstop approve\` those. Now you are golden and able to make changes to your pages CSS without having to fear to a) break thinks if you are refactoring, or b) having a super quick way to get an overview of the changes you made across multiple pages of your blog in different viewports.
 
@@ -26,7 +62,16 @@ You will get a really nice page telling you that the tests were failing. Why? Be
 
 With my page being a blog, the content obviously will continuously change, making the comparison of the current look against reference images unfeasable. Luckily this is an easy fix: I created a new database containing exactly one sample post, which uses all the usual tags like h1-h6, lists, blockquotes to showcase most of the styles coming into play.
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/151562663b5d7d296fcc143ec545e3ff.js"></script><!-- RAW_HTML_END -->
+\`\`\`sh
+# Create and migrate a new database just for visual regression testing
+LUCKY_ENV=visual_test lucky db.create && lucky db.migrate
+
+# Add one sample post
+open http://localhost:5000/posts/new
+
+# Run the local server with that one sample post
+LUCKY_ENV=visual_test lucky dev
+\`\`\`
 
 This is how the current reference image looks in tablet mode:
 

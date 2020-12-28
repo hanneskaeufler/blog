@@ -49,7 +49,19 @@ Let's walk through one of my commits together. I really enjoyed working like thi
 
 Lets add some code to render the badge text on the right:
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/79395e87ed151bf37df47197495d6ac2.js"></script><!-- RAW_HTML_END -->
+\`\`\`diff
+    def __render_row(self, row):
+         self.__render_project_name(row)
++        self.__render_project_status(row)
++
++    def __render_project_status(self, row):
++        start_y = (row[0] + 1) * self.__row_height()
++        badge_width = 150
++        padding = 10
++        pos = (self.__from_right(badge_width), start_y + padding, self.__from_right(padding), start_y + self.__row_height() - padding)
++        self.draw.rectangle(pos, outline = self.BLACK)
++        self.draw.text((self.__from_right(badge_width + 35), start_y + 17), self.PASSED, font = self.badge_font, fill = self.BLACK)
+\`\`\`
 
 Hit \`<leader>t\`, and see this:
 
@@ -57,7 +69,16 @@ Hit \`<leader>t\`, and see this:
 
 So obviously I got the alignment wrong. Lets fix it:
 
-<!-- RAW_HTML_START --><script src="https://gist.github.com/hanneskaeufler/7d99eb537efc4f0ace391f47602c2c3a.js"></script><!-- RAW_HTML_END -->
+\`\`\`diff
+         padding = 10
+         pos = (self.__from_right(badge_width), start_y + padding, self.__from_right(padding), start_y + self.__row_height() - padding)
+         self.draw.rectangle(pos, outline = self.BLACK)
+-        self.draw.text((self.__from_right(badge_width + 35), start_y + 17), self.PASSED, font = self.badge_font, fill = self.BLACK)
++        self.draw.text((self.__from_right(badge_width - 35), start_y + 17), self.PASSED, font = self.badge_font, fill = self.BLACK)
+
+     def __render_project_name(self, row):
+        index = row[0]
+\`\`\`
 
 Re-run the tests, see this:
 
