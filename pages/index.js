@@ -1,5 +1,6 @@
 import { Github, Twitter, Xing } from "@/components/icons";
 import Preview from "@/components/posts/preview";
+import ProminentLink from "@/components/prominentLink";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -85,18 +86,20 @@ function Home() {
       </div>
       <div className="mt-20 flex flex-col md:flex-row space-y-2 md:space-y-0 justify-center">
         {currentPage > 1 && (
-          <Link href={{ query: { page: currentPage - 1 } }}>
-            <a className="text-indigo-600 hover:text-indigo-800 bg-indigo-100 hover:bg-indigo-200 rounded-full py-2 px-4 md:mr-10 transition">
-              &laquo; Previous page
-            </a>
-          </Link>
+          <ProminentLink
+            href={{ query: { page: currentPage - 1 } }}
+            className="md:mr-4"
+          >
+            &laquo; Previous page
+          </ProminentLink>
         )}
         {currentPage < maxPage && (
-          <Link href={{ query: { page: currentPage + 1 } }}>
-            <a className="text-indigo-600 hover:text-indigo-800 text-right bg-indigo-100 hover:bg-indigo-200 rounded-full py-2 px-4 transition">
-              Next page &raquo;
-            </a>
-          </Link>
+          <ProminentLink
+            href={{ query: { page: currentPage + 1 } }}
+            className="justify-end"
+          >
+            Next page &raquo;
+          </ProminentLink>
         )}
       </div>
     </div>
