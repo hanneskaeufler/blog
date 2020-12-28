@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "local-variable",
   title: "Local variable",
-  publishedAt: "2016-04-23 16:51:44.237557+00",
+  publishedAt: "2016-04-23 16:51:44+00",
   content: `This is the first installment of "A vs. B", the series on the details of (mostly unit) tests. Without going into much detail, having an extensive set of unit tests to verify the behaviour of the parts composing a computer program is of immense value. But since those tests are code as well, we should look at the quality of those tests with laser eyes as well.
 
 This specific example is PHP code and assumes an xUnit style test, in this case using [PHPUnit](http://phpunit.de). The tools and even language however are completely besides the issue I want to focus on. So here are the two variants:
