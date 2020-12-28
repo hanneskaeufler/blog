@@ -1,1 +1,0 @@
-docker-compose run --rm app /bin/sh -c 'npm run create-asset-manifest && ./wait-for-postgres.sh $DATABASE_URL && lucky db.create && lucky db.migrate && ./bin/crytic --min-msi=50.0 --reporters=Console,Stryker,ConsoleFileSummary'

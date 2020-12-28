@@ -1,51 +1,30 @@
-[![CircleCI](https://circleci.com/gh/hanneskaeufler/blog.svg?style=svg)](https://circleci.com/gh/hanneskaeufler/blog) ![CI](https://github.com/hanneskaeufler/blog/workflows/CI/badge.svg) ![nightly](https://github.com/hanneskaeufler/blog/workflows/nightly/badge.svg) [![codecov](https://codecov.io/gh/hanneskaeufler/blog/branch/master/graph/badge.svg)](https://codecov.io/gh/hanneskaeufler/blog) ![Mutation Score Badge](https://badge.stryker-mutator.io/github.com/hanneskaeufler/blog/master)
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# blog
+## Getting Started
 
-This is my personal website/blog written using [Lucky](https://luckyframework.org). Enjoy!
+First, run the development server:
 
-### Setting up the project
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-1. Run `make dev-server` to start the app
-2. Visit `localhost:5000` in the browser
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Development
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-This is a bit of an experiment to be as pedantic about each and every bit of code as we can be realistically.
-The following checks are run (see also `.circleci/config.yml`):
+## Learn More
 
-| Check | Description |
-| ----  | ------------|
-| Static analysis| Checks for unused variables etc. Run with `./bin/ameba` |
-| Code formatting | Can check formatting with `crystal tool format --check` and also autofix when omitting `--check` |
-| Unit tests | Run em with `crystal spec` |
-| Integration tests | Some of the tests hit the database and are not necessarily micro-test. Run em through the same runner with `crystal spec` |
-| Visual regression tests | Uses [backstopjs](https://github.com/garris/BackstopJS). Was a bit trickier to get running smoothly on CI. Needs a few pointers, see below. Run with `npm test` |
-| CSS linting | Uses stylelint, run with `rpm run lint` |
-| Automated code review | Pull requests trigger a run of `danger-js` which looks for basics like PR descriptions, small-ish PRs. |
-| Accessibility testing | The chrome dev tools can analyse contrast etc. Run with `npm run accessibility-test` which uses a script heavily based on [Google Chrome's a11y dev tools](https://github.com/GoogleChrome/accessibility-developer-tools) |
-| Security testing | On the frontend side we can make sure not to have major security holes in the dependencies, which is checked by `npm audit` |
-| Mutation testing | We can inject intentional code changes that must fail the test-suite to check if they do. This is using my own mutation test librabry [crytic](https://github.com/hanneskaeufler/crytic) |
+To learn more about Next.js, take a look at the following resources:
 
-- [ ] Performance testing
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-#### Visual regression testing
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-* To generate reference images on the mac, run `docker run --rm -v $(pwd):/src hanneskaeufler/crystal-node-ruby:0.25.1 backstop --config=/src/backstop.js`
-* Switch the host in `backstop.json` to `host.docker.internal:5000`, see [docker guides](https://docs.docker.com/docker-for-mac/networking/#use-cases-and-workarounds)
-* To export the local visual regression test database, run `/Applications/Postgres.app/Contents/Versions/10/bin/pg_dump --no-acl --no-owner --data-only --table=posts blog_visual_test > blog_visual_test.dump`
-* Also, duh: https://github.com/garris/BackstopJS/issues/796
+## Deploy on Vercel
 
-### Learning Lucky
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Lucky uses the [Crystal](https://crystal-lang.org) programming language. You can learn about Lucky from the [Lucky Guides](http://luckyframework.org/guides).
-
-### Deploying manually
-
-This project is continually deployed with a workflow on circleci. You can however deploy manually:
-Run `git push heroku master`. To export/import the database see: https://devcenter.heroku.com/articles/heroku-postgres-import-export#import-to-heroku-postgres
-
-### Deploying locally with Docker
-
-Start the database and app by running `docker-compose up`.
-Run  `docker-compose run app crystal tasks.cr -- db.migrate` to setup the db.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
