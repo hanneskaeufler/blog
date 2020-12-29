@@ -14,7 +14,7 @@ function QuickLink({ target, label, children, ...props }) {
 
 function Banner() {
   return (
-    <div className="px-2 py-12 shadow-lg bg-white rounded-md text-5xl text-indigo-500 font-bold text-center">
+    <div className="px-2 py-12 shadow-lg bg-white rounded-md text-3xl sm:text-5xl text-indigo-500 font-bold text-center">
       racing · software · open-source
     </div>
   );

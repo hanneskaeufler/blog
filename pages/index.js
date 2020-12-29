@@ -36,7 +36,7 @@ function Home() {
     maxPage = Math.ceil(posts.length / perPage);
 
   return (
-    <div className="container mx-auto flex-grow">
+    <div className="container mx-auto flex-grow px-2">
       <Head>
         <title key="title">Hannes Käufler: Blog</title>
       </Head>

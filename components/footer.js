@@ -3,7 +3,7 @@ import { Github, Twitter, Xing } from "@/components/icons";
 
 export default function Footer() {
   return (
-    <footer className="mt-10 border-t-2 border-gray-200 bg-gray-100 text-lg text-gray-600">
+    <footer className="mt-10 px-2 border-t-2 border-gray-200 bg-gray-100 text-lg text-gray-600">
       <div class="container mx-auto grid md:grid-cols-2">
         <div className="py-6">
           <h4 className="font-bold text-gray-800 mb-6">Imprint</h4>
