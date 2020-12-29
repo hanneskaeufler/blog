@@ -24,15 +24,15 @@ export default function Footer() {
           <p>
             This blog is open-source, check it out on{" "}
             <Link href="https://github.com/hanneskaeufler/blog">
-              <a className="underline">Github</a>
+              <a className="underline hover:text-gray-900">Github</a>
             </Link>
             . It is served by{" "}
             <Link href="https://vercel.com">
-              <a className="underline">Vercel</a>
+              <a className="underline hover:text-gray-900">Vercel</a>
             </Link>
             , written in Javascript 😱 and built with the awesome{" "}
             <Link href="https://nextjs.org">
-              <a className="underline">Next.js</a>
+              <a className="underline hover:text-gray-900">Next.js</a>
             </Link>
             .
           </p>
