@@ -5,7 +5,7 @@ export const post = {
   slug: "lucky",
   title: "Lucky",
   publishedAt: "2016-06-01 08:56:11+00",
-  content: `I really can't stand much of the negativity some people exhibit in their daily lives. [Just give it a second](https://www.youtube.com/watch?v=ZFsOUbZ0Lr0) dude. Sometimes we really need to take a step back and appreciate what we take for granted. Without further ado, here's list of problems you probably never needed to worry about:
+  content: `I really can't stand much of the negativity some people exhibit in their daily lives. [Just give it a second](https://www.youtube.com/watch?v=nUBtKNzoKZ4) dude. Sometimes we really need to take a step back and appreciate what we take for granted. Without further ado, here's list of problems you probably never needed to worry about:
 
 * Not having an absurd amount of food at your fingertips.
 * Getting medical attention should you need it.
