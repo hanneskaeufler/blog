@@ -1,10 +1,9 @@
-import { Github, Twitter, Xing } from "@/components/icons";
 import Preview from "@/components/posts/preview";
 import ProminentLink from "@/components/prominentLink";
+import BlogTitle from "@/components/blogTitle";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 import { post as sx2021Post } from "./posts/2021-supercross-predictions";
 import { post as bugsPost } from "./posts/50-million-lines-of-bugs";
@@ -29,25 +28,6 @@ import { post as snapshotPost } from "./posts/snapshot-tdd";
 
 const perPage = 5;
 
-function QuickLink({ target, label, children, ...props }) {
-  return (
-    <Link href={target}>
-      <a className="bg-black bg-opacity-20 text-green-50 text rounded-full py-2 px-3 hover:bg-green-600 transition flex items-center">
-        {children}
-        <span className="ml-1 hidden md:inline">{label}</span>
-      </a>
-    </Link>
-  );
-}
-
-function Banner() {
-  return (
-    <div className="px-2 py-12 shadow-lg bg-white rounded-md text-5xl text-indigo-500 font-bold text-center">
-      racing · software · open-source
-    </div>
-  );
-}
-
 function Home() {
   const router = useRouter(),
     posts = getAllPosts(),
@@ -60,26 +40,7 @@ function Home() {
       <Head>
         <title key="title">Hannes Käufler: Blog</title>
       </Head>
-      <div className="blog-title">
-        <div className="flex space-x-2 py-7 justify-center text-lg">
-          <QuickLink label="github" target="https://github.com/hanneskaeufler">
-            <Github className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
-          </QuickLink>
-          <QuickLink
-            label="twitter"
-            target="https://twitter.com/hanneskaeufler"
-          >
-            <Twitter className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
-          </QuickLink>
-          <QuickLink
-            label="xing"
-            target="https://xing.com/profile/Hannes_Kaeufler "
-          >
-            <Xing className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
-          </QuickLink>
-        </div>
-        <Banner />
-      </div>
+      <BlogTitle />
       <div className="mt-20 space-y-24">
         {currentPosts.map((post) => (
           <Preview key={post.slug} post={post} />
