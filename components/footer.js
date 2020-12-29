@@ -14,9 +14,21 @@ export default function Footer() {
             80807 München
           </address>
           <div className="flex items-center mt-6 space-x-2">
-            <Github className="w-4 h-4" />
-            <Twitter className="w-4 h-4" />
-            <Xing className="w-4 h-4" />
+            <Link href="https://github.com/hanneskaeufler">
+              <a>
+                <Github className="w-4 h-4 hover:text-gray-900" />
+              </a>
+            </Link>
+            <Link href="https://twitter.com/hanneskaeufler">
+              <a>
+                <Twitter className="w-4 h-4 hover:text-gray-900" />
+              </a>
+            </Link>
+            <Link href="https://xing.com/profile/Hannes_Kaeufler">
+              <a>
+                <Xing className="w-4 h-4 hover:text-gray-900" />
+              </a>
+            </Link>
           </div>
         </div>
         <div className="py-6">
