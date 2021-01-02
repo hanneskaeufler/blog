@@ -6,16 +6,13 @@ export const post = {
   title: "Snapshot TDD",
   publishedAt: "2018-02-12 20:13:57+00",
   type: "long-form",
-  summary: `One of my recent weekend side projects, an e-ink / raspberrypi driven build status dashboard, was a great playground for doing TDD powered by visual snapshots. But let's rewind a bit.
-
-### Goals
-
-What I actually wanted to achieve was the following: Build a semi-decent python class to draw a dashboard type interface, which I can feed to my e-ink display. I had already prototyped such a [script](https://github.com/hanneskaeufler/e-ink-build-dashboard/commit/7c22ac5064a9e5b1f17c47b9e6b9aae8bb4d579c#diff-5bc02cefb3ea9e27f1a6776eabd1935d), but it was a "make it work in the quickest possible way in 1 hour" mess. Nothing I wanted to maintain or even look at for even five more minutes. I also didn't want to start completely from scratch regarding the output, because I was happy enough with the result this script produced, which is shown here:`,
   content: `One of my recent weekend side projects, an e-ink / raspberrypi driven build status dashboard, was a great playground for doing TDD powered by visual snapshots. But let's rewind a bit.
 
 ### Goals
 
 What I actually wanted to achieve was the following: Build a semi-decent python class to draw a dashboard type interface, which I can feed to my e-ink display. I had already prototyped such a [script](https://github.com/hanneskaeufler/e-ink-build-dashboard/commit/7c22ac5064a9e5b1f17c47b9e6b9aae8bb4d579c#diff-5bc02cefb3ea9e27f1a6776eabd1935d), but it was a "make it work in the quickest possible way in 1 hour" mess. Nothing I wanted to maintain or even look at for even five more minutes. I also didn't want to start completely from scratch regarding the output, because I was happy enough with the result this script produced, which is shown here:
+
+<!--more-->
 
 ![Reference](https://raw.githubusercontent.com/hanneskaeufler/e-ink-build-dashboard/dbce7e6c93b1c446639a8c8b23685085d6337389/expected.png)
 

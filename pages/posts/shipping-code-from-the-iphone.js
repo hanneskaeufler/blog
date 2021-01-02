@@ -6,8 +6,9 @@ export const post = {
   title: "Shipping code from the iPhone",
   publishedAt: "2018-05-04 18:39:43+00",
   type: "long-form",
-  summary: `After traveling abroad for more than two weeks, and then spending two days laying by the pool, I naturally got a bit of a tech craving. To spend the afternoon I set myself the challenge of fixing a small bug on this blog, having nothing more than some Hotel WiFi™ and my iPhone at hand. But that must be enough, right? Let‘s see how it went.`,
   content: `After traveling abroad for more than two weeks, and then spending two days laying by the pool, I naturally got a bit of a tech craving. To spend the afternoon I set myself the challenge of fixing a small bug on this blog, having nothing more than some Hotel WiFi™ and my iPhone at hand. But that must be enough, right? Let‘s see how it went.
+
+<!--more-->
 
 ### The objective
 

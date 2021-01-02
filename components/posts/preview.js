@@ -3,12 +3,18 @@ import PostHead from "@/components/posts/head";
 import Link from "next/link";
 import ProminentLink from "@/components/prominentLink";
 
-export default function Preview({ post }) {
-  let perma = `/posts/${post.slug}`;
-  let type = post.type ?? "short-form";
+const SUMMARY_MARKER = "<!--more-->";
 
-  let content =
-    type == "long-form" ? post.summary ?? post.content : post.content;
+export default function Preview({ post }) {
+  const perma = `/posts/${post.slug}`;
+  const type = post.type ?? "short-form";
+
+  let content;
+  if (type == "long-form") {
+    content = post.content.split(SUMMARY_MARKER)[0];
+  } else {
+    content = post.content;
+  }
 
   return (
     <article>

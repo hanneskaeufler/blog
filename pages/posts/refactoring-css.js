@@ -6,12 +6,11 @@ export const post = {
   title: "Refactoring CSS",
   publishedAt: "2018-04-08 10:32:19+00",
   type: "long-form",
-  summary: `One shortcoming of this permanently-work-in-progress blog of mine was the rendering on mobile devices. The experience of browsing the blog on a phone or tablet was less than ideal: text touching the borders of the screen, images overflowing the main section, social media links being out of place, and many more. It was a long standing [issue](https://github.com/hanneskaeufler/blog/issues/5). So I set off on fixing this. While digging straight into the first CSS changes and fiddling in the developer console of Chrome, I remembered what I wrote in the [Snapshot TDD](/posts/snapshot-tdd) post:
-
-> Things of visual nature are not unit-tested easily, which is why they are often simply untested. We usually don't test stylesheets, colors, images etc. However we can't say those things are unimportant.`,
   content: `One shortcoming of this permanently-work-in-progress blog of mine was the rendering on mobile devices. The experience of browsing the blog on a phone or tablet was less than ideal: text touching the borders of the screen, images overflowing the main section, social media links being out of place, and many more. It was a long standing [issue](https://github.com/hanneskaeufler/blog/issues/5). So I set off on fixing this. While digging straight into the first CSS changes and fiddling in the developer console of Chrome, I remembered what I wrote in the [Snapshot TDD](/posts/snapshot-tdd) post:
 
 > Things of visual nature are not unit-tested easily, which is why they are often simply untested. We usually don't test stylesheets, colors, images etc. However we can't say those things are unimportant.
+
+<!--more-->
 
 Unhappy about the workflow I just started and taking into account the above thought, I typed some words into google and emerged with this awesome tool: [BackstopJS](https://garris.github.io/BackstopJS/). It's headlined with "Visual regression testing for web apps" and was _exactly_ what I was looking for. It provides a safety net for changing the visual nature of something rendered in a browser by taking and comparing screenshots. Basically exactly what I manually and crudely setup for the e-ink dashboard, just **so much** more awesome.
 

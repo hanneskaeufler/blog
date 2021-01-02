@@ -6,8 +6,9 @@ export const post = {
   title: "Building a mutation test framework in crystal - Part 1",
   publishedAt: "2019-01-22 15:10:57+00",
   type: "long-form",
-  summary: `In this series of posts I want to explain and document the basic building blocks of building a mutation test framework in [crystal-lang](https://crystal-lang.org). For a bit more context on the working framework named [crytic](https://github.com/hanneskaeufler/crytic), make sure to check out the [introductory post](http://hannes.kaeufler.net/posts/introducing-crytic---mutation-testing-in-crystal-lang).`,
   content: `In this series of posts I want to explain and document the basic building blocks of building a mutation test framework in [crystal-lang](https://crystal-lang.org). For a bit more context on the working framework named [crytic](https://github.com/hanneskaeufler/crytic), make sure to check out the [introductory post](http://hannes.kaeufler.net/posts/introducing-crytic---mutation-testing-in-crystal-lang).
+
+<!--more-->
 
 So let's get into the first block:
 

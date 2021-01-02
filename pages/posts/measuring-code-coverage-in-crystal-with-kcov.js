@@ -6,10 +6,10 @@ export const post = {
   title: "Measuring code coverage in crystal with kcov",
   publishedAt: "2019-02-24 16:37:43+00",
   type: "long-form",
-  summary: `Crystal, the programming language, does [not yet](https://github.com/crystal-lang/crystal/issues/1157) provide a built in way of measuring the effectiveness of your test suite. So by running \`crystal spec\` you pretty much only have binary insight into the suite: it's passing or it's not.
-This lead me to build [crytic](http://github.com/hanneskaeufler/crytic) in the first place. But while mutation coverage is a great tool to investigate the test suite, plain old code coverage is usually quicker to obtain and easier to glance at.`,
   content: `Crystal, the programming language, does [not yet](https://github.com/crystal-lang/crystal/issues/1157) provide a built in way of measuring the effectiveness of your test suite. So by running \`crystal spec\` you pretty much only have binary insight into the suite: it's passing or it's not.
 This lead me to build [crytic](http://github.com/hanneskaeufler/crytic) in the first place. But while mutation coverage is a great tool to investigate the test suite, plain old code coverage is usually quicker to obtain and easier to glance at.
+
+<!--more-->
 
 ### The players
 

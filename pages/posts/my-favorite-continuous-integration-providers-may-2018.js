@@ -6,17 +6,13 @@ export const post = {
   title: "My favorite continuous integration providers (May 2018)",
   publishedAt: "2018-05-24 18:18:10+00",
   type: "long-form",
-  summary: `Seeing the following tweet yesterday, which links to a [great article](https://t.co/1pERihonQY) comparing multiple CI/CD providers
-
-<!-- RAW_HTML_START --><blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">I&#39;m starting a review blog for all things related to iOS development. Check out my first review on CI services!<a href="https://t.co/1pERihonQY">https://t.co/1pERihonQY</a></p>&mdash; Oliver Clark Rickard (@ocrickard) <a href="https://twitter.com/ocrickard/status/999389350113824768?ref_src=twsrc%5Etfw">23. Mai 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><!-- RAW_HTML_END -->
-
-made me realize that I did indeed go through most of them at some point in time. So very shortly, here are my two cents:`,
-
   content: `Seeing the following tweet yesterday, which links to a [great article](https://t.co/1pERihonQY) comparing multiple CI/CD providers
 
 <!-- RAW_HTML_START --><blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">I&#39;m starting a review blog for all things related to iOS development. Check out my first review on CI services!<a href="https://t.co/1pERihonQY">https://t.co/1pERihonQY</a></p>&mdash; Oliver Clark Rickard (@ocrickard) <a href="https://twitter.com/ocrickard/status/999389350113824768?ref_src=twsrc%5Etfw">23. Mai 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><!-- RAW_HTML_END -->
 
 made me realize that I did indeed go through most of them at some point in time. So very shortly, here are my two cents:
+
+<!--more-->
 
 ## CircleCI
 
