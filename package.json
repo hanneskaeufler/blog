@@ -12,7 +12,7 @@
     "autoprefixer": "^10.1.0",
     "dayjs": "^1.9.7",
     "next": "10.0.8",
-    "postcss": "^8.2.1",
+    "postcss": "^8.2.13",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-markdown": "^5.0.3",
