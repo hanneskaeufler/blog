@@ -7,7 +7,7 @@ export const post = {
   publishedAt: "2021-05-15 12:00:00+00",
   type: "long-form",
   content: `I have dabbled in iOS development, on and off, for many years now. Starting back when UIKit and Objective-C were still the only platform choices, continuing with exploring
-  [RubyMotion](https://rubymotion.com), slowly making the transition to Swift, playing with [React Native](https://reactnative.dev) and then seeing SwiftUI come to life ... it's been an interesting journey. For a variety of reasons, none of the opinionated options in building an app ever really caught my fancy. Sure, Apple leaves a lot of questions unanswered for architecting an iOS app, but generic patterns like MVVM or MVC can be applied to iOS development without selling your soul to any large third party framework. The smaller the app is, the easier it also is to kind of get away with not _really_ following a specific pattern.
+  [RubyMotion](http://www.rubymotion.com), slowly making the transition to Swift, playing with [React Native](https://reactnative.dev) and then seeing SwiftUI come to life ... it's been an interesting journey. For a variety of reasons, none of the opinionated options in building an app ever really caught my fancy. Sure, Apple leaves a lot of questions unanswered for architecting an iOS app, but generic patterns like MVVM or MVC can be applied to iOS development without selling your soul to any large third party framework. The smaller the app is, the easier it also is to kind of get away with not _really_ following a specific pattern.
 
 <div class="p-5 rounded-lg bg-indigo-200 border-2 border-indigo-400 hover:bg-indigo-100 hover:border-indigo-300">
   <a href="https://apps.apple.com/us/app/planeton/id1526069486" class="flex" style="text-decoration: none !important; color: rgb(75, 85, 99); font-weight: normal !important">
@@ -87,7 +87,7 @@ at least get decent integration into Apple's walled gardens, better than e.g. \`
 Being an optimist on a side-project with nothing to lose, I figured, sure, let's just wholesale migrate to the composable
 architecture in one big bang. This, as you can imagine, failed miserably, as I stumbled from one
 issue (due to my lack of understanding) into the next, had to touch every single file in the project
-and in therefore was in a constant state of not much of it working. With the outlook of spending weeks (remember, this is a side-project for nights and weekends)
+and therefore was in a constant state of not much of it working. With the outlook of spending weeks (remember, this is a side-project for nights and weekends)
 on just this re-architecting without moving the user-facing details any further along, I realized I had to scrap this branch and think fresh.
 
 #### Attempt 2 - Gradually migrate
@@ -124,7 +124,7 @@ I used this trick of getting a binding to something in the app's state countless
 work on each view one after another.
 
 With that strategy it was only a couple pull requests later, and I was fully running on the composable architecture.
-It is amazing how it shows time and time again: making many small problems out of a seemingly large problems is
+It is amazing how it shows time and time again: making many small problems out of a seemingly large problem is
 one of the most effective strategies to learn as a software developer.
 
 ### Benefit 1 - Testing
@@ -224,7 +224,7 @@ store? I ultimately decided to implement another reducer to change the behaviour
 the game when played via the onboarding flow. This could probably also be done by
 combining the existing reducer somehow, but this worked well for me.
 
-### Benefit 4 - Easy automation of app-store related tasks
+### Benefit 3 - Easy automation of app-store related tasks
 
 If you ever shipped an iOS app, you'll know that preparing assets for the App-Store
 is actually a pretty big ordeal. Trailer videos, preview snapshots, marketing material
@@ -284,7 +284,7 @@ class Snapshots : XCTestCase {
 
 Note that the \`assertSnapshot\` assertion helper springs from another one
 of Brandon's and Stephen's libraries: [swift snapshot testing](https://github.com/pointfreeco/swift-snapshot-testing).
-In order for all of this to work this flawlessly, again, isolation is so important. You
+In order for all of this to work flawlessly, again, isolation is so important. You
 need your views isolated from side-effects, or behaviour you cannot control from the outside.
 With the composable architecture, you can achieve that with ease.
 
@@ -324,7 +324,7 @@ To reach that, ultimately, Planeton's structure now looks like this:
 
 However skeptical I was when first looking at examples of the composable architecture, I must
 say I am super happy having used it. I really feel like none of the choices hold me back, quite
-the opposite, many feature where a joy to implement _because_ of the structure it suggests.
+the opposite, many features where a joy to implement _because_ of the structure it suggests.
 
 Strong suits to me where:
 
