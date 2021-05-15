@@ -7,7 +7,7 @@ export const post = {
   publishedAt: "2021-05-15 12:00:00+00",
   type: "long-form",
   content: `I have dabbled in iOS development, on and off, for many years now. Starting back when UIKit and Objective-C were still the only platform choices, continuing with exploring
-  [RubyMotion](https://rubymotion.com), slowly making the transition to Swift, playing with [ReactNative](https://reactnative.dev) and then seeing SwiftUI come to life ... it's been an interesting journey. For a variety of reasons, none of the opinionated options in building an app ever really caught my fancy. Sure, Apple leaves a lot of questions unanswered for architecting an iOS app, but generic patterns like MVVM or MVC can be applied to iOS development without selling your soul to any large third party framework. The smaller the app is, the easier it also is to kind of get away with not _really_ following a specific pattern.
+  [RubyMotion](https://rubymotion.com), slowly making the transition to Swift, playing with [React Native](https://reactnative.dev) and then seeing SwiftUI come to life ... it's been an interesting journey. For a variety of reasons, none of the opinionated options in building an app ever really caught my fancy. Sure, Apple leaves a lot of questions unanswered for architecting an iOS app, but generic patterns like MVVM or MVC can be applied to iOS development without selling your soul to any large third party framework. The smaller the app is, the easier it also is to kind of get away with not _really_ following a specific pattern.
 
 <div class="p-5 rounded-lg bg-indigo-200 border-2 border-indigo-400 hover:bg-indigo-100 hover:border-indigo-300">
   <a href="https://apps.apple.com/us/app/planeton/id1526069486" class="flex" style="text-decoration: none !important; color: rgb(75, 85, 99); font-weight: normal !important">
@@ -330,7 +330,7 @@ Strong suits to me where:
 
 * Fast, non-ui-driven testing in isolation
 * Composition of small, isolated parts into a bigger whole
-* Small API, barely coupling my App to a third party library
+* Small API, barely coupling [my app](https://apps.apple.com/us/app/planeton/id1526069486) to a third party library
 
 To finish off, I strongely suggest looking at [the isowords repository](https://github.com/pointfreeco/isowords). Isowords
 is a game of theirs also using the composable architecture and does a good job of showing production usage
