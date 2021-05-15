@@ -5,6 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { post as composableArchitectureReview } from "./posts/composable-architecture-review";
 import { post as sx2021Post } from "./posts/2021-supercross-predictions";
 import { post as bugsPost } from "./posts/50-million-lines-of-bugs";
 import { post as buildingMutationPost } from "./posts/building-a-mutation-test-framework-in-crystal---part-1";
@@ -77,6 +78,7 @@ function getPostsForPage(posts, query) {
 
 function getAllPosts() {
   return [
+    composableArchitectureReview,
     sx2021Post,
     crystalCoveragePost,
     buildingMutationPost,
