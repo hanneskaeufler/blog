@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "opinion-robotic-racing",
   title: "Opinion: Robotic racing",
-  publishedAt: "2018-07-15 20:17:06+00",
+  publishedAt: "2018-07-15T20:17:06",
   content: `[Roborace](https://roborace.com), the autonomous racing company and car, has recently competed in the Goodwood Festival Of Speed. I am a huge proponent of autonomy in the automotive sector as a whole, but sporadically following Roborace's public outings make me wonder if autonomous racing will ever be a thing. Watch the hillclimb first:
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QtVbch-02Fs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

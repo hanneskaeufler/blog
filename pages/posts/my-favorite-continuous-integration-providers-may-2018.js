@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "my-favorite-continuous-integration-providers-may-2018",
   title: "My favorite continuous integration providers (May 2018)",
-  publishedAt: "2018-05-24 18:18:10+00",
+  publishedAt: "2018-05-24T18:18:10",
   type: "long-form",
   content: `Seeing the following tweet yesterday, which links to a [great article](https://t.co/1pERihonQY) comparing multiple CI/CD providers
 

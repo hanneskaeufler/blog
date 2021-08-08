@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "danger-todoist-celebrates-200k-downloads",
   title: "Danger-todoist celebrates 200k downloads",
-  publishedAt: "2018-01-17 23:00:00+00",
+  publishedAt: "2018-01-17T23:00:00",
   content: `[Danger-todoist](https://rubygems.org/gems/danger-todoist) is a plugin for the excellent [Danger](http://danger.systems/) ecosystem. More specifically for the [ruby variant](http://danger.systems/ruby/) of Danger. What does Danger do? It is basically a kind of automated code / pull request review system. You create a pull request on github, and a bot account will recommend changes to the pull request. The changes it suggests are based on a freely configurable set of rules and suggestions, as codified per your \`Dangerfile\`. The beauty comes as always through the flexibility of just plain ruby code and a set of plugins.
 
 One of those plugins is danger-todoist, which I first published in September 2016. A things that makes me cringe is leaving \`TODO: fix me\` comments all over our code, and of course then never fixing them. Makes one wonder if there really was something to do ... 🤓.

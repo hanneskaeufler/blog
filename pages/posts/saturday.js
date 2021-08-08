@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "saturday",
   title: "Saturday",
-  publishedAt: "2016-04-23 16:04:16+00",
+  publishedAt: "2016-04-23T16:04:16",
   content: `
 Today is a saturday. It's a slow day. I barely got up, cooked & ate, binge-watched a ton of tv series. ["Fear the Walking Dead"](http://www.imdb.com/title/tt3743822/?ref_=nv_sr_1) is off of my watchlist after the pilot already. To not waste this day completely, the plan was to finally launch a site where visitors can vote on their preferred tests. Tests as in software tests, so code to verify the correctness of a piece of a computer program. However, after diving deep into [Ruby on Rails](http://rubyonrails.org) again, I saw this super epic tweet:
 

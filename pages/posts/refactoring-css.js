@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "refactoring-css",
   title: "Refactoring CSS",
-  publishedAt: "2018-04-08 10:32:19+00",
+  publishedAt: "2018-04-08T10:32:19",
   type: "long-form",
   content: `One shortcoming of this permanently-work-in-progress blog of mine was the rendering on mobile devices. The experience of browsing the blog on a phone or tablet was less than ideal: text touching the borders of the screen, images overflowing the main section, social media links being out of place, and many more. It was a long standing [issue](https://github.com/hanneskaeufler/blog/issues/5). So I set off on fixing this. While digging straight into the first CSS changes and fiddling in the developer console of Chrome, I remembered what I wrote in the [Snapshot TDD](/posts/snapshot-tdd) post:
 

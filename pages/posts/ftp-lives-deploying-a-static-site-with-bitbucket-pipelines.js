@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "ftp-lives-deploying-a-static-site-with-bitbucket-pipelines",
   title: "FTP lives: Deploying a static site with Bitbucket pipelines",
-  publishedAt: "2018-05-23 19:20:18+00",
+  publishedAt: "2018-05-23T19:20:18",
   type: "long-form",
   content: `Yes. It still exists. Not the entire world has moved to a fancy pants containerized Kubernetes - Serverless - Cloud Hosting (I don't even know the actual latest trends) setup yet. Case in point is [pitbuddyapp.com](pitbuddyapp.com), website to my hobby [iOS](https://itunes.apple.com/us/app/pitbuddy/id871256006?mt=8&uo=4) and [Android](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png) app for [rc car racing](https://www.youtube.com/watch?v=chladGajTmE) enthusiasts. The website is plain static html, no preprocessors, no javascript, build steps or the likes. It is hosted on my families [1und1](https://1und1.de) webspace. So how did I deploy this in the past? Yes, I took the trusty FTP program and copied the files (insert laughter here).
 

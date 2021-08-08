@@ -4,7 +4,7 @@ import Full from "@/components/posts/full";
 export const post = {
   slug: "2021-supercross-predictions",
   title: "2021 Supercross Predictions",
-  publishedAt: "2020-12-28 23:00:00+00",
+  publishedAt: "2020-12-28T23:00:00",
   type: "long-form",
   content: `<img src="/supercross.jpg" class="w-full h-48 object-cover rounded-lg shadow" />With 2020 coming to a close, the 2021 Monster Energy AMA Supercross season is right around the corner. The first round is [scheduled to be](https://racerxonline.com/2020/12/15/redux-2021-supercross-schedule) held in Houston, Texas on January 16th. This gives us a couple of days to think about who will be coming out on top in both the 450, 250 East and 250 West classes. Actually, the 250 entry lists aren't public yet, so we can only try to predict the 250 field as a whole, not knowing who will line up on either the west or east rounds' gates. That sounds a bit too artificial, so let's focus on the 450 division.
 

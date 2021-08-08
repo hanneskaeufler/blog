@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "quick-test-feedback-with-fswatch",
   title: "Quick test feedback with fswatch",
-  publishedAt: "2018-07-28 18:08:50+00",
+  publishedAt: "2018-07-28T18:08:50",
   content: `[Loads](https://github.com/guard/guard) of [tools](https://jestjs.io/docs/en/getting-started#running-from-command-line) exist for continuously monitoring files on your disk for changes and running the tests whenever a change happened. Some test runners do that by themselves, others don't and rely on additional tools. The crystal test runner doesn't provide such an option, so I looked for an alternative. The easiest I found was the following:
 
 \`fswatch -or ./src ./spec | xargs -I{} crystal spec\`

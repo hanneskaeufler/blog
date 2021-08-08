@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "my-2017-podcast-winners",
   title: "My 2017 podcast winners",
-  publishedAt: "2017-12-22 22:38:49+00",
+  publishedAt: "2017-12-22T22:38:49",
   content: `In 2017 I have likely listened to hundreds of hours of podcasts. Out of interest, lets do the math real quick: \`50 weeks until now * 5 podcasts * 1h average length = 250h\`. So yeah, hundreds of hours it is. But I definitely don't consider that to be wasted time, but sometimes great entertainment, time spent learning, or a soothing tone to fall asleep to. Without much further ado, here's what I have been listening to in 2017, in no particular order:
 
 * [2 Dope Queens](https://overcast.fm/itunes1097193327/2-dope-queens): Phoebe Robinson and Jessica Williams are two friends hosting a hilarious live comedy show. They literally crack me up each episode and easily brighten my mood for quite a while. Funniest podcast I know.

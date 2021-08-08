@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "introducing-crytic---mutation-testing-in-crystal-lang",
   title: "Introducing crytic - mutation testing in crystal-lang",
-  publishedAt: "2018-10-20 16:08:58+00",
+  publishedAt: "2018-10-20T16:08:58",
   type: "long-form",
   content: `<img src="/crytic.png" align="right" class="w-full md:w-64" />While trying to be [as pedantic as possible](https://github.com/hanneskaeufler/blog#development) about test automation with this very [blog's source code](https://github.com/hanneskaeufler/blog), I had two todos: performance and mutation testing. Both of those I did not have a plan yet as to how to tackle them. However, I have previously dabbled in mutation testing with ruby's [mutant gem](https://github.com/mbj/mutant), so I at least had an idea of what to get out of a mutation test suite. Some searching revealed to me that there was no mutation test library yet for [crystal](https://crystal-lang.org). And what does the software engineer do in that case? Write his/her own of course! So I hereby present to you:
 

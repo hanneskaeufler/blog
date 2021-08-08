@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "lucky-crystal",
   title: "Lucky Crystal",
-  publishedAt: "2017-12-03 11:50:31+00",
+  publishedAt: "2017-12-03T11:50:31",
   content: `In the ever changing landscape of web frameworks, there is a new kid on the block: [Lucky](http://luckyframework.org). Lucky is written in [Crystal](http://crystal-lang.org), a statically typed programming language heavily inspired by [Ruby's](http://ruby-lang.org) syntax, which claims to be
 > Fast as C, slick as Ruby
 

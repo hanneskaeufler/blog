@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "composable-architecture-review",
   title: "The Swift Composable Architecture - A Review",
-  publishedAt: "2021-05-15 12:00:00+00",
+  publishedAt: "2021-05-15T12:00:00",
   type: "long-form",
   content: `I have dabbled in iOS development, on and off, for many years now. Starting back when UIKit and Objective-C were still the only platform choices, continuing with exploring
   [RubyMotion](http://www.rubymotion.com), slowly making the transition to Swift, playing with [React Native](https://reactnative.dev) and then seeing SwiftUI come to life ... it's been an interesting journey. For a variety of reasons, none of the opinionated options in building an app ever really caught my fancy. Sure, Apple leaves a lot of questions unanswered for architecting an iOS app, but generic patterns like MVVM or MVC can be applied to iOS development without selling your soul to any large third party framework. The smaller the app is, the easier it also is to kind of get away with not _really_ following a specific pattern.
@@ -335,7 +335,8 @@ Strong suits to me where:
 To finish off, I strongely suggest looking at [the isowords repository](https://github.com/pointfreeco/isowords). Isowords
 is a game of theirs also using the composable architecture and does a good job of showing production usage
 in a decently sized app. I think all of the points I talked about can be seen in their repository as well.
-It was a great inspiration and learning resource for myself for sure.`};
+It was a great inspiration and learning resource for myself for sure.`,
+};
 
 export default function Post() {
   return (

@@ -4,7 +4,7 @@ import Layout from "@/components/layout";
 export const post = {
   slug: "snapshot-tdd",
   title: "Snapshot TDD",
-  publishedAt: "2018-02-12 20:13:57+00",
+  publishedAt: "2018-02-12T20:13:57",
   type: "long-form",
   content: `One of my recent weekend side projects, an e-ink / raspberrypi driven build status dashboard, was a great playground for doing TDD powered by visual snapshots. But let's rewind a bit.
 
