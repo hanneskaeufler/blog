@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.0",
-    "autoprefixer": "^10.1.0",
+    "autoprefixer": "^10.3.2",
     "dayjs": "^1.9.7",
     "next": "^11.1.0",
     "postcss": "^8.2.1",
