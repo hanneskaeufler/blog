@@ -10,7 +10,7 @@ export const post = {
   [RubyMotion](http://www.rubymotion.com), slowly making the transition to Swift, playing with [React Native](https://reactnative.dev) and then seeing SwiftUI come to life ... it's been an interesting journey. For a variety of reasons, none of the opinionated options in building an app ever really caught my fancy. Sure, Apple leaves a lot of questions unanswered for architecting an iOS app, but generic patterns like MVVM or MVC can be applied to iOS development without selling your soul to any large third party framework. The smaller the app is, the easier it also is to kind of get away with not _really_ following a specific pattern.
 
 <div class="p-5 rounded-lg bg-indigo-200 border-2 border-indigo-400 hover:bg-indigo-100 hover:border-indigo-300">
-  <a href="https://apps.apple.com/us/app/planeton/id1526069486" class="flex" style="text-decoration: none !important; color: rgb(75, 85, 99); font-weight: normal !important">
+  <a href="https://apps.apple.com/us/app/planeton/id1526069486" class="flex no-underline" style="color: rgb(75, 85, 99); font-weight: normal !important">
     <img src="/planeton-icon.png" class="rounded-lg w-24 h-24" />
     <p class="pl-5" style="margin: 0px !important">
       Let me take a second to advertise <strong>Planeton</strong>, the iOS game that I will talk about in this article. Planeton is a simple, turn-based strategy game you can play against your friends, or strangers, online. Each player starts out with a single planet and can send ships to conquer neutral or other players' planets.
