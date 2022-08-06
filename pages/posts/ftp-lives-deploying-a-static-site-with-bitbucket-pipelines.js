@@ -41,7 +41,6 @@ pipelines:
  \`git ftp\` can use a separate [ignore file](https://github.com/git-ftp/git-ftp/blob/master/man/git-ftp.1.md#ignoring-files-to-be-synced) to tune what content to deploy or omit.
 
 ### Lessons learned
- *
  * There is a docker container for almost anything
  * Does this approach scale? Probably not. Do I care? No.
  * I need to run backstopjs using the docker container locally as well, since there are text rendering (aliasing) differences on macOs vs. dockerized ubuntu.`,
