@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.0",
@@ -18,5 +19,9 @@
     "react-markdown": "^5.0.3",
     "remark-gfm": "^1.0.0",
     "tailwindcss": "^2.2.2"
+  },
+  "devDependencies": {
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.4"
   }
 }
