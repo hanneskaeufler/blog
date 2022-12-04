@@ -19,11 +19,6 @@ export default function Footer() {
                 <Github className="w-4 h-4 hover:text-gray-900" />
               </a>
             </Link>
-            <Link href="https://twitter.com/hanneskaeufler">
-              <a>
-                <Twitter className="w-4 h-4 hover:text-gray-900" />
-              </a>
-            </Link>
             <Link href="https://xing.com/profile/Hannes_Kaeufler">
               <a>
                 <Xing className="w-4 h-4 hover:text-gray-900" />

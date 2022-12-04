@@ -1,4 +1,4 @@
-import { Github, Twitter, Xing } from "@/components/icons";
+import { Github, Xing } from "@/components/icons";
 import Link from "next/link";
 
 function QuickLink({ target, label, children, ...props }) {
@@ -26,9 +26,6 @@ export default function BlogTitle() {
       <div className="flex space-x-2 py-7 justify-center text-lg">
         <QuickLink label="github" target="https://github.com/hanneskaeufler">
           <Github className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
-        </QuickLink>
-        <QuickLink label="twitter" target="https://twitter.com/hanneskaeufler">
-          <Twitter className="w-6 h-6 md:h-4 md:h-4 text-black opacity-20" />
         </QuickLink>
         <QuickLink
           label="xing"
