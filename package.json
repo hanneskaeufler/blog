@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": ">=14.6.0"
+  },
   "name": "blog",
   "version": "0.1.0",
   "private": true,
