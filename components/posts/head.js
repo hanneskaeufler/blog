@@ -27,11 +27,12 @@ export default function Head({ post }) {
   return (
     <div>
       <h2 className="text-3xl font-bold text-gray-700 mb-2">
-        <Link href={perma}>
-          <a className="border-transparent border-b hover:border-gray-600 transition inline-block relative">
-            <span className="text-gray-300 absolute -left-7">#</span>
-            {post.title}
-          </a>
+        <Link
+          href={perma}
+          className="border-transparent border-b hover:border-gray-600 transition inline-block relative"
+        >
+          <span className="text-gray-300 absolute -left-7">#</span>
+          {post.title}
         </Link>
       </h2>
       <div className="text-lg text-gray-400 mb-10">

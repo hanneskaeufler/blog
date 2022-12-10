@@ -3,11 +3,12 @@ import Link from "next/link";
 
 function QuickLink({ target, label, children, ...props }) {
   return (
-    <Link href={target}>
-      <a className="bg-black bg-opacity-20 text-green-50 text rounded-full py-2 px-3 hover:bg-emerald-600 transition flex items-center">
-        {children}
-        <span className="ml-1 hidden md:inline">{label}</span>
-      </a>
+    <Link
+      href={target}
+      className="bg-black bg-opacity-20 text-green-50 text rounded-full py-2 px-3 hover:bg-emerald-600 transition flex items-center"
+    >
+      {children}
+      <span className="ml-1 hidden md:inline">{label}</span>
     </Link>
   );
 }
