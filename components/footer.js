@@ -15,14 +15,10 @@ export default function Footer() {
           </address>
           <div className="flex items-center mt-6 space-x-2">
             <Link href="https://github.com/hanneskaeufler">
-              <a>
-                <Github className="w-4 h-4 hover:text-gray-900" />
-              </a>
+              <Github className="w-4 h-4 hover:text-gray-900" />
             </Link>
             <Link href="https://xing.com/profile/Hannes_Kaeufler">
-              <a>
-                <Xing className="w-4 h-4 hover:text-gray-900" />
-              </a>
+              <Xing className="w-4 h-4 hover:text-gray-900" />
             </Link>
           </div>
         </div>
@@ -30,16 +26,25 @@ export default function Footer() {
           <h4 className="font-bold text-gray-800 mb-6">From Germany with ❤️</h4>
           <p>
             This blog is open-source, check it out on{" "}
-            <Link href="https://github.com/hanneskaeufler/blog">
-              <a className="underline hover:text-gray-900">Github</a>
+            <Link
+              href="https://github.com/hanneskaeufler/blog"
+              className="underline hover:text-gray-900"
+            >
+              Github
             </Link>
             . It is served by{" "}
-            <Link href="https://vercel.com">
-              <a className="underline hover:text-gray-900">Vercel</a>
+            <Link
+              href="https://vercel.com"
+              className="underline hover:text-gray-900"
+            >
+              Vercel
             </Link>
             , written in Javascript 😱 and built with the awesome{" "}
-            <Link href="https://nextjs.org">
-              <a className="underline hover:text-gray-900">Next.js</a>
+            <Link
+              href="https://nextjs.org"
+              className="underline hover:text-gray-900"
+            >
+              Next.js
             </Link>
             .
           </p>
