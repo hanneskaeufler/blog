@@ -20,7 +20,7 @@ Ever wanted to send a collection of photos to a friend or family member? Maybe y
 
 This is what a demo gallery looks like:
 
-![GalleryMagic example gallery](gallerymagic-example.png)
+![GalleryMagic example gallery](/gallerymagic-example.png)
 
 Given my sister sometimes has the need for html galleries of her photos, I had dabbled in gallery generation before. Static site generators like Jekyll or Hugo can do this, but they are not for the faint of heart (read: your mom). I have probably four or five abandoned prototypes on my private git repos, all of varying technological background that I was interested in at the time. Ruby code packaged in a way so it can be embedded in a macOS app, a SwiftUI app that tries to embed one of the existing open-source html gallery generators, and so on. None of them ever made it to any real usable state let alone to the App Store.
 
@@ -28,7 +28,7 @@ Given my sister sometimes has the need for html galleries of her photos, I had d
 
 Now what made me start to dabble in this again? The belief that I can build a simple app that does this *in a weekend* (care to take a guess if this estimation turned out to be the case?), given we now have AI assistants left right and center. I had so far been disappointed by the quality of results the AI assistants could produce. Claude code changed that one evening and I came away impressed. So off I went one evening, vibecoding my way through some rough ideas, and by the following evening I had a working prototype that could generate a simple html gallery from a set of photos. By that point, the app was all local, simple html produced on your machine, no network involved. Claude did help me patching together a SwiftUI interface with a Rust CLI to do the image manipulation. HTML generation is implemented in Swift as well. So far, this turned out to be a great combination. For me, because I like both Swift and Rust, and for the app, because the ecosystems both lend themselves well to the respective tasks.
 
-![Claude reporting on commits in the repo](claude-commits.png)
+![Claude reporting on commits in the repo](/claude-commits.png)
 *See Claude struggling to identify the work it did.*
 
 Now today, or 601 commits later, the vibecoding part has only been a small part of the development. Out of all commits, only 21 were made by claude. So arguably most of the praise I can give to claude code is that it got me started by *making me believe I can ship this quickly.* And so I did. I shipped an embarrasingly work in progress app to the macOS App Store on May 2nd 2025, got rejected by App Review twice and finally got approved on May 3rd. Since then I have shipped 10 updates to arrive at version 1.5 today, June 29th.
