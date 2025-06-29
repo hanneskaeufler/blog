@@ -5,6 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { post as galleryMagicIntro } from "./posts/gallerymagic-20-years-late";
 import { post as stuffJustWorks } from "./posts/stuff-just-works";
 import { post as composableArchitectureReview } from "./posts/composable-architecture-review";
 import { post as sx2021Post } from "./posts/2021-supercross-predictions";
@@ -79,6 +80,7 @@ function getPostsForPage(posts, query) {
 
 function getAllPosts() {
   return [
+    galleryMagicIntro,
     stuffJustWorks,
     composableArchitectureReview,
     sx2021Post,
