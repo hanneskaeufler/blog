@@ -15,7 +15,7 @@
     "@tailwindcss/typography": "^0.5.8",
     "autoprefixer": "^10.4.13",
     "dayjs": "^1.11.7",
-    "next": "^16.2.3",
+    "next": "^16.2.6",
     "postcss": "^8.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
